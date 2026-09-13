@@ -7,12 +7,12 @@
 ```text
 GitHub（ソース、tokens、registry.json）
   ↓ CI（検査、生成、空アプリへの導入検証）
-HTTPS（https://design.example.com/v1/r/）
+HTTPS（https://design.yukihi.tokyo/v1/r/）
   ↓ @yukihito名前空間
 Reactアプリ（npx shadcn@latest add @yukihito/button）
 ```
 
-`design.example.com`は実際に使用するサブドメインが決まるまでの仮表記です。Cloudflareで管理する独自ドメインのサブドメインへ置き換えます。名前空間は`@yukihito`です。
+Cloudflareで管理する`design.yukihi.tokyo`を正式な配信先とします。名前空間は`@yukihito`です。
 
 ## 2. 管理するものと置かないもの
 
@@ -30,26 +30,26 @@ GitHubでは次を管理します。
 
 ## 3. 公開前に決める項目
 
-| 項目                   | 現在                     | 完了条件                                     |
-| ---------------------- | ------------------------ | -------------------------------------------- |
-| 公開URL                | サブドメイン名のみ未決定 | Cloudflare Pagesへカスタムドメインを接続する |
-| 名前空間               | `@yukihito`              | 公式Directoryで重複を確認して申請する        |
-| バージョン             | `v1`                     | 確定                                         |
-| 公開範囲               | 公開                     | 確定                                         |
-| 独自コードのライセンス | MIT                      | `LICENSE`とpackage metadataへ反映済み        |
-| 配信基盤               | Cloudflare Pages         | GitHub接続、build、custom domainを設定する   |
-| CI                     | GitHub Actions想定       | workflowと必須チェックを設定する             |
-| リリース責任者         | Yukihito                 | 確定                                         |
+| 項目                   | 現在                                | 完了条件                                   |
+| ---------------------- | ----------------------------------- | ------------------------------------------ |
+| 公開URL                | `https://design.yukihi.tokyo/v1/r/` | 接続済み                                   |
+| 名前空間               | `@yukihito`                         | 公式Directoryで重複を確認して申請する      |
+| バージョン             | `v1`                                | 確定                                       |
+| 公開範囲               | 公開                                | 確定                                       |
+| 独自コードのライセンス | MIT                                 | `LICENSE`とpackage metadataへ反映済み      |
+| 配信基盤               | Cloudflare Workers                  | GitHub接続、build、custom domainを設定済み |
+| CI                     | GitHub Actions想定                  | workflowと必須チェックを設定する           |
+| リリース責任者         | Yukihito                            | 確定                                       |
 
 ### 3.1 独自ドメインとサブドメイン
 
-Registryに必要なのは、shadcn CLIがJSONを取得できる安定したHTTPS URLです。このプロジェクトでは、所有するドメインをCloudflareで管理し、そのサブドメインをCloudflare Pagesへ接続します。これは適切な構成です。
+Registryに必要なのは、shadcn CLIがJSONを取得できる安定したHTTPS URLです。このプロジェクトでは、所有するドメインをCloudflareで管理し、そのサブドメインをCloudflare Workerへ接続しています。
 
 ```text
-https://<決定するサブドメイン>.<所有ドメイン>/v1/r/button.json
+https://design.yukihi.tokyo/v1/r/button.json
 ```
 
-DNSへレコードを追加するだけではJSONは配信されません。Cloudflare Pagesプロジェクトを作成し、GitHubリポジトリを接続してから、PagesのCustom domainsでサブドメインを割り当てます。CloudflareがDNSとTLSを管理し、PagesがRegistry JSONを配信します。
+Cloudflare WorkerへGitHubリポジトリを接続し、Custom Domainとしてサブドメインを割り当てます。CloudflareがDNSとTLSを管理し、WorkerのStatic AssetsがRegistry JSONを配信します。
 
 ### 3.2 公開方法の選択
 
@@ -66,7 +66,7 @@ DNSへレコードを追加するだけではJSONは配信されません。Clou
 npx shadcn@latest add <GitHub-owner>/<repository>/button
 ```
 
-現在の正式経路はCloudflare PagesのHTTPS URLと`@yukihito`です。GitHub直接導入は代替経路とします。
+現在の正式経路はCloudflare WorkersのHTTPS URLと`@yukihito`です。GitHub直接導入は代替経路とします。
 
 ## 4. ローカル生成
 
@@ -76,13 +76,13 @@ npx shadcn@latest add <GitHub-owner>/<repository>/button
 npm ci
 npm run tokens
 npm run typecheck
-REGISTRY_BASE_URL=https://design.example.com/v1/r npm run registry:build
+npm run registry:build
 ```
 
 `REGISTRY_BASE_URL`は項目JSONを置くディレクトリそのものです。末尾の`/`は省略できます。正しい依存URLは次です。
 
 ```text
-https://design.example.com/v1/r/button.json
+https://design.yukihi.tokyo/v1/r/button.json
 ```
 
 生成後に確認します。
@@ -98,7 +98,7 @@ npx shadcn@latest view ./public/r/button.json
 
 - CIと同じ`npm ci`を使う。ロックファイルと`package.json`が不一致なら失敗する
 - Token変更後に`npm run tokens`を忘れると配布CSSが古いままになる
-- `REGISTRY_BASE_URL`省略時はlocalhost用JSONになる。本番へ配信しない
+- 別環境へ配信する場合だけ`REGISTRY_BASE_URL`で配信先を上書きする
 - `registry.json`と`public/r`を手編集しない。生成スクリプトを修正して再生成する
 - 生成JSON内に`127.0.0.1`、`localhost`、`example.com`が残っていないことを本番配信前に検査する
 
@@ -115,7 +115,7 @@ npm run lint
 npm run tokens
 git diff --exit-code
 npm run typecheck
-REGISTRY_BASE_URL=https://design.example.com/v1/r npm run registry:build
+npm run registry:build
 git diff --exit-code
 ```
 
@@ -171,64 +171,61 @@ npm run build
 
 ## 6. HTTPS配信
 
-配信基盤とは、生成したJSONファイルをインターネット上で保存し、HTTPSリクエストへ応答するサービスです。今回はCloudflare Pagesを配信基盤とします。Cloudflare DNSはサブドメインの名前解決、Cloudflare Pagesはファイルのbuild・保存・配信を担当します。
+配信基盤とは、生成したJSONファイルをインターネット上で保存し、HTTPSリクエストへ応答するサービスです。今回はCloudflare WorkersのStatic Assetsを配信基盤とします。Cloudflare DNSはサブドメインの名前解決、Workerはファイルのbuild・保存・配信を担当します。
 
-### 6.1 Cloudflare Pagesプロジェクトを作る
+### 6.1 Cloudflare Workerを設定する
 
 1. Cloudflare DashboardのWorkers & Pagesを開く
-2. Pagesプロジェクトを作成し、GitHubの`yukihito-jokyu/design-system`を接続する
+2. Workerを作成し、GitHubの`yukihito-jokyu/design-system`を接続する
 3. Production branchを保護された既定ブランチにする
-4. Framework presetはNoneにする
-5. Root directoryはリポジトリルートにする
-6. 次のbuild commandとoutput directoryを設定する
+4. Root directoryはリポジトリルートにする
+5. 次のbuild commandとdeploy commandを設定する
 
-サブドメインを`<registry-host>`として、build commandは次の処理にします。
+Build command：
 
 ```sh
-npm ci && npm run typecheck && REGISTRY_BASE_URL=https://<registry-host>/v1/r npm run registry:build && mkdir -p dist/v1 && cp -R public/r dist/v1/r
+npm ci && npm run typecheck && npm run registry:build && mkdir -p dist/v1 && cp -R public/r dist/v1/r
 ```
 
-Build output directory：
+Deploy command：
 
 ```text
-dist
+npx wrangler deploy
 ```
 
 `public/r`をそのままoutputにすると公開パスは`/r/`となり、決定した`/v1/r/`になりません。そこで配信時だけ`dist/v1/r`へ配置します。`dist`は生成物でありGitへコミットしません。
 
 ### 6.2 サブドメインを接続する
 
-1. PagesプロジェクトのCustom domainsを開く
-2. 所有ドメインのサブドメインを入力する
-3. Cloudflareが提示するDNS設定を確認して有効化する
-4. TLS証明書がActiveになるまで待つ
-5. `<registry-host>`を実際のホスト名へ置き換えて再deployする
+1. WorkerのSettingsからDomains & Routesを開く
+2. Custom Domainへ`design.yukihi.tokyo`を入力する
+3. TLS証明書がActiveになるまで待つ
 
-DNS画面で先にCNAMEを手作業するのではなく、PagesのCustom domainsから追加します。これによりPagesとの関連付け、DNS、証明書設定の取り違えを避けられます。
+DNS画面で先にCNAMEを手作業するのではなく、WorkerのCustom Domainから追加します。CloudflareがDNSレコードと証明書を作成します。
 
 ### 6.3 配信内容を確認する
 
 配信対象は`public/r/`から作成した`dist/v1/r/`です。
 
 ```text
-public/r/registry.json → https://design.example.com/v1/r/registry.json
-public/r/button.json   → https://design.example.com/v1/r/button.json
+public/r/registry.json → https://design.yukihi.tokyo/v1/r/registry.json
+public/r/button.json   → https://design.yukihi.tokyo/v1/r/button.json
 ```
 
 配信後に実際のサブドメインで確認します。
 
 ```sh
-curl --fail https://design.example.com/v1/r/registry.json
-curl --fail https://design.example.com/v1/r/button.json
-npx shadcn@latest list https://design.example.com/v1/r/registry.json
-npx shadcn@latest view https://design.example.com/v1/r/button.json
+curl --fail https://design.yukihi.tokyo/v1/r/registry.json
+curl --fail https://design.yukihi.tokyo/v1/r/button.json
+npx shadcn@latest list https://design.yukihi.tokyo/v1/r/registry.json
+npx shadcn@latest view https://design.yukihi.tokyo/v1/r/button.json
 ```
 
 別の空アプリから、公開URLで最終導入確認します。
 
 ```sh
 npx shadcn@latest init --base radix
-npx shadcn@latest add https://design.example.com/v1/r/button.json
+npx shadcn@latest add https://design.yukihi.tokyo/v1/r/button.json
 ```
 
 ### 詰まりやすい点
@@ -253,7 +250,7 @@ npx shadcn@latest add https://design.example.com/v1/r/button.json
 
 ```sh
 npx shadcn@latest registry add \
-  @yukihito=https://design.example.com/v1/r/{name}.json
+  @yukihito=https://design.yukihi.tokyo/v1/r/{name}.json
 ```
 
 または`components.json`へ追加します。
@@ -261,7 +258,7 @@ npx shadcn@latest registry add \
 ```json
 {
   "registries": {
-    "@yukihito": "https://design.example.com/v1/r/{name}.json"
+    "@yukihito": "https://design.yukihi.tokyo/v1/r/{name}.json"
   }
 }
 ```
@@ -314,9 +311,9 @@ npx shadcn@latest view @yukihito/button
 申請前の検証例：
 
 ```sh
-npx shadcn@latest list https://design.example.com/v1/r/registry.json
-npx shadcn@latest search https://design.example.com/v1/r/registry.json --query button
-npx shadcn@latest view https://design.example.com/v1/r/button.json
+npx shadcn@latest list https://design.yukihi.tokyo/v1/r/registry.json
+npx shadcn@latest search https://design.yukihi.tokyo/v1/r/registry.json --query button
+npx shadcn@latest view https://design.yukihi.tokyo/v1/r/button.json
 ```
 
 merge後は、名前空間URLを手動登録していない新しいアプリで確認します。
@@ -399,8 +396,8 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 ```json
 {
   "registries": {
-    "@yukihito": "https://design.example.com/v1/r/{name}.json",
-    "@yukihito-next": "https://design.example.com/v2/r/{name}.json"
+    "@yukihito": "https://design.yukihi.tokyo/v1/r/{name}.json",
+    "@yukihito-next": "https://design.yukihi.tokyo/v2/r/{name}.json"
   }
 }
 ```
