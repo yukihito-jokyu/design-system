@@ -107,29 +107,11 @@ jobs:
 
           node --input-type=module <<'NODE'
           import { writeFile } from "node:fs/promises";
+          import ts from "typescript";
 
-          const config = {
-            compilerOptions: {
-              target: "ES2022",
-              useDefineForClassFields: true,
-              lib: ["ES2022", "DOM", "DOM.Iterable"],
-              allowJs: false,
-              skipLibCheck: true,
-              esModuleInterop: true,
-              allowSyntheticDefaultImports: true,
-              strict: true,
-              forceConsistentCasingInFileNames: true,
-              module: "ESNext",
-              moduleResolution: "Bundler",
-              resolveJsonModule: true,
-              isolatedModules: true,
-              noEmit: true,
-              jsx: "react-jsx",
-              baseUrl: ".",
-              paths: { "@/*": ["./src/*"] },
-            },
-            include: ["src"],
-          };
+          const { config, error } = ts.readConfigFile("tsconfig.app.json", ts.sys.readFile);
+          if (error) throw new Error(ts.flattenDiagnosticMessageText(error.messageText, "\n"));
+          config.compilerOptions.paths = { "@/*": ["./src/*"] };
           await writeFile("tsconfig.app.json", `${JSON.stringify(config, null, 2)}\n`);
           NODE
 
@@ -177,8 +159,8 @@ jobs:
             ink-idea-feature-icon)
               test -f src/components/icons/InkIdeaFeatureIcon.tsx
               test -f src/components/icons/IconFrame.tsx
-              icon_count="$(find src/components/icons -maxdepth 1 -type f -name '*Icon.tsx' | wc -l | tr -d ' ')"
-              test "$icon_count" -eq 2
+              icon_file_count="$(find src/components/icons -maxdepth 1 -type f -name '*.tsx' | wc -l | tr -d ' ')"
+              test "$icon_file_count" -eq 2
               printf '%s\n' \
                 'import { InkIdeaFeatureIcon } from "@/components/icons/InkIdeaFeatureIcon";' \
                 '' \
