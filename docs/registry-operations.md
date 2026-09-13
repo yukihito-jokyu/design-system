@@ -8,11 +8,11 @@
 GitHub（ソース、tokens、registry.json）
   ↓ CI（検査、生成、空アプリへの導入検証）
 HTTPS（https://design.yukihi.tokyo/v1/r/）
-  ↓ @yukihito名前空間
-Reactアプリ（npx shadcn@latest add @yukihito/button）
+  ↓ @yukihi名前空間
+Reactアプリ（npx shadcn@latest add @yukihi/button）
 ```
 
-Cloudflareで管理する`design.yukihi.tokyo`を正式な配信先とします。名前空間は`@yukihito`です。
+Cloudflareで管理する`design.yukihi.tokyo`を正式な配信先とします。名前空間は`@yukihi`です。
 
 ## 2. 管理するものと置かないもの
 
@@ -33,7 +33,7 @@ GitHubでは次を管理します。
 | 項目                   | 現在                                | 完了条件                                   |
 | ---------------------- | ----------------------------------- | ------------------------------------------ |
 | 公開URL                | `https://design.yukihi.tokyo/v1/r/` | 接続済み                                   |
-| 名前空間               | `@yukihito`                         | 公式Directoryで重複を確認して申請する      |
+| 名前空間               | `@yukihi`                           | 公式Directoryで重複を確認して申請する      |
 | バージョン             | `v1`                                | 確定                                       |
 | 公開範囲               | 公開                                | 確定                                       |
 | 独自コードのライセンス | MIT                                 | `LICENSE`とpackage metadataへ反映済み      |
@@ -66,7 +66,7 @@ Cloudflare WorkerへGitHubリポジトリを接続し、Custom Domainとして�
 npx shadcn@latest add <GitHub-owner>/<repository>/button
 ```
 
-現在の正式経路はCloudflare WorkersのHTTPS URLと`@yukihito`です。GitHub直接導入は代替経路とします。
+現在の正式経路はCloudflare WorkersのHTTPS URLと`@yukihi`です。GitHub直接導入は代替経路とします。
 
 ## 4. ローカル生成
 
@@ -237,7 +237,7 @@ npx shadcn@latest add https://design.yukihi.tokyo/v1/r/button.json
 - 非公開Registryでは秘密をGitやJSONへ書かず、headerと環境変数で認証する
 - 直前の正常な`public/r`へ戻せるロールバック手順を用意する
 
-## 7. `@yukihito`の登録
+## 7. `@yukihi`の登録
 
 名前空間の利用には次の2段階があります。
 
@@ -250,7 +250,7 @@ npx shadcn@latest add https://design.yukihi.tokyo/v1/r/button.json
 
 ```sh
 npx shadcn@latest registry add \
-  @yukihito=https://design.yukihi.tokyo/v1/r/{name}.json
+  @yukihi=https://design.yukihi.tokyo/v1/r/{name}.json
 ```
 
 または`components.json`へ追加します。
@@ -258,7 +258,7 @@ npx shadcn@latest registry add \
 ```json
 {
   "registries": {
-    "@yukihito": "https://design.yukihi.tokyo/v1/r/{name}.json"
+    "@yukihi": "https://design.yukihi.tokyo/v1/r/{name}.json"
   }
 }
 ```
@@ -266,26 +266,26 @@ npx shadcn@latest registry add \
 登録確認：
 
 ```sh
-npx shadcn@latest list @yukihito
-npx shadcn@latest search @yukihito --query button
-npx shadcn@latest view @yukihito/button
+npx shadcn@latest list @yukihi
+npx shadcn@latest search @yukihi --query button
+npx shadcn@latest view @yukihi/button
 ```
 
 ### 詰まりやすい点
 
-- `{name}`を消さない。`@yukihito/button`の`button`がここへ入る
-- アプリごとに名前を変えず、`@yukihito`へ統一する
-- `@yukihito`はnpmスコープではない。`npm install @yukihito/button`とは別物である
+- `{name}`を消さない。`@yukihi/button`の`button`がここへ入る
+- アプリごとに名前を変えず、`@yukihi`へ統一する
+- `@yukihi`はnpmスコープではない。`npm install @yukihi/button`とは別物である
 - `components.json`がなければ、先に`npx shadcn@latest init --base radix`を実行する
 - 公式Registry Directoryへ未登録なら、各アプリでこのURL登録が必要になる
 
 ### 7.2 shadcn公式Directoryへ登録する
 
-公式登録は必須ではありません。未登録でも、前節の`registry add`または`components.json`設定後に`@yukihito/button`を利用できます。
+公式登録は必須ではありません。未登録でも、前節の`registry add`または`components.json`設定後に`@yukihi/button`を利用できます。
 
 公式Directoryへ登録すると、利用者はURLを事前設定せずに名前空間を利用できます。申請前に https://ui.shadcn.com/r/registries.json で希望する名前が使われていないか確認します。
 
-申請前に公式一覧で`@yukihito`が未使用であることを確認します。使用済みなら`@yukihito-ui`など一意な候補を決め、この文書、README、利用アプリの`components.json`を同時に更新します。
+申請前に公式一覧で`@yukihi`が未使用であることを確認します。使用済みなら`@yukihi-ui`など一意な候補を決め、この文書、README、利用アプリの`components.json`を同時に更新します。
 
 公式Directoryの要件は次です。
 
@@ -319,7 +319,7 @@ npx shadcn@latest view https://design.yukihi.tokyo/v1/r/button.json
 merge後は、名前空間URLを手動登録していない新しいアプリで確認します。
 
 ```sh
-npx shadcn@latest add @yukihito/button
+npx shadcn@latest add @yukihi/button
 ```
 
 公式申請は外部リポジトリへのPull Requestを伴います。公開準備と権利確認の完了後、明示的な承認を得て実施します。
@@ -329,25 +329,25 @@ npx shadcn@latest add @yukihito/button
 通常は必要な項目だけ導入します。
 
 ```sh
-npx shadcn@latest add @yukihito/button
-npx shadcn@latest add @yukihito/dialog
-npx shadcn@latest add @yukihito/app-shell
+npx shadcn@latest add @yukihi/button
+npx shadcn@latest add @yukihi/dialog
+npx shadcn@latest add @yukihi/app-shell
 ```
 
 個別アイコンと動的Character APIは依存範囲が異なります。
 
 ```sh
 # 対象アイコンとIconFrameだけ
-npx shadcn@latest add @yukihito/ink-idea-feature-icon
+npx shadcn@latest add @yukihi/ink-idea-feature-icon
 
 # 全Characterアイコンを動的に選択するAPI
-npx shadcn@latest add @yukihito/character-icons
+npx shadcn@latest add @yukihi/character-icons
 ```
 
 全項目導入：
 
 ```sh
-npx shadcn@latest add @yukihito/design-system
+npx shadcn@latest add @yukihi/design-system
 ```
 
 全体導入は114ファイルと関連パッケージを追加します。新規アプリ、検証アプリ、全機能が必要なアプリに限定し、通常は必要なPatternまたは部品だけを導入します。
@@ -380,7 +380,7 @@ Registryはソースを利用アプリへコピーします。同名ファイル
 
 ```sh
 git status
-npx shadcn@latest view @yukihito/button
+npx shadcn@latest view @yukihi/button
 # add後
 git diff
 npm run typecheck
@@ -396,8 +396,8 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 ```json
 {
   "registries": {
-    "@yukihito": "https://design.yukihi.tokyo/v1/r/{name}.json",
-    "@yukihito-next": "https://design.yukihi.tokyo/v2/r/{name}.json"
+    "@yukihi": "https://design.yukihi.tokyo/v1/r/{name}.json",
+    "@yukihi-next": "https://design.yukihi.tokyo/v2/r/{name}.json"
   }
 }
 ```
@@ -409,14 +409,14 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 利用アプリの`AGENTS.md`などへ、最低限次を記載します。
 
 ```md
-- UI実装前に `npx shadcn@latest search @yukihito --query <用途>` で検索する。
-- 導入前に `npx shadcn@latest view @yukihito/<item>` で内容と依存を確認する。
+- UI実装前に `npx shadcn@latest search @yukihi --query <用途>` で検索する。
+- 導入前に `npx shadcn@latest view @yukihi/<item>` で内容と依存を確認する。
 - Pattern、Foundation、独自合成の順で検討する。
 - 共通値をハードコードせず、導入済みTokenを使用する。
 - `tokens/foundation.json`の`decided`と`proposed`を混同しない。
 - SVGの形、固有色、名前付きexportを変更しない。
 - Portal、disabled、invalid、loading、IME、フォーカス復帰、Reduced Motionを維持する。
-- `@yukihito/design-system`を無条件に導入せず、必要項目だけ導入する。
+- `@yukihi/design-system`を無条件に導入せず、必要項目だけ導入する。
 ```
 
 現在のRegistryは、多くの項目の説明が汎用的です。AIの選択精度を上げるには、各項目へ「用途」「使わない条件」「主要Props」「短い例」「関連Pattern」を追加する必要があります。
@@ -448,7 +448,7 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 
 ### 利用者向け
 
-- [ ] `@yukihito`登録手順がある
+- [ ] `@yukihi`登録手順がある
 - [ ] Tailwind v4と`--base radix`を明記した
 - [ ] CSS importとProviderの例がある
 - [ ] 検索、確認、個別導入方法がある
@@ -456,18 +456,18 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 
 ## 12. 障害の切り分け
 
-| 症状                             | 最初に確認する場所                          |
-| -------------------------------- | ------------------------------------------- |
-| `@yukihito/button`が見つからない | `components.json`、`{name}`、公開URL        |
-| JSON parse error                 | URLが404ページやSPAのHTMLを返していないか   |
-| 依存項目だけ取得できない         | `registryDependencies`が本番URLか           |
-| `asChild`付近の型エラー          | `shadcn init --base radix`を使用したか      |
-| Tokenが反映されない              | `design-system/styles.css`を読み込んだか    |
-| Portalだけ色が違う               | ProviderとPortalの`data-ds-base`継承        |
-| importが解決しない               | `components.json`と`tsconfig.json`のalias   |
-| 個別アイコンで全点が入る         | `character-icons`でなく個別itemを指定したか |
-| 更新後も古い                     | CDNキャッシュと配信中JSON                   |
-| 利用アプリの変更が消えた         | `add`時に既存ファイルを上書きしていないか   |
+| 症状                           | 最初に確認する場所                          |
+| ------------------------------ | ------------------------------------------- |
+| `@yukihi/button`が見つからない | `components.json`、`{name}`、公開URL        |
+| JSON parse error               | URLが404ページやSPAのHTMLを返していないか   |
+| 依存項目だけ取得できない       | `registryDependencies`が本番URLか           |
+| `asChild`付近の型エラー        | `shadcn init --base radix`を使用したか      |
+| Tokenが反映されない            | `design-system/styles.css`を読み込んだか    |
+| Portalだけ色が違う             | ProviderとPortalの`data-ds-base`継承        |
+| importが解決しない             | `components.json`と`tsconfig.json`のalias   |
+| 個別アイコンで全点が入る       | `character-icons`でなく個別itemを指定したか |
+| 更新後も古い                   | CDNキャッシュと配信中JSON                   |
+| 利用アプリの変更が消えた       | `add`時に既存ファイルを上書きしていないか   |
 
 報告時は、秘密情報を除いて、実行コマンド、Node.js・shadcnバージョン、`components.json`、対象URL、`shadcn view`結果、エラー、導入前後の差分を添えます。
 
