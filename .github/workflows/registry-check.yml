@@ -98,9 +98,10 @@ jobs:
 
       - name: Create empty React app
         run: |
-          app_dir="$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
-          npm create vite@latest "$app_dir" -- --template react-ts
-          cd "$app_dir"
+          app_name="registry-consumer-${{ matrix.target }}"
+          cd "$RUNNER_TEMP"
+          npm create vite@latest "$app_name" -- --template react-ts
+          cd "$RUNNER_TEMP/$app_name"
           npm install
           npm install tailwindcss @tailwindcss/vite
 
