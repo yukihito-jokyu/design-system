@@ -1,12 +1,12 @@
 # Collapsible
 
-- Registry: `@yukihito/collapsible`
+- Registry: `@yukihi/collapsible`
 - Source: `src/components/ui/collapsible.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/collapsible
+npx shadcn@latest add @yukihi/collapsible
 ```
 
 ## 使用例

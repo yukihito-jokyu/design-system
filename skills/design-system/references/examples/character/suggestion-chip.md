@@ -1,12 +1,12 @@
 # SuggestionChip
 
-- Registry: `@yukihito/suggestion-chip`
+- Registry: `@yukihi/suggestion-chip`
 - Source: `src/components/character/suggestion-chip.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/suggestion-chip
+npx shadcn@latest add @yukihi/suggestion-chip
 ```
 
 ## 使用例

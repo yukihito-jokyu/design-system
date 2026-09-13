@@ -1,12 +1,12 @@
 # AssemblyThinkingStatusIcon
 
-- Registry: `@yukihito/assembly-thinking-status-icon`
+- Registry: `@yukihi/assembly-thinking-status-icon`
 - Source: `src/components/icons/AssemblyThinkingStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-thinking-status-icon
+npx shadcn@latest add @yukihi/assembly-thinking-status-icon
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # MessageBubble
 
-- Registry: `@yukihito/message-bubble`
+- Registry: `@yukihi/message-bubble`
 - Source: `src/components/character/message-bubble.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/message-bubble
+npx shadcn@latest add @yukihi/message-bubble
 ```
 
 ## 使用例

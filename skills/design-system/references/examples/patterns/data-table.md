@@ -1,12 +1,12 @@
 # DataTable
 
-- Registry: `@yukihito/data-table`
+- Registry: `@yukihi/data-table`
 - Source: `src/components/patterns/data-table.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/data-table
+npx shadcn@latest add @yukihi/data-table
 ```
 
 ## 使用例

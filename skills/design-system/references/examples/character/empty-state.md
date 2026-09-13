@@ -1,12 +1,12 @@
 # EmptyState
 
-- Registry: `@yukihito/empty-state`
+- Registry: `@yukihi/empty-state`
 - Source: `src/components/character/empty-state.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/empty-state
+npx shadcn@latest add @yukihi/empty-state
 ```
 
 ## 使用例

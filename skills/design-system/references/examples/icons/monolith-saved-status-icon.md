@@ -1,12 +1,12 @@
 # MonolithSavedStatusIcon
 
-- Registry: `@yukihito/monolith-saved-status-icon`
+- Registry: `@yukihi/monolith-saved-status-icon`
 - Source: `src/components/icons/MonolithSavedStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-saved-status-icon
+npx shadcn@latest add @yukihi/monolith-saved-status-icon
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # Select
 
-- Registry: `@yukihito/select`
+- Registry: `@yukihi/select`
 - Source: `src/components/ui/select.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/select
+npx shadcn@latest add @yukihi/select
 ```
 
 ## 使用例

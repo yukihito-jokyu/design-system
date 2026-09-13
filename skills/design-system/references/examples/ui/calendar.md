@@ -1,12 +1,12 @@
 # Calendar
 
-- Registry: `@yukihito/calendar`
+- Registry: `@yukihi/calendar`
 - Source: `src/components/ui/calendar.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/calendar
+npx shadcn@latest add @yukihi/calendar
 ```
 
 ## 使用例

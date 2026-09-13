@@ -1,12 +1,12 @@
 # SettingsSection
 
-- Registry: `@yukihito/settings-section`
+- Registry: `@yukihi/settings-section`
 - Source: `src/components/patterns/settings-section.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/settings-section
+npx shadcn@latest add @yukihi/settings-section
 ```
 
 ## 使用例

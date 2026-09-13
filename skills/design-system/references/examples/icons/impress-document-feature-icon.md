@@ -1,12 +1,12 @@
 # ImpressDocumentFeatureIcon
 
-- Registry: `@yukihito/impress-document-feature-icon`
+- Registry: `@yukihi/impress-document-feature-icon`
 - Source: `src/components/icons/ImpressDocumentFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/impress-document-feature-icon
+npx shadcn@latest add @yukihi/impress-document-feature-icon
 ```
 
 ## 使用例

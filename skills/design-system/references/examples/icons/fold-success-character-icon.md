@@ -1,12 +1,12 @@
 # FoldSuccessCharacterIcon
 
-- Registry: `@yukihito/fold-success-character-icon`
+- Registry: `@yukihi/fold-success-character-icon`
 - Source: `src/components/icons/FoldSuccessCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/fold-success-character-icon
+npx shadcn@latest add @yukihi/fold-success-character-icon
 ```
 
 ## 使用例

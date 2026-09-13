@@ -1,12 +1,12 @@
 # AssemblyHistoryFeatureIcon
 
-- Registry: `@yukihito/assembly-history-feature-icon`
+- Registry: `@yukihi/assembly-history-feature-icon`
 - Source: `src/components/icons/AssemblyHistoryFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-history-feature-icon
+npx shadcn@latest add @yukihi/assembly-history-feature-icon
 ```
 
 ## 使用例

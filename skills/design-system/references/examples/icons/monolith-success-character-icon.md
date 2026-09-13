@@ -1,12 +1,12 @@
 # MonolithSuccessCharacterIcon
 
-- Registry: `@yukihito/monolith-success-character-icon`
+- Registry: `@yukihi/monolith-success-character-icon`
 - Source: `src/components/icons/MonolithSuccessCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-success-character-icon
+npx shadcn@latest add @yukihi/monolith-success-character-icon
 ```
 
 ## 使用例

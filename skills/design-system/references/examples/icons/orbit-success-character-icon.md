@@ -1,12 +1,12 @@
 # OrbitSuccessCharacterIcon
 
-- Registry: `@yukihito/orbit-success-character-icon`
+- Registry: `@yukihi/orbit-success-character-icon`
 - Source: `src/components/icons/OrbitSuccessCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/orbit-success-character-icon
+npx shadcn@latest add @yukihi/orbit-success-character-icon
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # Accordion
 
-- Registry: `@yukihito/accordion`
+- Registry: `@yukihi/accordion`
 - Source: `src/components/ui/accordion.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/accordion
+npx shadcn@latest add @yukihi/accordion
 ```
 
 ## 使用例

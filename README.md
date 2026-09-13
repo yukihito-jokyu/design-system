@@ -72,7 +72,7 @@ npx shadcn@latest add http://127.0.0.1:4173/r/ink-idea-feature-icon.json
 REGISTRY_BASE_URL=https://別の配信先.example/v1/r npm run registry:build
 ```
 
-GitHub・CI・Cloudflare Workers配信・`@yukihito`名前空間を含む正式運用は、[Registry運用・導入手順書](docs/registry-operations.md)を参照してください。
+GitHub・CI・Cloudflare Workers配信・`@yukihi`名前空間を含む正式運用は、[Registry運用・導入手順書](docs/registry-operations.md)を参照してください。
 
 ## AI向け利用ルール
 

@@ -1,12 +1,12 @@
 # FoldThinkingStatusIcon
 
-- Registry: `@yukihito/fold-thinking-status-icon`
+- Registry: `@yukihi/fold-thinking-status-icon`
 - Source: `src/components/icons/FoldThinkingStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/fold-thinking-status-icon
+npx shadcn@latest add @yukihi/fold-thinking-status-icon
 ```
 
 ## 使用例

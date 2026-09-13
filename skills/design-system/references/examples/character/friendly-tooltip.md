@@ -1,12 +1,12 @@
 # FriendlyTooltip
 
-- Registry: `@yukihito/friendly-tooltip`
+- Registry: `@yukihi/friendly-tooltip`
 - Source: `src/components/character/friendly-tooltip.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/friendly-tooltip
+npx shadcn@latest add @yukihi/friendly-tooltip
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # ImpressWelcomeCharacterIcon
 
-- Registry: `@yukihito/impress-welcome-character-icon`
+- Registry: `@yukihi/impress-welcome-character-icon`
 - Source: `src/components/icons/ImpressWelcomeCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/impress-welcome-character-icon
+npx shadcn@latest add @yukihi/impress-welcome-character-icon
 ```
 
 ## 使用例

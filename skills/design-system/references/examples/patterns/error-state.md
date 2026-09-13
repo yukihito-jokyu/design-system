@@ -1,12 +1,12 @@
 # ErrorState
 
-- Registry: `@yukihito/error-state`
+- Registry: `@yukihi/error-state`
 - Source: `src/components/patterns/error-state.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/error-state
+npx shadcn@latest add @yukihi/error-state
 ```
 
 ## 使用例

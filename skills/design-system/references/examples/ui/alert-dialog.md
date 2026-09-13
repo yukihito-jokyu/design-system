@@ -1,12 +1,12 @@
 # AlertDialog
 
-- Registry: `@yukihito/alert-dialog`
+- Registry: `@yukihi/alert-dialog`
 - Source: `src/components/ui/alert-dialog.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/alert-dialog
+npx shadcn@latest add @yukihi/alert-dialog
 ```
 
 ## 使用例

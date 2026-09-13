@@ -1,12 +1,12 @@
 # InkDocumentFeatureIcon
 
-- Registry: `@yukihito/ink-document-feature-icon`
+- Registry: `@yukihi/ink-document-feature-icon`
 - Source: `src/components/icons/InkDocumentFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/ink-document-feature-icon
+npx shadcn@latest add @yukihi/ink-document-feature-icon
 ```
 
 ## 使用例

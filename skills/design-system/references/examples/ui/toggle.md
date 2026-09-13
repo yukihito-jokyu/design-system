@@ -1,12 +1,12 @@
 # Toggle
 
-- Registry: `@yukihito/toggle`
+- Registry: `@yukihi/toggle`
 - Source: `src/components/ui/toggle.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/toggle
+npx shadcn@latest add @yukihi/toggle
 ```
 
 ## 使用例

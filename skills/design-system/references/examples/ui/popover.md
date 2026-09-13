@@ -1,12 +1,12 @@
 # Popover
 
-- Registry: `@yukihito/popover`
+- Registry: `@yukihi/popover`
 - Source: `src/components/ui/popover.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/popover
+npx shadcn@latest add @yukihi/popover
 ```
 
 ## 使用例

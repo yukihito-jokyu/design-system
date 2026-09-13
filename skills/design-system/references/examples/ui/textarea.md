@@ -1,12 +1,12 @@
 # Textarea
 
-- Registry: `@yukihito/textarea`
+- Registry: `@yukihi/textarea`
 - Source: `src/components/ui/textarea.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/textarea
+npx shadcn@latest add @yukihi/textarea
 ```
 
 ## 使用例

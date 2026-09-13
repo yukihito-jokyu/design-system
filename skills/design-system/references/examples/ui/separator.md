@@ -1,12 +1,12 @@
 # Separator
 
-- Registry: `@yukihito/separator`
+- Registry: `@yukihi/separator`
 - Source: `src/components/ui/separator.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/separator
+npx shadcn@latest add @yukihi/separator
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # FormField
 
-- Registry: `@yukihito/form-field`
+- Registry: `@yukihi/form-field`
 - Source: `src/components/patterns/form-field.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/form-field
+npx shadcn@latest add @yukihi/form-field
 ```
 
 ## 使用例

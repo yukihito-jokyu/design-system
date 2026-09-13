@@ -1,12 +1,12 @@
 # FoldIdeaFeatureIcon
 
-- Registry: `@yukihito/fold-idea-feature-icon`
+- Registry: `@yukihi/fold-idea-feature-icon`
 - Source: `src/components/icons/FoldIdeaFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/fold-idea-feature-icon
+npx shadcn@latest add @yukihi/fold-idea-feature-icon
 ```
 
 ## 使用例

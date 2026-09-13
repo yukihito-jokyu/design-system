@@ -1,12 +1,12 @@
 # OrbitSavedStatusIcon
 
-- Registry: `@yukihito/orbit-saved-status-icon`
+- Registry: `@yukihi/orbit-saved-status-icon`
 - Source: `src/components/icons/OrbitSavedStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/orbit-saved-status-icon
+npx shadcn@latest add @yukihi/orbit-saved-status-icon
 ```
 
 ## 使用例

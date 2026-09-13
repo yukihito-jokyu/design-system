@@ -1,12 +1,12 @@
 # AssemblySavedStatusIcon
 
-- Registry: `@yukihito/assembly-saved-status-icon`
+- Registry: `@yukihi/assembly-saved-status-icon`
 - Source: `src/components/icons/AssemblySavedStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-saved-status-icon
+npx shadcn@latest add @yukihi/assembly-saved-status-icon
 ```
 
 ## 使用例

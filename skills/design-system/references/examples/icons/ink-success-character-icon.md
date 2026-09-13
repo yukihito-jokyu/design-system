@@ -1,12 +1,12 @@
 # InkSuccessCharacterIcon
 
-- Registry: `@yukihito/ink-success-character-icon`
+- Registry: `@yukihi/ink-success-character-icon`
 - Source: `src/components/icons/InkSuccessCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/ink-success-character-icon
+npx shadcn@latest add @yukihi/ink-success-character-icon
 ```
 
 ## 使用例

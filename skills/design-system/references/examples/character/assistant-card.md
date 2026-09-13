@@ -1,12 +1,12 @@
 # AssistantCard
 
-- Registry: `@yukihito/assistant-card`
+- Registry: `@yukihi/assistant-card`
 - Source: `src/components/character/assistant-card.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assistant-card
+npx shadcn@latest add @yukihi/assistant-card
 ```
 
 ## 使用例

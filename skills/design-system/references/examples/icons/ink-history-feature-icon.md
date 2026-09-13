@@ -1,12 +1,12 @@
 # InkHistoryFeatureIcon
 
-- Registry: `@yukihito/ink-history-feature-icon`
+- Registry: `@yukihi/ink-history-feature-icon`
 - Source: `src/components/icons/InkHistoryFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/ink-history-feature-icon
+npx shadcn@latest add @yukihi/ink-history-feature-icon
 ```
 
 ## 使用例

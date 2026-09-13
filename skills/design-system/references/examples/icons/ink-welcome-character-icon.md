@@ -1,12 +1,12 @@
 # InkWelcomeCharacterIcon
 
-- Registry: `@yukihito/ink-welcome-character-icon`
+- Registry: `@yukihi/ink-welcome-character-icon`
 - Source: `src/components/icons/InkWelcomeCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/ink-welcome-character-icon
+npx shadcn@latest add @yukihi/ink-welcome-character-icon
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # Slider
 
-- Registry: `@yukihito/slider`
+- Registry: `@yukihi/slider`
 - Source: `src/components/ui/slider.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/slider
+npx shadcn@latest add @yukihi/slider
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # FoldWelcomeCharacterIcon
 
-- Registry: `@yukihito/fold-welcome-character-icon`
+- Registry: `@yukihi/fold-welcome-character-icon`
 - Source: `src/components/icons/FoldWelcomeCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/fold-welcome-character-icon
+npx shadcn@latest add @yukihi/fold-welcome-character-icon
 ```
 
 ## 使用例

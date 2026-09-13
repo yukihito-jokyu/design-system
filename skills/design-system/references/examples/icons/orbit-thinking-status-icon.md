@@ -1,12 +1,12 @@
 # OrbitThinkingStatusIcon
 
-- Registry: `@yukihito/orbit-thinking-status-icon`
+- Registry: `@yukihi/orbit-thinking-status-icon`
 - Source: `src/components/icons/OrbitThinkingStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/orbit-thinking-status-icon
+npx shadcn@latest add @yukihi/orbit-thinking-status-icon
 ```
 
 ## 使用例

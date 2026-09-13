@@ -1,12 +1,12 @@
 # Switch
 
-- Registry: `@yukihito/switch`
+- Registry: `@yukihi/switch`
 - Source: `src/components/ui/switch.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/switch
+npx shadcn@latest add @yukihi/switch
 ```
 
 ## 使用例

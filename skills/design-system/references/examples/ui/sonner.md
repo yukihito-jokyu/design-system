@@ -1,12 +1,12 @@
 # Toaster
 
-- Registry: `@yukihito/sonner`
+- Registry: `@yukihi/sonner`
 - Source: `src/components/ui/sonner.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/sonner
+npx shadcn@latest add @yukihi/sonner
 ```
 
 ## 使用例

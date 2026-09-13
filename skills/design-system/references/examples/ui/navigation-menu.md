@@ -1,12 +1,12 @@
 # NavigationMenu
 
-- Registry: `@yukihito/navigation-menu`
+- Registry: `@yukihi/navigation-menu`
 - Source: `src/components/ui/navigation-menu.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/navigation-menu
+npx shadcn@latest add @yukihi/navigation-menu
 ```
 
 ## 使用例

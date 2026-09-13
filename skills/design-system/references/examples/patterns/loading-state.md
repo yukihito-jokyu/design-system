@@ -1,12 +1,12 @@
 # LoadingState
 
-- Registry: `@yukihito/loading-state`
+- Registry: `@yukihi/loading-state`
 - Source: `src/components/patterns/loading-state.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/loading-state
+npx shadcn@latest add @yukihi/loading-state
 ```
 
 ## 使用例

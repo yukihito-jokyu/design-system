@@ -1,12 +1,12 @@
 # ToggleGroup
 
-- Registry: `@yukihito/toggle-group`
+- Registry: `@yukihi/toggle-group`
 - Source: `src/components/ui/toggle-group.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/toggle-group
+npx shadcn@latest add @yukihi/toggle-group
 ```
 
 ## 使用例

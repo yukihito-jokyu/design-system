@@ -1,12 +1,12 @@
 # RadioGroup
 
-- Registry: `@yukihito/radio-group`
+- Registry: `@yukihi/radio-group`
 - Source: `src/components/ui/radio-group.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/radio-group
+npx shadcn@latest add @yukihi/radio-group
 ```
 
 ## 使用例

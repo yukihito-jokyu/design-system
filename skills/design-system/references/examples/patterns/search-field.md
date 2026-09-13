@@ -1,12 +1,12 @@
 # SearchField
 
-- Registry: `@yukihito/search-field`
+- Registry: `@yukihi/search-field`
 - Source: `src/components/patterns/search-field.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/search-field
+npx shadcn@latest add @yukihi/search-field
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # FoldHistoryFeatureIcon
 
-- Registry: `@yukihito/fold-history-feature-icon`
+- Registry: `@yukihi/fold-history-feature-icon`
 - Source: `src/components/icons/FoldHistoryFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/fold-history-feature-icon
+npx shadcn@latest add @yukihi/fold-history-feature-icon
 ```
 
 ## 使用例

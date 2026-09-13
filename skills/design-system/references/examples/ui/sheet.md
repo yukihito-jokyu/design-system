@@ -1,12 +1,12 @@
 # Sheet
 
-- Registry: `@yukihito/sheet`
+- Registry: `@yukihi/sheet`
 - Source: `src/components/ui/sheet.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/sheet
+npx shadcn@latest add @yukihi/sheet
 ```
 
 ## 使用例

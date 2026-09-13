@@ -1,12 +1,12 @@
 # SoftNotice
 
-- Registry: `@yukihito/soft-notice`
+- Registry: `@yukihi/soft-notice`
 - Source: `src/components/character/soft-notice.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/soft-notice
+npx shadcn@latest add @yukihi/soft-notice
 ```
 
 ## 使用例

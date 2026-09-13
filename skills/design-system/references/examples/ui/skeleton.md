@@ -1,12 +1,12 @@
 # Skeleton
 
-- Registry: `@yukihito/skeleton`
+- Registry: `@yukihi/skeleton`
 - Source: `src/components/ui/skeleton.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/skeleton
+npx shadcn@latest add @yukihi/skeleton
 ```
 
 ## 使用例

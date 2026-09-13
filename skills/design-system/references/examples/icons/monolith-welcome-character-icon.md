@@ -1,12 +1,12 @@
 # MonolithWelcomeCharacterIcon
 
-- Registry: `@yukihito/monolith-welcome-character-icon`
+- Registry: `@yukihi/monolith-welcome-character-icon`
 - Source: `src/components/icons/MonolithWelcomeCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-welcome-character-icon
+npx shadcn@latest add @yukihi/monolith-welcome-character-icon
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # MonolithDocumentFeatureIcon
 
-- Registry: `@yukihito/monolith-document-feature-icon`
+- Registry: `@yukihi/monolith-document-feature-icon`
 - Source: `src/components/icons/MonolithDocumentFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-document-feature-icon
+npx shadcn@latest add @yukihi/monolith-document-feature-icon
 ```
 
 ## 使用例

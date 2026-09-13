@@ -1,12 +1,12 @@
 # Table
 
-- Registry: `@yukihito/table`
+- Registry: `@yukihi/table`
 - Source: `src/components/ui/table.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/table
+npx shadcn@latest add @yukihi/table
 ```
 
 ## 使用例

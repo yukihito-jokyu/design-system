@@ -1,12 +1,12 @@
 # AssemblyWelcomeCharacterIcon
 
-- Registry: `@yukihito/assembly-welcome-character-icon`
+- Registry: `@yukihi/assembly-welcome-character-icon`
 - Source: `src/components/icons/AssemblyWelcomeCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-welcome-character-icon
+npx shadcn@latest add @yukihi/assembly-welcome-character-icon
 ```
 
 ## 使用例

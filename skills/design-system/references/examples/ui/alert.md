@@ -1,12 +1,12 @@
 # Alert
 
-- Registry: `@yukihito/alert`
+- Registry: `@yukihi/alert`
 - Source: `src/components/ui/alert.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/alert
+npx shadcn@latest add @yukihi/alert
 ```
 
 ## 使用例

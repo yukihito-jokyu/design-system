@@ -1,12 +1,12 @@
 # Label
 
-- Registry: `@yukihito/label`
+- Registry: `@yukihi/label`
 - Source: `src/components/ui/label.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/label
+npx shadcn@latest add @yukihi/label
 ```
 
 ## 使用例

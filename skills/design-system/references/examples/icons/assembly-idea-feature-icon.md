@@ -1,12 +1,12 @@
 # AssemblyIdeaFeatureIcon
 
-- Registry: `@yukihito/assembly-idea-feature-icon`
+- Registry: `@yukihi/assembly-idea-feature-icon`
 - Source: `src/components/icons/AssemblyIdeaFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-idea-feature-icon
+npx shadcn@latest add @yukihi/assembly-idea-feature-icon
 ```
 
 ## 使用例

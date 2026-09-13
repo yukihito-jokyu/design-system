@@ -1,12 +1,12 @@
 # FoldSavedStatusIcon
 
-- Registry: `@yukihito/fold-saved-status-icon`
+- Registry: `@yukihi/fold-saved-status-icon`
 - Source: `src/components/icons/FoldSavedStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/fold-saved-status-icon
+npx shadcn@latest add @yukihi/fold-saved-status-icon
 ```
 
 ## 使用例
