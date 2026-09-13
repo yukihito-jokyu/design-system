@@ -255,7 +255,7 @@ writeFileSync(
   `${JSON.stringify(
     {
       $schema: "https://ui.shadcn.com/schema/registry.json",
-      name: "yukihito",
+      name: "yukihi",
       homepage: "https://github.com/yukihito-jokyu/design-system",
       items,
     },
