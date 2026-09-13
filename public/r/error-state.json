@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-state",
+  "title": "error-state",
+  "description": "Design system patterns component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/alert.json",
+    "http://127.0.0.1:4173/r/button.json",
+    "http://127.0.0.1:4173/r/design-system-styles.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/patterns/error-state.tsx",
+      "content": "import { Alert, AlertTitle, AlertDescription } from \"../ui/alert\";\nimport { Button } from \"../ui/button\";\n\nexport function ErrorState({\n  title = \"処理を完了できませんでした\",\n  description,\n  onRetry,\n}: {\n  title?: string;\n  description: string;\n  onRetry?: () => void;\n}) {\n  return (\n    <Alert variant=\"destructive\">\n      <AlertTitle>{title}</AlertTitle>\n      <AlertDescription>\n        <p>{description}</p>\n        {onRetry && (\n          <Button type=\"button\" variant=\"outline\" onClick={onRetry}>\n            再試行\n          </Button>\n        )}\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/patterns/error-state.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

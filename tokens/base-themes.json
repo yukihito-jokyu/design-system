@@ -1,0 +1,92 @@
+{
+  "milk": {
+    "label": "ミルク × アプリコット",
+    "colors": {
+      "bg": "#f8f7f3",
+      "surface": "#fffdf8",
+      "soft": "#e9e2d8",
+      "fg": "#38342f",
+      "muted": "#6b635b",
+      "border": "#ead7c4",
+      "control": "#a58b75",
+      "control-hover": "#ecd9c8",
+      "ring": "#98603a",
+      "primary": "#efb889",
+      "ink": "#5e3617",
+      "primary-hover": "#e8aa76",
+      "primary-active": "#df9c65"
+    }
+  },
+  "cream": {
+    "label": "クリーム × ハニー",
+    "colors": {
+      "bg": "#f8f3e8",
+      "surface": "#fffbf2",
+      "soft": "#eae0cb",
+      "fg": "#3d3529",
+      "muted": "#70624e",
+      "border": "#ebdcbf",
+      "control": "#a28a69",
+      "control-hover": "#e4d6bc",
+      "ring": "#926137",
+      "primary": "#e6c574",
+      "ink": "#533f0e",
+      "primary-hover": "#daba61",
+      "primary-active": "#cdac50"
+    }
+  },
+  "neutral": {
+    "label": "青空 × ブルー",
+    "colors": {
+      "bg": "#f2fbff",
+      "surface": "#fbfeff",
+      "soft": "#d9f2ff",
+      "fg": "#173b50",
+      "muted": "#38627a",
+      "border": "#d4effc",
+      "control": "#4f8aab",
+      "control-hover": "#bce8fc",
+      "ring": "#17648f",
+      "primary": "#79cef5",
+      "ink": "#103f59",
+      "primary-hover": "#5dbfea",
+      "primary-active": "#44b0df"
+    }
+  },
+  "sage": {
+    "label": "新緑 × グリーン",
+    "colors": {
+      "bg": "#f4fced",
+      "surface": "#fcfff8",
+      "soft": "#e0f4ca",
+      "fg": "#24431b",
+      "muted": "#476a36",
+      "border": "#ddf0c9",
+      "control": "#759b54",
+      "control-hover": "#c9ecaa",
+      "ring": "#467b25",
+      "primary": "#a4df76",
+      "ink": "#25440f",
+      "primary-hover": "#8fd25d",
+      "primary-active": "#7ac448"
+    }
+  },
+  "lavender": {
+    "label": "宵闇 × パープル",
+    "colors": {
+      "bg": "#f7f2ff",
+      "surface": "#fdfaff",
+      "soft": "#e8d8ff",
+      "fg": "#32184e",
+      "muted": "#674782",
+      "border": "#e9dcfb",
+      "control": "#9771bc",
+      "control-hover": "#d9bff7",
+      "ring": "#743ab0",
+      "primary": "#bc8df2",
+      "ink": "#27083e",
+      "primary-hover": "#ae79e9",
+      "primary-active": "#a774e1"
+    }
+  }
+}

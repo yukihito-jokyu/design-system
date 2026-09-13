@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "textarea",
+  "description": "Design system ui component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/textarea.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return <textarea data-slot=\"textarea\" className={cn(\"ds-textarea\", className)} {...props} />;\n}\n\nexport { Textarea };\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/textarea.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

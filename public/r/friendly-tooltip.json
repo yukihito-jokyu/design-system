@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "friendly-tooltip",
+  "title": "friendly-tooltip",
+  "description": "Design system character component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/tooltip.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/character/friendly-tooltip.tsx",
+      "content": "import type { ReactElement } from \"react\";\nimport { Tooltip, TooltipTrigger, TooltipContent } from \"../ui/tooltip\";\n\nexport function FriendlyTooltip({\n  content,\n  children,\n}: {\n  content: string;\n  children: ReactElement;\n}) {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>{children}</TooltipTrigger>\n      <TooltipContent>{content}</TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/character/friendly-tooltip.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

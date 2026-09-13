@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "loading-state",
+  "title": "loading-state",
+  "description": "Design system patterns component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/skeleton.json",
+    "http://127.0.0.1:4173/r/spinner.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/patterns/loading-state.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Skeleton } from \"../ui/skeleton\";\nimport { Spinner } from \"../ui/spinner\";\n\nexport function LoadingState({\n  loading,\n  children,\n  label = \"読み込み中\",\n  initial = false,\n}: {\n  loading: boolean;\n  children?: ReactNode;\n  label?: string;\n  initial?: boolean;\n}) {\n  return (\n    <div aria-busy={loading}>\n      <p role=\"status\">\n        {loading && (\n          <>\n            <Spinner aria-hidden=\"true\" />\n            {label}\n          </>\n        )}\n      </p>\n      {loading && initial ? (\n        <div aria-hidden=\"true\" className=\"stack\">\n          <Skeleton className=\"h-6 w-3/4\" />\n          <Skeleton className=\"h-20 w-full\" />\n        </div>\n      ) : (\n        children\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/patterns/loading-state.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

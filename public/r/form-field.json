@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-field",
+  "title": "form-field",
+  "description": "Design system patterns component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/patterns/form-field.tsx",
+      "content": "import { useId, type ReactNode } from \"react\";\nimport { Label } from \"../ui/label\";\nexport type FieldBinding = {\n  id: string;\n  \"aria-describedby\"?: string;\n  \"aria-invalid\"?: true;\n  required?: boolean;\n};\n\nexport function FormField({\n  label,\n  description,\n  error,\n  required,\n  children,\n}: {\n  label: string;\n  description?: string;\n  error?: string;\n  required?: boolean;\n  children: (props: FieldBinding) => ReactNode;\n}) {\n  const id = useId();\n\n  const described =\n    [description ? `${id}-help` : null, error ? `${id}-error` : null].filter(Boolean).join(\" \") ||\n    undefined;\n\n  return (\n    <div className=\"field\">\n      <Label htmlFor={id}>\n        {label}\n        {required ? \"（必須）\" : \"\"}\n      </Label>\n      {children({\n        id,\n        \"aria-describedby\": described,\n        \"aria-invalid\": error ? true : undefined,\n        required,\n      })}\n      {description && (\n        <p id={`${id}-help`} className=\"note\">\n          {description}\n        </p>\n      )}\n      {error && (\n        <p id={`${id}-error`} className=\"error\">\n          {error}\n        </p>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/patterns/form-field.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "assistant-card",
+  "title": "assistant-card",
+  "description": "Design system character component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/card.json",
+    "http://127.0.0.1:4173/r/character-icons.json",
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/suggestion-chip.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/character/assistant-card.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Card, CardHeader, CardTitle, CardContent } from \"../ui/card\";\nimport { CharacterIcon, StatusBubble, type IconDirection } from \"./index\";\nimport { SuggestionChip } from \"./suggestion-chip\";\n\nexport function AssistantCard({\n  title,\n  body,\n  suggestions = [],\n  status,\n  direction = \"fold\",\n}: {\n  title: string;\n  body: ReactNode;\n  suggestions?: { label: string; onSelect: () => void }[];\n  status?: \"thinking\" | \"saved\";\n  direction?: IconDirection;\n}) {\n  return (\n    <Card>\n      <CardHeader>\n        <div className=\"actions\">\n          <CharacterIcon\n            direction={direction}\n            expression={status === \"thinking\" ? \"thinking\" : \"welcome\"}\n          />\n          <CardTitle>{title}</CardTitle>\n        </div>\n      </CardHeader>\n      <CardContent className=\"stack\">\n        <div>{body}</div>\n        {status && <StatusBubble direction={direction} status={status} />}\n        <div className=\"actions\">\n          {suggestions.map((suggestion, i) => (\n            <SuggestionChip key={i} {...suggestion} />\n          ))}\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/character/assistant-card.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

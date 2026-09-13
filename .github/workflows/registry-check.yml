@@ -1,0 +1,196 @@
+name: Registry check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: registry-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Quality and generated files
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check formatting
+        run: npm run fmt:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Regenerate design tokens
+        run: npm run tokens
+
+      - name: Check committed token output
+        run: git diff --exit-code -- registry/styles
+
+      - name: Build registry
+        run: npm run registry:build
+
+      - name: Check committed registry output
+        run: git diff --exit-code -- registry.json public/r
+
+  install-test:
+    name: Install ${{ matrix.target }} into an empty app
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - design-system
+          - button
+          - ink-idea-feature-icon
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install registry dependencies
+        run: npm ci
+
+      - name: Build and serve registry
+        run: |
+          npm run tokens
+          npm run registry:build
+          npm run registry:serve > "$RUNNER_TEMP/registry-server.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/registry-server.pid"
+
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/r/registry.json > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+
+          cat "$RUNNER_TEMP/registry-server.log"
+          exit 1
+
+      - name: Create empty React app
+        run: |
+          app_name="registry-consumer-${{ matrix.target }}"
+          cd "$RUNNER_TEMP"
+          npm create vite@latest "$app_name" -- --template react-ts
+          cd "$RUNNER_TEMP/$app_name"
+          npm install
+          npm install tailwindcss @tailwindcss/vite
+
+          node --input-type=module <<'NODE'
+          import { writeFile } from "node:fs/promises";
+          import ts from "typescript";
+
+          const { config, error } = ts.readConfigFile("tsconfig.app.json", ts.sys.readFile);
+          if (error) throw new Error(ts.flattenDiagnosticMessageText(error.messageText, "\n"));
+          config.compilerOptions.paths = { "@/*": ["./src/*"] };
+          await writeFile("tsconfig.app.json", `${JSON.stringify(config, null, 2)}\n`);
+          NODE
+
+          node --input-type=module <<'NODE'
+          import { writeFile } from "node:fs/promises";
+
+          const config = `import { fileURLToPath, URL } from "node:url";
+          import { defineConfig } from "vite";
+          import react from "@vitejs/plugin-react";
+          import tailwindcss from "@tailwindcss/vite";
+
+          export default defineConfig({
+            plugins: [react(), tailwindcss()],
+            resolve: {
+              alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
+            },
+          });
+          `;
+          await writeFile("vite.config.ts", config);
+          NODE
+
+          cp "$GITHUB_WORKSPACE/components.json" components.json
+          node --input-type=module <<'NODE'
+          import { readFile, writeFile } from "node:fs/promises";
+
+          const config = JSON.parse(await readFile("components.json", "utf8"));
+          config.tailwind.css = "src/index.css";
+          await writeFile("components.json", `${JSON.stringify(config, null, 2)}\n`);
+          NODE
+          printf '%s\n' '@import "tailwindcss";' > src/index.css
+
+      - name: Install registry item with shadcn CLI
+        run: |
+          app_dir="$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
+          cd "$app_dir"
+          npx shadcn@latest add "http://127.0.0.1:4173/r/${{ matrix.target }}.json" --yes
+          printf '%s\n' '@import "./components/design-system/styles.css";' >> src/index.css
+
+      - name: Add compilation smoke test
+        run: |
+          app_dir="$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
+          cd "$app_dir"
+
+          case "${{ matrix.target }}" in
+            ink-idea-feature-icon)
+              test -f src/components/icons/InkIdeaFeatureIcon.tsx
+              test -f src/components/icons/IconFrame.tsx
+              icon_file_count="$(find src/components/icons -maxdepth 1 -type f -name '*.tsx' | wc -l | tr -d ' ')"
+              test "$icon_file_count" -eq 2
+              printf '%s\n' \
+                'import { InkIdeaFeatureIcon } from "@/components/icons/InkIdeaFeatureIcon";' \
+                '' \
+                'export default function App() {' \
+                '  return <InkIdeaFeatureIcon />;' \
+                '}' > src/App.tsx
+              ;;
+            *)
+              test -f src/components/ui/button.tsx
+              printf '%s\n' \
+                'import { Button } from "@/components/ui/button";' \
+                '' \
+                'export default function App() {' \
+                '  return <Button>保存する</Button>;' \
+                '}' > src/App.tsx
+              ;;
+          esac
+
+      - name: Type-check and build consumer
+        run: |
+          cd "$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
+          npm run build
+
+      - name: Show registry server log on failure
+        if: failure()
+        run: cat "$RUNNER_TEMP/registry-server.log"
+
+      - name: Stop registry server
+        if: always()
+        run: |
+          if test -f "$RUNNER_TEMP/registry-server.pid"; then
+            kill "$(cat "$RUNNER_TEMP/registry-server.pid")" || true
+          fi

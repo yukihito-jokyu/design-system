@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "assistant-panel",
+  "title": "assistant-panel",
+  "description": "Design system patterns component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/assistant-card.json",
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/icon-button.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/patterns/assistant-panel.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { AssistantCard } from \"../character/assistant-card\";\nimport { IconButton } from \"../ui/icon-button\";\nimport { XIcon } from \"lucide-react\";\n\nexport function AssistantPanel({\n  onClose,\n  ...props\n}: ComponentProps<typeof AssistantCard> & { onClose?: () => void }) {\n  return (\n    <section aria-label=\"作業のサポート\" className=\"stack\">\n      {onClose && (\n        <IconButton aria-label=\"サポートを閉じる\" variant=\"ghost\" onClick={onClose}>\n          <XIcon size={20} />\n        </IconButton>\n      )}\n      <AssistantCard {...props} />\n    </section>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/patterns/assistant-panel.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

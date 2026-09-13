@@ -1,0 +1,20 @@
+# ToggleGroup
+
+- Registry: `@yukihito/toggle-group`
+- Source: `src/components/ui/toggle-group.tsx`
+
+## 導入
+
+```sh
+npx shadcn@latest add @yukihito/toggle-group
+```
+
+## 使用例
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+
+<ToggleGroup />;
+```
+
+必要な状態・Propsは導入後の型定義で確認し、Tokenとアクセシビリティ属性を維持する。

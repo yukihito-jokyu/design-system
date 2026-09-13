@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "suggestion-chip",
+  "title": "suggestion-chip",
+  "description": "Design system character component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/button.json",
+    "http://127.0.0.1:4173/r/design-system-styles.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/character/suggestion-chip.tsx",
+      "content": "import { Button } from \"../ui/button\";\n\nexport function SuggestionChip({\n  label,\n  onSelect,\n  disabled,\n}: {\n  label: string;\n  onSelect: () => void;\n  disabled?: boolean;\n}) {\n  return (\n    <Button\n      type=\"button\"\n      variant=\"secondary\"\n      className=\"rounded-pill\"\n      disabled={disabled}\n      onClick={onSelect}\n    >\n      {label}\n    </Button>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/character/suggestion-chip.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
