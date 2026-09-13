@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-mobile",
+  "title": "Mobile Hook",
+  "description": "Responsive mobile-state hook.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/hooks/use-mobile.ts",
+      "content": "import * as React from \"react\";\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport function useIsMobile() {\n  return React.useSyncExternalStore(\n    (onStoreChange) => {\n      const mediaQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);\n\n      mediaQuery.addEventListener(\"change\", onStoreChange);\n      return () => mediaQuery.removeEventListener(\"change\", onStoreChange);\n    },\n    () => window.innerWidth < MOBILE_BREAKPOINT,\n    () => false,\n  );\n}\n",
+      "type": "registry:hook",
+      "target": "src/hooks/use-mobile.ts"
+    }
+  ],
+  "type": "registry:hook"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-toolbar",
+  "title": "table-toolbar",
+  "description": "Design system patterns component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/search-field.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/patterns/table-toolbar.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { SearchField } from \"./search-field\";\n\nexport function TableToolbar({\n  query,\n  onQueryChange,\n  count,\n  children,\n}: {\n  query: string;\n  onQueryChange: (value: string) => void;\n  count: number;\n  children?: ReactNode;\n}) {\n  return (\n    <div className=\"stack\">\n      <SearchField label=\"一覧を検索\" value={query} onValueChange={onQueryChange} />\n      <div className=\"actions\">\n        <span>{count}件</span>\n        {children}\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/patterns/table-toolbar.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

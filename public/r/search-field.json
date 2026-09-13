@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "search-field",
+  "title": "search-field",
+  "description": "Design system patterns component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/icon-button.json",
+    "http://127.0.0.1:4173/r/input.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/patterns/search-field.tsx",
+      "content": "import { useRef } from \"react\";\nimport { SearchIcon, XIcon } from \"lucide-react\";\nimport { Input } from \"../ui/input\";\nimport { IconButton } from \"../ui/icon-button\";\n\nexport function SearchField({\n  label = \"検索\",\n  value,\n  onValueChange,\n  onSearch,\n}: {\n  label?: string;\n  value: string;\n  onValueChange: (value: string) => void;\n  onSearch?: (value: string) => void;\n}) {\n  const composing = useRef(false);\n  return (\n    <div className=\"actions flex-nowrap\">\n      <SearchIcon size={20} aria-hidden=\"true\" />\n      <Input\n        aria-label={label}\n        type=\"search\"\n        value={value}\n        onCompositionStart={() => (composing.current = true)}\n        onCompositionEnd={() => (composing.current = false)}\n        onChange={(e) => onValueChange(e.target.value)}\n        onKeyDown={(e) => {\n          if (e.key === \"Enter\" && !composing.current && !e.nativeEvent.isComposing) {\n            e.preventDefault();\n            onSearch?.(value);\n          }\n        }}\n      />\n      <IconButton\n        aria-label={`${label}をクリア`}\n        type=\"button\"\n        variant=\"ghost\"\n        disabled={!value}\n        onClick={() => onValueChange(\"\")}\n      >\n        <XIcon size={20} />\n      </IconButton>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/patterns/search-field.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "title": "toast",
+  "description": "Design system ui component.",
+  "dependencies": [
+    "sonner@^2.0.8"
+  ],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/sonner.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/toast.tsx",
+      "content": "// Toast notifications use shadcn's Sonner integration.\nexport { toast } from \"sonner\";\nexport { Toaster } from \"./sonner\";\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/toast.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

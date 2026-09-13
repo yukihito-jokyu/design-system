@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-provider",
+  "title": "Design Theme Provider",
+  "description": "Scoped theme and portal color inheritance.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/theme-provider.tsx",
+      "content": "\"use client\";\nimport { createContext, useContext, type ReactNode } from \"react\";\nexport type ThemeName = \"milk\" | \"cream\" | \"neutral\" | \"sage\" | \"lavender\";\nconst ThemeContext = createContext<ThemeName>(\"milk\");\nexport const useDesignTheme = () => useContext(ThemeContext);\n\nexport function DesignThemeProvider({\n  theme,\n  children,\n}: {\n  theme: ThemeName;\n  children: ReactNode;\n}) {\n  return (\n    <ThemeContext.Provider value={theme}>\n      <div data-ds-base={theme}>{children}</div>\n    </ThemeContext.Provider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/theme-provider.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

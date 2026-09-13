@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "file-upload",
+  "title": "file-upload",
+  "description": "Design system ui component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/button.json",
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/input.json",
+    "http://127.0.0.1:4173/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/file-upload.tsx",
+      "content": "\"use client\";\nimport { useId, useRef, useState } from \"react\";\nimport { Input } from \"./input\";\nimport { Label } from \"./label\";\nimport { Button } from \"./button\";\nexport type FileUploadProps = {\n  label: string;\n  accept?: string;\n  multiple?: boolean;\n  maxSize?: number;\n  disabled?: boolean;\n  onFilesChange?: (files: File[]) => void;\n  onUpload?: (files: File[]) => Promise<void>;\n};\n\nexport function acceptsFile(file: File, accept?: string) {\n  return (\n    !accept ||\n    accept.split(\",\").some((rule) => {\n      const r = rule.trim().toLowerCase();\n      return r.startsWith(\".\")\n        ? file.name.toLowerCase().endsWith(r)\n        : r.endsWith(\"/*\")\n          ? file.type.startsWith(r.slice(0, -1))\n          : file.type === r;\n    })\n  );\n}\n\nexport function FileUpload({\n  label,\n  accept,\n  multiple = false,\n  maxSize = 10 * 1024 * 1024,\n  disabled,\n  onFilesChange,\n  onUpload,\n}: FileUploadProps) {\n  const id = useId();\n  const [files, setFiles] = useState<File[]>([]);\n  const [errors, setErrors] = useState<string[]>([]);\n  const [state, setState] = useState<\"idle\" | \"uploading\" | \"success\" | \"error\">(\"idle\");\n  const busy = useRef(false);\n\n  async function upload() {\n    if (!onUpload || busy.current || !files.length) return;\n    busy.current = true;\n    setState(\"uploading\");\n    try {\n      await onUpload(files);\n      setState(\"success\");\n    } catch {\n      setState(\"error\");\n    } finally {\n      busy.current = false;\n    }\n  }\n\n  return (\n    <div className=\"field\">\n      <Label htmlFor={id}>{label}</Label>\n      <Input\n        id={id}\n        type=\"file\"\n        accept={accept}\n        multiple={multiple}\n        disabled={disabled || state === \"uploading\"}\n        aria-describedby={`${id}-help ${id}-state`}\n        aria-invalid={errors.length > 0 || undefined}\n        onChange={(e) => {\n          const incoming = Array.from(e.target.files ?? []);\n          const valid: File[] = [];\n          const messages: string[] = [];\n          for (const file of incoming) {\n            if (file.size > maxSize) messages.push(`${file.name}：サイズの上限を超えています。`);\n            else if (!acceptsFile(file, accept))\n              messages.push(`${file.name}：対応していない形式です。`);\n            else valid.push(file);\n          }\n          setFiles(valid);\n          setErrors(messages);\n          setState(\"idle\");\n          onFilesChange?.(valid);\n          e.target.value = \"\";\n        }}\n      />\n      <p id={`${id}-help`} className=\"note\">\n        上限{Math.round((maxSize / 1024 / 1024) * 10) / 10}MB{accept ? `、形式：${accept}` : \"\"}\n      </p>\n      {files.length > 0 && (\n        <ul>\n          {files.map((file, i) => (\n            <li key={`${file.name}-${i}`}>{file.name}</li>\n          ))}\n        </ul>\n      )}\n      <div id={`${id}-state`} role=\"status\">\n        {errors.map((message) => (\n          <p className=\"error\" key={message}>\n            {message}\n          </p>\n        ))}\n        {state === \"error\" && (\n          <p className=\"error\">送信できませんでした。選択したファイルを保持しています。</p>\n        )}\n        {state === \"success\" && <p>送信しました。</p>}\n      </div>\n      {onUpload && (\n        <Button\n          type=\"button\"\n          disabled={disabled || !files.length}\n          loading={state === \"uploading\"}\n          onClick={() => void upload()}\n        >\n          {state === \"error\" ? \"再試行\" : \"送信する\"}\n        </Button>\n      )}\n    </div>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/file-upload.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

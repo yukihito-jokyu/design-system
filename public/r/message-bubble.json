@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "message-bubble",
+  "title": "message-bubble",
+  "description": "Design system character component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/button.json",
+    "http://127.0.0.1:4173/r/design-system-styles.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/character/message-bubble.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Button } from \"../ui/button\";\n\nexport function MessageBubble({\n  author,\n  time,\n  children,\n  status = \"sent\",\n  onRetry,\n}: {\n  author: string;\n  time?: string;\n  children: ReactNode;\n  status?: \"sending\" | \"sent\" | \"error\";\n  onRetry?: () => void;\n}) {\n  return (\n    <article className=\"message-bubble\">\n      <header className=\"actions\">\n        <strong>{author}</strong>\n        {time && <time dateTime={time}>{new Date(time).toLocaleString(\"ja-JP\")}</time>}\n      </header>\n      <div>{children}</div>\n      <p role=\"status\">\n        {status === \"sending\" ? \"送信中\" : status === \"error\" ? \"送信できませんでした\" : \"\"}\n      </p>\n      {status === \"error\" && onRetry && (\n        <Button variant=\"outline\" onClick={onRetry}>\n          再試行\n        </Button>\n      )}\n    </article>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "src/components/character/message-bubble.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

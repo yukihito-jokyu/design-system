@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "badge",
+  "description": "Design system ui component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "http://127.0.0.1:4173/r/design-system-styles.json",
+    "http://127.0.0.1:4173/r/utils.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/ui/badge.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/lib/utils\";\nimport { Slot } from \"radix-ui\";\n\nconst badgeVariants = cva(\"ds-badge\", {\n  variants: {\n    variant: {\n      success: \"bg-success-soft text-success-soft-foreground\",\n      warning: \"bg-warning-soft text-warning-soft-foreground\",\n      default: \"bg-primary text-primary-foreground [a&]:hover:bg-primary/90\",\n      secondary: \"bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90\",\n      destructive:\n        \"bg-destructive text-destructive-foreground focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40 [a&]:hover:bg-destructive/90\",\n      outline:\n        \"border-border text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      ghost: \"[a&]:hover:bg-accent [a&]:hover:text-accent-foreground\",\n      link: \"text-foreground underline-offset-4 [a&]:hover:underline\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n  },\n});\n\nfunction Badge({\n  className,\n  variant = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"span\"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"span\";\n\n  return (\n    <Comp\n      data-slot=\"badge\"\n      data-variant={variant}\n      className={cn(badgeVariants({ variant }), className)}\n      {...props}\n    />\n  );\n}\n\nexport { Badge, badgeVariants };\n",
+      "type": "registry:ui",
+      "target": "src/components/ui/badge.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}
