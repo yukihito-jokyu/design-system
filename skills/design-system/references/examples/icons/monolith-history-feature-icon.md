@@ -1,12 +1,12 @@
 # MonolithHistoryFeatureIcon
 
-- Registry: `@yukihito/monolith-history-feature-icon`
+- Registry: `@yukihi/monolith-history-feature-icon`
 - Source: `src/components/icons/MonolithHistoryFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-history-feature-icon
+npx shadcn@latest add @yukihi/monolith-history-feature-icon
 ```
 
 ## 使用例

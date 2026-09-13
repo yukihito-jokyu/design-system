@@ -1,12 +1,12 @@
 # FileUpload
 
-- Registry: `@yukihito/file-upload`
+- Registry: `@yukihi/file-upload`
 - Source: `src/components/ui/file-upload.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/file-upload
+npx shadcn@latest add @yukihi/file-upload
 ```
 
 ## 使用例

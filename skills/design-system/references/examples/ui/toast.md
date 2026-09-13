@@ -1,12 +1,12 @@
 # toast
 
-- Registry: `@yukihito/toast`
+- Registry: `@yukihi/toast`
 - Source: `src/components/ui/toast.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/toast
+npx shadcn@latest add @yukihi/toast
 ```
 
 ## 使用例

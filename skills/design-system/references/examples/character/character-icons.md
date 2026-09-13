@@ -1,6 +1,6 @@
 # CharacterIcon・FeatureIcon・StatusBubble
 
-- Registry: `@yukihito/character-icons`
+- Registry: `@yukihi/character-icons`
 - Source: `src/components/character/index.tsx`
 
 ## 導入
@@ -8,7 +8,7 @@
 動的に6方向のアイコンを選択するときだけ使用します。個別SVGだけが必要なら、対応する個別itemを導入します。
 
 ```sh
-npx shadcn@latest add @yukihito/character-icons
+npx shadcn@latest add @yukihi/character-icons
 ```
 
 ## 使用例

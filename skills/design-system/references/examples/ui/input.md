@@ -1,12 +1,12 @@
 # Input
 
-- Registry: `@yukihito/input`
+- Registry: `@yukihi/input`
 - Source: `src/components/ui/input.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/input
+npx shadcn@latest add @yukihi/input
 ```
 
 ## 使用例

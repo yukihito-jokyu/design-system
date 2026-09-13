@@ -1,12 +1,12 @@
 # InkSavedStatusIcon
 
-- Registry: `@yukihito/ink-saved-status-icon`
+- Registry: `@yukihi/ink-saved-status-icon`
 - Source: `src/components/icons/InkSavedStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/ink-saved-status-icon
+npx shadcn@latest add @yukihi/ink-saved-status-icon
 ```
 
 ## 使用例

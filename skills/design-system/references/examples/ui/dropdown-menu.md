@@ -1,12 +1,12 @@
 # DropdownMenu
 
-- Registry: `@yukihito/dropdown-menu`
+- Registry: `@yukihi/dropdown-menu`
 - Source: `src/components/ui/dropdown-menu.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/dropdown-menu
+npx shadcn@latest add @yukihi/dropdown-menu
 ```
 
 ## 使用例

@@ -7,11 +7,11 @@ description: React UIをYukihito Design SystemのRegistry、既存Pattern、Foun
 
 ## 作業手順
 
-1. 利用アプリの`components.json`と`@yukihito`設定を確認する。
+1. 利用アプリの`components.json`と`@yukihi`設定を確認する。
 2. [references/component-selection.md](references/component-selection.md)を読み、Pattern、Foundation、独自合成の順で選ぶ。
 3. 使用する項目ごとに`references/examples/<分類>/<item>.md`を読む。ThemeProviderは`references/examples/theme-provider.md`を読む。対象が未決定なら、ファイル名または本文を検索する。
-4. `npx shadcn@latest view @yukihito/<item>`で配布内容と依存を確認する。
-5. `npx shadcn@latest add @yukihito/<item>`で必要な項目だけ導入する。
+4. `npx shadcn@latest view @yukihi/<item>`で配布内容と依存を確認する。
+5. `npx shadcn@latest add @yukihi/<item>`で必要な項目だけ導入する。
 6. 配色・寸法・SVGを扱う場合は[references/tokens.md](references/tokens.md)を読む。
 7. 実装後は[references/validation.md](references/validation.md)に従って検証する。
 
@@ -22,7 +22,7 @@ description: React UIをYukihito Design SystemのRegistry、既存Pattern、Foun
 - `foundation.json`の`decided`だけを承認済みとして扱い、`proposed`を自動採用しない。
 - SVGの形、固有色、既存の名前付きexportを変更しない。
 - Portal配色、disabled、invalid、loading、IME、フォーカス復帰、Reduced Motionを維持する。
-- `@yukihito/design-system`を無条件に導入せず、必要な項目だけを選ぶ。
+- `@yukihi/design-system`を無条件に導入せず、必要な項目だけを選ぶ。
 
 ## 例の読み方
 

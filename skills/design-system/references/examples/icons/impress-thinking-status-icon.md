@@ -1,12 +1,12 @@
 # ImpressThinkingStatusIcon
 
-- Registry: `@yukihito/impress-thinking-status-icon`
+- Registry: `@yukihi/impress-thinking-status-icon`
 - Source: `src/components/icons/ImpressThinkingStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/impress-thinking-status-icon
+npx shadcn@latest add @yukihi/impress-thinking-status-icon
 ```
 
 ## 使用例

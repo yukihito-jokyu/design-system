@@ -1,12 +1,12 @@
 # Combobox
 
-- Registry: `@yukihito/combobox`
+- Registry: `@yukihi/combobox`
 - Source: `src/components/ui/combobox.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/combobox
+npx shadcn@latest add @yukihi/combobox
 ```
 
 ## 使用例

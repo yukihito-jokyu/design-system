@@ -1,12 +1,12 @@
 # Tabs
 
-- Registry: `@yukihito/tabs`
+- Registry: `@yukihi/tabs`
 - Source: `src/components/ui/tabs.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/tabs
+npx shadcn@latest add @yukihi/tabs
 ```
 
 ## 使用例

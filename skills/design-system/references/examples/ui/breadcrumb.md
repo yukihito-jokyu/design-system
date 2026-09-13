@@ -1,12 +1,12 @@
 # Breadcrumb
 
-- Registry: `@yukihito/breadcrumb`
+- Registry: `@yukihi/breadcrumb`
 - Source: `src/components/ui/breadcrumb.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/breadcrumb
+npx shadcn@latest add @yukihi/breadcrumb
 ```
 
 ## 使用例

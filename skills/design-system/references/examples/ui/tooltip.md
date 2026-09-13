@@ -1,12 +1,12 @@
 # Tooltip
 
-- Registry: `@yukihito/tooltip`
+- Registry: `@yukihi/tooltip`
 - Source: `src/components/ui/tooltip.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/tooltip
+npx shadcn@latest add @yukihi/tooltip
 ```
 
 ## 使用例

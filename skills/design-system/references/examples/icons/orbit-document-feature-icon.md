@@ -1,12 +1,12 @@
 # OrbitDocumentFeatureIcon
 
-- Registry: `@yukihito/orbit-document-feature-icon`
+- Registry: `@yukihi/orbit-document-feature-icon`
 - Source: `src/components/icons/OrbitDocumentFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/orbit-document-feature-icon
+npx shadcn@latest add @yukihi/orbit-document-feature-icon
 ```
 
 ## 使用例

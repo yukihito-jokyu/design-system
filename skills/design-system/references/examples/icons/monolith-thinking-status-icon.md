@@ -1,12 +1,12 @@
 # MonolithThinkingStatusIcon
 
-- Registry: `@yukihito/monolith-thinking-status-icon`
+- Registry: `@yukihi/monolith-thinking-status-icon`
 - Source: `src/components/icons/MonolithThinkingStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-thinking-status-icon
+npx shadcn@latest add @yukihi/monolith-thinking-status-icon
 ```
 
 ## 使用例

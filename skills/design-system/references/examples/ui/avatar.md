@@ -1,12 +1,12 @@
 # Avatar
 
-- Registry: `@yukihito/avatar`
+- Registry: `@yukihi/avatar`
 - Source: `src/components/ui/avatar.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/avatar
+npx shadcn@latest add @yukihi/avatar
 ```
 
 ## 使用例

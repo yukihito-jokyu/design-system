@@ -1,12 +1,12 @@
 # AssemblySuccessCharacterIcon
 
-- Registry: `@yukihito/assembly-success-character-icon`
+- Registry: `@yukihi/assembly-success-character-icon`
 - Source: `src/components/icons/AssemblySuccessCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-success-character-icon
+npx shadcn@latest add @yukihi/assembly-success-character-icon
 ```
 
 ## 使用例

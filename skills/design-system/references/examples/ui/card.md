@@ -1,12 +1,12 @@
 # Card
 
-- Registry: `@yukihito/card`
+- Registry: `@yukihi/card`
 - Source: `src/components/ui/card.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/card
+npx shadcn@latest add @yukihi/card
 ```
 
 ## 使用例

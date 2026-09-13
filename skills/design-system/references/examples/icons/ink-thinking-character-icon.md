@@ -1,12 +1,12 @@
 # InkThinkingCharacterIcon
 
-- Registry: `@yukihito/ink-thinking-character-icon`
+- Registry: `@yukihi/ink-thinking-character-icon`
 - Source: `src/components/icons/InkThinkingCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/ink-thinking-character-icon
+npx shadcn@latest add @yukihi/ink-thinking-character-icon
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # TableToolbar
 
-- Registry: `@yukihito/table-toolbar`
+- Registry: `@yukihi/table-toolbar`
 - Source: `src/components/patterns/table-toolbar.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/table-toolbar
+npx shadcn@latest add @yukihi/table-toolbar
 ```
 
 ## 使用例

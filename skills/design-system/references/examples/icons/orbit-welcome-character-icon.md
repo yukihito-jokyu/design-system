@@ -1,12 +1,12 @@
 # OrbitWelcomeCharacterIcon
 
-- Registry: `@yukihito/orbit-welcome-character-icon`
+- Registry: `@yukihi/orbit-welcome-character-icon`
 - Source: `src/components/icons/OrbitWelcomeCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/orbit-welcome-character-icon
+npx shadcn@latest add @yukihi/orbit-welcome-character-icon
 ```
 
 ## 使用例

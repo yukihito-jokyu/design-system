@@ -1,12 +1,12 @@
 # MonolithThinkingCharacterIcon
 
-- Registry: `@yukihito/monolith-thinking-character-icon`
+- Registry: `@yukihi/monolith-thinking-character-icon`
 - Source: `src/components/icons/MonolithThinkingCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/monolith-thinking-character-icon
+npx shadcn@latest add @yukihi/monolith-thinking-character-icon
 ```
 
 ## 使用例

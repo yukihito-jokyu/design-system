@@ -1,12 +1,12 @@
 # AssistantPanel
 
-- Registry: `@yukihito/assistant-panel`
+- Registry: `@yukihi/assistant-panel`
 - Source: `src/components/patterns/assistant-panel.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assistant-panel
+npx shadcn@latest add @yukihi/assistant-panel
 ```
 
 ## 使用例

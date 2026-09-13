@@ -1,12 +1,12 @@
 # Button
 
-- Registry: `@yukihito/button`
+- Registry: `@yukihi/button`
 - Source: `src/components/ui/button.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/button
+npx shadcn@latest add @yukihi/button
 ```
 
 ## 使用例

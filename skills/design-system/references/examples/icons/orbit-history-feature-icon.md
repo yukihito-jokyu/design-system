@@ -1,12 +1,12 @@
 # OrbitHistoryFeatureIcon
 
-- Registry: `@yukihito/orbit-history-feature-icon`
+- Registry: `@yukihi/orbit-history-feature-icon`
 - Source: `src/components/icons/OrbitHistoryFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/orbit-history-feature-icon
+npx shadcn@latest add @yukihi/orbit-history-feature-icon
 ```
 
 ## 使用例

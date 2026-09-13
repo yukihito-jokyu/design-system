@@ -1,12 +1,12 @@
 # Pagination
 
-- Registry: `@yukihito/pagination`
+- Registry: `@yukihi/pagination`
 - Source: `src/components/ui/pagination.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/pagination
+npx shadcn@latest add @yukihi/pagination
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # Sidebar
 
-- Registry: `@yukihito/sidebar`
+- Registry: `@yukihi/sidebar`
 - Source: `src/components/ui/sidebar.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/sidebar
+npx shadcn@latest add @yukihi/sidebar
 ```
 
 ## 使用例

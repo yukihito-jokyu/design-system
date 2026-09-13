@@ -1,12 +1,12 @@
 # InputGroup
 
-- Registry: `@yukihito/input-group`
+- Registry: `@yukihi/input-group`
 - Source: `src/components/ui/input-group.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/input-group
+npx shadcn@latest add @yukihi/input-group
 ```
 
 ## 使用例

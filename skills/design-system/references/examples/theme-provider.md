@@ -1,12 +1,12 @@
 # DesignThemeProvider
 
-- Registry: `@yukihito/theme-provider`
+- Registry: `@yukihi/theme-provider`
 - Source: `src/components/theme-provider.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/theme-provider
+npx shadcn@latest add @yukihi/theme-provider
 ```
 
 アプリのTailwind CSSから共通スタイルを1回読み込みます。

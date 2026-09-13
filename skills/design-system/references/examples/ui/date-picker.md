@@ -1,12 +1,12 @@
 # DatePicker
 
-- Registry: `@yukihito/date-picker`
+- Registry: `@yukihi/date-picker`
 - Source: `src/components/ui/date-picker.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/date-picker
+npx shadcn@latest add @yukihi/date-picker
 ```
 
 ## 使用例

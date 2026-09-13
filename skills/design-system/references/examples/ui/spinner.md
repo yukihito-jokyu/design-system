@@ -1,12 +1,12 @@
 # Spinner
 
-- Registry: `@yukihito/spinner`
+- Registry: `@yukihi/spinner`
 - Source: `src/components/ui/spinner.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/spinner
+npx shadcn@latest add @yukihi/spinner
 ```
 
 ## 使用例

@@ -1,12 +1,12 @@
 # Checkbox
 
-- Registry: `@yukihito/checkbox`
+- Registry: `@yukihi/checkbox`
 - Source: `src/components/ui/checkbox.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/checkbox
+npx shadcn@latest add @yukihi/checkbox
 ```
 
 ## 使用例

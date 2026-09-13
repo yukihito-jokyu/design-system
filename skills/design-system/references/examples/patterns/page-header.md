@@ -1,12 +1,12 @@
 # PageHeader
 
-- Registry: `@yukihito/page-header`
+- Registry: `@yukihi/page-header`
 - Source: `src/components/patterns/page-header.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/page-header
+npx shadcn@latest add @yukihi/page-header
 ```
 
 ## 使用例

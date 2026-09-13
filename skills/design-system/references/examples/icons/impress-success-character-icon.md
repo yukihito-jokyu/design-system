@@ -1,12 +1,12 @@
 # ImpressSuccessCharacterIcon
 
-- Registry: `@yukihito/impress-success-character-icon`
+- Registry: `@yukihi/impress-success-character-icon`
 - Source: `src/components/icons/ImpressSuccessCharacterIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/impress-success-character-icon
+npx shadcn@latest add @yukihi/impress-success-character-icon
 ```
 
 ## 使用例

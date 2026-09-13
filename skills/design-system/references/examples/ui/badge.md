@@ -1,12 +1,12 @@
 # Badge
 
-- Registry: `@yukihito/badge`
+- Registry: `@yukihi/badge`
 - Source: `src/components/ui/badge.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/badge
+npx shadcn@latest add @yukihi/badge
 ```
 
 ## 使用例

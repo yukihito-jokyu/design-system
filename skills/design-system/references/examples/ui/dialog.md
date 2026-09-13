@@ -1,12 +1,12 @@
 # Dialog
 
-- Registry: `@yukihito/dialog`
+- Registry: `@yukihi/dialog`
 - Source: `src/components/ui/dialog.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/dialog
+npx shadcn@latest add @yukihi/dialog
 ```
 
 ## 使用例

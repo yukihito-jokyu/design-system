@@ -1,12 +1,12 @@
 # ImpressSavedStatusIcon
 
-- Registry: `@yukihito/impress-saved-status-icon`
+- Registry: `@yukihi/impress-saved-status-icon`
 - Source: `src/components/icons/ImpressSavedStatusIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/impress-saved-status-icon
+npx shadcn@latest add @yukihi/impress-saved-status-icon
 ```
 
 ## 使用例

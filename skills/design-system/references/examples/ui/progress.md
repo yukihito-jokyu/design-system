@@ -1,12 +1,12 @@
 # Progress
 
-- Registry: `@yukihito/progress`
+- Registry: `@yukihi/progress`
 - Source: `src/components/ui/progress.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/progress
+npx shadcn@latest add @yukihi/progress
 ```
 
 ## 使用例

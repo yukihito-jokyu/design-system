@@ -1,12 +1,12 @@
 # AppShell
 
-- Registry: `@yukihito/app-shell`
+- Registry: `@yukihi/app-shell`
 - Source: `src/components/patterns/app-shell.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/app-shell
+npx shadcn@latest add @yukihi/app-shell
 ```
 
 ## 使用例

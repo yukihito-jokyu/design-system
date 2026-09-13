@@ -1,12 +1,12 @@
 # AssemblyDocumentFeatureIcon
 
-- Registry: `@yukihito/assembly-document-feature-icon`
+- Registry: `@yukihi/assembly-document-feature-icon`
 - Source: `src/components/icons/AssemblyDocumentFeatureIcon.tsx`
 
 ## 導入
 
 ```sh
-npx shadcn@latest add @yukihito/assembly-document-feature-icon
+npx shadcn@latest add @yukihi/assembly-document-feature-icon
 ```
 
 ## 使用例
