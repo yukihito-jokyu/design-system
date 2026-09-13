@@ -54,7 +54,7 @@
       "description": "Scoped theme and portal color inheritance.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -86,7 +86,7 @@
       "description": "Shared frame for approved SVG artwork.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -103,8 +103,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -121,8 +121,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -139,8 +139,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -157,8 +157,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -175,8 +175,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -193,8 +193,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -211,8 +211,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -229,8 +229,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -247,8 +247,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -265,8 +265,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -283,8 +283,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -301,8 +301,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -319,8 +319,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -337,8 +337,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -355,8 +355,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -373,8 +373,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -391,8 +391,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -409,8 +409,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -427,8 +427,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -445,8 +445,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -463,8 +463,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -481,8 +481,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -499,8 +499,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -517,8 +517,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -535,8 +535,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -553,8 +553,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -571,8 +571,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -589,8 +589,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -607,8 +607,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -625,8 +625,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -643,8 +643,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -661,8 +661,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -679,8 +679,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -697,8 +697,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -715,8 +715,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -733,8 +733,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -751,8 +751,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -769,8 +769,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -787,8 +787,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -805,8 +805,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -823,8 +823,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -841,8 +841,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -859,8 +859,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -877,8 +877,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -895,8 +895,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -913,8 +913,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -931,8 +931,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -949,8 +949,8 @@
       "description": "Approved standalone SVG icon.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-frame.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json"
       ],
       "files": [
         {
@@ -970,8 +970,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -990,10 +990,10 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1012,8 +1012,8 @@
         "class-variance-authority@^0.7.1"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1032,8 +1032,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1053,8 +1053,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1074,8 +1074,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1095,8 +1095,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1116,9 +1116,9 @@
         "react-day-picker@^10.0.1"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1135,8 +1135,8 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1156,8 +1156,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1176,7 +1176,7 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -1196,11 +1196,11 @@
         "lucide-react@^1.45.0"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/input-group.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/input-group.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1219,11 +1219,11 @@
         "lucide-react@^1.45.0"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/calendar.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-button.json",
-        "http://127.0.0.1:4173/r/input.json",
-        "http://127.0.0.1:4173/r/popover.json"
+        "https://design.yukihi.tokyo/v1/r/calendar.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-button.json",
+        "https://design.yukihi.tokyo/v1/r/input.json",
+        "https://design.yukihi.tokyo/v1/r/popover.json"
       ],
       "files": [
         {
@@ -1243,10 +1243,10 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1266,9 +1266,9 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1285,10 +1285,10 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/input.json",
-        "http://127.0.0.1:4173/r/label.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/input.json",
+        "https://design.yukihi.tokyo/v1/r/label.json"
       ],
       "files": [
         {
@@ -1305,8 +1305,8 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -1325,11 +1325,11 @@
         "class-variance-authority@^0.7.1"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/input.json",
-        "http://127.0.0.1:4173/r/textarea.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/input.json",
+        "https://design.yukihi.tokyo/v1/r/textarea.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1346,8 +1346,8 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1366,8 +1366,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1388,8 +1388,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1408,9 +1408,9 @@
         "lucide-react@^1.45.0"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1429,9 +1429,9 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1450,8 +1450,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1471,8 +1471,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1492,9 +1492,9 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1513,8 +1513,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1534,9 +1534,9 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1557,15 +1557,15 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/input.json",
-        "http://127.0.0.1:4173/r/separator.json",
-        "http://127.0.0.1:4173/r/sheet.json",
-        "http://127.0.0.1:4173/r/skeleton.json",
-        "http://127.0.0.1:4173/r/tooltip.json",
-        "http://127.0.0.1:4173/r/use-mobile.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/input.json",
+        "https://design.yukihi.tokyo/v1/r/separator.json",
+        "https://design.yukihi.tokyo/v1/r/sheet.json",
+        "https://design.yukihi.tokyo/v1/r/skeleton.json",
+        "https://design.yukihi.tokyo/v1/r/tooltip.json",
+        "https://design.yukihi.tokyo/v1/r/use-mobile.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1582,8 +1582,8 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1602,8 +1602,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1623,8 +1623,8 @@
         "sonner@^2.0.8"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json"
       ],
       "files": [
         {
@@ -1643,8 +1643,8 @@
         "lucide-react@^1.45.0"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1663,8 +1663,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1681,8 +1681,8 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1702,8 +1702,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1720,8 +1720,8 @@
       "description": "Design system ui component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1740,8 +1740,8 @@
         "sonner@^2.0.8"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/sonner.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/sonner.json"
       ],
       "files": [
         {
@@ -1761,9 +1761,9 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/toggle.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/toggle.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1783,8 +1783,8 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1803,9 +1803,9 @@
         "radix-ui@^1.6.7"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -1822,10 +1822,10 @@
       "description": "Design system character component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/card.json",
-        "http://127.0.0.1:4173/r/character-icons.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/suggestion-chip.json"
+        "https://design.yukihi.tokyo/v1/r/card.json",
+        "https://design.yukihi.tokyo/v1/r/character-icons.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/suggestion-chip.json"
       ],
       "files": [
         {
@@ -1842,8 +1842,8 @@
       "description": "Design system character component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/character-icons.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/character-icons.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -1860,8 +1860,8 @@
       "description": "Design system character component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/tooltip.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/tooltip.json"
       ],
       "files": [
         {
@@ -1878,8 +1878,8 @@
       "description": "Design system character component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -1896,8 +1896,8 @@
       "description": "Design system character component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/alert.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/alert.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -1914,8 +1914,8 @@
       "description": "Design system character component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -1932,9 +1932,9 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/sheet.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/sheet.json"
       ],
       "files": [
         {
@@ -1953,9 +1953,9 @@
         "lucide-react@^1.45.0"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/assistant-card.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-button.json"
+        "https://design.yukihi.tokyo/v1/r/assistant-card.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-button.json"
       ],
       "files": [
         {
@@ -1972,11 +1972,11 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/checkbox.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/table-toolbar.json",
-        "http://127.0.0.1:4173/r/table.json"
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/checkbox.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/table-toolbar.json",
+        "https://design.yukihi.tokyo/v1/r/table.json"
       ],
       "files": [
         {
@@ -1993,9 +1993,9 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/alert.json",
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/alert.json",
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -2012,8 +2012,8 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/label.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/label.json"
       ],
       "files": [
         {
@@ -2030,9 +2030,9 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/skeleton.json",
-        "http://127.0.0.1:4173/r/spinner.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/skeleton.json",
+        "https://design.yukihi.tokyo/v1/r/spinner.json"
       ],
       "files": [
         {
@@ -2049,7 +2049,7 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -2068,9 +2068,9 @@
         "lucide-react@^1.45.0"
       ],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/icon-button.json",
-        "http://127.0.0.1:4173/r/input.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/icon-button.json",
+        "https://design.yukihi.tokyo/v1/r/input.json"
       ],
       "files": [
         {
@@ -2087,7 +2087,7 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
       ],
       "files": [
         {
@@ -2104,8 +2104,8 @@
       "description": "Design system patterns component.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/search-field.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/search-field.json"
       ],
       "files": [
         {
@@ -2122,56 +2122,56 @@
       "description": "Dynamic six-direction character/status API and all approved artwork variants.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/assembly-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/assembly-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/assembly-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/assembly-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/assembly-success-character-icon.json",
-        "http://127.0.0.1:4173/r/assembly-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/assembly-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/assembly-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/fold-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/fold-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/fold-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/fold-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/fold-success-character-icon.json",
-        "http://127.0.0.1:4173/r/fold-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/fold-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/fold-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/impress-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/impress-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/impress-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/impress-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/impress-success-character-icon.json",
-        "http://127.0.0.1:4173/r/impress-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/impress-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/impress-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/ink-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/ink-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/ink-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/ink-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/ink-success-character-icon.json",
-        "http://127.0.0.1:4173/r/ink-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/ink-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/ink-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/monolith-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/monolith-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/monolith-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/monolith-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/monolith-success-character-icon.json",
-        "http://127.0.0.1:4173/r/monolith-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/monolith-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/monolith-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/orbit-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/orbit-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/orbit-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/orbit-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/orbit-success-character-icon.json",
-        "http://127.0.0.1:4173/r/orbit-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/orbit-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/orbit-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/utils.json"
+        "https://design.yukihi.tokyo/v1/r/assembly-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/fold-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json"
       ],
       "files": [
         {
@@ -2193,117 +2193,117 @@
       "description": "All Foundation, Character, Pattern, and approved icon items.",
       "dependencies": [],
       "registryDependencies": [
-        "http://127.0.0.1:4173/r/design-system-styles.json",
-        "http://127.0.0.1:4173/r/utils.json",
-        "http://127.0.0.1:4173/r/theme-provider.json",
-        "http://127.0.0.1:4173/r/use-mobile.json",
-        "http://127.0.0.1:4173/r/icon-frame.json",
-        "http://127.0.0.1:4173/r/assembly-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/assembly-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/assembly-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/assembly-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/assembly-success-character-icon.json",
-        "http://127.0.0.1:4173/r/assembly-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/assembly-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/assembly-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/fold-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/fold-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/fold-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/fold-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/fold-success-character-icon.json",
-        "http://127.0.0.1:4173/r/fold-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/fold-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/fold-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/impress-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/impress-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/impress-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/impress-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/impress-success-character-icon.json",
-        "http://127.0.0.1:4173/r/impress-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/impress-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/impress-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/ink-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/ink-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/ink-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/ink-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/ink-success-character-icon.json",
-        "http://127.0.0.1:4173/r/ink-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/ink-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/ink-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/monolith-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/monolith-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/monolith-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/monolith-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/monolith-success-character-icon.json",
-        "http://127.0.0.1:4173/r/monolith-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/monolith-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/monolith-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/orbit-document-feature-icon.json",
-        "http://127.0.0.1:4173/r/orbit-history-feature-icon.json",
-        "http://127.0.0.1:4173/r/orbit-idea-feature-icon.json",
-        "http://127.0.0.1:4173/r/orbit-saved-status-icon.json",
-        "http://127.0.0.1:4173/r/orbit-success-character-icon.json",
-        "http://127.0.0.1:4173/r/orbit-thinking-character-icon.json",
-        "http://127.0.0.1:4173/r/orbit-thinking-status-icon.json",
-        "http://127.0.0.1:4173/r/orbit-welcome-character-icon.json",
-        "http://127.0.0.1:4173/r/accordion.json",
-        "http://127.0.0.1:4173/r/alert-dialog.json",
-        "http://127.0.0.1:4173/r/alert.json",
-        "http://127.0.0.1:4173/r/avatar.json",
-        "http://127.0.0.1:4173/r/badge.json",
-        "http://127.0.0.1:4173/r/breadcrumb.json",
-        "http://127.0.0.1:4173/r/button.json",
-        "http://127.0.0.1:4173/r/calendar.json",
-        "http://127.0.0.1:4173/r/card.json",
-        "http://127.0.0.1:4173/r/checkbox.json",
-        "http://127.0.0.1:4173/r/collapsible.json",
-        "http://127.0.0.1:4173/r/combobox.json",
-        "http://127.0.0.1:4173/r/date-picker.json",
-        "http://127.0.0.1:4173/r/dialog.json",
-        "http://127.0.0.1:4173/r/dropdown-menu.json",
-        "http://127.0.0.1:4173/r/file-upload.json",
-        "http://127.0.0.1:4173/r/icon-button.json",
-        "http://127.0.0.1:4173/r/input-group.json",
-        "http://127.0.0.1:4173/r/input.json",
-        "http://127.0.0.1:4173/r/label.json",
-        "http://127.0.0.1:4173/r/navigation-menu.json",
-        "http://127.0.0.1:4173/r/pagination.json",
-        "http://127.0.0.1:4173/r/popover.json",
-        "http://127.0.0.1:4173/r/progress.json",
-        "http://127.0.0.1:4173/r/radio-group.json",
-        "http://127.0.0.1:4173/r/select.json",
-        "http://127.0.0.1:4173/r/separator.json",
-        "http://127.0.0.1:4173/r/sheet.json",
-        "http://127.0.0.1:4173/r/sidebar.json",
-        "http://127.0.0.1:4173/r/skeleton.json",
-        "http://127.0.0.1:4173/r/slider.json",
-        "http://127.0.0.1:4173/r/sonner.json",
-        "http://127.0.0.1:4173/r/spinner.json",
-        "http://127.0.0.1:4173/r/switch.json",
-        "http://127.0.0.1:4173/r/table.json",
-        "http://127.0.0.1:4173/r/tabs.json",
-        "http://127.0.0.1:4173/r/textarea.json",
-        "http://127.0.0.1:4173/r/toast.json",
-        "http://127.0.0.1:4173/r/toggle-group.json",
-        "http://127.0.0.1:4173/r/toggle.json",
-        "http://127.0.0.1:4173/r/tooltip.json",
-        "http://127.0.0.1:4173/r/assistant-card.json",
-        "http://127.0.0.1:4173/r/empty-state.json",
-        "http://127.0.0.1:4173/r/friendly-tooltip.json",
-        "http://127.0.0.1:4173/r/message-bubble.json",
-        "http://127.0.0.1:4173/r/soft-notice.json",
-        "http://127.0.0.1:4173/r/suggestion-chip.json",
-        "http://127.0.0.1:4173/r/app-shell.json",
-        "http://127.0.0.1:4173/r/assistant-panel.json",
-        "http://127.0.0.1:4173/r/data-table.json",
-        "http://127.0.0.1:4173/r/error-state.json",
-        "http://127.0.0.1:4173/r/form-field.json",
-        "http://127.0.0.1:4173/r/loading-state.json",
-        "http://127.0.0.1:4173/r/page-header.json",
-        "http://127.0.0.1:4173/r/search-field.json",
-        "http://127.0.0.1:4173/r/settings-section.json",
-        "http://127.0.0.1:4173/r/table-toolbar.json",
-        "http://127.0.0.1:4173/r/character-icons.json"
+        "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+        "https://design.yukihi.tokyo/v1/r/utils.json",
+        "https://design.yukihi.tokyo/v1/r/theme-provider.json",
+        "https://design.yukihi.tokyo/v1/r/use-mobile.json",
+        "https://design.yukihi.tokyo/v1/r/icon-frame.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/assembly-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/fold-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/impress-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/ink-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/monolith-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-document-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-history-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-idea-feature-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-saved-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-success-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-thinking-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-thinking-status-icon.json",
+        "https://design.yukihi.tokyo/v1/r/orbit-welcome-character-icon.json",
+        "https://design.yukihi.tokyo/v1/r/accordion.json",
+        "https://design.yukihi.tokyo/v1/r/alert-dialog.json",
+        "https://design.yukihi.tokyo/v1/r/alert.json",
+        "https://design.yukihi.tokyo/v1/r/avatar.json",
+        "https://design.yukihi.tokyo/v1/r/badge.json",
+        "https://design.yukihi.tokyo/v1/r/breadcrumb.json",
+        "https://design.yukihi.tokyo/v1/r/button.json",
+        "https://design.yukihi.tokyo/v1/r/calendar.json",
+        "https://design.yukihi.tokyo/v1/r/card.json",
+        "https://design.yukihi.tokyo/v1/r/checkbox.json",
+        "https://design.yukihi.tokyo/v1/r/collapsible.json",
+        "https://design.yukihi.tokyo/v1/r/combobox.json",
+        "https://design.yukihi.tokyo/v1/r/date-picker.json",
+        "https://design.yukihi.tokyo/v1/r/dialog.json",
+        "https://design.yukihi.tokyo/v1/r/dropdown-menu.json",
+        "https://design.yukihi.tokyo/v1/r/file-upload.json",
+        "https://design.yukihi.tokyo/v1/r/icon-button.json",
+        "https://design.yukihi.tokyo/v1/r/input-group.json",
+        "https://design.yukihi.tokyo/v1/r/input.json",
+        "https://design.yukihi.tokyo/v1/r/label.json",
+        "https://design.yukihi.tokyo/v1/r/navigation-menu.json",
+        "https://design.yukihi.tokyo/v1/r/pagination.json",
+        "https://design.yukihi.tokyo/v1/r/popover.json",
+        "https://design.yukihi.tokyo/v1/r/progress.json",
+        "https://design.yukihi.tokyo/v1/r/radio-group.json",
+        "https://design.yukihi.tokyo/v1/r/select.json",
+        "https://design.yukihi.tokyo/v1/r/separator.json",
+        "https://design.yukihi.tokyo/v1/r/sheet.json",
+        "https://design.yukihi.tokyo/v1/r/sidebar.json",
+        "https://design.yukihi.tokyo/v1/r/skeleton.json",
+        "https://design.yukihi.tokyo/v1/r/slider.json",
+        "https://design.yukihi.tokyo/v1/r/sonner.json",
+        "https://design.yukihi.tokyo/v1/r/spinner.json",
+        "https://design.yukihi.tokyo/v1/r/switch.json",
+        "https://design.yukihi.tokyo/v1/r/table.json",
+        "https://design.yukihi.tokyo/v1/r/tabs.json",
+        "https://design.yukihi.tokyo/v1/r/textarea.json",
+        "https://design.yukihi.tokyo/v1/r/toast.json",
+        "https://design.yukihi.tokyo/v1/r/toggle-group.json",
+        "https://design.yukihi.tokyo/v1/r/toggle.json",
+        "https://design.yukihi.tokyo/v1/r/tooltip.json",
+        "https://design.yukihi.tokyo/v1/r/assistant-card.json",
+        "https://design.yukihi.tokyo/v1/r/empty-state.json",
+        "https://design.yukihi.tokyo/v1/r/friendly-tooltip.json",
+        "https://design.yukihi.tokyo/v1/r/message-bubble.json",
+        "https://design.yukihi.tokyo/v1/r/soft-notice.json",
+        "https://design.yukihi.tokyo/v1/r/suggestion-chip.json",
+        "https://design.yukihi.tokyo/v1/r/app-shell.json",
+        "https://design.yukihi.tokyo/v1/r/assistant-panel.json",
+        "https://design.yukihi.tokyo/v1/r/data-table.json",
+        "https://design.yukihi.tokyo/v1/r/error-state.json",
+        "https://design.yukihi.tokyo/v1/r/form-field.json",
+        "https://design.yukihi.tokyo/v1/r/loading-state.json",
+        "https://design.yukihi.tokyo/v1/r/page-header.json",
+        "https://design.yukihi.tokyo/v1/r/search-field.json",
+        "https://design.yukihi.tokyo/v1/r/settings-section.json",
+        "https://design.yukihi.tokyo/v1/r/table-toolbar.json",
+        "https://design.yukihi.tokyo/v1/r/character-icons.json"
       ],
       "files": []
     }

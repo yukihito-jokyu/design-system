@@ -7,9 +7,9 @@
     "lucide-react@^1.45.0"
   ],
   "registryDependencies": [
-    "http://127.0.0.1:4173/r/assistant-card.json",
-    "http://127.0.0.1:4173/r/design-system-styles.json",
-    "http://127.0.0.1:4173/r/icon-button.json"
+    "https://design.yukihi.tokyo/v1/r/assistant-card.json",
+    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+    "https://design.yukihi.tokyo/v1/r/icon-button.json"
   ],
   "files": [
     {

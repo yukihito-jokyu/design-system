@@ -5,10 +5,10 @@
   "description": "Design system character component.",
   "dependencies": [],
   "registryDependencies": [
-    "http://127.0.0.1:4173/r/card.json",
-    "http://127.0.0.1:4173/r/character-icons.json",
-    "http://127.0.0.1:4173/r/design-system-styles.json",
-    "http://127.0.0.1:4173/r/suggestion-chip.json"
+    "https://design.yukihi.tokyo/v1/r/card.json",
+    "https://design.yukihi.tokyo/v1/r/character-icons.json",
+    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+    "https://design.yukihi.tokyo/v1/r/suggestion-chip.json"
   ],
   "files": [
     {

@@ -7,11 +7,11 @@
     "class-variance-authority@^0.7.1"
   ],
   "registryDependencies": [
-    "http://127.0.0.1:4173/r/button.json",
-    "http://127.0.0.1:4173/r/design-system-styles.json",
-    "http://127.0.0.1:4173/r/input.json",
-    "http://127.0.0.1:4173/r/textarea.json",
-    "http://127.0.0.1:4173/r/utils.json"
+    "https://design.yukihi.tokyo/v1/r/button.json",
+    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+    "https://design.yukihi.tokyo/v1/r/input.json",
+    "https://design.yukihi.tokyo/v1/r/textarea.json",
+    "https://design.yukihi.tokyo/v1/r/utils.json"
   ],
   "files": [
     {

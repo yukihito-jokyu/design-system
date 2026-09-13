@@ -80,6 +80,8 @@ jobs:
         run: npm ci
 
       - name: Build and serve registry
+        env:
+          REGISTRY_BASE_URL: http://127.0.0.1:4173/r
         run: |
           npm run tokens
           npm run registry:build

@@ -26,7 +26,7 @@ Registryと導入先の両方で、shadcnをRadix構成にします。現行CLI�
 ```sh
 # このリポジトリ
 npm ci
-npm run registry:build
+REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:build
 npm run registry:serve
 
 # React + TypeScript + Tailwind v4の導入先（別ターミナル）
@@ -66,13 +66,13 @@ npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json
 npx shadcn@latest add http://127.0.0.1:4173/r/ink-idea-feature-icon.json
 ```
 
-別のURLやポートで配信する場合は、依存URLをその配信先にしてから生成します。
+標準の公開先は`https://design.yukihi.tokyo/v1/r`です。別のURLやポートで配信する場合は、依存URLをその配信先にしてから生成します。
 
 ```sh
-REGISTRY_BASE_URL=https://design.example.com/v1/r npm run registry:build
+REGISTRY_BASE_URL=https://別の配信先.example/v1/r npm run registry:build
 ```
 
-GitHub・CI・Cloudflare Pages配信・`@yukihito`名前空間を含む正式運用は、[Registry運用・導入手順書](docs/registry-operations.md)を参照してください。
+GitHub・CI・Cloudflare Workers配信・`@yukihito`名前空間を含む正式運用は、[Registry運用・導入手順書](docs/registry-operations.md)を参照してください。
 
 ## AI向け利用ルール
 

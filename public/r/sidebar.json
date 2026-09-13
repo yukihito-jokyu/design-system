@@ -9,15 +9,15 @@
     "radix-ui@^1.6.7"
   ],
   "registryDependencies": [
-    "http://127.0.0.1:4173/r/button.json",
-    "http://127.0.0.1:4173/r/design-system-styles.json",
-    "http://127.0.0.1:4173/r/input.json",
-    "http://127.0.0.1:4173/r/separator.json",
-    "http://127.0.0.1:4173/r/sheet.json",
-    "http://127.0.0.1:4173/r/skeleton.json",
-    "http://127.0.0.1:4173/r/tooltip.json",
-    "http://127.0.0.1:4173/r/use-mobile.json",
-    "http://127.0.0.1:4173/r/utils.json"
+    "https://design.yukihi.tokyo/v1/r/button.json",
+    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+    "https://design.yukihi.tokyo/v1/r/input.json",
+    "https://design.yukihi.tokyo/v1/r/separator.json",
+    "https://design.yukihi.tokyo/v1/r/sheet.json",
+    "https://design.yukihi.tokyo/v1/r/skeleton.json",
+    "https://design.yukihi.tokyo/v1/r/tooltip.json",
+    "https://design.yukihi.tokyo/v1/r/use-mobile.json",
+    "https://design.yukihi.tokyo/v1/r/utils.json"
   ],
   "files": [
     {
