@@ -1,0 +1,20 @@
+# ErrorState
+
+- Registry: `@yukihito/error-state`
+- Source: `src/components/patterns/error-state.tsx`
+
+## 導入
+
+```sh
+npx shadcn@latest add @yukihito/error-state
+```
+
+## 使用例
+
+```tsx
+import { ErrorState } from "@/components/patterns/error-state";
+
+<ErrorState description="読み込みに失敗しました。" onRetry={() => {}} />;
+```
+
+必要な状態・Propsは導入後の型定義で確認し、Tokenとアクセシビリティ属性を維持する。

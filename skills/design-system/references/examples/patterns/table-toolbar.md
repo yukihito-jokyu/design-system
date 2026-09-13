@@ -1,0 +1,20 @@
+# TableToolbar
+
+- Registry: `@yukihito/table-toolbar`
+- Source: `src/components/patterns/table-toolbar.tsx`
+
+## 導入
+
+```sh
+npx shadcn@latest add @yukihito/table-toolbar
+```
+
+## 使用例
+
+```tsx
+import { TableToolbar } from "@/components/patterns/table-toolbar";
+
+<TableToolbar query={query} onQueryChange={setQuery} count={10} />;
+```
+
+必要な状態・Propsは導入後の型定義で確認し、Tokenとアクセシビリティ属性を維持する。

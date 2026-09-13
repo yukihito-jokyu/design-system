@@ -1,0 +1,20 @@
+# FoldIdeaFeatureIcon
+
+- Registry: `@yukihito/fold-idea-feature-icon`
+- Source: `src/components/icons/FoldIdeaFeatureIcon.tsx`
+
+## 導入
+
+```sh
+npx shadcn@latest add @yukihito/fold-idea-feature-icon
+```
+
+## 使用例
+
+```tsx
+import { FoldIdeaFeatureIcon } from "@/components/icons/FoldIdeaFeatureIcon";
+
+<FoldIdeaFeatureIcon label="FoldIdeaFeatureIcon" />;
+```
+
+必要な状態・Propsは導入後の型定義で確認し、Tokenとアクセシビリティ属性を維持する。
