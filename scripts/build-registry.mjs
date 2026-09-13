@@ -2,7 +2,11 @@ import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { basename, dirname, extname, join } from "node:path";
 
 const root = new URL("..", import.meta.url).pathname;
-const baseUrl = (process.env.REGISTRY_BASE_URL || "http://127.0.0.1:4173/r").replace(/\/$/, "");
+
+const baseUrl = (process.env.REGISTRY_BASE_URL || "https://design.yukihi.tokyo/v1/r").replace(
+  /\/$/,
+  "",
+);
 
 const kebab = (value) =>
   value

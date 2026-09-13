@@ -5,7 +5,7 @@
   "description": "Design system patterns component.",
   "dependencies": [],
   "registryDependencies": [
-    "http://127.0.0.1:4173/r/design-system-styles.json"
+    "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
   ],
   "files": [
     {

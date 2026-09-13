@@ -9,8 +9,8 @@
     "radix-ui@^1.6.7"
   ],
   "registryDependencies": [
-    "http://127.0.0.1:4173/r/design-system-styles.json",
-    "http://127.0.0.1:4173/r/utils.json"
+    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
+    "https://design.yukihi.tokyo/v1/r/utils.json"
   ],
   "files": [
     {
