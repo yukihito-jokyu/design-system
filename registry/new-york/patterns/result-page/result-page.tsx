@@ -35,7 +35,7 @@ export function ResultPage({
       </Alert>
       <div className="actions">
         {targetLink}
-        {action}
+        {status === "success" && action}
         {status !== "success" && onRetry && (
           <Button type="button" onClick={onRetry}>
             再試行
