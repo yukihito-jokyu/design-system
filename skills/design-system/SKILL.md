@@ -8,7 +8,7 @@ description: React UIをYukihito Design SystemのRegistry、既存Pattern、Foun
 ## 作業手順
 
 1. 利用アプリの`components.json`と`@yukihi`設定を確認する。
-2. [references/component-selection.md](references/component-selection.md)を読み、Pattern、Foundation、独自合成の順で選ぶ。
+2. [references/pattern-selection.md](references/pattern-selection.md)で主Patternと操作Patternを決め、[references/component-selection.md](references/component-selection.md)で内側の部品を選ぶ。
 3. 使用する項目ごとに`references/examples/<分類>/<item>.md`を読む。ThemeProviderは`references/examples/theme-provider.md`を読む。対象が未決定なら、ファイル名または本文を検索する。
 4. `npx shadcn@latest view @yukihi/<item>`で配布内容と依存を確認する。
 5. `npx shadcn@latest add @yukihi/<item>`で必要な項目だけ導入する。
