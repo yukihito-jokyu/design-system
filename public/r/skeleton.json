@@ -5,15 +5,15 @@
   "description": "Design system ui component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/utils.json"
+    "@yukihi/design-system-styles",
+    "@yukihi/utils"
   ],
   "files": [
     {
-      "path": "src/components/ui/skeleton.tsx",
-      "content": "import { cn } from \"@/lib/utils\";\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\"animate-pulse rounded-md bg-accent\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Skeleton };\n",
+      "path": "registry/new-york/ui/skeleton/skeleton.tsx",
+      "content": "import { cn } from \"@/registry/new-york/lib/utils/utils\";\n\nfunction Skeleton({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"skeleton\"\n      className={cn(\"animate-pulse rounded-md bg-accent\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Skeleton };\n",
       "type": "registry:ui",
-      "target": "src/components/ui/skeleton.tsx"
+      "target": "@ui/skeleton.tsx"
     }
   ],
   "type": "registry:ui"

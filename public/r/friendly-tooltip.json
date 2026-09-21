@@ -5,15 +5,15 @@
   "description": "Design system character component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/tooltip.json"
+    "@yukihi/design-system-styles",
+    "@yukihi/tooltip"
   ],
   "files": [
     {
-      "path": "src/components/character/friendly-tooltip.tsx",
-      "content": "import type { ReactElement } from \"react\";\nimport { Tooltip, TooltipTrigger, TooltipContent } from \"../ui/tooltip\";\n\nexport function FriendlyTooltip({\n  content,\n  children,\n}: {\n  content: string;\n  children: ReactElement;\n}) {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>{children}</TooltipTrigger>\n      <TooltipContent>{content}</TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "path": "registry/new-york/character/friendly-tooltip/friendly-tooltip.tsx",
+      "content": "import type { ReactElement } from \"react\";\nimport { Tooltip, TooltipTrigger, TooltipContent } from \"@/registry/new-york/ui/tooltip/tooltip\";\n\nexport function FriendlyTooltip({\n  content,\n  children,\n}: {\n  content: string;\n  children: ReactElement;\n}) {\n  return (\n    <Tooltip>\n      <TooltipTrigger asChild>{children}</TooltipTrigger>\n      <TooltipContent>{content}</TooltipContent>\n    </Tooltip>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/character/friendly-tooltip.tsx"
+      "target": "@components/character/friendly-tooltip.tsx"
     }
   ],
   "type": "registry:component"

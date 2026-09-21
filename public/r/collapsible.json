@@ -7,14 +7,14 @@
     "radix-ui@^1.6.7"
   ],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
+    "@yukihi/design-system-styles"
   ],
   "files": [
     {
-      "path": "src/components/ui/collapsible.tsx",
+      "path": "registry/new-york/ui/collapsible/collapsible.tsx",
       "content": "import { Collapsible as CollapsiblePrimitive } from \"radix-ui\";\n\nfunction Collapsible({ ...props }: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />;\n}\n\nfunction CollapsibleTrigger({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {\n  return <CollapsiblePrimitive.CollapsibleTrigger data-slot=\"collapsible-trigger\" {...props} />;\n}\n\nfunction CollapsibleContent({\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {\n  return <CollapsiblePrimitive.CollapsibleContent data-slot=\"collapsible-content\" {...props} />;\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
       "type": "registry:ui",
-      "target": "src/components/ui/collapsible.tsx"
+      "target": "@ui/collapsible.tsx"
     }
   ],
   "type": "registry:ui"

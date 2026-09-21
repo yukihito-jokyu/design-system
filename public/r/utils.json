@@ -10,10 +10,10 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/lib/utils.ts",
+      "path": "registry/new-york/lib/utils/utils.ts",
       "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
       "type": "registry:lib",
-      "target": "src/lib/utils.ts"
+      "target": "@lib/utils.ts"
     }
   ],
   "type": "registry:lib"

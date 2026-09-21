@@ -7,16 +7,16 @@
     "lucide-react@^1.45.0"
   ],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/assistant-card.json",
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/icon-button.json"
+    "@yukihi/assistant-card",
+    "@yukihi/design-system-styles",
+    "@yukihi/icon-button"
   ],
   "files": [
     {
-      "path": "src/components/patterns/assistant-panel.tsx",
-      "content": "import type { ComponentProps } from \"react\";\nimport { AssistantCard } from \"../character/assistant-card\";\nimport { IconButton } from \"../ui/icon-button\";\nimport { XIcon } from \"lucide-react\";\n\nexport function AssistantPanel({\n  onClose,\n  ...props\n}: ComponentProps<typeof AssistantCard> & { onClose?: () => void }) {\n  return (\n    <section aria-label=\"作業のサポート\" className=\"stack\">\n      {onClose && (\n        <IconButton aria-label=\"サポートを閉じる\" variant=\"ghost\" onClick={onClose}>\n          <XIcon size={20} />\n        </IconButton>\n      )}\n      <AssistantCard {...props} />\n    </section>\n  );\n}\n",
+      "path": "registry/new-york/patterns/assistant-panel/assistant-panel.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { AssistantCard } from \"@/registry/new-york/character/assistant-card/assistant-card\";\nimport { IconButton } from \"@/registry/new-york/ui/icon-button/icon-button\";\nimport { XIcon } from \"lucide-react\";\n\nexport function AssistantPanel({\n  onClose,\n  ...props\n}: ComponentProps<typeof AssistantCard> & { onClose?: () => void }) {\n  return (\n    <section aria-label=\"作業のサポート\" className=\"stack\">\n      {onClose && (\n        <IconButton aria-label=\"サポートを閉じる\" variant=\"ghost\" onClick={onClose}>\n          <XIcon size={20} />\n        </IconButton>\n      )}\n      <AssistantCard {...props} />\n    </section>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/patterns/assistant-panel.tsx"
+      "target": "@components/patterns/assistant-panel.tsx"
     }
   ],
   "type": "registry:component"

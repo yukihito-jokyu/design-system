@@ -5,16 +5,16 @@
   "description": "Design system patterns component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/button.json",
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/sheet.json"
+    "@yukihi/button",
+    "@yukihi/design-system-styles",
+    "@yukihi/sheet"
   ],
   "files": [
     {
-      "path": "src/components/patterns/app-shell.tsx",
-      "content": "import { useId, type ReactNode } from \"react\";\nimport { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetDescription } from \"../ui/sheet\";\nimport { Button } from \"../ui/button\";\n\nexport function AppShell({\n  navigation,\n  children,\n  aside,\n  contentElement = \"main\",\n}: {\n  navigation: ReactNode;\n  children: ReactNode;\n  aside?: ReactNode;\n  contentElement?: \"main\" | \"section\";\n}) {\n  const id = useId();\n  const Content = contentElement;\n  return (\n    <div className=\"app-shell\">\n      <a className=\"skip-link\" href={`#${id}`}>\n        本文へ移動\n      </a>\n      <div className=\"app-shell-mobile\">\n        <Sheet>\n          <SheetTrigger asChild>\n            <Button variant=\"outline\">メニューを開く</Button>\n          </SheetTrigger>\n          <SheetContent side=\"left\">\n            <SheetTitle>メニュー</SheetTitle>\n            <SheetDescription>表示するページを選択してください。</SheetDescription>\n            <nav aria-label=\"モバイルナビゲーション\">{navigation}</nav>\n          </SheetContent>\n        </Sheet>\n      </div>\n      <nav className=\"app-shell-nav\" aria-label=\"メインナビゲーション\">\n        {navigation}\n      </nav>\n      <Content id={id} aria-label=\"作業領域\" tabIndex={-1} className=\"app-shell-content\">\n        {children}\n      </Content>\n      {aside && <aside aria-label=\"補助情報\">{aside}</aside>}\n    </div>\n  );\n}\n",
+      "path": "registry/new-york/patterns/app-shell/app-shell.tsx",
+      "content": "import { useId, type ReactNode } from \"react\";\nimport {\n  Sheet,\n  SheetTrigger,\n  SheetContent,\n  SheetTitle,\n  SheetDescription,\n} from \"@/registry/new-york/ui/sheet/sheet\";\nimport { Button } from \"@/registry/new-york/ui/button/button\";\n\nexport function AppShell({\n  navigation,\n  children,\n  aside,\n  contentElement = \"main\",\n}: {\n  navigation: ReactNode;\n  children: ReactNode;\n  aside?: ReactNode;\n  contentElement?: \"main\" | \"section\";\n}) {\n  const id = useId();\n  const Content = contentElement;\n  return (\n    <div className=\"app-shell\">\n      <a className=\"skip-link\" href={`#${id}`}>\n        本文へ移動\n      </a>\n      <div className=\"app-shell-mobile\">\n        <Sheet>\n          <SheetTrigger asChild>\n            <Button variant=\"outline\">メニューを開く</Button>\n          </SheetTrigger>\n          <SheetContent side=\"left\">\n            <SheetTitle>メニュー</SheetTitle>\n            <SheetDescription>表示するページを選択してください。</SheetDescription>\n            <nav aria-label=\"モバイルナビゲーション\">{navigation}</nav>\n          </SheetContent>\n        </Sheet>\n      </div>\n      <nav className=\"app-shell-nav\" aria-label=\"メインナビゲーション\">\n        {navigation}\n      </nav>\n      <Content id={id} aria-label=\"作業領域\" tabIndex={-1} className=\"app-shell-content\">\n        {children}\n      </Content>\n      {aside && <aside aria-label=\"補助情報\">{aside}</aside>}\n    </div>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/patterns/app-shell.tsx"
+      "target": "@components/patterns/app-shell.tsx"
     }
   ],
   "type": "registry:component"

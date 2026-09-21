@@ -5,15 +5,15 @@
   "description": "Design system ui component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/utils.json"
+    "@yukihi/design-system-styles",
+    "@yukihi/utils"
   ],
   "files": [
     {
-      "path": "src/components/ui/input.tsx",
-      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Input({\n  className,\n  type,\n  controlSize = \"md\",\n  ...props\n}: React.ComponentProps<\"input\"> & { controlSize?: \"sm\" | \"md\" | \"lg\" }) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      data-size={controlSize}\n      className={cn(\"ds-input\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
+      "path": "registry/new-york/ui/input/input.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/new-york/lib/utils/utils\";\n\nfunction Input({\n  className,\n  type,\n  controlSize = \"md\",\n  ...props\n}: React.ComponentProps<\"input\"> & { controlSize?: \"sm\" | \"md\" | \"lg\" }) {\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      data-size={controlSize}\n      className={cn(\"ds-input\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
       "type": "registry:ui",
-      "target": "src/components/ui/input.tsx"
+      "target": "@ui/input.tsx"
     }
   ],
   "type": "registry:ui"
