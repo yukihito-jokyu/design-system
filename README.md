@@ -1,6 +1,6 @@
 # design-system
 
-再利用するデザインシステム本体です。Foundation 39種類・Character 9種類・Pattern 10種類・個別SVGアイコン48点を含みます。
+再利用するデザインシステム本体です。Foundation 39種類・Character 9種類・Pattern 18種類・個別SVGアイコン48点を含みます。
 
 ## 構成
 
@@ -19,18 +19,18 @@ ReactとTailwind v4を用いるアプリで利用します。共通スタイル�
 
 ## PatternをStorybookで見る
 
-承認済みPattern 10種類だけを、このリポジトリのStorybookで閲覧できます。Storyは各Pattern原本の隣にあり、Registry配布用JSONには含めません。上部のThemeで5テーマ、表示幅メニューで狭い画面に切り替えられます。検索・並べ替え・入力などはプレビュー内で操作できます。
+承認済みPattern 18種類だけを、このリポジトリのStorybookで閲覧できます。Storyは各Pattern原本の隣にあり、Registry配布用JSONには含めません。上部のThemeで5テーマ、表示幅メニューで狭い画面に切り替えられます。検索・並べ替え・入力などはプレビュー内で操作できます。
 
 ```sh
 npm ci
 npm run storybook
 ```
 
-表示されたURLをブラウザで開き、左側の`Patterns`から選びます。終了は`Ctrl+C`です。静的な閲覧サイトを作る場合は次を実行し、HTTPサーバー経由で開きます。公式の既定どおり`storybook-static/`へ出力し、Gitの管理対象には含めません。
+表示されたURLをブラウザで開き、左側の`Patterns`から選びます。終了は`Ctrl+C`です。静的な閲覧サイトを作る場合はリポジトリ外へ出力し、HTTPサーバー経由で開きます。
 
 ```sh
-npm run build-storybook
-npx http-server storybook-static
+npm run build-storybook -- --output-dir /tmp/design-system-storybook
+npx http-server /tmp/design-system-storybook
 ```
 
 `.storybook/styles.css`は`design-system-styles`を一時Vite環境へshadcn CLIで導入した結果です。Tokenや共通CSSの正本を変更したときだけ、[運用手順](docs/registry-operations.md#storybook用cssの同期)に従って再反映します。`npm run storybook`は閲覧用、`npm run registry:serve`はRegistry JSONのローカル配信用で、用途が異なります。

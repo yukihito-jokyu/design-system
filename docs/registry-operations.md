@@ -25,7 +25,7 @@ GitHubでは次を管理します。
 - `public/r/`：HTTPS配信へ渡す生成済みJSON
 - README、運用手順、第三者ライセンス表記
 
-承認済みPattern 10種類のStorybookだけを例外として本体に置きます。StoryはPattern原本に隣接しますがRegistry項目の`files`には登録しません。それ以外のカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証とStorybook静的出力は一時ディレクトリ、他の手動カタログは別リポジトリまたは`development-preview`で管理します。
+承認済みPattern 18種類のStorybookだけを例外として本体に置きます。StoryはPattern原本に隣接しますがRegistry項目の`files`には登録しません。それ以外のカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証とStorybook静的出力は一時ディレクトリ、他の手動カタログは別リポジトリまたは`development-preview`で管理します。
 
 ### Storybook用CSSの同期
 
