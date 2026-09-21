@@ -42,6 +42,12 @@ jobs:
       - name: Type-check
         run: npm run typecheck
 
+      - name: Type-check Storybook
+        run: npm run typecheck:storybook
+
+      - name: Build Storybook outside the repository
+        run: npm run build-storybook
+
       - name: Build registry
         run: npm run registry:build
 
@@ -84,6 +90,71 @@ jobs:
           test ! -e registry/styles
           test ! -e scripts/build-design-tokens.mjs
           test ! -e scripts/build-registry.mjs
+
+  storybook-styles:
+    name: Check Storybook styles against registry installation
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Serve local registry
+        env:
+          REGISTRY_BASE_URL: http://127.0.0.1:4173/r
+        run: |
+          npm run registry:serve > "$RUNNER_TEMP/registry-server.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/registry-server.pid"
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/r/design-system-styles.json > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat "$RUNNER_TEMP/registry-server.log"
+          exit 1
+      - name: Install styles into a temporary consumer and compare
+        run: |
+          cd "$RUNNER_TEMP"
+          npm create vite@latest storybook-style-consumer -- --template react-ts
+          app_dir="$RUNNER_TEMP/storybook-style-consumer"
+          cp "$GITHUB_WORKSPACE/components.json" "$app_dir/components.json"
+          node --input-type=module - "$app_dir" <<'NODE'
+          import { readFileSync, writeFileSync } from 'node:fs';
+          import { join } from 'node:path';
+          const app = process.argv[2];
+          const config = JSON.parse(readFileSync(join(app, 'components.json'), 'utf8'));
+          config.tailwind.css = 'src/index.css';
+          config.registries['@yukihi'] = 'http://127.0.0.1:4173/r/{name}.json';
+          writeFileSync(join(app, 'components.json'), JSON.stringify(config, null, 2) + '\n');
+          const tsconfig = JSON.parse(readFileSync(join(app, 'tsconfig.json'), 'utf8'));
+          tsconfig.compilerOptions = { paths: { '@/*': ['./src/*'] } };
+          writeFileSync(join(app, 'tsconfig.json'), JSON.stringify(tsconfig, null, 2) + '\n');
+          const appConfigPath = join(app, 'tsconfig.app.json');
+          const appConfig = JSON.parse(readFileSync(appConfigPath, 'utf8').replace(/\/\*[\s\S]*?\*\//g, ''));
+          appConfig.compilerOptions.paths = { '@/*': ['./src/*'] };
+          writeFileSync(appConfigPath, JSON.stringify(appConfig, null, 2) + '\n');
+          writeFileSync(join(app, 'vite.config.ts'), [
+            'import { fileURLToPath, URL } from "node:url";',
+            'import { defineConfig } from "vite";',
+            'export default defineConfig({ resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } } });',
+          ].join('\n') + '\n');
+          writeFileSync(join(app, 'src/index.css'), '@import "tailwindcss";\n');
+          NODE
+          cd "$app_dir"
+          "$GITHUB_WORKSPACE/node_modules/.bin/shadcn" add http://127.0.0.1:4173/r/design-system-styles.json --yes
+          diff -u "$GITHUB_WORKSPACE/.storybook/styles.css" src/index.css
+      - name: Show registry server log on failure
+        if: failure()
+        run: cat "$RUNNER_TEMP/registry-server.log"
+      - name: Stop registry server
+        if: always()
+        run: |
+          if test -f "$RUNNER_TEMP/registry-server.pid"; then
+            kill "$(cat "$RUNNER_TEMP/registry-server.pid")" || true
+          fi
 
   install-test:
     name: Install ${{ matrix.target }} into an empty app
