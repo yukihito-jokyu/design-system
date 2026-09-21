@@ -1,7 +1,7 @@
 # AppShell
 
 - Registry: `@yukihi/app-shell`
-- Source: `src/components/patterns/app-shell.tsx`
+- Source: `registry/new-york/patterns/app-shell/app-shell.tsx`
 
 ## 導入
 

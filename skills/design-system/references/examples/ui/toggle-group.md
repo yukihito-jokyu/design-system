@@ -1,7 +1,7 @@
 # ToggleGroup
 
 - Registry: `@yukihi/toggle-group`
-- Source: `src/components/ui/toggle-group.tsx`
+- Source: `registry/new-york/ui/toggle-group/toggle-group.tsx`
 
 ## 導入
 

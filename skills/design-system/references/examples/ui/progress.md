@@ -1,7 +1,7 @@
 # Progress
 
 - Registry: `@yukihi/progress`
-- Source: `src/components/ui/progress.tsx`
+- Source: `registry/new-york/ui/progress/progress.tsx`
 
 ## 導入
 

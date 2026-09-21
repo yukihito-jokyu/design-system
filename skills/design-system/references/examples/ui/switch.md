@@ -1,7 +1,7 @@
 # Switch
 
 - Registry: `@yukihi/switch`
-- Source: `src/components/ui/switch.tsx`
+- Source: `registry/new-york/ui/switch/switch.tsx`
 
 ## 導入
 

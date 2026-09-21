@@ -1,7 +1,7 @@
 # OrbitWelcomeCharacterIcon
 
 - Registry: `@yukihi/orbit-welcome-character-icon`
-- Source: `src/components/icons/OrbitWelcomeCharacterIcon.tsx`
+- Source: `registry/new-york/icons/orbit-welcome-character-icon/OrbitWelcomeCharacterIcon.tsx`
 
 ## 導入
 

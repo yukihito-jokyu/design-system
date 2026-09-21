@@ -1,7 +1,7 @@
 # Checkbox
 
 - Registry: `@yukihi/checkbox`
-- Source: `src/components/ui/checkbox.tsx`
+- Source: `registry/new-york/ui/checkbox/checkbox.tsx`
 
 ## 導入
 

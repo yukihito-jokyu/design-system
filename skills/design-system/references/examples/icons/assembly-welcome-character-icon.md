@@ -1,7 +1,7 @@
 # AssemblyWelcomeCharacterIcon
 
 - Registry: `@yukihi/assembly-welcome-character-icon`
-- Source: `src/components/icons/AssemblyWelcomeCharacterIcon.tsx`
+- Source: `registry/new-york/icons/assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon.tsx`
 
 ## 導入
 

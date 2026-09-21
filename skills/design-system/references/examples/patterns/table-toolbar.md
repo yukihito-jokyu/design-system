@@ -1,7 +1,7 @@
 # TableToolbar
 
 - Registry: `@yukihi/table-toolbar`
-- Source: `src/components/patterns/table-toolbar.tsx`
+- Source: `registry/new-york/patterns/table-toolbar/table-toolbar.tsx`
 
 ## 導入
 

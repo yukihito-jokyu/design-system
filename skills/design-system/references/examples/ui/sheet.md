@@ -1,7 +1,7 @@
 # Sheet
 
 - Registry: `@yukihi/sheet`
-- Source: `src/components/ui/sheet.tsx`
+- Source: `registry/new-york/ui/sheet/sheet.tsx`
 
 ## 導入
 

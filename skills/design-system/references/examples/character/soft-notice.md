@@ -1,7 +1,7 @@
 # SoftNotice
 
 - Registry: `@yukihi/soft-notice`
-- Source: `src/components/character/soft-notice.tsx`
+- Source: `registry/new-york/character/soft-notice/soft-notice.tsx`
 
 ## 導入
 

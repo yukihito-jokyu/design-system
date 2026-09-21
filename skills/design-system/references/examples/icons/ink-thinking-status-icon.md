@@ -1,7 +1,7 @@
 # InkThinkingStatusIcon
 
 - Registry: `@yukihi/ink-thinking-status-icon`
-- Source: `src/components/icons/InkThinkingStatusIcon.tsx`
+- Source: `registry/new-york/icons/ink-thinking-status-icon/InkThinkingStatusIcon.tsx`
 
 ## 導入
 

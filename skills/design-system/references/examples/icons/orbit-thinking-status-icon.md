@@ -1,7 +1,7 @@
 # OrbitThinkingStatusIcon
 
 - Registry: `@yukihi/orbit-thinking-status-icon`
-- Source: `src/components/icons/OrbitThinkingStatusIcon.tsx`
+- Source: `registry/new-york/icons/orbit-thinking-status-icon/OrbitThinkingStatusIcon.tsx`
 
 ## 導入
 

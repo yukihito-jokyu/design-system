@@ -1,7 +1,7 @@
 # InkWelcomeCharacterIcon
 
 - Registry: `@yukihi/ink-welcome-character-icon`
-- Source: `src/components/icons/InkWelcomeCharacterIcon.tsx`
+- Source: `registry/new-york/icons/ink-welcome-character-icon/InkWelcomeCharacterIcon.tsx`
 
 ## 導入
 

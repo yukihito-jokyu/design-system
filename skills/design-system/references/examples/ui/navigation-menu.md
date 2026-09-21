@@ -1,7 +1,7 @@
 # NavigationMenu
 
 - Registry: `@yukihi/navigation-menu`
-- Source: `src/components/ui/navigation-menu.tsx`
+- Source: `registry/new-york/ui/navigation-menu/navigation-menu.tsx`
 
 ## 導入
 

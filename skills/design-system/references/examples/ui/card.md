@@ -1,7 +1,7 @@
 # Card
 
 - Registry: `@yukihi/card`
-- Source: `src/components/ui/card.tsx`
+- Source: `registry/new-york/ui/card/card.tsx`
 
 ## 導入
 

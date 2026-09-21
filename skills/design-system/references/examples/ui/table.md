@@ -1,7 +1,7 @@
 # Table
 
 - Registry: `@yukihi/table`
-- Source: `src/components/ui/table.tsx`
+- Source: `registry/new-york/ui/table/table.tsx`
 
 ## 導入
 

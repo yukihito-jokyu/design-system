@@ -1,7 +1,7 @@
 # InkThinkingCharacterIcon
 
 - Registry: `@yukihi/ink-thinking-character-icon`
-- Source: `src/components/icons/InkThinkingCharacterIcon.tsx`
+- Source: `registry/new-york/icons/ink-thinking-character-icon/InkThinkingCharacterIcon.tsx`
 
 ## 導入
 

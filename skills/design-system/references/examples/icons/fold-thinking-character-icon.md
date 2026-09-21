@@ -1,7 +1,7 @@
 # FoldThinkingCharacterIcon
 
 - Registry: `@yukihi/fold-thinking-character-icon`
-- Source: `src/components/icons/FoldThinkingCharacterIcon.tsx`
+- Source: `registry/new-york/icons/fold-thinking-character-icon/FoldThinkingCharacterIcon.tsx`
 
 ## 導入
 

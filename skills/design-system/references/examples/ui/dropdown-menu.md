@@ -1,7 +1,7 @@
 # DropdownMenu
 
 - Registry: `@yukihi/dropdown-menu`
-- Source: `src/components/ui/dropdown-menu.tsx`
+- Source: `registry/new-york/ui/dropdown-menu/dropdown-menu.tsx`
 
 ## 導入
 

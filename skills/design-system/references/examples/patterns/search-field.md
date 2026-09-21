@@ -1,7 +1,7 @@
 # SearchField
 
 - Registry: `@yukihi/search-field`
-- Source: `src/components/patterns/search-field.tsx`
+- Source: `registry/new-york/patterns/search-field/search-field.tsx`
 
 ## 導入
 

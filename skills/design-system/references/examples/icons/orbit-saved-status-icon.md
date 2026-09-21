@@ -1,7 +1,7 @@
 # OrbitSavedStatusIcon
 
 - Registry: `@yukihi/orbit-saved-status-icon`
-- Source: `src/components/icons/OrbitSavedStatusIcon.tsx`
+- Source: `registry/new-york/icons/orbit-saved-status-icon/OrbitSavedStatusIcon.tsx`
 
 ## 導入
 

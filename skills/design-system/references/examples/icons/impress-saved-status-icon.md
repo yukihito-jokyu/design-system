@@ -1,7 +1,7 @@
 # ImpressSavedStatusIcon
 
 - Registry: `@yukihi/impress-saved-status-icon`
-- Source: `src/components/icons/ImpressSavedStatusIcon.tsx`
+- Source: `registry/new-york/icons/impress-saved-status-icon/ImpressSavedStatusIcon.tsx`
 
 ## 導入
 

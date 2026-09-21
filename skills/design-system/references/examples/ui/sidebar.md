@@ -1,7 +1,7 @@
 # Sidebar
 
 - Registry: `@yukihi/sidebar`
-- Source: `src/components/ui/sidebar.tsx`
+- Source: `registry/new-york/ui/sidebar/sidebar.tsx`
 
 ## 導入
 

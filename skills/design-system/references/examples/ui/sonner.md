@@ -1,7 +1,7 @@
 # Toaster
 
 - Registry: `@yukihi/sonner`
-- Source: `src/components/ui/sonner.tsx`
+- Source: `registry/new-york/ui/sonner/sonner.tsx`
 
 ## 導入
 

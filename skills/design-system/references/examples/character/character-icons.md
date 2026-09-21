@@ -1,7 +1,7 @@
 # CharacterIcon・FeatureIcon・StatusBubble
 
 - Registry: `@yukihi/character-icons`
-- Source: `src/components/character/index.tsx`
+- Source: `registry/new-york/character/character-icons/index.tsx`
 
 ## 導入
 

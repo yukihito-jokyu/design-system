@@ -1,7 +1,7 @@
 # FoldThinkingStatusIcon
 
 - Registry: `@yukihi/fold-thinking-status-icon`
-- Source: `src/components/icons/FoldThinkingStatusIcon.tsx`
+- Source: `registry/new-york/icons/fold-thinking-status-icon/FoldThinkingStatusIcon.tsx`
 
 ## 導入
 

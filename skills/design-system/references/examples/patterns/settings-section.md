@@ -1,7 +1,7 @@
 # SettingsSection
 
 - Registry: `@yukihi/settings-section`
-- Source: `src/components/patterns/settings-section.tsx`
+- Source: `registry/new-york/patterns/settings-section/settings-section.tsx`
 
 ## 導入
 

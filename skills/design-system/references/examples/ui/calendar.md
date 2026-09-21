@@ -1,7 +1,7 @@
 # Calendar
 
 - Registry: `@yukihi/calendar`
-- Source: `src/components/ui/calendar.tsx`
+- Source: `registry/new-york/ui/calendar/calendar.tsx`
 
 ## 導入
 

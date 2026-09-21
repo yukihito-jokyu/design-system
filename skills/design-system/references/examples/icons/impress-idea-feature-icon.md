@@ -1,7 +1,7 @@
 # ImpressIdeaFeatureIcon
 
 - Registry: `@yukihi/impress-idea-feature-icon`
-- Source: `src/components/icons/ImpressIdeaFeatureIcon.tsx`
+- Source: `registry/new-york/icons/impress-idea-feature-icon/ImpressIdeaFeatureIcon.tsx`
 
 ## 導入
 

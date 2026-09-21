@@ -1,7 +1,7 @@
 # FoldHistoryFeatureIcon
 
 - Registry: `@yukihi/fold-history-feature-icon`
-- Source: `src/components/icons/FoldHistoryFeatureIcon.tsx`
+- Source: `registry/new-york/icons/fold-history-feature-icon/FoldHistoryFeatureIcon.tsx`
 
 ## 導入
 

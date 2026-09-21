@@ -1,7 +1,7 @@
 # OrbitHistoryFeatureIcon
 
 - Registry: `@yukihi/orbit-history-feature-icon`
-- Source: `src/components/icons/OrbitHistoryFeatureIcon.tsx`
+- Source: `registry/new-york/icons/orbit-history-feature-icon/OrbitHistoryFeatureIcon.tsx`
 
 ## 導入
 

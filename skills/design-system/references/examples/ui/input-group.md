@@ -1,7 +1,7 @@
 # InputGroup
 
 - Registry: `@yukihi/input-group`
-- Source: `src/components/ui/input-group.tsx`
+- Source: `registry/new-york/ui/input-group/input-group.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # MessageBubble
 
 - Registry: `@yukihi/message-bubble`
-- Source: `src/components/character/message-bubble.tsx`
+- Source: `registry/new-york/character/message-bubble/message-bubble.tsx`
 
 ## 導入
 

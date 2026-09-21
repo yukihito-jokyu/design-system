@@ -1,7 +1,7 @@
 # InkIdeaFeatureIcon
 
 - Registry: `@yukihi/ink-idea-feature-icon`
-- Source: `src/components/icons/InkIdeaFeatureIcon.tsx`
+- Source: `registry/new-york/icons/ink-idea-feature-icon/InkIdeaFeatureIcon.tsx`
 
 ## 導入
 

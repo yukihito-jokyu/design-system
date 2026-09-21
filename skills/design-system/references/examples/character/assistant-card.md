@@ -1,7 +1,7 @@
 # AssistantCard
 
 - Registry: `@yukihi/assistant-card`
-- Source: `src/components/character/assistant-card.tsx`
+- Source: `registry/new-york/character/assistant-card/assistant-card.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # Accordion
 
 - Registry: `@yukihi/accordion`
-- Source: `src/components/ui/accordion.tsx`
+- Source: `registry/new-york/ui/accordion/accordion.tsx`
 
 ## 導入
 

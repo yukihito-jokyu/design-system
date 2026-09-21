@@ -1,7 +1,7 @@
 # EmptyState
 
 - Registry: `@yukihi/empty-state`
-- Source: `src/components/character/empty-state.tsx`
+- Source: `registry/new-york/character/empty-state/empty-state.tsx`
 
 ## 導入
 

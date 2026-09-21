@@ -1,7 +1,7 @@
 # ImpressSuccessCharacterIcon
 
 - Registry: `@yukihi/impress-success-character-icon`
-- Source: `src/components/icons/ImpressSuccessCharacterIcon.tsx`
+- Source: `registry/new-york/icons/impress-success-character-icon/ImpressSuccessCharacterIcon.tsx`
 
 ## 導入
 
