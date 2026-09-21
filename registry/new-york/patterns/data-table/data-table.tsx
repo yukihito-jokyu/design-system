@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   Table,
   TableHeader,
@@ -11,6 +11,7 @@ import {
 import { Button } from "@/registry/new-york/ui/button/button";
 import { Checkbox } from "@/registry/new-york/ui/checkbox/checkbox";
 import { TableToolbar } from "@/registry/new-york/patterns/table-toolbar/table-toolbar";
+import { EmptyState } from "@/registry/new-york/character/empty-state/empty-state";
 export type DataColumn<T> = {
   id: string;
   header: string;
@@ -28,6 +29,9 @@ export function DataTable<T>({
   filters,
   filterRow,
   onSelectionChange,
+  filterKey,
+  selectionScope = "page",
+  emptyAction,
 }: {
   rows: T[];
   columns: DataColumn<T>[];
@@ -37,11 +41,26 @@ export function DataTable<T>({
   filters?: ReactNode;
   filterRow?: (row: T) => boolean;
   onSelectionChange?: (ids: string[]) => void;
+  filterKey?: string | number;
+  selectionScope?: "page" | "filtered";
+  emptyAction?: ReactNode;
 }) {
   const [query, setQuery] = useState("");
-  const [page, setPage] = useState(1);
+  const [pageState, setPageState] = useState({ key: filterKey, value: 1 });
   const [sort, setSort] = useState<{ id: string; desc: boolean } | null>(null);
-  const [selection, setSelection] = useState<string[]>([]);
+  const [selectionState, setSelectionState] = useState({ key: filterKey, value: [] as string[] });
+  const previousFilterKey = useRef(filterKey);
+  const page = pageState.key === filterKey ? pageState.value : 1;
+  const selection = selectionState.key === filterKey ? selectionState.value : [];
+  const setPage = (value: number) => setPageState({ key: filterKey, value });
+  const setSelection = (value: string[]) => setSelectionState({ key: filterKey, value });
+
+  useEffect(() => {
+    if (previousFilterKey.current !== filterKey) {
+      previousFilterKey.current = filterKey;
+      onSelectionChange?.([]);
+    }
+  }, [filterKey, onSelectionChange]);
 
   const filtered = useMemo(() => {
     const list = rows.filter(
@@ -73,6 +92,13 @@ export function DataTable<T>({
   const current = Math.min(page, pages);
   const visible = filtered.slice((current - 1) * limit, current * limit);
   const selected = selection.filter((id) => rows.some((row) => getRowId(row) === id));
+  const selectable = selectionScope === "filtered" ? filtered : visible;
+  const selectableIds = selectable.map(getRowId);
+
+  const allSelected =
+    selectableIds.length > 0 && selectableIds.every((id) => selected.includes(id));
+
+  const someSelected = selectableIds.some((id) => selected.includes(id));
   return (
     <div className="stack">
       <TableToolbar
@@ -80,6 +106,8 @@ export function DataTable<T>({
         onQueryChange={(q) => {
           setQuery(q);
           setPage(1);
+          setSelection([]);
+          onSelectionChange?.([]);
         }}
         count={filtered.length}
       >
@@ -90,7 +118,23 @@ export function DataTable<T>({
         <TableCaption>{caption}</TableCaption>
         <TableHeader>
           <TableRow>
-            {onSelectionChange && <TableHead>選択</TableHead>}
+            {onSelectionChange && (
+              <TableHead>
+                <Checkbox
+                  aria-label={`${selectionScope === "page" ? "表示中" : "絞り込み後"}の項目をすべて選択`}
+                  disabled={selectableIds.length === 0}
+                  checked={allSelected ? true : someSelected ? "indeterminate" : false}
+                  onCheckedChange={(checked) => {
+                    const next = checked
+                      ? [...new Set([...selected, ...selectableIds])]
+                      : selected.filter((id) => !selectableIds.includes(id));
+
+                    setSelection(next);
+                    onSelectionChange(next);
+                  }}
+                />
+              </TableHead>
+            )}
             {columns.map((column) => (
               <TableHead
                 key={column.id}
@@ -147,8 +191,20 @@ export function DataTable<T>({
           ))}
           {!visible.length && (
             <TableRow>
-              <TableCell colSpan={columns.length + (onSelectionChange ? 1 : 0)}>
-                一致する項目がありません。検索や絞り込みを変更してください。
+              <TableCell
+                colSpan={columns.length + (onSelectionChange ? 1 : 0)}
+                className="whitespace-normal"
+              >
+                <EmptyState
+                  kind={query ? "search" : filterRow ? "filter" : "initial"}
+                  title={query ? "検索に一致する項目がありません" : "項目がありません"}
+                  description={
+                    query || filterRow
+                      ? "検索や絞り込みを変更してください。"
+                      : "項目を作成すると、ここに表示されます。"
+                  }
+                  action={emptyAction}
+                />
               </TableCell>
             </TableRow>
           )}
