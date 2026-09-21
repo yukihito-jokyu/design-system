@@ -1,7 +1,7 @@
 # FoldSavedStatusIcon
 
 - Registry: `@yukihi/fold-saved-status-icon`
-- Source: `src/components/icons/FoldSavedStatusIcon.tsx`
+- Source: `registry/new-york/icons/fold-saved-status-icon/FoldSavedStatusIcon.tsx`
 
 ## 導入
 

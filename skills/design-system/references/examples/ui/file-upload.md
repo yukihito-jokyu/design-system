@@ -1,7 +1,7 @@
 # FileUpload
 
 - Registry: `@yukihi/file-upload`
-- Source: `src/components/ui/file-upload.tsx`
+- Source: `registry/new-york/ui/file-upload/file-upload.tsx`
 
 ## 導入
 

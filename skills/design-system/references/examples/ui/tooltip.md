@@ -1,7 +1,7 @@
 # Tooltip
 
 - Registry: `@yukihi/tooltip`
-- Source: `src/components/ui/tooltip.tsx`
+- Source: `registry/new-york/ui/tooltip/tooltip.tsx`
 
 ## 導入
 

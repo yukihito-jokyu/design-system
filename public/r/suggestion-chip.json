@@ -5,15 +5,15 @@
   "description": "Design system character component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/button.json",
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
+    "@yukihi/button",
+    "@yukihi/design-system-styles"
   ],
   "files": [
     {
-      "path": "src/components/character/suggestion-chip.tsx",
-      "content": "import { Button } from \"../ui/button\";\n\nexport function SuggestionChip({\n  label,\n  onSelect,\n  disabled,\n}: {\n  label: string;\n  onSelect: () => void;\n  disabled?: boolean;\n}) {\n  return (\n    <Button\n      type=\"button\"\n      variant=\"secondary\"\n      className=\"rounded-pill\"\n      disabled={disabled}\n      onClick={onSelect}\n    >\n      {label}\n    </Button>\n  );\n}\n",
+      "path": "registry/new-york/character/suggestion-chip/suggestion-chip.tsx",
+      "content": "import { Button } from \"@/registry/new-york/ui/button/button\";\n\nexport function SuggestionChip({\n  label,\n  onSelect,\n  disabled,\n}: {\n  label: string;\n  onSelect: () => void;\n  disabled?: boolean;\n}) {\n  return (\n    <Button\n      type=\"button\"\n      variant=\"secondary\"\n      className=\"rounded-pill\"\n      disabled={disabled}\n      onClick={onSelect}\n    >\n      {label}\n    </Button>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/character/suggestion-chip.tsx"
+      "target": "@components/character/suggestion-chip.tsx"
     }
   ],
   "type": "registry:component"

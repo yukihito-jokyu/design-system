@@ -1,7 +1,7 @@
 # Toggle
 
 - Registry: `@yukihi/toggle`
-- Source: `src/components/ui/toggle.tsx`
+- Source: `registry/new-york/ui/toggle/toggle.tsx`
 
 ## 導入
 

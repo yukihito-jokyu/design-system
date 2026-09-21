@@ -1,7 +1,7 @@
 # MonolithThinkingCharacterIcon
 
 - Registry: `@yukihi/monolith-thinking-character-icon`
-- Source: `src/components/icons/MonolithThinkingCharacterIcon.tsx`
+- Source: `registry/new-york/icons/monolith-thinking-character-icon/MonolithThinkingCharacterIcon.tsx`
 
 ## 導入
 

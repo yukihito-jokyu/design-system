@@ -1,7 +1,7 @@
 # Input
 
 - Registry: `@yukihi/input`
-- Source: `src/components/ui/input.tsx`
+- Source: `registry/new-york/ui/input/input.tsx`
 
 ## 導入
 

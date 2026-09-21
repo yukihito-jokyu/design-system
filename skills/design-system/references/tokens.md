@@ -1,7 +1,7 @@
 # Tokenと視覚仕様
 
-- `tokens/`を共通値の正本とする。
-- `tokens/foundation.json`の`decided`と`proposed`を区別する。
+- `registry/new-york/styles/registry.json`の`design-system-styles`項目を共通値とCSSの正本とする。
+- 旧Token JSONの`decided`・`proposed`区分は移行済みである。未承認値を承認済みとして扱わず、値の変更は別途レビューする。
 - 配色は`milk`、`cream`、`neutral`、`sage`、`lavender`から選ぶ。
 - 面・文字・枠・アクセントを同じ配色セットで連動させる。
 - 操作高36px、44px、48pxを維持する。

@@ -1,7 +1,7 @@
 # FormField
 
 - Registry: `@yukihi/form-field`
-- Source: `src/components/patterns/form-field.tsx`
+- Source: `registry/new-york/patterns/form-field/form-field.tsx`
 
 ## 導入
 

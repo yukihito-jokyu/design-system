@@ -1,7 +1,7 @@
 # AssemblyDocumentFeatureIcon
 
 - Registry: `@yukihi/assembly-document-feature-icon`
-- Source: `src/components/icons/AssemblyDocumentFeatureIcon.tsx`
+- Source: `registry/new-york/icons/assembly-document-feature-icon/AssemblyDocumentFeatureIcon.tsx`
 
 ## 導入
 

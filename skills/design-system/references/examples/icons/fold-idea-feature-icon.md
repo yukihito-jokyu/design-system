@@ -1,7 +1,7 @@
 # FoldIdeaFeatureIcon
 
 - Registry: `@yukihi/fold-idea-feature-icon`
-- Source: `src/components/icons/FoldIdeaFeatureIcon.tsx`
+- Source: `registry/new-york/icons/fold-idea-feature-icon/FoldIdeaFeatureIcon.tsx`
 
 ## 導入
 

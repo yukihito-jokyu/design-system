@@ -5,14 +5,14 @@
   "description": "Design system patterns component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
+    "@yukihi/design-system-styles"
   ],
   "files": [
     {
-      "path": "src/components/patterns/page-header.tsx",
+      "path": "registry/new-york/patterns/page-header/page-header.tsx",
       "content": "import type { ReactNode } from \"react\";\n\nexport function PageHeader({\n  title,\n  description,\n  actions,\n}: {\n  title: string;\n  description?: string;\n  actions?: ReactNode;\n}) {\n  return (\n    <header className=\"pattern-page-header\">\n      <div>\n        <h2>{title}</h2>\n        {description && <p className=\"note\">{description}</p>}\n      </div>\n      {actions && <div className=\"actions\">{actions}</div>}\n    </header>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/patterns/page-header.tsx"
+      "target": "@components/patterns/page-header.tsx"
     }
   ],
   "type": "registry:component"

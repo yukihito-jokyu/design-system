@@ -1,7 +1,7 @@
 # DesignThemeProvider
 
 - Registry: `@yukihi/theme-provider`
-- Source: `src/components/theme-provider.tsx`
+- Source: `registry/new-york/components/theme-provider/theme-provider.tsx`
 
 ## 導入
 
@@ -13,7 +13,7 @@ npx shadcn@latest add @yukihi/theme-provider
 
 ```css
 @import "tailwindcss";
-@import "@/components/design-system/styles.css";
+/* 共通スタイルはRegistry導入時にshadcn CLIが反映します。 */
 ```
 
 ## 使用例

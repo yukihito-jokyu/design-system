@@ -1,7 +1,7 @@
 # Combobox
 
 - Registry: `@yukihi/combobox`
-- Source: `src/components/ui/combobox.tsx`
+- Source: `registry/new-york/ui/combobox/combobox.tsx`
 
 ## 導入
 

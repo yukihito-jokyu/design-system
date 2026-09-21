@@ -1,7 +1,7 @@
 # InkHistoryFeatureIcon
 
 - Registry: `@yukihi/ink-history-feature-icon`
-- Source: `src/components/icons/InkHistoryFeatureIcon.tsx`
+- Source: `registry/new-york/icons/ink-history-feature-icon/InkHistoryFeatureIcon.tsx`
 
 ## 導入
 

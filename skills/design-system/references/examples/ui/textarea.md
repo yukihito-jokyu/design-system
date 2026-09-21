@@ -1,7 +1,7 @@
 # Textarea
 
 - Registry: `@yukihi/textarea`
-- Source: `src/components/ui/textarea.tsx`
+- Source: `registry/new-york/ui/textarea/textarea.tsx`
 
 ## 導入
 

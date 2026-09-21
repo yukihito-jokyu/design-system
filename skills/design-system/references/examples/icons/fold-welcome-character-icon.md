@@ -1,7 +1,7 @@
 # FoldWelcomeCharacterIcon
 
 - Registry: `@yukihi/fold-welcome-character-icon`
-- Source: `src/components/icons/FoldWelcomeCharacterIcon.tsx`
+- Source: `registry/new-york/icons/fold-welcome-character-icon/FoldWelcomeCharacterIcon.tsx`
 
 ## 導入
 

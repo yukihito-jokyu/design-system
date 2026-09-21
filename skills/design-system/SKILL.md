@@ -19,7 +19,7 @@ description: React UIをYukihito Design SystemのRegistry、既存Pattern、Foun
 
 - 既存Patternで表現できる画面を低水準部品から作り直さない。
 - Tokenにある共通値をハードコードしない。
-- `foundation.json`の`decided`だけを承認済みとして扱い、`proposed`を自動採用しない。
+- `registry/new-york/styles/registry.json`の承認済み値を参照し、値の変更を推測で行わない。
 - SVGの形、固有色、既存の名前付きexportを変更しない。
 - Portal配色、disabled、invalid、loading、IME、フォーカス復帰、Reduced Motionを維持する。
 - `@yukihi/design-system`を無条件に導入せず、必要な項目だけを選ぶ。

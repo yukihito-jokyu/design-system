@@ -1,7 +1,7 @@
 # Alert
 
 - Registry: `@yukihi/alert`
-- Source: `src/components/ui/alert.tsx`
+- Source: `registry/new-york/ui/alert/alert.tsx`
 
 ## 導入
 

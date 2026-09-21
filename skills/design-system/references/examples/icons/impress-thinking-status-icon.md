@@ -1,7 +1,7 @@
 # ImpressThinkingStatusIcon
 
 - Registry: `@yukihi/impress-thinking-status-icon`
-- Source: `src/components/icons/ImpressThinkingStatusIcon.tsx`
+- Source: `registry/new-york/icons/impress-thinking-status-icon/ImpressThinkingStatusIcon.tsx`
 
 ## 導入
 

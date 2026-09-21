@@ -5,7 +5,7 @@
 この文書は、デザインシステムを継続的に検査・配布・導入するための手順です。
 
 ```text
-GitHub（ソース、tokens、registry.json）
+GitHub（registry/new-york、registry.json、public/r）
   ↓ CI（検査、生成、空アプリへの導入検証）
 HTTPS（https://design.yukihi.tokyo/v1/r/）
   ↓ @yukihi名前空間
@@ -18,11 +18,10 @@ Cloudflareで管理する`design.yukihi.tokyo`を正式な配信先とします�
 
 GitHubでは次を管理します。
 
-- `src/`：承認済みコンポーネント、Pattern、Character、SVG
-- `tokens/`：配色と寸法の正本
-- `registry.json`：Registry項目と依存関係
-- `registry/styles/`：配布用Token CSS、Tailwind接続、共通CSS
-- `scripts/`：Token、Registryの生成とローカル配信
+- `registry/new-york/`：承認済みコンポーネント、Pattern、Character、SVG、hook、utility
+- `registry/new-york/styles/registry.json`：Tokenと共通CSSの正本
+- ルートと分類別の`registry.json`：Registry項目と依存関係
+- `scripts/serve-registry.mjs`：ローカル配信とCI検証
 - `public/r/`：HTTPS配信へ渡す生成済みJSON
 - README、運用手順、第三者ライセンス表記
 
@@ -74,12 +73,11 @@ npx shadcn@latest add <GitHub-owner>/<repository>/button
 
 ```sh
 npm ci
-npm run tokens
 npm run typecheck
 npm run registry:build
 ```
 
-`REGISTRY_BASE_URL`は項目JSONを置くディレクトリそのものです。末尾の`/`は省略できます。正しい依存URLは次です。
+公開用JSONの`@yukihi`は次のURLへ解決します。`REGISTRY_BASE_URL`はローカル配信時にだけbaseの名前空間を差し替え、Git管理する生成JSONは変更しません。
 
 ```text
 https://design.yukihi.tokyo/v1/r/button.json
@@ -97,9 +95,9 @@ npx shadcn@latest view ./public/r/button.json
 ### 詰まりやすい点
 
 - CIと同じ`npm ci`を使う。ロックファイルと`package.json`が不一致なら失敗する
-- Token変更後に`npm run tokens`を忘れると配布CSSが古いままになる
-- 別環境へ配信する場合だけ`REGISTRY_BASE_URL`で配信先を上書きする
-- `registry.json`と`public/r`を手編集しない。生成スクリプトを修正して再生成する
+- Tokenと共通CSSは分類別`registry.json`の`cssVars`・`css`を編集する
+- ローカル導入検証では`REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve`を使う
+- `public/r`を手編集しない。原本を変更して`npm run registry:build`で再生成する
 - 生成JSON内に`127.0.0.1`、`localhost`、`example.com`が残っていないことを本番配信前に検査する
 
 ## 5. CI
@@ -112,49 +110,49 @@ Pull Request検証と本番配信を別ジョブにします。本番配信は�
 npm ci
 npm run fmt:check
 npm run lint
-npm run tokens
-git diff --exit-code
 npm run typecheck
 npm run registry:build
 git diff --exit-code
 ```
 
-最初の`git diff`はToken生成漏れ、次の`git diff`はRegistry生成物のコミット漏れを検出します。生成物をGit管理しない方針に変える場合は、後者をSchema検査へ置き換え、方針を混在させません。
+`git diff`はGit管理するRegistry生成物のコミット漏れを検出します。生成物をGit管理しない方針には変更しません。
 
 ### 5.2 空アプリへの導入検証
 
-元リポジトリの`src`や`node_modules`を参照できないCI一時ディレクトリに、React + TypeScript + Tailwind v4アプリを作ります。次の3系統を別々に検証します。
+元リポジトリの原本や`node_modules`を参照できないCI一時ディレクトリに、React + TypeScript + Tailwind v4アプリを作ります。次の系統を別々に検証します。
 
 1. `design-system`全体の導入、型検査、production build
 2. `button`など小さいセットの導入、型検査、production build
 3. 個別アイコン1点の導入。他の47点が存在しないことの確認
+4. アイコンbarrel、hook、ThemeProvider、Character、Patternの個別導入
+5. `registry:base`のURLを指定した新規`init`とRadix実装・CSS・ビルド
 
 全体導入の概略です。先にRegistryをCI内のHTTPサーバーで配信しておきます。
 
 ```sh
-npm create vite@latest "$RUNNER_TEMP/registry-consumer" -- --template react-ts
+cd "$RUNNER_TEMP"
+npx shadcn@latest init --template vite --base radix --no-monorepo --preset nova --name registry-consumer --yes
 cd "$RUNNER_TEMP/registry-consumer"
-npm install
-npm install tailwindcss @tailwindcss/vite
-npx shadcn@latest init --base radix --yes
+npx shadcn@latest registry add '@yukihi=http://127.0.0.1:4173/r/{name}.json'
 npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json --yes
 npm run build
 ```
 
-導入アプリのCSSには次を追加します。
+導入アプリのCSSにはTailwindを読み込みます。Registry項目のToken・共通CSSはshadcn CLIが反映します。
 
 ```css
 @import "tailwindcss";
-@import "@/components/design-system/styles.css";
 ```
 
 ### 詰まりやすい点
 
 - shadcnの既定値に頼らず、必ず`--base radix`を明示する
+- 初期化済みアプリへの`add`では、依存解決より先に`@yukihi`を登録する。base URLだけを渡すと公開URLを参照する場合がある
+- `add`は既存styleを維持する。`new-york`固定は新規`init`で確認する
 - Base UI構成ではRadix用`asChild`が変換され、型エラーになる可能性がある
 - JSONファイルのSchema確認だけで成功としない。利用者と同じHTTP URLから`add`する
 - 一時アプリが元リポジトリを参照できると、欠落依存を見逃す
-- CSS import忘れはビルドで発見できないことがあるため、画面でも確認する
+- Registry導入後のCSS変数、全palette、Portal、Reduced Motionを画面でも確認する
 - 個別アイコンでは対象SVGと`IconFrame`以外が入っていないことを検査する
 
 ### 5.3 ブラウザ検証
@@ -221,11 +219,12 @@ npx shadcn@latest list https://design.yukihi.tokyo/v1/r/registry.json
 npx shadcn@latest view https://design.yukihi.tokyo/v1/r/button.json
 ```
 
-別の空アプリから、公開URLで最終導入確認します。
+別の空ディレクトリから、公開URLをbaseに指定して最終導入確認します。
 
 ```sh
-npx shadcn@latest init --base radix
-npx shadcn@latest add https://design.yukihi.tokyo/v1/r/button.json
+npx shadcn@latest init https://design.yukihi.tokyo/v1/r/design-system.json --template vite --base radix --name registry-consumer --yes
+cd registry-consumer
+npm run build
 ```
 
 ### 詰まりやすい点
@@ -233,7 +232,7 @@ npx shadcn@latest add https://design.yukihi.tokyo/v1/r/button.json
 - SPAフォールバックにより、存在しないJSONが`200 text/html`にならないようにする。存在しない項目は404を返す
 - JSONの`Content-Type`、TLS証明書、DNS、社内プロキシを確認する
 - 同じ`v1` URLを更新するため、長すぎるCDNキャッシュを避け、無効化手順を決める
-- JSON内の`registryDependencies`がlocalhostではなく本番URLか確認する
+- 生成JSON内の`config.registries.@yukihi`がlocalhostではなく本番URLか確認する
 - 非公開Registryでは秘密をGitやJSONへ書かず、headerと環境変数で認証する
 - 直前の正常な`public/r`へ戻せるロールバック手順を用意する
 
@@ -350,13 +349,12 @@ npx shadcn@latest add @yukihi/character-icons
 npx shadcn@latest add @yukihi/design-system
 ```
 
-全体導入は114ファイルと関連パッケージを追加します。新規アプリ、検証アプリ、全機能が必要なアプリに限定し、通常は必要なPatternまたは部品だけを導入します。
+全体導入は100以上のファイルと関連パッケージを追加します。新規アプリ、検証アプリ、全機能が必要なアプリに限定し、通常は必要なPatternまたは部品だけを導入します。
 
-導入後、アプリのTailwind CSSで共通スタイルを1回読み込みます。
+アプリのCSSではTailwindを読み込みます。共通スタイルはCLIが直接反映します。
 
 ```css
 @import "tailwindcss";
-@import "@/components/design-system/styles.css";
 ```
 
 利用範囲をProviderで囲みます。
@@ -413,7 +411,7 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 - 導入前に `npx shadcn@latest view @yukihi/<item>` で内容と依存を確認する。
 - Pattern、Foundation、独自合成の順で検討する。
 - 共通値をハードコードせず、導入済みTokenを使用する。
-- `tokens/foundation.json`の`decided`と`proposed`を混同しない。
+- Tokenの正本`registry/new-york/styles/registry.json`に移した値を不用意に変更しない。
 - SVGの形、固有色、名前付きexportを変更しない。
 - Portal、disabled、invalid、loading、IME、フォーカス復帰、Reduced Motionを維持する。
 - `@yukihi/design-system`を無条件に導入せず、必要項目だけ導入する。
@@ -432,7 +430,7 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 
 ### CI
 
-- [ ] install、format、lint、Token同期、型検査が成功する
+- [ ] install、format、lint、型検査、Registry生成物の同期が成功する
 - [ ] 本番URLでRegistryを生成する
 - [ ] JSONにlocalhostや仮ドメインが残っていない
 - [ ] 全体、小規模、個別アイコンの導入が成功する
@@ -450,24 +448,24 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 
 - [ ] `@yukihi`登録手順がある
 - [ ] Tailwind v4と`--base radix`を明記した
-- [ ] CSS importとProviderの例がある
+- [ ] CSSへのRegistry自動反映とProviderの例がある
 - [ ] 検索、確認、個別導入方法がある
 - [ ] 破壊的変更の通知先と移行方法がある
 
 ## 12. 障害の切り分け
 
-| 症状                           | 最初に確認する場所                          |
-| ------------------------------ | ------------------------------------------- |
-| `@yukihi/button`が見つからない | `components.json`、`{name}`、公開URL        |
-| JSON parse error               | URLが404ページやSPAのHTMLを返していないか   |
-| 依存項目だけ取得できない       | `registryDependencies`が本番URLか           |
-| `asChild`付近の型エラー        | `shadcn init --base radix`を使用したか      |
-| Tokenが反映されない            | `design-system/styles.css`を読み込んだか    |
-| Portalだけ色が違う             | ProviderとPortalの`data-ds-base`継承        |
-| importが解決しない             | `components.json`と`tsconfig.json`のalias   |
-| 個別アイコンで全点が入る       | `character-icons`でなく個別itemを指定したか |
-| 更新後も古い                   | CDNキャッシュと配信中JSON                   |
-| 利用アプリの変更が消えた       | `add`時に既存ファイルを上書きしていないか   |
+| 症状                           | 最初に確認する場所                                |
+| ------------------------------ | ------------------------------------------------- |
+| `@yukihi/button`が見つからない | `components.json`、`{name}`、公開URL              |
+| JSON parse error               | URLが404ページやSPAのHTMLを返していないか         |
+| 依存項目だけ取得できない       | `registryDependencies`が本番URLか                 |
+| `asChild`付近の型エラー        | `shadcn init --base radix`を使用したか            |
+| Tokenが反映されない            | `design-system-styles`が導入されCSSへ反映されたか |
+| Portalだけ色が違う             | ProviderとPortalの`data-ds-base`継承              |
+| importが解決しない             | `components.json`と`tsconfig.json`のalias         |
+| 個別アイコンで全点が入る       | `character-icons`でなく個別itemを指定したか       |
+| 更新後も古い                   | CDNキャッシュと配信中JSON                         |
+| 利用アプリの変更が消えた       | `add`時に既存ファイルを上書きしていないか         |
 
 報告時は、秘密情報を除いて、実行コマンド、Node.js・shadcnバージョン、`components.json`、対象URL、`shadcn view`結果、エラー、導入前後の差分を添えます。
 

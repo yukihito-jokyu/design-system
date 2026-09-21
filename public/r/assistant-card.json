@@ -5,17 +5,17 @@
   "description": "Design system character component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/card.json",
-    "https://design.yukihi.tokyo/v1/r/character-icons.json",
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/suggestion-chip.json"
+    "@yukihi/card",
+    "@yukihi/character-icons",
+    "@yukihi/design-system-styles",
+    "@yukihi/suggestion-chip"
   ],
   "files": [
     {
-      "path": "src/components/character/assistant-card.tsx",
-      "content": "import type { ReactNode } from \"react\";\nimport { Card, CardHeader, CardTitle, CardContent } from \"../ui/card\";\nimport { CharacterIcon, StatusBubble, type IconDirection } from \"./index\";\nimport { SuggestionChip } from \"./suggestion-chip\";\n\nexport function AssistantCard({\n  title,\n  body,\n  suggestions = [],\n  status,\n  direction = \"fold\",\n}: {\n  title: string;\n  body: ReactNode;\n  suggestions?: { label: string; onSelect: () => void }[];\n  status?: \"thinking\" | \"saved\";\n  direction?: IconDirection;\n}) {\n  return (\n    <Card>\n      <CardHeader>\n        <div className=\"actions\">\n          <CharacterIcon\n            direction={direction}\n            expression={status === \"thinking\" ? \"thinking\" : \"welcome\"}\n          />\n          <CardTitle>{title}</CardTitle>\n        </div>\n      </CardHeader>\n      <CardContent className=\"stack\">\n        <div>{body}</div>\n        {status && <StatusBubble direction={direction} status={status} />}\n        <div className=\"actions\">\n          {suggestions.map((suggestion, i) => (\n            <SuggestionChip key={i} {...suggestion} />\n          ))}\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "path": "registry/new-york/character/assistant-card/assistant-card.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Card, CardHeader, CardTitle, CardContent } from \"@/registry/new-york/ui/card/card\";\nimport {\n  CharacterIcon,\n  StatusBubble,\n  type IconDirection,\n} from \"@/registry/new-york/character/character-icons/index\";\nimport { SuggestionChip } from \"@/registry/new-york/character/suggestion-chip/suggestion-chip\";\n\nexport function AssistantCard({\n  title,\n  body,\n  suggestions = [],\n  status,\n  direction = \"fold\",\n}: {\n  title: string;\n  body: ReactNode;\n  suggestions?: { label: string; onSelect: () => void }[];\n  status?: \"thinking\" | \"saved\";\n  direction?: IconDirection;\n}) {\n  return (\n    <Card>\n      <CardHeader>\n        <div className=\"actions\">\n          <CharacterIcon\n            direction={direction}\n            expression={status === \"thinking\" ? \"thinking\" : \"welcome\"}\n          />\n          <CardTitle>{title}</CardTitle>\n        </div>\n      </CardHeader>\n      <CardContent className=\"stack\">\n        <div>{body}</div>\n        {status && <StatusBubble direction={direction} status={status} />}\n        <div className=\"actions\">\n          {suggestions.map((suggestion, i) => (\n            <SuggestionChip key={i} {...suggestion} />\n          ))}\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/character/assistant-card.tsx"
+      "target": "@components/character/assistant-card.tsx"
     }
   ],
   "type": "registry:component"

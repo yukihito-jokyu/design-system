@@ -1,7 +1,7 @@
 # AssemblyHistoryFeatureIcon
 
 - Registry: `@yukihi/assembly-history-feature-icon`
-- Source: `src/components/icons/AssemblyHistoryFeatureIcon.tsx`
+- Source: `registry/new-york/icons/assembly-history-feature-icon/AssemblyHistoryFeatureIcon.tsx`
 
 ## 導入
 

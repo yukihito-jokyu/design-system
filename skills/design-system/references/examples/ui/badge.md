@@ -1,7 +1,7 @@
 # Badge
 
 - Registry: `@yukihi/badge`
-- Source: `src/components/ui/badge.tsx`
+- Source: `registry/new-york/ui/badge/badge.tsx`
 
 ## 導入
 

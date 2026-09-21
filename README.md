@@ -4,20 +4,18 @@
 
 ## 構成
 
-- `src/components/`：UI、Character、Pattern、個別アイコン、ThemeProvider
-- `src/hooks/`、`src/lib/`：部品が使用する補助コード
-- `src/styles.css`：部品とPatternの共通スタイル
-- `tokens/`：配色・寸法の正本
-- `registry/styles/`：生成したToken CSSとTailwind接続
-- `scripts/build-design-tokens.mjs`：Tokenの再生成
+- `registry/new-york/`：UI、Character、Pattern、個別アイコン、hook、utilityの原本
+- `registry/new-york/styles/registry.json`：Tokenと共通CSSの正本
+- `registry.json`と各分類の`registry.json`：配布項目と依存の定義
+- `public/r/`：Git管理する生成済みRegistry JSON
 
 ```sh
 npm ci
 npm run typecheck
-npm run tokens
+npm run registry:build
 ```
 
-ReactとTailwind v4を用いるアプリで利用します。スタイルは `src/styles.css`、テーマの切り替えは `DesignThemeProvider` を使用します。
+ReactとTailwind v4を用いるアプリで利用します。共通スタイルはRegistry導入時にCSSへ反映され、テーマの切り替えは`DesignThemeProvider`を使用します。
 
 ## Registryをローカルで使う
 
@@ -26,19 +24,21 @@ Registryと導入先の両方で、shadcnをRadix構成にします。現行CLI�
 ```sh
 # このリポジトリ
 npm ci
-REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:build
-npm run registry:serve
+npm run registry:build
+REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve
 
-# React + TypeScript + Tailwind v4の導入先（別ターミナル）
-npx shadcn@latest init --base radix
+# 新規Viteプロジェクトをbaseから初期化（別ターミナル、一時ディレクトリ）
+npx shadcn@latest init http://127.0.0.1:4173/r/design-system.json --template vite --base radix --name my-app --yes
+
+# 既存のRadix構成アプリへ個別項目を追加する場合
+npx shadcn@latest registry add '@yukihi=http://127.0.0.1:4173/r/{name}.json'
 npx shadcn@latest add http://127.0.0.1:4173/r/button.json
 ```
 
-導入先のTailwind CSSファイルで、Tailwindの後に共通スタイルを1回読み込みます。`body`や見出しへデザインシステムの見た目は適用されません。
+導入先のTailwind CSSファイルにはTailwindを読み込みます。Tokenと共通スタイルはCLIが追加します。`body`や見出しへデザインシステムの見た目は適用されません。
 
 ```css
 @import "tailwindcss";
-@import "@/components/design-system/styles.css";
 ```
 
 ```tsx
@@ -60,16 +60,18 @@ export function Example() {
 npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json
 ```
 
+既存アプリへの全体導入でも、先に上の`registry add`を実行します。`add`は既存のstyleを維持するため、`new-york`固定が必要な新規アプリはbase URLを指定した`init`を使います。
+
 個別SVGはそれぞれ独立項目です。たとえば次の導入は`InkIdeaFeatureIcon`と`IconFrame`だけを追加し、他の47点を追加しません。
 
 ```sh
 npx shadcn@latest add http://127.0.0.1:4173/r/ink-idea-feature-icon.json
 ```
 
-標準の公開先は`https://design.yukihi.tokyo/v1/r`です。別のURLやポートで配信する場合は、依存URLをその配信先にしてから生成します。
+標準の公開先は`https://design.yukihi.tokyo/v1/r`です。ローカル検証時だけ、`serve-registry.mjs`が`design-system`の名前空間を`REGISTRY_BASE_URL`へ切り替えます。Git管理する生成JSONは公開URLのままです。
 
 ```sh
-REGISTRY_BASE_URL=https://別の配信先.example/v1/r npm run registry:build
+REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve
 ```
 
 GitHub・CI・Cloudflare Workers配信・`@yukihi`名前空間を含む正式運用は、[Registry運用・導入手順書](docs/registry-operations.md)を参照してください。
@@ -85,7 +87,7 @@ npx skills add yukihito-jokyu/design-system --skill design-system
 Skillにはコンポーネント選択、Token、検証ルールと、Registryで導入できる各コンポーネントの使用例があります。AIは対象を決めた後、`skills/design-system/references/examples/`にある同名ファイルを参照します。
 
 - 新規UIを作る前にRegistryの既存Foundation・Character・Patternを検索し、合成で対応する。
-- 配色・寸法の共通値は`tokens/`を正本とし、`foundation.json`の`decided`と`proposed`を混同しない。
+- 配色・寸法の共通値は`registry/new-york/styles/registry.json`を正本とし、移行前の値を維持する。
 - SVGの形・固有色、StatusBubbleの独自配色、既存の名前付きexportを変更しない。
 - Portal部品は`DesignThemeProvider`のテーマ継承を維持し、disabled、invalid、loading、IME、フォーカス復帰、Reduced Motionを退行させない。
 

@@ -1,7 +1,7 @@
 # Popover
 
 - Registry: `@yukihi/popover`
-- Source: `src/components/ui/popover.tsx`
+- Source: `registry/new-york/ui/popover/popover.tsx`
 
 ## 導入
 

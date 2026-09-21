@@ -1,7 +1,7 @@
 # InkSavedStatusIcon
 
 - Registry: `@yukihi/ink-saved-status-icon`
-- Source: `src/components/icons/InkSavedStatusIcon.tsx`
+- Source: `registry/new-york/icons/ink-saved-status-icon/InkSavedStatusIcon.tsx`
 
 ## 導入
 

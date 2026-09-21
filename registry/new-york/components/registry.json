@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Design Theme Provider",
+      "description": "Scoped theme and portal color inheritance.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "theme-provider/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/theme-provider.tsx"
+        }
+      ]
+    }
+  ]
+}

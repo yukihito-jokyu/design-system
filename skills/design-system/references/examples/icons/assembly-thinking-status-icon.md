@@ -1,7 +1,7 @@
 # AssemblyThinkingStatusIcon
 
 - Registry: `@yukihi/assembly-thinking-status-icon`
-- Source: `src/components/icons/AssemblyThinkingStatusIcon.tsx`
+- Source: `registry/new-york/icons/assembly-thinking-status-icon/AssemblyThinkingStatusIcon.tsx`
 
 ## 導入
 

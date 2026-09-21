@@ -1,7 +1,7 @@
 # MonolithSuccessCharacterIcon
 
 - Registry: `@yukihi/monolith-success-character-icon`
-- Source: `src/components/icons/MonolithSuccessCharacterIcon.tsx`
+- Source: `registry/new-york/icons/monolith-success-character-icon/MonolithSuccessCharacterIcon.tsx`
 
 ## 導入
 

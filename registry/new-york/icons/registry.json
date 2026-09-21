@@ -1,0 +1,951 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "icon-frame",
+      "type": "registry:component",
+      "title": "Icon Frame",
+      "description": "Shared frame for approved SVG artwork.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "icon-frame/IconFrame.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/IconFrame.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-document-feature-icon",
+      "type": "registry:component",
+      "title": "AssemblyDocumentFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-document-feature-icon/AssemblyDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyDocumentFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-history-feature-icon",
+      "type": "registry:component",
+      "title": "AssemblyHistoryFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-history-feature-icon/AssemblyHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyHistoryFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-idea-feature-icon",
+      "type": "registry:component",
+      "title": "AssemblyIdeaFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-idea-feature-icon/AssemblyIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyIdeaFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-saved-status-icon",
+      "type": "registry:component",
+      "title": "AssemblySavedStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-saved-status-icon/AssemblySavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblySavedStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-success-character-icon",
+      "type": "registry:component",
+      "title": "AssemblySuccessCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-success-character-icon/AssemblySuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblySuccessCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-thinking-character-icon",
+      "type": "registry:component",
+      "title": "AssemblyThinkingCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-thinking-character-icon/AssemblyThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyThinkingCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-thinking-status-icon",
+      "type": "registry:component",
+      "title": "AssemblyThinkingStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-thinking-status-icon/AssemblyThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyThinkingStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assembly-welcome-character-icon",
+      "type": "registry:component",
+      "title": "AssemblyWelcomeCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyWelcomeCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-document-feature-icon",
+      "type": "registry:component",
+      "title": "FoldDocumentFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-document-feature-icon/FoldDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldDocumentFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-history-feature-icon",
+      "type": "registry:component",
+      "title": "FoldHistoryFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-history-feature-icon/FoldHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldHistoryFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-idea-feature-icon",
+      "type": "registry:component",
+      "title": "FoldIdeaFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-idea-feature-icon/FoldIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldIdeaFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-saved-status-icon",
+      "type": "registry:component",
+      "title": "FoldSavedStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-saved-status-icon/FoldSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldSavedStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-success-character-icon",
+      "type": "registry:component",
+      "title": "FoldSuccessCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-success-character-icon/FoldSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldSuccessCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-thinking-character-icon",
+      "type": "registry:component",
+      "title": "FoldThinkingCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-thinking-character-icon/FoldThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldThinkingCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-thinking-status-icon",
+      "type": "registry:component",
+      "title": "FoldThinkingStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-thinking-status-icon/FoldThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldThinkingStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fold-welcome-character-icon",
+      "type": "registry:component",
+      "title": "FoldWelcomeCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-welcome-character-icon/FoldWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldWelcomeCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-document-feature-icon",
+      "type": "registry:component",
+      "title": "ImpressDocumentFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-document-feature-icon/ImpressDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressDocumentFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-history-feature-icon",
+      "type": "registry:component",
+      "title": "ImpressHistoryFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-history-feature-icon/ImpressHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressHistoryFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-idea-feature-icon",
+      "type": "registry:component",
+      "title": "ImpressIdeaFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-idea-feature-icon/ImpressIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressIdeaFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-saved-status-icon",
+      "type": "registry:component",
+      "title": "ImpressSavedStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-saved-status-icon/ImpressSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressSavedStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-success-character-icon",
+      "type": "registry:component",
+      "title": "ImpressSuccessCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-success-character-icon/ImpressSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressSuccessCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-thinking-character-icon",
+      "type": "registry:component",
+      "title": "ImpressThinkingCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-thinking-character-icon/ImpressThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressThinkingCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-thinking-status-icon",
+      "type": "registry:component",
+      "title": "ImpressThinkingStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-thinking-status-icon/ImpressThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressThinkingStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "impress-welcome-character-icon",
+      "type": "registry:component",
+      "title": "ImpressWelcomeCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-welcome-character-icon/ImpressWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressWelcomeCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-document-feature-icon",
+      "type": "registry:component",
+      "title": "InkDocumentFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-document-feature-icon/InkDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkDocumentFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-history-feature-icon",
+      "type": "registry:component",
+      "title": "InkHistoryFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-history-feature-icon/InkHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkHistoryFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-idea-feature-icon",
+      "type": "registry:component",
+      "title": "InkIdeaFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-idea-feature-icon/InkIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkIdeaFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-saved-status-icon",
+      "type": "registry:component",
+      "title": "InkSavedStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-saved-status-icon/InkSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkSavedStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-success-character-icon",
+      "type": "registry:component",
+      "title": "InkSuccessCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-success-character-icon/InkSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkSuccessCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-thinking-character-icon",
+      "type": "registry:component",
+      "title": "InkThinkingCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-thinking-character-icon/InkThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkThinkingCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-thinking-status-icon",
+      "type": "registry:component",
+      "title": "InkThinkingStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-thinking-status-icon/InkThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkThinkingStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ink-welcome-character-icon",
+      "type": "registry:component",
+      "title": "InkWelcomeCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-welcome-character-icon/InkWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkWelcomeCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-document-feature-icon",
+      "type": "registry:component",
+      "title": "MonolithDocumentFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-document-feature-icon/MonolithDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithDocumentFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-history-feature-icon",
+      "type": "registry:component",
+      "title": "MonolithHistoryFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-history-feature-icon/MonolithHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithHistoryFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-idea-feature-icon",
+      "type": "registry:component",
+      "title": "MonolithIdeaFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-idea-feature-icon/MonolithIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithIdeaFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-saved-status-icon",
+      "type": "registry:component",
+      "title": "MonolithSavedStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-saved-status-icon/MonolithSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithSavedStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-success-character-icon",
+      "type": "registry:component",
+      "title": "MonolithSuccessCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-success-character-icon/MonolithSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithSuccessCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-thinking-character-icon",
+      "type": "registry:component",
+      "title": "MonolithThinkingCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-thinking-character-icon/MonolithThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithThinkingCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-thinking-status-icon",
+      "type": "registry:component",
+      "title": "MonolithThinkingStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-thinking-status-icon/MonolithThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithThinkingStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "monolith-welcome-character-icon",
+      "type": "registry:component",
+      "title": "MonolithWelcomeCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-welcome-character-icon/MonolithWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithWelcomeCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-document-feature-icon",
+      "type": "registry:component",
+      "title": "OrbitDocumentFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-document-feature-icon/OrbitDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitDocumentFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-history-feature-icon",
+      "type": "registry:component",
+      "title": "OrbitHistoryFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-history-feature-icon/OrbitHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitHistoryFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-idea-feature-icon",
+      "type": "registry:component",
+      "title": "OrbitIdeaFeatureIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-idea-feature-icon/OrbitIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitIdeaFeatureIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-saved-status-icon",
+      "type": "registry:component",
+      "title": "OrbitSavedStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-saved-status-icon/OrbitSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitSavedStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-success-character-icon",
+      "type": "registry:component",
+      "title": "OrbitSuccessCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-success-character-icon/OrbitSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitSuccessCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-thinking-character-icon",
+      "type": "registry:component",
+      "title": "OrbitThinkingCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-thinking-character-icon/OrbitThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitThinkingCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-thinking-status-icon",
+      "type": "registry:component",
+      "title": "OrbitThinkingStatusIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-thinking-status-icon/OrbitThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitThinkingStatusIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "orbit-welcome-character-icon",
+      "type": "registry:component",
+      "title": "OrbitWelcomeCharacterIcon",
+      "description": "Approved standalone SVG icon.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-welcome-character-icon/OrbitWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitWelcomeCharacterIcon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icons",
+      "type": "registry:component",
+      "title": "All Approved Icons",
+      "description": "Barrel exports for all approved standalone SVG icons.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/icon-frame",
+        "@yukihi/assembly-document-feature-icon",
+        "@yukihi/assembly-history-feature-icon",
+        "@yukihi/assembly-idea-feature-icon",
+        "@yukihi/assembly-saved-status-icon",
+        "@yukihi/assembly-success-character-icon",
+        "@yukihi/assembly-thinking-character-icon",
+        "@yukihi/assembly-thinking-status-icon",
+        "@yukihi/assembly-welcome-character-icon",
+        "@yukihi/fold-document-feature-icon",
+        "@yukihi/fold-history-feature-icon",
+        "@yukihi/fold-idea-feature-icon",
+        "@yukihi/fold-saved-status-icon",
+        "@yukihi/fold-success-character-icon",
+        "@yukihi/fold-thinking-character-icon",
+        "@yukihi/fold-thinking-status-icon",
+        "@yukihi/fold-welcome-character-icon",
+        "@yukihi/impress-document-feature-icon",
+        "@yukihi/impress-history-feature-icon",
+        "@yukihi/impress-idea-feature-icon",
+        "@yukihi/impress-saved-status-icon",
+        "@yukihi/impress-success-character-icon",
+        "@yukihi/impress-thinking-character-icon",
+        "@yukihi/impress-thinking-status-icon",
+        "@yukihi/impress-welcome-character-icon",
+        "@yukihi/ink-document-feature-icon",
+        "@yukihi/ink-history-feature-icon",
+        "@yukihi/ink-idea-feature-icon",
+        "@yukihi/ink-saved-status-icon",
+        "@yukihi/ink-success-character-icon",
+        "@yukihi/ink-thinking-character-icon",
+        "@yukihi/ink-thinking-status-icon",
+        "@yukihi/ink-welcome-character-icon",
+        "@yukihi/monolith-document-feature-icon",
+        "@yukihi/monolith-history-feature-icon",
+        "@yukihi/monolith-idea-feature-icon",
+        "@yukihi/monolith-saved-status-icon",
+        "@yukihi/monolith-success-character-icon",
+        "@yukihi/monolith-thinking-character-icon",
+        "@yukihi/monolith-thinking-status-icon",
+        "@yukihi/monolith-welcome-character-icon",
+        "@yukihi/orbit-document-feature-icon",
+        "@yukihi/orbit-history-feature-icon",
+        "@yukihi/orbit-idea-feature-icon",
+        "@yukihi/orbit-saved-status-icon",
+        "@yukihi/orbit-success-character-icon",
+        "@yukihi/orbit-thinking-character-icon",
+        "@yukihi/orbit-thinking-status-icon",
+        "@yukihi/orbit-welcome-character-icon"
+      ],
+      "files": [
+        {
+          "path": "icons/index.ts",
+          "type": "registry:component",
+          "target": "@components/icons/index.ts"
+        }
+      ]
+    }
+  ]
+}

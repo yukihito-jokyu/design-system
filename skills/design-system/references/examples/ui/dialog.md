@@ -1,7 +1,7 @@
 # Dialog
 
 - Registry: `@yukihi/dialog`
-- Source: `src/components/ui/dialog.tsx`
+- Source: `registry/new-york/ui/dialog/dialog.tsx`
 
 ## 導入
 

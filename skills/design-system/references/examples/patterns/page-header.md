@@ -1,7 +1,7 @@
 # PageHeader
 
 - Registry: `@yukihi/page-header`
-- Source: `src/components/patterns/page-header.tsx`
+- Source: `registry/new-york/patterns/page-header/page-header.tsx`
 
 ## 導入
 

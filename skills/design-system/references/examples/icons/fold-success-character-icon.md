@@ -1,7 +1,7 @@
 # FoldSuccessCharacterIcon
 
 - Registry: `@yukihi/fold-success-character-icon`
-- Source: `src/components/icons/FoldSuccessCharacterIcon.tsx`
+- Source: `registry/new-york/icons/fold-success-character-icon/FoldSuccessCharacterIcon.tsx`
 
 ## 導入
 

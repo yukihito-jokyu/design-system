@@ -1,7 +1,7 @@
 # MonolithIdeaFeatureIcon
 
 - Registry: `@yukihi/monolith-idea-feature-icon`
-- Source: `src/components/icons/MonolithIdeaFeatureIcon.tsx`
+- Source: `registry/new-york/icons/monolith-idea-feature-icon/MonolithIdeaFeatureIcon.tsx`
 
 ## 導入
 

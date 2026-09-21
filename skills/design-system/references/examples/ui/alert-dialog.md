@@ -1,7 +1,7 @@
 # AlertDialog
 
 - Registry: `@yukihi/alert-dialog`
-- Source: `src/components/ui/alert-dialog.tsx`
+- Source: `registry/new-york/ui/alert-dialog/alert-dialog.tsx`
 
 ## 導入
 
