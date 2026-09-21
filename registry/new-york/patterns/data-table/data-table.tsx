@@ -114,25 +114,33 @@ export function DataTable<T>({
         {filters}
         {onSelectionChange && <span>{selected.length}件選択</span>}
       </TableToolbar>
-      <Table>
+      <Table className="table-fixed">
         <TableCaption>{caption}</TableCaption>
+        <colgroup>
+          {onSelectionChange && <col style={{ width: "var(--ds-control-height-md)" }} />}
+          {columns.map((column) => (
+            <col key={column.id} />
+          ))}
+        </colgroup>
         <TableHeader>
           <TableRow>
             {onSelectionChange && (
               <TableHead>
-                <Checkbox
-                  aria-label={`${selectionScope === "page" ? "表示中" : "絞り込み後"}の項目をすべて選択`}
-                  disabled={selectableIds.length === 0}
-                  checked={allSelected ? true : someSelected ? "indeterminate" : false}
-                  onCheckedChange={(checked) => {
-                    const next = checked
-                      ? [...new Set([...selected, ...selectableIds])]
-                      : selected.filter((id) => !selectableIds.includes(id));
+                <span className="inline-flex items-center align-middle">
+                  <Checkbox
+                    aria-label={`${selectionScope === "page" ? "表示中" : "絞り込み後"}の項目をすべて選択`}
+                    disabled={selectableIds.length === 0}
+                    checked={allSelected ? true : someSelected ? "indeterminate" : false}
+                    onCheckedChange={(checked) => {
+                      const next = checked
+                        ? [...new Set([...selected, ...selectableIds])]
+                        : selected.filter((id) => !selectableIds.includes(id));
 
-                    setSelection(next);
-                    onSelectionChange(next);
-                  }}
-                />
+                      setSelection(next);
+                      onSelectionChange(next);
+                    }}
+                  />
+                </span>
               </TableHead>
             )}
             {columns.map((column) => (
@@ -151,12 +159,24 @@ export function DataTable<T>({
                 {column.sortable ? (
                   <Button
                     variant="ghost"
+                    className="!px-0 !border-0"
                     onClick={() =>
-                      setSort({ id: column.id, desc: sort?.id === column.id ? !sort.desc : false })
+                      setSort((current) =>
+                        current?.id !== column.id
+                          ? { id: column.id, desc: false }
+                          : current.desc
+                            ? null
+                            : { id: column.id, desc: true },
+                      )
                     }
                   >
                     {column.header}
-                    {sort?.id === column.id ? (sort.desc ? " ↓" : " ↑") : ""}
+                    <span
+                      className="inline-block w-[var(--ds-space-4)] text-center"
+                      aria-hidden="true"
+                    >
+                      {sort?.id === column.id ? (sort.desc ? "↓" : "↑") : ""}
+                    </span>
                   </Button>
                 ) : (
                   column.header
@@ -170,18 +190,20 @@ export function DataTable<T>({
             <TableRow key={getRowId(row)}>
               {onSelectionChange && (
                 <TableCell>
-                  <Checkbox
-                    aria-label={`${columns[0]?.value(row)}を選択`}
-                    checked={selected.includes(getRowId(row))}
-                    onCheckedChange={(checked) => {
-                      const next = checked
-                        ? [...selected, getRowId(row)]
-                        : selected.filter((id) => id !== getRowId(row));
+                  <span className="inline-flex items-center align-middle">
+                    <Checkbox
+                      aria-label={`${columns[0]?.value(row)}を選択`}
+                      checked={selected.includes(getRowId(row))}
+                      onCheckedChange={(checked) => {
+                        const next = checked
+                          ? [...selected, getRowId(row)]
+                          : selected.filter((id) => id !== getRowId(row));
 
-                      setSelection(next);
-                      onSelectionChange(next);
-                    }}
-                  />
+                        setSelection(next);
+                        onSelectionChange(next);
+                      }}
+                    />
+                  </span>
                 </TableCell>
               )}
               {columns.map((column) => (
