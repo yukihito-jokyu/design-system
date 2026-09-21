@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 import { EditPage } from "./edit-page";
+import { Input } from "@/registry/new-york/ui/input/input";
 
 const meta = {
   title: "Patterns/EditPage",
@@ -9,17 +11,40 @@ const meta = {
     variant: "create" as const,
     children: (
       <label>
-        名前 <input name="name" required />
+        名前 <Input name="name" required />
       </label>
     ),
-    onSubmit: () => alert("保存"),
-    onCancel: () => alert("取消"),
+    onSubmit: () => {},
   },
 } satisfies Meta<typeof EditPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const Default: Story = {};
-export const EmptyOrFailure: Story = { args: { error: "名前を確認してください", dirty: true } };
-export const Narrow: Story = { globals: { viewport: { value: "mobile1", isRotated: false } } };
-export const Submitting: Story = { args: { submitting: true, dirty: true } };
+
+function Example(args: React.ComponentProps<typeof EditPage>) {
+  const [result, setResult] = useState("");
+  return (
+    <>
+      <EditPage
+        {...args}
+        onSubmit={() => setResult("保存しました。")}
+        onCancel={() => setResult("入力を取り消しました。")}
+      />
+      {result && <p role="status">{result}</p>}
+    </>
+  );
+}
+
+export const Default: Story = { render: (args) => <Example {...args} /> };
+
+export const EmptyOrFailure: Story = {
+  ...Default,
+  args: { error: "名前を確認してください", dirty: true },
+};
+
+export const Narrow: Story = {
+  ...Default,
+  globals: { viewport: { value: "mobile1", isRotated: false } },
+};
+
+export const Submitting: Story = { ...Default, args: { submitting: true, dirty: true } };

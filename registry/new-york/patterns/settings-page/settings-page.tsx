@@ -14,6 +14,8 @@ export type SettingsGroup = {
   saved?: boolean;
   error?: string;
   dangerous?: boolean;
+  actionLabel?: string;
+  busyLabel?: string;
 };
 
 export function SettingsPage({
@@ -36,16 +38,25 @@ export function SettingsPage({
       headingLevel={headingLevel}
     >
       {group.content}
-      {group.error && <ErrorState title="設定を保存できませんでした" description={group.error} />}
-      {group.saved && <p role="status">保存しました。</p>}
-      <Button
-        type="button"
-        variant={group.dangerous ? "destructive" : "default"}
-        disabled={group.saving}
-        onClick={group.onSave}
-      >
-        {group.saving ? "保存中…" : "保存"}
-      </Button>
+      {group.error && (
+        <ErrorState
+          title={group.dangerous ? "設定を初期化できませんでした" : "設定を保存できませんでした"}
+          description={group.error}
+        />
+      )}
+      {group.saved && (
+        <p role="status">{group.dangerous ? "初期化しました。" : "保存しました。"}</p>
+      )}
+      <div className="actions">
+        <Button
+          type="button"
+          variant={group.dangerous ? "destructive" : "default"}
+          disabled={group.saving}
+          onClick={group.onSave}
+        >
+          {group.saving ? (group.busyLabel ?? "保存中…") : (group.actionLabel ?? "保存")}
+        </Button>
+      </div>
     </SettingsSection>
   );
 

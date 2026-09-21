@@ -32,7 +32,12 @@ export function DetailPage({
   return (
     <main className="stack">
       {back && <nav aria-label="戻り先">{back}</nav>}
-      <PageHeader title={title} description={description} actions={actions} headingLevel={1} />
+      <PageHeader
+        title={title}
+        description={description}
+        actions={status === "ready" ? actions : undefined}
+        headingLevel={1}
+      />
       {status === "error" || status === "missing" || status === "forbidden" ? (
         <ErrorState description={message} onRetry={status === "error" ? onRetry : undefined} />
       ) : (

@@ -628,12 +628,51 @@
   .app-shell-content,
 .app-shell aside {
     min-width: 0;
+    padding: var(--ds-space-4);
+    border: var(--ds-border-width-soft) solid var(--border);
+    background: var(--surface);
+}
+  .app-shell-nav {
+    border: var(--ds-border-width-soft) solid var(--border);
+    background: var(--surface-soft);
+}
+  .app-shell-nav .stack,
+.app-shell-menu .stack {
+    gap: 0;
+}
+  .app-shell-nav a,
+.app-shell-menu a {
+    display: block;
+    padding: var(--ds-space-4);
+    color: var(--foreground);
+    text-decoration: none;
+}
+  .app-shell-nav a:hover,
+.app-shell-menu a:hover,
+.app-shell-nav a:focus-visible,
+.app-shell-menu a:focus-visible {
+    background: var(--accent);
+    color: var(--accent-foreground);
+}
+  .app-shell-nav a[aria-current="page"],
+.app-shell-menu a[aria-current="page"] {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: 600;
+}
+  .app-shell-nav a[aria-current="page"]:hover,
+.app-shell-menu a[aria-current="page"]:hover {
+    background: var(--primary-hover);
 }
   .app-shell aside {
     grid-column: 2;
+    background: var(--surface-soft);
 }
   .app-shell-mobile {
     display: none;
+    padding: var(--ds-space-4);
+    border: var(--ds-border-width-soft) solid var(--border);
+    background: var(--surface-soft);
 }
   .skip-link {
     position: absolute;

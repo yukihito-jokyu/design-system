@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui/card/card";
 import { Badge } from "@/registry/new-york/ui/badge/badge";
 import { PageHeader } from "@/registry/new-york/patterns/page-header/page-header";
@@ -16,6 +16,13 @@ const labels = {
   "in-progress": "進行中",
   complete: "完了",
   blocked: "問題あり",
+};
+
+const badgeVariants: Record<WorkflowTask["status"], ComponentProps<typeof Badge>["variant"]> = {
+  "not-started": "secondary",
+  "in-progress": "warning",
+  complete: "success",
+  blocked: "destructive",
 };
 
 export function TaskWorkflowPage({
@@ -45,11 +52,11 @@ export function TaskWorkflowPage({
           <Card key={task.id}>
             <CardHeader>
               <CardTitle>{task.title}</CardTitle>
-              <Badge>{labels[task.status]}</Badge>
+              <Badge variant={badgeVariants[task.status]}>{labels[task.status]}</Badge>
             </CardHeader>
             <CardContent className="stack">
               {task.description && <p>{task.description}</p>}
-              {task.action}
+              {task.action && <div className="actions">{task.action}</div>}
             </CardContent>
           </Card>
         ))}

@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { CollectionPage } from "./collection-page";
+import { Button } from "@/registry/new-york/ui/button/button";
+import { useState } from "react";
 
 const meta = {
   title: "Patterns/CollectionPage",
@@ -25,7 +27,24 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const EmptyOrFailure: Story = {
-  args: { rows: [], empty: <p>顧客がいません。作成してください。</p> },
+  args: { rows: [] },
+  render: (args) => {
+    function Example() {
+      const [creating, setCreating] = useState(false);
+
+      return (
+        <>
+          <CollectionPage
+            {...args}
+            emptyAction={<Button onClick={() => setCreating(true)}>顧客を作成</Button>}
+          />
+          {creating && <p role="status">顧客の作成を開始します。</p>}
+        </>
+      );
+    }
+
+    return <Example />;
+  },
 };
 
 export const Narrow: Story = { globals: { viewport: { value: "mobile1", isRotated: false } } };
