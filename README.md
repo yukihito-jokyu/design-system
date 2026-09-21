@@ -17,6 +17,24 @@ npm run registry:build
 
 ReactとTailwind v4を用いるアプリで利用します。共通スタイルはRegistry導入時にCSSへ反映され、テーマの切り替えは`DesignThemeProvider`を使用します。
 
+## PatternをStorybookで見る
+
+承認済みPattern 10種類だけを、このリポジトリのStorybookで閲覧できます。Storyは各Pattern原本の隣にあり、Registry配布用JSONには含めません。上部のThemeで5テーマ、表示幅メニューで狭い画面に切り替えられます。検索・並べ替え・入力などはプレビュー内で操作できます。
+
+```sh
+npm ci
+npm run storybook
+```
+
+表示されたURLをブラウザで開き、左側の`Patterns`から選びます。終了は`Ctrl+C`です。静的な閲覧サイトを作る場合は次を実行し、HTTPサーバー経由で開きます。公式の既定どおり`storybook-static/`へ出力し、Gitの管理対象には含めません。
+
+```sh
+npm run build-storybook
+npx http-server storybook-static
+```
+
+`.storybook/styles.css`は`design-system-styles`を一時Vite環境へshadcn CLIで導入した結果です。Tokenや共通CSSの正本を変更したときだけ、[運用手順](docs/registry-operations.md#storybook用cssの同期)に従って再反映します。`npm run storybook`は閲覧用、`npm run registry:serve`はRegistry JSONのローカル配信用で、用途が異なります。
+
 ## Registryをローカルで使う
 
 Registryと導入先の両方で、shadcnをRadix構成にします。現行CLIでBase UI構成へ入れると`asChild`が`render`へ変換されるため、このデザインシステムでは`radix`を指定してください。
@@ -98,6 +116,6 @@ import { FoldWelcomeCharacterIcon } from "@/components/icons/FoldWelcomeCharacte
 
 配色5セット、操作高36/44/48px、薄い枠4px・濃い枠2px。SVGの固有色と輪郭を保持します。
 
-カタログ・検証環境・画像原案・設計履歴は本体に含めません。開発時の一式は元の作業場所の `development-preview/` に保存しています。
+承認済みPatternのStorybook以外のカタログ・検証環境・画像原案・設計履歴は本体に含めません。開発時の一式は元の作業場所の `development-preview/` に保存しています。
 
 このリポジトリ独自コードは[MIT License](LICENSE)で公開します。第三者由来コードと依存パッケージの表記は[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)を参照してください。

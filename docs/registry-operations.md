@@ -25,7 +25,20 @@ GitHubでは次を管理します。
 - `public/r/`：HTTPS配信へ渡す生成済みJSON
 - README、運用手順、第三者ライセンス表記
 
-本体にはカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証はCIの一時ディレクトリ、手動カタログは別リポジトリまたは`development-preview`で管理します。
+承認済みPattern 10種類のStorybookだけを例外として本体に置きます。StoryはPattern原本に隣接しますがRegistry項目の`files`には登録しません。それ以外のカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証とStorybook静的出力は一時ディレクトリ、他の手動カタログは別リポジトリまたは`development-preview`で管理します。
+
+### Storybook用CSSの同期
+
+`.storybook/styles.css`は`registry/new-york/styles/registry.json`の`design-system-styles`を、shadcn CLIで一時Vite環境へ導入した結果です。正本を変更したときは、リポジトリ外の一時ディレクトリにReact/Vite環境を作り、`components.json`を複製して`tailwind.css`だけを一時アプリの`src/index.css`へ向けます。`src/index.css`を`@import "tailwindcss";`のみで始め、Registryをローカル配信して、ロック済みCLIでスタイルを導入します。
+
+```sh
+npm run registry:build
+REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve
+# 別ターミナル・一時Vite環境のルートで実行
+/path/to/design-system/node_modules/.bin/shadcn add http://127.0.0.1:4173/r/design-system-styles.json --yes
+```
+
+CLIが更新した`src/index.css`を`.storybook/styles.css`へ反映します。`components.json`と`registry/new-york/styles/index.css`は変更しません。CIの`storybook-styles`ジョブは同じ導入を一時環境で再現し、CSSの差分を検出します。Storybook設定とStoryの型検査は`npm run typecheck:storybook`、静的出力は`npm run build-storybook`で確認します。
 
 ## 3. 公開前に決める項目
 
