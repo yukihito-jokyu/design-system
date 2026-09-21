@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 import { AppShell } from "./app-shell";
 
 const meta = {
@@ -6,10 +7,9 @@ const meta = {
   component: AppShell,
   args: {
     navigation: (
-      <div className="stack">
-        <a href="#home">ホーム</a>
-        <a href="#settings">設定</a>
-      </div>
+      <a href="#home" aria-current="page">
+        ホーム
+      </a>
     ),
     children: (
       <div className="stack">
@@ -23,5 +23,35 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const Default: Story = {};
-export const Narrow: Story = { globals: { viewport: { value: "mobile1", isRotated: false } } };
+
+function Example(args: React.ComponentProps<typeof AppShell>) {
+  const [current, setCurrent] = useState<"home" | "settings">("home");
+
+  const navigation = (
+    <div className="stack">
+      <a
+        href="#home"
+        aria-current={current === "home" ? "page" : undefined}
+        onClick={() => setCurrent("home")}
+      >
+        ホーム
+      </a>
+      <a
+        href="#settings"
+        aria-current={current === "settings" ? "page" : undefined}
+        onClick={() => setCurrent("settings")}
+      >
+        設定
+      </a>
+    </div>
+  );
+
+  return <AppShell {...args} navigation={navigation} />;
+}
+
+export const Default: Story = { render: (args) => <Example {...args} /> };
+
+export const Narrow: Story = {
+  ...Default,
+  globals: { viewport: { value: "mobile1", isRotated: false } },
+};
