@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "result-page",
+  "title": "result-page",
+  "description": "完了結果と次の行動を残す画面。短い通知だけなら使わない。",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/alert",
+    "@yukihi/button",
+    "@yukihi/design-system-styles",
+    "@yukihi/page-header"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/patterns/result-page/result-page.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Alert, AlertDescription, AlertTitle } from \"@/registry/new-york/ui/alert/alert\";\nimport { Button } from \"@/registry/new-york/ui/button/button\";\nimport { PageHeader } from \"@/registry/new-york/patterns/page-header/page-header\";\n\nexport function ResultPage({\n  title,\n  description,\n  status,\n  details,\n  targetLink,\n  action,\n  onRetry,\n}: {\n  title: string;\n  description: string;\n  status: \"success\" | \"partial\" | \"failure\";\n  details?: ReactNode;\n  targetLink?: ReactNode;\n  action?: ReactNode;\n  onRetry?: () => void;\n}) {\n  return (\n    <main className=\"stack\">\n      <PageHeader title={title} description={description} headingLevel={1} />\n      <Alert variant={status === \"failure\" ? \"destructive\" : \"default\"} role=\"status\">\n        <AlertTitle>\n          {status === \"success\"\n            ? \"完了\"\n            : status === \"partial\"\n              ? \"一部完了\"\n              : \"完了できませんでした\"}\n        </AlertTitle>\n        <AlertDescription>{details}</AlertDescription>\n      </Alert>\n      <div className=\"actions\">\n        {targetLink}\n        {action}\n        {status !== \"success\" && onRetry && (\n          <Button type=\"button\" onClick={onRetry}>\n            再試行\n          </Button>\n        )}\n      </div>\n    </main>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/result-page.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "task-workflow-page",
+  "title": "task-workflow-page",
+  "description": "独立した複数作業の進行を管理する画面。直線的な段階入力には使わない。",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/badge",
+    "@yukihi/card",
+    "@yukihi/design-system-styles",
+    "@yukihi/page-header"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/patterns/task-workflow-page/task-workflow-page.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/registry/new-york/ui/card/card\";\nimport { Badge } from \"@/registry/new-york/ui/badge/badge\";\nimport { PageHeader } from \"@/registry/new-york/patterns/page-header/page-header\";\n\nexport type WorkflowTask = {\n  id: string;\n  title: string;\n  description?: string;\n  status: \"not-started\" | \"in-progress\" | \"complete\" | \"blocked\";\n  action?: ReactNode;\n};\n\nconst labels = {\n  \"not-started\": \"未開始\",\n  \"in-progress\": \"進行中\",\n  complete: \"完了\",\n  blocked: \"問題あり\",\n};\n\nexport function TaskWorkflowPage({\n  title,\n  description,\n  tasks,\n  complete,\n  completionAction,\n}: {\n  title: string;\n  description?: string;\n  tasks: WorkflowTask[];\n  complete?: boolean;\n  completionAction?: ReactNode;\n}) {\n  const isComplete =\n    complete ?? (tasks.length > 0 && tasks.every((task) => task.status === \"complete\"));\n\n  return (\n    <main className=\"stack\">\n      <PageHeader title={title} description={description} headingLevel={1} />\n      <p role=\"status\" aria-live=\"polite\">\n        {tasks.filter((task) => task.status === \"complete\").length} / {tasks.length} 件完了\n      </p>\n      <div className=\"grid gap-[var(--ds-space-4)] sm:grid-cols-2\">\n        {tasks.map((task) => (\n          <Card key={task.id}>\n            <CardHeader>\n              <CardTitle>{task.title}</CardTitle>\n              <Badge>{labels[task.status]}</Badge>\n            </CardHeader>\n            <CardContent className=\"stack\">\n              {task.description && <p>{task.description}</p>}\n              {task.action}\n            </CardContent>\n          </Card>\n        ))}\n      </div>\n      {isComplete && (\n        <div role=\"status\" className=\"stack\">\n          <p>すべての作業が完了しました。</p>\n          {completionAction}\n        </div>\n      )}\n    </main>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/task-workflow-page.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

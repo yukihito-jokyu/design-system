@@ -83,7 +83,7 @@ jobs:
               }
             }
           }
-          if (names.size !== 113) throw new Error(`Expected 113 items, got ${names.size}`);
+          if (names.size !== 121) throw new Error(`Expected 121 items, got ${names.size}`);
           NODE
           test ! -e src
           test ! -e tokens

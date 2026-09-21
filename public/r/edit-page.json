@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "edit-page",
+  "title": "edit-page",
+  "description": "1件を作成・編集して保存する画面。複数の独立した設定群には使わない。",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/button",
+    "@yukihi/design-system-styles",
+    "@yukihi/error-state",
+    "@yukihi/page-header"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/patterns/edit-page/edit-page.tsx",
+      "content": "import type { FormEvent, ReactNode } from \"react\";\nimport { Button } from \"@/registry/new-york/ui/button/button\";\nimport { PageHeader } from \"@/registry/new-york/patterns/page-header/page-header\";\nimport { ErrorState } from \"@/registry/new-york/patterns/error-state/error-state\";\n\nexport function EditPage({\n  title,\n  variant,\n  description,\n  children,\n  onSubmit,\n  onCancel,\n  submitting = false,\n  error,\n  dirty = false,\n}: {\n  title: string;\n  variant: \"create\" | \"edit\";\n  description?: string;\n  children: ReactNode;\n  onSubmit: (event: FormEvent<HTMLFormElement>) => void;\n  onCancel?: () => void;\n  submitting?: boolean;\n  error?: string;\n  dirty?: boolean;\n}) {\n  return (\n    <main className=\"stack\">\n      <PageHeader title={title} description={description} headingLevel={1} />\n      <form\n        className=\"stack\"\n        onSubmit={(event) => {\n          event.preventDefault();\n          if (!submitting) onSubmit(event);\n        }}\n        aria-busy={submitting}\n      >\n        {error && <ErrorState title=\"保存できませんでした\" description={error} />}\n        {children}\n        {dirty && (\n          <p className=\"note\" role=\"status\">\n            未保存の変更があります。離れる前に保存または取り消してください。\n          </p>\n        )}\n        <div className=\"actions\">\n          <Button type=\"submit\" disabled={submitting}>\n            {submitting ? \"保存中…\" : variant === \"create\" ? \"作成\" : \"保存\"}\n          </Button>\n          {onCancel && (\n            <Button type=\"button\" variant=\"outline\" onClick={onCancel} disabled={submitting}>\n              取消\n            </Button>\n          )}\n        </div>\n      </form>\n    </main>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/edit-page.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
