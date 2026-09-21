@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "page-header",
   "title": "page-header",
-  "description": "Design system patterns component.",
+  "description": "見出し・説明・主操作をまとめる。本文や画面状態の代わりには使わない。",
   "dependencies": [],
   "registryDependencies": [
     "@yukihi/design-system-styles"
@@ -10,7 +10,7 @@
   "files": [
     {
       "path": "registry/new-york/patterns/page-header/page-header.tsx",
-      "content": "import type { ReactNode } from \"react\";\n\nexport function PageHeader({\n  title,\n  description,\n  actions,\n}: {\n  title: string;\n  description?: string;\n  actions?: ReactNode;\n}) {\n  return (\n    <header className=\"pattern-page-header\">\n      <div>\n        <h2>{title}</h2>\n        {description && <p className=\"note\">{description}</p>}\n      </div>\n      {actions && <div className=\"actions\">{actions}</div>}\n    </header>\n  );\n}\n",
+      "content": "import type { ReactNode } from \"react\";\n\nexport function PageHeader({\n  title,\n  description,\n  actions,\n  headingLevel = 2,\n}: {\n  title: string;\n  description?: string;\n  actions?: ReactNode;\n  headingLevel?: 1 | 2;\n}) {\n  const Heading = headingLevel === 1 ? \"h1\" : \"h2\";\n  return (\n    <header className=\"pattern-page-header\">\n      <div>\n        <Heading>{title}</Heading>\n        {description && <p className=\"note\">{description}</p>}\n      </div>\n      {actions && <div className=\"actions\">{actions}</div>}\n    </header>\n  );\n}\n",
       "type": "registry:component",
       "target": "@components/patterns/page-header.tsx"
     }

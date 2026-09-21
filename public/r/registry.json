@@ -593,7 +593,7 @@
           "justify-content": "space-between",
           "gap": "var(--ds-space-4)"
         },
-        ".pattern-page-header h2": {
+        ".pattern-page-header :is(h1, h2)": {
           "font-size": "var(--ds-font-size-heading)",
           "font-weight": "600"
         },
@@ -1827,7 +1827,7 @@
     {
       "name": "app-shell",
       "title": "app-shell",
-      "description": "Design system patterns component.",
+      "description": "画面共通のナビゲーション枠。単独画面の主目的を表すPatternには使わない。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/button",
@@ -1846,7 +1846,7 @@
     {
       "name": "assistant-panel",
       "title": "assistant-panel",
-      "description": "Design system patterns component.",
+      "description": "AI支援が要件にある画面へ案内領域を加える。AI支援が不要なら使わない。",
       "dependencies": [
         "lucide-react@^1.45.0"
       ],
@@ -1867,14 +1867,15 @@
     {
       "name": "data-table",
       "title": "data-table",
-      "description": "Design system patterns component.",
+      "description": "表形式の検索・並べ替え・選択・ページ送り。画面全体の構成にはcollection-pageを使う。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/button",
         "@yukihi/checkbox",
         "@yukihi/design-system-styles",
-        "@yukihi/table-toolbar",
-        "@yukihi/table"
+        "@yukihi/empty-state",
+        "@yukihi/table",
+        "@yukihi/table-toolbar"
       ],
       "files": [
         {
@@ -1888,7 +1889,7 @@
     {
       "name": "error-state",
       "title": "error-state",
-      "description": "Design system patterns component.",
+      "description": "処理失敗の説明と再試行。対象が0件の状態には使わない。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/alert",
@@ -1907,7 +1908,7 @@
     {
       "name": "form-field",
       "title": "form-field",
-      "description": "Design system patterns component.",
+      "description": "ラベル・説明・入力エラーを結ぶ入力欄。フォーム全体の構成には使わない。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/design-system-styles",
@@ -1925,7 +1926,7 @@
     {
       "name": "loading-state",
       "title": "loading-state",
-      "description": "Design system patterns component.",
+      "description": "領域の待機と初回スケルトン。失敗結果の表示には使わない。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/design-system-styles",
@@ -1944,7 +1945,7 @@
     {
       "name": "page-header",
       "title": "page-header",
-      "description": "Design system patterns component.",
+      "description": "見出し・説明・主操作をまとめる。本文や画面状態の代わりには使わない。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/design-system-styles"
@@ -1961,7 +1962,7 @@
     {
       "name": "search-field",
       "title": "search-field",
-      "description": "Design system patterns component.",
+      "description": "検索語を入力する欄。条件全体の管理にはtable-toolbarを使う。",
       "dependencies": [
         "lucide-react@^1.45.0"
       ],
@@ -1982,7 +1983,7 @@
     {
       "name": "settings-section",
       "title": "settings-section",
-      "description": "Design system patterns component.",
+      "description": "設定群の見出し・説明・本文。画面全体にはsettings-pageを使う。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/design-system-styles"
@@ -1999,7 +2000,7 @@
     {
       "name": "table-toolbar",
       "title": "table-toolbar",
-      "description": "Design system patterns component.",
+      "description": "一覧の検索・条件・件数をまとめる。表本体にはdata-tableを使う。",
       "dependencies": [],
       "registryDependencies": [
         "@yukihi/design-system-styles",
@@ -2010,6 +2011,171 @@
           "path": "registry/new-york/patterns/table-toolbar/table-toolbar.tsx",
           "type": "registry:component",
           "target": "@components/patterns/table-toolbar.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "dashboard-page",
+      "title": "dashboard-page",
+      "description": "複数の指標と進行状況を把握し優先作業へ進む画面。単一数値の表示には使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/card",
+        "@yukihi/design-system-styles",
+        "@yukihi/error-state",
+        "@yukihi/loading-state",
+        "@yukihi/page-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/dashboard-page/dashboard-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/dashboard-page.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "collection-page",
+      "title": "collection-page",
+      "description": "複数件を探し比較して選ぶ画面。単一対象の閲覧には使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/data-table",
+        "@yukihi/design-system-styles",
+        "@yukihi/empty-state",
+        "@yukihi/error-state",
+        "@yukihi/loading-state",
+        "@yukihi/page-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/collection-page/collection-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/collection-page.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "detail-page",
+      "title": "detail-page",
+      "description": "1件を閲覧し関連操作へ進む画面。編集と保存が主目的なら使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/error-state",
+        "@yukihi/loading-state",
+        "@yukihi/page-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/detail-page/detail-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/detail-page.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "edit-page",
+      "title": "edit-page",
+      "description": "1件を作成・編集して保存する画面。複数の独立した設定群には使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/error-state",
+        "@yukihi/page-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/edit-page/edit-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/edit-page.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "settings-page",
+      "title": "settings-page",
+      "description": "複数の設定群を管理する画面。単一項目の変更には使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/error-state",
+        "@yukihi/page-header",
+        "@yukihi/settings-section"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/settings-page/settings-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/settings-page.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "step-form",
+      "title": "step-form",
+      "description": "順番に入力し確認して送信する画面。独立した複数作業には使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/error-state",
+        "@yukihi/page-header",
+        "@yukihi/progress"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/step-form/step-form.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/step-form.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "task-workflow-page",
+      "title": "task-workflow-page",
+      "description": "独立した複数作業の進行を管理する画面。直線的な段階入力には使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/badge",
+        "@yukihi/card",
+        "@yukihi/design-system-styles",
+        "@yukihi/page-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/task-workflow-page/task-workflow-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/task-workflow-page.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "result-page",
+      "title": "result-page",
+      "description": "完了結果と次の行動を残す画面。短い通知だけなら使わない。",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/alert",
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/page-header"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/patterns/result-page/result-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/result-page.tsx"
         }
       ],
       "type": "registry:component"
@@ -3078,7 +3244,15 @@
         "@yukihi/settings-section",
         "@yukihi/table-toolbar",
         "@yukihi/character-icons",
-        "@yukihi/icons"
+        "@yukihi/icons",
+        "@yukihi/dashboard-page",
+        "@yukihi/collection-page",
+        "@yukihi/detail-page",
+        "@yukihi/edit-page",
+        "@yukihi/settings-page",
+        "@yukihi/step-form",
+        "@yukihi/task-workflow-page",
+        "@yukihi/result-page"
       ],
       "files": [],
       "type": "registry:base",

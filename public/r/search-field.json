@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "search-field",
   "title": "search-field",
-  "description": "Design system patterns component.",
+  "description": "検索語を入力する欄。条件全体の管理にはtable-toolbarを使う。",
   "dependencies": [
     "lucide-react@^1.45.0"
   ],

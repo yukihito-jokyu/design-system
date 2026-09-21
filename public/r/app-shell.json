@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "app-shell",
   "title": "app-shell",
-  "description": "Design system patterns component.",
+  "description": "画面共通のナビゲーション枠。単独画面の主目的を表すPatternには使わない。",
   "dependencies": [],
   "registryDependencies": [
     "@yukihi/button",

@@ -589,7 +589,7 @@
       "justify-content": "space-between",
       "gap": "var(--ds-space-4)"
     },
-    ".pattern-page-header h2": {
+    ".pattern-page-header :is(h1, h2)": {
       "font-size": "var(--ds-font-size-heading)",
       "font-weight": "600"
     },

@@ -117,7 +117,15 @@
     "@yukihi/settings-section",
     "@yukihi/table-toolbar",
     "@yukihi/character-icons",
-    "@yukihi/icons"
+    "@yukihi/icons",
+    "@yukihi/dashboard-page",
+    "@yukihi/collection-page",
+    "@yukihi/detail-page",
+    "@yukihi/edit-page",
+    "@yukihi/settings-page",
+    "@yukihi/step-form",
+    "@yukihi/task-workflow-page",
+    "@yukihi/result-page"
   ],
   "files": [],
   "type": "registry:base",
