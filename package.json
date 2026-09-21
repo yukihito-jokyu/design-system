@@ -14,6 +14,7 @@
     "storybook": "storybook dev",
     "build-storybook": "storybook build",
     "registry:build": "shadcn build registry.json --output public/r",
+    "registry:check": "node scripts/check-registry-structure.mjs",
     "registry:serve": "node scripts/serve-registry.mjs"
   },
   "dependencies": {
