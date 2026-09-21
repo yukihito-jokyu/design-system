@@ -1,7 +1,7 @@
 # OrbitSuccessCharacterIcon
 
 - Registry: `@yukihi/orbit-success-character-icon`
-- Source: `src/components/icons/OrbitSuccessCharacterIcon.tsx`
+- Source: `registry/new-york/icons/orbit-success-character-icon/OrbitSuccessCharacterIcon.tsx`
 
 ## 導入
 

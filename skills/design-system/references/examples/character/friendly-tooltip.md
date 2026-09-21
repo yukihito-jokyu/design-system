@@ -1,7 +1,7 @@
 # FriendlyTooltip
 
 - Registry: `@yukihi/friendly-tooltip`
-- Source: `src/components/character/friendly-tooltip.tsx`
+- Source: `registry/new-york/character/friendly-tooltip/friendly-tooltip.tsx`
 
 ## 導入
 

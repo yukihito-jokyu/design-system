@@ -5,15 +5,15 @@
   "description": "Design system ui component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/utils.json"
+    "@yukihi/design-system-styles",
+    "@yukihi/utils"
   ],
   "files": [
     {
-      "path": "src/components/ui/textarea.tsx",
-      "content": "import * as React from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return <textarea data-slot=\"textarea\" className={cn(\"ds-textarea\", className)} {...props} />;\n}\n\nexport { Textarea };\n",
+      "path": "registry/new-york/ui/textarea/textarea.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/new-york/lib/utils/utils\";\n\nfunction Textarea({ className, ...props }: React.ComponentProps<\"textarea\">) {\n  return <textarea data-slot=\"textarea\" className={cn(\"ds-textarea\", className)} {...props} />;\n}\n\nexport { Textarea };\n",
       "type": "registry:ui",
-      "target": "src/components/ui/textarea.tsx"
+      "target": "@ui/textarea.tsx"
     }
   ],
   "type": "registry:ui"

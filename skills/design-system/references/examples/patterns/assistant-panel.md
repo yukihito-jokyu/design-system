@@ -1,7 +1,7 @@
 # AssistantPanel
 
 - Registry: `@yukihi/assistant-panel`
-- Source: `src/components/patterns/assistant-panel.tsx`
+- Source: `registry/new-york/patterns/assistant-panel/assistant-panel.tsx`
 
 ## 導入
 

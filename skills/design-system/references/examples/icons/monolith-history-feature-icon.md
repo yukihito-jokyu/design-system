@@ -1,7 +1,7 @@
 # MonolithHistoryFeatureIcon
 
 - Registry: `@yukihi/monolith-history-feature-icon`
-- Source: `src/components/icons/MonolithHistoryFeatureIcon.tsx`
+- Source: `registry/new-york/icons/monolith-history-feature-icon/MonolithHistoryFeatureIcon.tsx`
 
 ## 導入
 

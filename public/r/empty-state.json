@@ -5,15 +5,15 @@
   "description": "Design system character component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/character-icons.json",
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
+    "@yukihi/character-icons",
+    "@yukihi/design-system-styles"
   ],
   "files": [
     {
-      "path": "src/components/character/empty-state.tsx",
-      "content": "import type { ReactNode } from \"react\";\nimport { CharacterIcon } from \"./index\";\n\nexport function EmptyState({\n  kind = \"initial\",\n  title,\n  description,\n  action,\n}: {\n  kind?: \"initial\" | \"search\" | \"filter\";\n  title: string;\n  description: string;\n  action?: ReactNode;\n}) {\n  return (\n    <section className=\"empty-state stack\" data-empty-kind={kind} aria-label={title}>\n      <CharacterIcon size={64} />\n      <h3>{title}</h3>\n      <p>{description}</p>\n      {action}\n    </section>\n  );\n}\n",
+      "path": "registry/new-york/character/empty-state/empty-state.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { CharacterIcon } from \"@/registry/new-york/character/character-icons/index\";\n\nexport function EmptyState({\n  kind = \"initial\",\n  title,\n  description,\n  action,\n}: {\n  kind?: \"initial\" | \"search\" | \"filter\";\n  title: string;\n  description: string;\n  action?: ReactNode;\n}) {\n  return (\n    <section className=\"empty-state stack\" data-empty-kind={kind} aria-label={title}>\n      <CharacterIcon size={64} />\n      <h3>{title}</h3>\n      <p>{description}</p>\n      {action}\n    </section>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/character/empty-state.tsx"
+      "target": "@components/character/empty-state.tsx"
     }
   ],
   "type": "registry:component"

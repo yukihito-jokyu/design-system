@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 permissions:
   contents: read
@@ -41,17 +42,48 @@ jobs:
       - name: Type-check
         run: npm run typecheck
 
-      - name: Regenerate design tokens
-        run: npm run tokens
-
-      - name: Check committed token output
-        run: git diff --exit-code -- registry/styles
-
       - name: Build registry
         run: npm run registry:build
 
       - name: Check committed registry output
-        run: git diff --exit-code -- registry.json public/r
+        run: git diff --exit-code -- public/r
+
+      - name: Check registry structure and dependencies
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          import { resolve, dirname } from 'node:path';
+          const root = JSON.parse(readFileSync('registry.json'));
+          const names = new Set();
+          for (const included of root.include) {
+            const registry = JSON.parse(readFileSync(included));
+            for (const item of registry.items) {
+              if (names.has(item.name)) throw new Error(`Duplicate item: ${item.name}`);
+              names.add(item.name);
+              for (const dependency of item.registryDependencies ?? []) {
+                if (!dependency.startsWith('@yukihi/')) throw new Error(`Unexpected dependency: ${item.name} -> ${dependency}`);
+              }
+              for (const file of item.files ?? []) {
+                const absolute = resolve(dirname(included), file.path);
+                if (!absolute.startsWith(resolve('registry/new-york') + '/')) throw new Error(`Invalid path: ${file.path}`);
+                readFileSync(absolute);
+              }
+            }
+          }
+          for (const included of root.include) {
+            for (const item of JSON.parse(readFileSync(included)).items) {
+              for (const dependency of item.registryDependencies ?? []) {
+                if (!names.has(dependency.slice('@yukihi/'.length))) throw new Error(`Missing dependency: ${dependency}`);
+              }
+            }
+          }
+          if (names.size !== 113) throw new Error(`Expected 113 items, got ${names.size}`);
+          NODE
+          test ! -e src
+          test ! -e tokens
+          test ! -e registry/styles
+          test ! -e scripts/build-design-tokens.mjs
+          test ! -e scripts/build-registry.mjs
 
   install-test:
     name: Install ${{ matrix.target }} into an empty app
@@ -65,6 +97,11 @@ jobs:
           - design-system
           - button
           - ink-idea-feature-icon
+          - icons
+          - use-mobile
+          - theme-provider
+          - assistant-card
+          - app-shell
 
     steps:
       - name: Checkout repository
@@ -83,7 +120,6 @@ jobs:
         env:
           REGISTRY_BASE_URL: http://127.0.0.1:4173/r
         run: |
-          npm run tokens
           npm run registry:build
           npm run registry:serve > "$RUNNER_TEMP/registry-server.log" 2>&1 &
           echo $! > "$RUNNER_TEMP/registry-server.pid"
@@ -108,13 +144,16 @@ jobs:
           npm install tailwindcss @tailwindcss/vite
 
           node --input-type=module <<'NODE'
-          import { writeFile } from "node:fs/promises";
+          import { readFile, writeFile } from "node:fs/promises";
           import ts from "typescript";
 
           const { config, error } = ts.readConfigFile("tsconfig.app.json", ts.sys.readFile);
           if (error) throw new Error(ts.flattenDiagnosticMessageText(error.messageText, "\n"));
           config.compilerOptions.paths = { "@/*": ["./src/*"] };
           await writeFile("tsconfig.app.json", `${JSON.stringify(config, null, 2)}\n`);
+          const rootConfig = JSON.parse(await readFile("tsconfig.json", "utf8"));
+          rootConfig.compilerOptions = { paths: { "@/*": ["./src/*"] } };
+          await writeFile("tsconfig.json", `${JSON.stringify(rootConfig, null, 2)}\n`);
           NODE
 
           node --input-type=module <<'NODE'
@@ -141,6 +180,7 @@ jobs:
 
           const config = JSON.parse(await readFile("components.json", "utf8"));
           config.tailwind.css = "src/index.css";
+          config.registries["@yukihi"] = "http://127.0.0.1:4173/r/{name}.json";
           await writeFile("components.json", `${JSON.stringify(config, null, 2)}\n`);
           NODE
           printf '%s\n' '@import "tailwindcss";' > src/index.css
@@ -150,7 +190,6 @@ jobs:
           app_dir="$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
           cd "$app_dir"
           npx shadcn@latest add "http://127.0.0.1:4173/r/${{ matrix.target }}.json" --yes
-          printf '%s\n' '@import "./components/design-system/styles.css";' >> src/index.css
 
       - name: Add compilation smoke test
         run: |
@@ -170,21 +209,34 @@ jobs:
                 '  return <InkIdeaFeatureIcon />;' \
                 '}' > src/App.tsx
               ;;
-            *)
+            icons)
+              test -f src/components/icons/index.ts
+              test "$(find src/components/icons -maxdepth 1 -name '*.tsx' | wc -l | tr -d ' ')" -eq 49
+              ;;
+            use-mobile)
+              test -f src/hooks/use-mobile.ts
+              ;;
+            theme-provider)
+              test -f src/components/theme-provider.tsx
+              ;;
+            assistant-card)
+              test -f src/components/character/assistant-card.tsx
+              ;;
+            app-shell)
+              test -f src/components/patterns/app-shell.tsx
+              ;;
+            button|design-system)
               test -f src/components/ui/button.tsx
-              printf '%s\n' \
-                'import { Button } from "@/components/ui/button";' \
-                '' \
-                'export default function App() {' \
-                '  return <Button>保存する</Button>;' \
-                '}' > src/App.tsx
               ;;
           esac
+          if rg -n '@/registry/new-york/' src/components src/hooks src/lib 2>/dev/null; then exit 1; fi
+          printf '%s\n' 'export default function App() { return <div />; }' > src/App.tsx
 
       - name: Type-check and build consumer
         run: |
           cd "$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
           npm run build
+          npm run lint
 
       - name: Show registry server log on failure
         if: failure()
@@ -196,3 +248,125 @@ jobs:
           if test -f "$RUNNER_TEMP/registry-server.pid"; then
             kill "$(cat "$RUNNER_TEMP/registry-server.pid")" || true
           fi
+
+  base-init:
+    name: Initialize a Vite project from registry:base
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build and serve local registry
+        env:
+          REGISTRY_BASE_URL: http://127.0.0.1:4173/r
+        run: |
+          npm run registry:build
+          npm run registry:serve > "$RUNNER_TEMP/registry-server.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/registry-server.pid"
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/r/registry.json > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat "$RUNNER_TEMP/registry-server.log"
+          exit 1
+      - name: Init from base URL and verify
+        run: |
+          cd "$RUNNER_TEMP"
+          npx shadcn@latest init http://127.0.0.1:4173/r/design-system.json --template vite --base radix --name registry-base-consumer --yes
+          cd registry-base-consumer
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const config = JSON.parse(readFileSync('components.json'));
+          const pkg = JSON.parse(readFileSync('package.json'));
+          if (config.style !== 'new-york' || config.rsc !== false || config.tsx !== true || config.iconLibrary !== 'lucide') throw new Error('Base config mismatch');
+          if (config.registries?.['@yukihi'] !== 'http://127.0.0.1:4173/r/{name}.json') throw new Error('Local namespace mismatch');
+          if (!pkg.dependencies['radix-ui']) throw new Error('Radix dependency missing');
+          const button = readFileSync('src/components/ui/button.tsx', 'utf8');
+          if (!button.includes('from "radix-ui"') || button.includes('from "@base-ui/react"')) throw new Error('Button is not the Radix variant');
+          const css = readFileSync('src/index.css', 'utf8');
+          for (const rule of ['@theme inline', '[data-ds-base="milk"]', '[data-ds-base="lavender"]', '@media (prefers-reduced-motion: reduce)']) {
+            if (!css.includes(rule)) throw new Error(`Missing CSS: ${rule}`);
+          }
+          NODE
+          test -f src/components/icons/index.ts
+          test -f src/components/patterns/app-shell.tsx
+          npm run build
+          npm run lint -- --rule 'react-refresh/only-export-components: off' --rule '@typescript-eslint/no-unused-vars: off'
+          before="$(shasum src/index.css package.json package-lock.json)"
+          npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json --yes --overwrite
+          after="$(shasum src/index.css package.json package-lock.json)"
+          test "$before" = "$after"
+          npm run build
+      - name: Show server log on failure
+        if: failure()
+        run: cat "$RUNNER_TEMP/registry-server.log"
+      - name: Stop server
+        if: always()
+        run: |
+          if test -f "$RUNNER_TEMP/registry-server.pid"; then kill "$(cat "$RUNNER_TEMP/registry-server.pid")" || true; fi
+
+  base-add:
+    name: Add registry:base to an initialized Radix project
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build and serve local registry
+        env:
+          REGISTRY_BASE_URL: http://127.0.0.1:4173/r
+        run: |
+          npm run registry:build
+          npm run registry:serve > "$RUNNER_TEMP/registry-server.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/registry-server.pid"
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/r/registry.json > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat "$RUNNER_TEMP/registry-server.log"
+          exit 1
+      - name: Init Radix, register namespace, and add base
+        run: |
+          cd "$RUNNER_TEMP"
+          npx shadcn@latest init --template vite --base radix --no-monorepo --preset nova --name registry-add-consumer --yes
+          cd registry-add-consumer
+          npx shadcn@latest registry add '@yukihi=http://127.0.0.1:4173/r/{name}.json'
+          npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json --yes --overwrite
+          node --input-type=module <<'NODE'
+          import { readFileSync } from 'node:fs';
+          const config = JSON.parse(readFileSync('components.json'));
+          const pkg = JSON.parse(readFileSync('package.json'));
+          const css = readFileSync('src/index.css', 'utf8');
+          if (config.style !== 'radix-nova') throw new Error(`Existing style changed: ${config.style}`);
+          if (config.registries?.['@yukihi'] !== 'http://127.0.0.1:4173/r/{name}.json') throw new Error('Namespace changed');
+          if (!pkg.dependencies['radix-ui']) throw new Error('Radix dependency missing');
+          for (const palette of ['milk', 'cream', 'neutral', 'sage', 'lavender']) {
+            if (!css.includes(`[data-ds-base="${palette}"]`)) throw new Error(`Missing palette: ${palette}`);
+          }
+          NODE
+          test -f src/components/icons/index.ts
+          test -f src/components/patterns/app-shell.tsx
+          npm run build
+          npm run lint -- --rule 'react-refresh/only-export-components: off' --rule '@typescript-eslint/no-unused-vars: off'
+          before="$(shasum src/index.css package.json package-lock.json)"
+          npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json --yes --overwrite
+          after="$(shasum src/index.css package.json package-lock.json)"
+          test "$before" = "$after"
+          npx shadcn@latest view @yukihi/button > /dev/null
+      - name: Show server log on failure
+        if: failure()
+        run: cat "$RUNNER_TEMP/registry-server.log"
+      - name: Stop server
+        if: always()
+        run: |
+          if test -f "$RUNNER_TEMP/registry-server.pid"; then kill "$(cat "$RUNNER_TEMP/registry-server.pid")" || true; fi

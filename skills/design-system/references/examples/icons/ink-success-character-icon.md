@@ -1,7 +1,7 @@
 # InkSuccessCharacterIcon
 
 - Registry: `@yukihi/ink-success-character-icon`
-- Source: `src/components/icons/InkSuccessCharacterIcon.tsx`
+- Source: `registry/new-york/icons/ink-success-character-icon/InkSuccessCharacterIcon.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # Breadcrumb
 
 - Registry: `@yukihi/breadcrumb`
-- Source: `src/components/ui/breadcrumb.tsx`
+- Source: `registry/new-york/ui/breadcrumb/breadcrumb.tsx`
 
 ## 導入
 

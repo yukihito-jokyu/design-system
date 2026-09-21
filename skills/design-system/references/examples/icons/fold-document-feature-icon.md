@@ -1,7 +1,7 @@
 # FoldDocumentFeatureIcon
 
 - Registry: `@yukihi/fold-document-feature-icon`
-- Source: `src/components/icons/FoldDocumentFeatureIcon.tsx`
+- Source: `registry/new-york/icons/fold-document-feature-icon/FoldDocumentFeatureIcon.tsx`
 
 ## 導入
 

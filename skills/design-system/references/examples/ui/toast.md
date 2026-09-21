@@ -1,7 +1,7 @@
 # toast
 
 - Registry: `@yukihi/toast`
-- Source: `src/components/ui/toast.tsx`
+- Source: `registry/new-york/ui/toast/toast.tsx`
 
 ## 導入
 

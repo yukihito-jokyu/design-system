@@ -1,7 +1,7 @@
 # Label
 
 - Registry: `@yukihi/label`
-- Source: `src/components/ui/label.tsx`
+- Source: `registry/new-york/ui/label/label.tsx`
 
 ## 導入
 

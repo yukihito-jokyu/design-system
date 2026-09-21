@@ -1,7 +1,7 @@
 # OrbitDocumentFeatureIcon
 
 - Registry: `@yukihi/orbit-document-feature-icon`
-- Source: `src/components/icons/OrbitDocumentFeatureIcon.tsx`
+- Source: `registry/new-york/icons/orbit-document-feature-icon/OrbitDocumentFeatureIcon.tsx`
 
 ## 導入
 

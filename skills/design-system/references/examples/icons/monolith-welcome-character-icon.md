@@ -1,7 +1,7 @@
 # MonolithWelcomeCharacterIcon
 
 - Registry: `@yukihi/monolith-welcome-character-icon`
-- Source: `src/components/icons/MonolithWelcomeCharacterIcon.tsx`
+- Source: `registry/new-york/icons/monolith-welcome-character-icon/MonolithWelcomeCharacterIcon.tsx`
 
 ## 導入
 

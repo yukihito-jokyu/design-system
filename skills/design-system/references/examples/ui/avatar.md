@@ -1,7 +1,7 @@
 # Avatar
 
 - Registry: `@yukihi/avatar`
-- Source: `src/components/ui/avatar.tsx`
+- Source: `registry/new-york/ui/avatar/avatar.tsx`
 
 ## 導入
 

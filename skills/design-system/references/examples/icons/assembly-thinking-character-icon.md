@@ -1,7 +1,7 @@
 # AssemblyThinkingCharacterIcon
 
 - Registry: `@yukihi/assembly-thinking-character-icon`
-- Source: `src/components/icons/AssemblyThinkingCharacterIcon.tsx`
+- Source: `registry/new-york/icons/assembly-thinking-character-icon/AssemblyThinkingCharacterIcon.tsx`
 
 ## 導入
 

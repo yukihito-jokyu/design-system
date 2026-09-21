@@ -1,7 +1,7 @@
 # Spinner
 
 - Registry: `@yukihi/spinner`
-- Source: `src/components/ui/spinner.tsx`
+- Source: `registry/new-york/ui/spinner/spinner.tsx`
 
 ## 導入
 

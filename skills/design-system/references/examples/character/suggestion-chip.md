@@ -1,7 +1,7 @@
 # SuggestionChip
 
 - Registry: `@yukihi/suggestion-chip`
-- Source: `src/components/character/suggestion-chip.tsx`
+- Source: `registry/new-york/character/suggestion-chip/suggestion-chip.tsx`
 
 ## 導入
 

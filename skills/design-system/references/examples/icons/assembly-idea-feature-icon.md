@@ -1,7 +1,7 @@
 # AssemblyIdeaFeatureIcon
 
 - Registry: `@yukihi/assembly-idea-feature-icon`
-- Source: `src/components/icons/AssemblyIdeaFeatureIcon.tsx`
+- Source: `registry/new-york/icons/assembly-idea-feature-icon/AssemblyIdeaFeatureIcon.tsx`
 
 ## 導入
 

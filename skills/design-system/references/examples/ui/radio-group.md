@@ -1,7 +1,7 @@
 # RadioGroup
 
 - Registry: `@yukihi/radio-group`
-- Source: `src/components/ui/radio-group.tsx`
+- Source: `registry/new-york/ui/radio-group/radio-group.tsx`
 
 ## 導入
 

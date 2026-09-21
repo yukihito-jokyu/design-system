@@ -1,7 +1,7 @@
 # IconButton
 
 - Registry: `@yukihi/icon-button`
-- Source: `src/components/ui/icon-button.tsx`
+- Source: `registry/new-york/ui/icon-button/icon-button.tsx`
 
 ## 導入
 

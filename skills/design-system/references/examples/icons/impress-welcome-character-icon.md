@@ -1,7 +1,7 @@
 # ImpressWelcomeCharacterIcon
 
 - Registry: `@yukihi/impress-welcome-character-icon`
-- Source: `src/components/icons/ImpressWelcomeCharacterIcon.tsx`
+- Source: `registry/new-york/icons/impress-welcome-character-icon/ImpressWelcomeCharacterIcon.tsx`
 
 ## 導入
 

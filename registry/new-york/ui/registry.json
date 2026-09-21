@@ -1,0 +1,860 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "accordion",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "accordion/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "alert-dialog",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "alert-dialog/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "alert",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "alert/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "avatar",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "avatar/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "badge",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "badge/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "breadcrumb",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "breadcrumb/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "button",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "button/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "calendar",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "react-day-picker@^10.0.1"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "calendar/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "card",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "card/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "checkbox",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "checkbox/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "collapsible",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "collapsible/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "combobox",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/input-group",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "combobox/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "date-picker",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/calendar",
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-button",
+        "@yukihi/input",
+        "@yukihi/popover"
+      ],
+      "files": [
+        {
+          "path": "date-picker/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "dialog",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "dialog/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "dropdown-menu",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "dropdown-menu/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "file-upload",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/input",
+        "@yukihi/label"
+      ],
+      "files": [
+        {
+          "path": "file-upload/file-upload.tsx",
+          "type": "registry:ui",
+          "target": "@ui/file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "title": "icon-button",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "icon-button/icon-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/icon-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "input-group",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/input",
+        "@yukihi/textarea",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "input-group/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "input",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "input/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "label",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "label/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "navigation-menu",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "navigation-menu/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "pagination",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "pagination/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "popover",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "popover/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "progress",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "progress/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "radio-group",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "radio-group/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "select",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "select/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "separator",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "separator/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "sheet",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "sheet/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "sidebar",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/input",
+        "@yukihi/separator",
+        "@yukihi/sheet",
+        "@yukihi/skeleton",
+        "@yukihi/tooltip",
+        "@yukihi/use-mobile",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "sidebar/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "skeleton",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "skeleton/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "slider",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "slider/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "sonner",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "sonner@^2.0.8"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider"
+      ],
+      "files": [
+        {
+          "path": "sonner/sonner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "spinner",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "spinner/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "switch",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "switch/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "table",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "table/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "tabs",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "tabs/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "textarea",
+      "description": "Design system ui component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "textarea/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "toast",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "sonner@^2.0.8"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/sonner"
+      ],
+      "files": [
+        {
+          "path": "toast/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "toggle-group",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/toggle",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "toggle-group/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "toggle",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "toggle/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "tooltip",
+      "description": "Design system ui component.",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/theme-provider",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "tooltip/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ]
+    }
+  ]
+}

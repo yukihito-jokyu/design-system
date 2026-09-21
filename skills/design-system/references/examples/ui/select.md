@@ -1,7 +1,7 @@
 # Select
 
 - Registry: `@yukihi/select`
-- Source: `src/components/ui/select.tsx`
+- Source: `registry/new-york/ui/select/select.tsx`
 
 ## 導入
 

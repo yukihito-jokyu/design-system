@@ -7,15 +7,15 @@
     "sonner@^2.0.8"
   ],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json",
-    "https://design.yukihi.tokyo/v1/r/sonner.json"
+    "@yukihi/design-system-styles",
+    "@yukihi/sonner"
   ],
   "files": [
     {
-      "path": "src/components/ui/toast.tsx",
-      "content": "// Toast notifications use shadcn's Sonner integration.\nexport { toast } from \"sonner\";\nexport { Toaster } from \"./sonner\";\n",
+      "path": "registry/new-york/ui/toast/toast.tsx",
+      "content": "// トースト通知にはshadcnのSonner連携を使う。\nexport { toast } from \"sonner\";\nimport { Toaster } from \"@/registry/new-york/ui/sonner/sonner\";\nexport { Toaster };\n",
       "type": "registry:ui",
-      "target": "src/components/ui/toast.tsx"
+      "target": "@ui/toast.tsx"
     }
   ],
   "type": "registry:ui"

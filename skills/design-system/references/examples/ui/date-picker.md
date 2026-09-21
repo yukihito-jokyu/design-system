@@ -1,7 +1,7 @@
 # DatePicker
 
 - Registry: `@yukihi/date-picker`
-- Source: `src/components/ui/date-picker.tsx`
+- Source: `registry/new-york/ui/date-picker/date-picker.tsx`
 
 ## 導入
 

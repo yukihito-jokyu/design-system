@@ -1,7 +1,7 @@
 # Slider
 
 - Registry: `@yukihi/slider`
-- Source: `src/components/ui/slider.tsx`
+- Source: `registry/new-york/ui/slider/slider.tsx`
 
 ## 導入
 

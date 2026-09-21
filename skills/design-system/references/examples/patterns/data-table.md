@@ -1,7 +1,7 @@
 # DataTable
 
 - Registry: `@yukihi/data-table`
-- Source: `src/components/patterns/data-table.tsx`
+- Source: `registry/new-york/patterns/data-table/data-table.tsx`
 
 ## 導入
 

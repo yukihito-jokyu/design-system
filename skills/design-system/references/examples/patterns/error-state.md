@@ -1,7 +1,7 @@
 # ErrorState
 
 - Registry: `@yukihi/error-state`
-- Source: `src/components/patterns/error-state.tsx`
+- Source: `registry/new-york/patterns/error-state/error-state.tsx`
 
 ## 導入
 

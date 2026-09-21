@@ -1,7 +1,7 @@
 # Collapsible
 
 - Registry: `@yukihi/collapsible`
-- Source: `src/components/ui/collapsible.tsx`
+- Source: `registry/new-york/ui/collapsible/collapsible.tsx`
 
 ## 導入
 

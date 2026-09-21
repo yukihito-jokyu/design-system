@@ -1,7 +1,7 @@
 # Button
 
 - Registry: `@yukihi/button`
-- Source: `src/components/ui/button.tsx`
+- Source: `registry/new-york/ui/button/button.tsx`
 
 ## 導入
 

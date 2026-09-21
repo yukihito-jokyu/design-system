@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Mobile Hook",
+      "description": "Responsive mobile-state hook.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "use-mobile/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.ts"
+        }
+      ]
+    }
+  ]
+}

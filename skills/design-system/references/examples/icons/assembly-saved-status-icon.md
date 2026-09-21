@@ -1,7 +1,7 @@
 # AssemblySavedStatusIcon
 
 - Registry: `@yukihi/assembly-saved-status-icon`
-- Source: `src/components/icons/AssemblySavedStatusIcon.tsx`
+- Source: `registry/new-york/icons/assembly-saved-status-icon/AssemblySavedStatusIcon.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # LoadingState
 
 - Registry: `@yukihi/loading-state`
-- Source: `src/components/patterns/loading-state.tsx`
+- Source: `registry/new-york/patterns/loading-state/loading-state.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # Skeleton
 
 - Registry: `@yukihi/skeleton`
-- Source: `src/components/ui/skeleton.tsx`
+- Source: `registry/new-york/ui/skeleton/skeleton.tsx`
 
 ## 導入
 

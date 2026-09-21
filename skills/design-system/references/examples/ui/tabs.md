@@ -1,7 +1,7 @@
 # Tabs
 
 - Registry: `@yukihi/tabs`
-- Source: `src/components/ui/tabs.tsx`
+- Source: `registry/new-york/ui/tabs/tabs.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # Separator
 
 - Registry: `@yukihi/separator`
-- Source: `src/components/ui/separator.tsx`
+- Source: `registry/new-york/ui/separator/separator.tsx`
 
 ## 導入
 

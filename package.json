@@ -10,9 +10,7 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "typecheck": "tsc --noEmit",
-    "tokens": "node scripts/build-design-tokens.mjs",
-    "registry:prepare": "node scripts/build-registry.mjs",
-    "registry:build": "npm run registry:prepare && shadcn build registry.json --output public/r",
+    "registry:build": "shadcn build registry.json --output public/r",
     "registry:serve": "node scripts/serve-registry.mjs"
   },
   "dependencies": {

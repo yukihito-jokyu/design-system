@@ -1,0 +1,195 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "app-shell",
+      "type": "registry:component",
+      "title": "app-shell",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles",
+        "@yukihi/sheet"
+      ],
+      "files": [
+        {
+          "path": "app-shell/app-shell.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/app-shell.tsx"
+        }
+      ]
+    },
+    {
+      "name": "assistant-panel",
+      "type": "registry:component",
+      "title": "assistant-panel",
+      "description": "Design system patterns component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/assistant-card",
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-button"
+      ],
+      "files": [
+        {
+          "path": "assistant-panel/assistant-panel.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/assistant-panel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "data-table",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/checkbox",
+        "@yukihi/design-system-styles",
+        "@yukihi/table-toolbar",
+        "@yukihi/table"
+      ],
+      "files": [
+        {
+          "path": "data-table/data-table.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "error-state",
+      "type": "registry:component",
+      "title": "error-state",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/alert",
+        "@yukihi/button",
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "error-state/error-state.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/error-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-field",
+      "type": "registry:component",
+      "title": "form-field",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/label"
+      ],
+      "files": [
+        {
+          "path": "form-field/form-field.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/form-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loading-state",
+      "type": "registry:component",
+      "title": "loading-state",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/skeleton",
+        "@yukihi/spinner"
+      ],
+      "files": [
+        {
+          "path": "loading-state/loading-state.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/loading-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "title": "page-header",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "page-header/page-header.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/page-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "search-field",
+      "type": "registry:component",
+      "title": "search-field",
+      "description": "Design system patterns component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/icon-button",
+        "@yukihi/input"
+      ],
+      "files": [
+        {
+          "path": "search-field/search-field.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/search-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-section",
+      "type": "registry:component",
+      "title": "settings-section",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "settings-section/settings-section.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/settings-section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table-toolbar",
+      "type": "registry:component",
+      "title": "table-toolbar",
+      "description": "Design system patterns component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/search-field"
+      ],
+      "files": [
+        {
+          "path": "table-toolbar/table-toolbar.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/table-toolbar.tsx"
+        }
+      ]
+    }
+  ]
+}

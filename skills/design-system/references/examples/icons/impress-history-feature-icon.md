@@ -1,7 +1,7 @@
 # ImpressHistoryFeatureIcon
 
 - Registry: `@yukihi/impress-history-feature-icon`
-- Source: `src/components/icons/ImpressHistoryFeatureIcon.tsx`
+- Source: `registry/new-york/icons/impress-history-feature-icon/ImpressHistoryFeatureIcon.tsx`
 
 ## 導入
 

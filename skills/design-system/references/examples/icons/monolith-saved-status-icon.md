@@ -1,7 +1,7 @@
 # MonolithSavedStatusIcon
 
 - Registry: `@yukihi/monolith-saved-status-icon`
-- Source: `src/components/icons/MonolithSavedStatusIcon.tsx`
+- Source: `registry/new-york/icons/monolith-saved-status-icon/MonolithSavedStatusIcon.tsx`
 
 ## 導入
 

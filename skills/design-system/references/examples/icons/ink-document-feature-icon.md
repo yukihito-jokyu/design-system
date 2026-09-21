@@ -1,7 +1,7 @@
 # InkDocumentFeatureIcon
 
 - Registry: `@yukihi/ink-document-feature-icon`
-- Source: `src/components/icons/InkDocumentFeatureIcon.tsx`
+- Source: `registry/new-york/icons/ink-document-feature-icon/InkDocumentFeatureIcon.tsx`
 
 ## 導入
 

@@ -1,7 +1,7 @@
 # AssemblySuccessCharacterIcon
 
 - Registry: `@yukihi/assembly-success-character-icon`
-- Source: `src/components/icons/AssemblySuccessCharacterIcon.tsx`
+- Source: `registry/new-york/icons/assembly-success-character-icon/AssemblySuccessCharacterIcon.tsx`
 
 ## 導入
 

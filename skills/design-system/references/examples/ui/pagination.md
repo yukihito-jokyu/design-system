@@ -1,7 +1,7 @@
 # Pagination
 
 - Registry: `@yukihi/pagination`
-- Source: `src/components/ui/pagination.tsx`
+- Source: `registry/new-york/ui/pagination/pagination.tsx`
 
 ## 導入
 

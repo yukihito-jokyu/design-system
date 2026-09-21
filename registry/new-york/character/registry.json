@@ -1,0 +1,186 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "assistant-card",
+      "type": "registry:component",
+      "title": "assistant-card",
+      "description": "Design system character component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/card",
+        "@yukihi/character-icons",
+        "@yukihi/design-system-styles",
+        "@yukihi/suggestion-chip"
+      ],
+      "files": [
+        {
+          "path": "assistant-card/assistant-card.tsx",
+          "type": "registry:component",
+          "target": "@components/character/assistant-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "title": "empty-state",
+      "description": "Design system character component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/character-icons",
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "empty-state/empty-state.tsx",
+          "type": "registry:component",
+          "target": "@components/character/empty-state.tsx"
+        }
+      ]
+    },
+    {
+      "name": "friendly-tooltip",
+      "type": "registry:component",
+      "title": "friendly-tooltip",
+      "description": "Design system character component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/design-system-styles",
+        "@yukihi/tooltip"
+      ],
+      "files": [
+        {
+          "path": "friendly-tooltip/friendly-tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/character/friendly-tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "message-bubble",
+      "type": "registry:component",
+      "title": "message-bubble",
+      "description": "Design system character component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "message-bubble/message-bubble.tsx",
+          "type": "registry:component",
+          "target": "@components/character/message-bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "soft-notice",
+      "type": "registry:component",
+      "title": "soft-notice",
+      "description": "Design system character component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/alert",
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "soft-notice/soft-notice.tsx",
+          "type": "registry:component",
+          "target": "@components/character/soft-notice.tsx"
+        }
+      ]
+    },
+    {
+      "name": "suggestion-chip",
+      "type": "registry:component",
+      "title": "suggestion-chip",
+      "description": "Design system character component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/button",
+        "@yukihi/design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "suggestion-chip/suggestion-chip.tsx",
+          "type": "registry:component",
+          "target": "@components/character/suggestion-chip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "character-icons",
+      "type": "registry:component",
+      "title": "Dynamic Character Icons",
+      "description": "Dynamic six-direction character/status API and all approved artwork variants.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/assembly-document-feature-icon",
+        "@yukihi/assembly-history-feature-icon",
+        "@yukihi/assembly-idea-feature-icon",
+        "@yukihi/assembly-saved-status-icon",
+        "@yukihi/assembly-success-character-icon",
+        "@yukihi/assembly-thinking-character-icon",
+        "@yukihi/assembly-thinking-status-icon",
+        "@yukihi/assembly-welcome-character-icon",
+        "@yukihi/design-system-styles",
+        "@yukihi/fold-document-feature-icon",
+        "@yukihi/fold-history-feature-icon",
+        "@yukihi/fold-idea-feature-icon",
+        "@yukihi/fold-saved-status-icon",
+        "@yukihi/fold-success-character-icon",
+        "@yukihi/fold-thinking-character-icon",
+        "@yukihi/fold-thinking-status-icon",
+        "@yukihi/fold-welcome-character-icon",
+        "@yukihi/impress-document-feature-icon",
+        "@yukihi/impress-history-feature-icon",
+        "@yukihi/impress-idea-feature-icon",
+        "@yukihi/impress-saved-status-icon",
+        "@yukihi/impress-success-character-icon",
+        "@yukihi/impress-thinking-character-icon",
+        "@yukihi/impress-thinking-status-icon",
+        "@yukihi/impress-welcome-character-icon",
+        "@yukihi/ink-document-feature-icon",
+        "@yukihi/ink-history-feature-icon",
+        "@yukihi/ink-idea-feature-icon",
+        "@yukihi/ink-saved-status-icon",
+        "@yukihi/ink-success-character-icon",
+        "@yukihi/ink-thinking-character-icon",
+        "@yukihi/ink-thinking-status-icon",
+        "@yukihi/ink-welcome-character-icon",
+        "@yukihi/monolith-document-feature-icon",
+        "@yukihi/monolith-history-feature-icon",
+        "@yukihi/monolith-idea-feature-icon",
+        "@yukihi/monolith-saved-status-icon",
+        "@yukihi/monolith-success-character-icon",
+        "@yukihi/monolith-thinking-character-icon",
+        "@yukihi/monolith-thinking-status-icon",
+        "@yukihi/monolith-welcome-character-icon",
+        "@yukihi/orbit-document-feature-icon",
+        "@yukihi/orbit-history-feature-icon",
+        "@yukihi/orbit-idea-feature-icon",
+        "@yukihi/orbit-saved-status-icon",
+        "@yukihi/orbit-success-character-icon",
+        "@yukihi/orbit-thinking-character-icon",
+        "@yukihi/orbit-thinking-status-icon",
+        "@yukihi/orbit-welcome-character-icon",
+        "@yukihi/utils"
+      ],
+      "files": [
+        {
+          "path": "character-icons/icon-map.ts",
+          "type": "registry:component",
+          "target": "@components/icons/icon-map.ts"
+        },
+        {
+          "path": "character-icons/index.tsx",
+          "type": "registry:component",
+          "target": "@components/character/index.tsx"
+        }
+      ]
+    }
+  ]
+}

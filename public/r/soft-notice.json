@@ -5,15 +5,15 @@
   "description": "Design system character component.",
   "dependencies": [],
   "registryDependencies": [
-    "https://design.yukihi.tokyo/v1/r/alert.json",
-    "https://design.yukihi.tokyo/v1/r/design-system-styles.json"
+    "@yukihi/alert",
+    "@yukihi/design-system-styles"
   ],
   "files": [
     {
-      "path": "src/components/character/soft-notice.tsx",
-      "content": "import type { ReactNode } from \"react\";\nimport { Alert, AlertTitle, AlertDescription } from \"../ui/alert\";\n\nexport function SoftNotice({\n  title,\n  children,\n  tone = \"neutral\",\n  action,\n}: {\n  title: string;\n  children: ReactNode;\n  tone?: \"neutral\" | \"success\" | \"warning\" | \"danger\";\n  action?: ReactNode;\n}) {\n  return (\n    <Alert className={`ds-tone-${tone}`}>\n      <AlertTitle>{title}</AlertTitle>\n      <AlertDescription>\n        {children}\n        {action}\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
+      "path": "registry/new-york/character/soft-notice/soft-notice.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Alert, AlertTitle, AlertDescription } from \"@/registry/new-york/ui/alert/alert\";\n\nexport function SoftNotice({\n  title,\n  children,\n  tone = \"neutral\",\n  action,\n}: {\n  title: string;\n  children: ReactNode;\n  tone?: \"neutral\" | \"success\" | \"warning\" | \"danger\";\n  action?: ReactNode;\n}) {\n  return (\n    <Alert className={`ds-tone-${tone}`}>\n      <AlertTitle>{title}</AlertTitle>\n      <AlertDescription>\n        {children}\n        {action}\n      </AlertDescription>\n    </Alert>\n  );\n}\n",
       "type": "registry:component",
-      "target": "src/components/character/soft-notice.tsx"
+      "target": "@components/character/soft-notice.tsx"
     }
   ],
   "type": "registry:component"
