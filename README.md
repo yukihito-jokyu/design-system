@@ -1,12 +1,12 @@
 # design-system
 
-再利用するデザインシステム本体です。Foundation 39種類・Character 9種類・Pattern 18種類・個別SVGアイコン48点を含みます。
+再利用する2つのデザインシステムを管理します。new-yorkとcobaltは、それぞれUI 41種類・Character 7種類・Pattern 18種類・個別SVG 48点と、共通スタイル・Provider・補助機能を持ちます。同一アプリでは一方を選びます。
 
 ## 構成
 
-- `registry/new-york/`：UI、Character、Pattern、個別アイコン、hook、utilityの原本
-- `registry/new-york/styles/registry.json`：Tokenと共通CSSの正本
-- `registry.json`と各分類の`registry.json`：配布項目と依存の定義
+- `registry/new-york/`・`registry/cobalt/`：各システムの原本とカテゴリ別索引
+- 各システムの`styles/registry.json`：Tokenと共通CSSの正本
+- `registry.json` → 各システムの`registry.json` → カテゴリ別`registry.json`：配布項目と依存の定義
 - `public/r/`：Git管理する生成済みRegistry JSON
 
 ```sh
@@ -33,7 +33,7 @@ npm run build-storybook -- --output-dir /tmp/design-system-storybook
 npx http-server /tmp/design-system-storybook
 ```
 
-`.storybook/styles.css`はnew-york、`.storybook/cobalt.css`はcobaltの`design-system-styles`から反映したCSSです。Tokenや共通CSSの正本を変更したときだけ、[運用手順](docs/registry-operations.md#storybook用cssの同期)に従って再反映します。`npm run storybook`は閲覧用、`npm run registry:serve`はRegistry JSONのローカル配信用で、用途が異なります。
+`.storybook/styles.css`はnew-york、`.storybook/cobalt.css`はcobaltの`cobalt-design-system-styles`から反映したCSSです。Tokenや共通CSSの正本を変更したときだけ、[運用手順](docs/registry-operations.md#storybook用cssの同期)に従って再反映します。`npm run storybook`は閲覧用、`npm run registry:serve`はRegistry JSONのローカル配信用で、用途が異なります。
 
 `.storybook/compatibility.css`は、両テーマを同時に読むStorybookで書体と動きの共通指定が干渉するのを防ぎます。配布する部品の寸法や色は上書きしません。
 
@@ -88,13 +88,56 @@ npx shadcn@latest add http://127.0.0.1:4173/r/design-system.json
 npx shadcn@latest add http://127.0.0.1:4173/r/ink-idea-feature-icon.json
 ```
 
-標準の公開先は`https://design.yukihi.tokyo/v1/r`です。ローカル検証時だけ、`serve-registry.mjs`が`design-system`の名前空間を`REGISTRY_BASE_URL`へ切り替えます。Git管理する生成JSONは公開URLのままです。
+標準の公開先は`https://design.yukihi.tokyo/v1/r`です。ローカル検証時だけ、`serve-registry.mjs`が両システムの一括導入項目の名前空間を`REGISTRY_BASE_URL`へ切り替えます。Git管理する生成JSONは公開URLのままです。
 
 ```sh
 REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve
 ```
 
 GitHub・CI・Cloudflare Workers配信・`@yukihi`名前空間を含む正式運用は、[Registry運用・導入手順書](docs/registry-operations.md)を参照してください。
+
+## cobaltを導入する
+
+cobaltも同じ`@yukihi`を使い、配布名だけに`cobalt-`が付きます。たとえば`cobalt-button`の導入先は`src/components/ui/button.tsx`で、export名は`Button`です。新しいnamespaceの登録は不要です。cobaltの公開は、この変更をデプロイした後に利用できます。
+
+```sh
+# 公開後：新規アプリの初期化・一括導入
+npx shadcn@4.21.0 init https://design.yukihi.tokyo/v1/r/cobalt-design-system.json --template vite --base radix --name my-cobalt-app --yes
+
+# 公開後：既存のRadixアプリへ個別・一括導入
+npx shadcn@4.21.0 add @yukihi/cobalt-button
+npx shadcn@4.21.0 add @yukihi/cobalt-design-system
+```
+
+```tsx
+import { DesignThemeProvider } from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
+
+export function Example() {
+  return (
+    <DesignThemeProvider theme="light" motion="on">
+      <Button motion="off">保存する</Button>
+    </DesignThemeProvider>
+  );
+}
+```
+
+Noto Sans JPの400/500/600/700は、共通CSSのGoogle Fonts importから読み込みます。色・寸法・動きの共通値は`registry/cobalt/styles/registry.json`が正本です。
+
+ローカルでは、先に既存の`registry add`例で`@yukihi`をローカルURLへ向け、`@yukihi/cobalt-button`または`@yukihi/cobalt-design-system`を導入します。新規initには`http://127.0.0.1:4173/r/cobalt-design-system.json`を指定します。
+
+## 配布物を検査する
+
+```sh
+npm run registry:build
+npm run registry:check
+npm run registry:prepare -- /tmp/design-system-dist
+REGISTRY_ROOT=/tmp/design-system-dist REGISTRY_BASE_URL=http://127.0.0.1:4173/v1/r npm run registry:serve
+```
+
+生成物は両システムとも`public/r/`へ集まり、検索索引は242項目です。一括導入は`design-system`と`cobalt-design-system`に分かれ、互いの部品を含みません。ビルドは原本・依存・importを検査してから出力し、古い生成JSONを取り除きます。`registry:check`は古い生成物やCSS・targetの不一致も検出します。`registry:prepare`は既定で`dist/v1/r/`へ配置し、引数で外部一時ディレクトリを指定できます。上の例では`http://127.0.0.1:4173/v1/r/cobalt-button.json`を確認できます。
+
+CIはロック済みshadcn CLIで、両システムの検索・個別/一括導入・新規init・既存add・再導入・CSS同期・型検査・production buildを検査します。静的Storybookと検証アプリはリポジトリ外へ出力します。
 
 ## AI向け利用ルール
 
