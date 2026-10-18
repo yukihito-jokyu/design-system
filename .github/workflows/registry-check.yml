@@ -305,7 +305,7 @@ jobs:
         run: |
           cd "$RUNNER_TEMP/registry-consumer-${{ matrix.target }}"
           npm run build
-          npm run lint -- --rule 'react-refresh/only-export-components: off' --rule '@typescript-eslint/no-unused-vars: off'
+          npm run lint
 
       - name: Show registry server log on failure
         if: failure()
