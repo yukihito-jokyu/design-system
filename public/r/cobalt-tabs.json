@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-tabs",
+  "title": "Cobalt tabs",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/tabs/tabs.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Tabs as TabsPrimitive } from \"radix-ui\";\nimport { useSelectionIndicator } from \"@/registry/cobalt/components/theme-provider/motion-layout\";\n\nfunction Tabs({\n  className,\n  orientation = \"horizontal\",\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.Root> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <TabsPrimitive.Root\n        data-slot=\"tabs\"\n        data-orientation={orientation}\n        orientation={orientation}\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-tabs\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nconst tabsListVariants = cva(\"cobalt-tabs-list\", {\n  variants: { variant: { default: \"cobalt-tabs-list-default\", line: \"cobalt-tabs-list-line\" } },\n  defaultVariants: { variant: \"default\" },\n});\n\nfunction TabsList({\n  className,\n  children,\n  ref: forwardedRef,\n  variant = \"default\",\n  ...props\n}: React.ComponentProps<typeof TabsPrimitive.List> & VariantProps<typeof tabsListVariants>) {\n  const { ref, effective } = useSelectionIndicator(forwardedRef);\n  return (\n    <TabsPrimitive.List\n      data-slot=\"tabs-list\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      data-variant={variant}\n      className={cn(tabsListVariants({ variant }), className)}\n      {...props}\n    >\n      {children}\n      {!props.asChild && <span className=\"cobalt-tabs-indicator\" aria-hidden=\"true\" />}\n    </TabsPrimitive.List>\n  );\n}\n\nfunction TabsTrigger({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {\n  const effective = useDesignMotion();\n  return (\n    <TabsPrimitive.Trigger\n      data-slot=\"tabs-trigger\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-tabs-trigger\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction TabsContent({ className, ...props }: React.ComponentProps<typeof TabsPrimitive.Content>) {\n  const effective = useDesignMotion();\n  return (\n    <TabsPrimitive.Content\n      data-slot=\"tabs-content\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-tabs-content\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/tabs.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "選択先へ面がつながって移動する楽しさを作る。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "タブ変更",
+          "effect": "文字・操作領域は固定し、選択面または線だけ位置と大きさを移す。連続操作は見えている途中位置から接続。内容は6pxとフェード。",
+          "timing": "expand / menu"
+        },
+        {
+          "trigger": "サイズ・向き変更",
+          "effect": "選択面を再計測するだけで不要な移動を再生しない。",
+          "timing": "none"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

@@ -1,4 +1,10 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": ["dist/**", "public/r/**", "registry.json", "registry/styles/**"]
+  "ignorePatterns": [
+    "dist/**",
+    "public/r/**",
+    "registry.json",
+    "registry/styles/**",
+    ".storybook/styles.css"
+  ]
 }

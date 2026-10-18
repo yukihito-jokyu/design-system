@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-assistant-panel",
+  "title": "Cobalt assistant-panel",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-assistant-card",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-icon-button",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/assistant-panel/assistant-panel.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { AssistantCard } from \"@/registry/cobalt/character/assistant-card/assistant-card\";\nimport { IconButton } from \"@/registry/cobalt/ui/icon-button/icon-button\";\nimport { XIcon } from \"lucide-react\";\nimport { MotionProvider } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function AssistantPanel({\n  onClose,\n  motion = \"inherit\",\n  ...props\n}: ComponentProps<typeof AssistantCard> & { onClose?: () => void }) {\n  return (\n    <MotionProvider motion={motion}>\n      <section aria-label=\"作業のサポート\" className=\"cobalt-assistant-panel\">\n        {onClose && (\n          <IconButton type=\"button\" aria-label=\"サポートを閉じる\" variant=\"ghost\" onClick={onClose}>\n            <XIcon size={20} />\n          </IconButton>\n        )}\n        <AssistantCard {...props} />\n      </section>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/assistant-panel.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "案内を親しみやすく取り出す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "案内を表示・選択",
+          "effect": "AssistantCardの小さな登場、SuggestionChipとButtonの手応えを継承。SVG自体は変形しない。",
+          "timing": "entry / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

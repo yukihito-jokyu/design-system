@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-skeleton",
+  "title": "Cobalt skeleton",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/skeleton/skeleton.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Skeleton({\n  className,\n  motion = \"inherit\",\n  ...props\n}: ComponentProps<\"div\"> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <div\n      data-slot=\"skeleton\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-skeleton\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Skeleton };\n",
+      "type": "registry:ui",
+      "target": "@ui/skeleton.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "読み込み中の輪郭を安定させる。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "読み込み中の輪郭は静止させ、動く待機表現はSpinnerに集約する。"
+    }
+  },
+  "type": "registry:ui"
+}

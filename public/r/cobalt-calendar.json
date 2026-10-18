@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-calendar",
+  "title": "Cobalt calendar",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "react-day-picker@^10.0.1",
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/calendar/calendar.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { ja } from \"react-day-picker/locale\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from \"lucide-react\";\nimport {\n  DayPicker,\n  getDefaultClassNames,\n  type DayButton,\n  type Root,\n  type Chevron,\n  type WeekNumber,\n} from \"react-day-picker\";\n\nimport { Button, buttonVariants } from \"@/registry/cobalt/ui/button/button\";\n\nfunction Calendar({\n  className,\n  classNames,\n  showOutsideDays = true,\n  captionLayout = \"label\",\n  buttonVariant = \"ghost\",\n  formatters,\n  components,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof DayPicker> & {\n  buttonVariant?: React.ComponentProps<typeof Button>[\"variant\"];\n  motion?: MotionPreference;\n}) {\n  const defaultClassNames = getDefaultClassNames();\n\n  return (\n    <MotionProvider motion={motion}>\n      <DayPicker\n        locale={ja}\n        showOutsideDays={showOutsideDays}\n        className={cn(\"cobalt-calendar\", className)}\n        captionLayout={captionLayout}\n        formatters={{\n          formatMonthDropdown: (date) => date.toLocaleString(\"ja-JP\", { month: \"short\" }),\n          ...formatters,\n        }}\n        classNames={{\n          root: cn(\"cobalt-calendar-root\", defaultClassNames.root),\n          months: cn(\"cobalt-calendar-months\", defaultClassNames.months),\n          month: cn(\"cobalt-calendar-month\", defaultClassNames.month),\n          nav: cn(\"cobalt-calendar-nav\", defaultClassNames.nav),\n          button_previous: cn(\n            buttonVariants({ variant: buttonVariant }),\n            \"cobalt-calendar-nav-button\",\n            defaultClassNames.button_previous,\n          ),\n          button_next: cn(\n            buttonVariants({ variant: buttonVariant }),\n            \"cobalt-calendar-nav-button\",\n            defaultClassNames.button_next,\n          ),\n          month_caption: cn(\"cobalt-calendar-month-caption\", defaultClassNames.month_caption),\n          dropdowns: cn(\"cobalt-calendar-dropdowns\", defaultClassNames.dropdowns),\n          dropdown_root: cn(\"cobalt-calendar-dropdown-root\", defaultClassNames.dropdown_root),\n          dropdown: cn(\"cobalt-calendar-dropdown\", defaultClassNames.dropdown),\n          caption_label: cn(\"cobalt-calendar-caption-label\", defaultClassNames.caption_label),\n          month_grid: cn(\"cobalt-calendar-month-grid\", defaultClassNames.month_grid),\n          weekdays: cn(\"cobalt-calendar-weekdays\", defaultClassNames.weekdays),\n          weekday: cn(\"cobalt-calendar-weekday\", defaultClassNames.weekday),\n          week: cn(\"cobalt-calendar-week\", defaultClassNames.week),\n          week_number_header: cn(\n            \"cobalt-calendar-week-number-header\",\n            defaultClassNames.week_number_header,\n          ),\n          week_number: cn(\"cobalt-calendar-week-number\", defaultClassNames.week_number),\n          day: cn(\"cobalt-calendar-day\", defaultClassNames.day),\n          range_start: cn(\"cobalt-calendar-range-start\", defaultClassNames.range_start),\n          range_middle: cn(\"cobalt-calendar-range-middle\", defaultClassNames.range_middle),\n          range_end: cn(\"cobalt-calendar-range-end\", defaultClassNames.range_end),\n          today: cn(\"cobalt-calendar-today\", defaultClassNames.today),\n          outside: cn(\"cobalt-calendar-outside\", defaultClassNames.outside),\n          disabled: cn(\"cobalt-calendar-disabled\", defaultClassNames.disabled),\n          hidden: cn(\"cobalt-calendar-hidden\", defaultClassNames.hidden),\n          ...classNames,\n        }}\n        components={{\n          Root: CalendarRoot,\n          Chevron: CalendarChevron,\n          DayButton: CalendarDayButton,\n          WeekNumber: CalendarWeekNumber,\n          ...components,\n        }}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\n// 既存の内側で定義する形では設定変更ごとにDOMが作り直されるため、\n// 関数の同一性を保ち、選択日とフォーカスを維持する。\nfunction CalendarRoot({ className, rootRef, ...props }: React.ComponentProps<typeof Root>) {\n  const effective = useDesignMotion();\n  return (\n    <div\n      data-slot=\"calendar\"\n      data-cobalt-motion={effective}\n      ref={rootRef}\n      className={cn(className)}\n      {...props}\n    />\n  );\n}\n\nfunction CalendarChevron({\n  className,\n  orientation,\n  ...props\n}: React.ComponentProps<typeof Chevron>) {\n  if (orientation === \"left\")\n    return <ChevronLeftIcon className={cn(\"size-4\", className)} {...props} />;\n  if (orientation === \"right\")\n    return <ChevronRightIcon className={cn(\"size-4\", className)} {...props} />;\n  return <ChevronDownIcon className={cn(\"size-4\", className)} {...props} />;\n}\n\nfunction CalendarWeekNumber({ children, ...props }: React.ComponentProps<typeof WeekNumber>) {\n  return (\n    <td {...props}>\n      <div className=\"cobalt-calendar-week-number\">{children}</div>\n    </td>\n  );\n}\n\nfunction CalendarDayButton({\n  className,\n  day,\n  modifiers,\n  ...props\n}: React.ComponentProps<typeof DayButton>) {\n  const defaultClassNames = getDefaultClassNames();\n\n  const ref = React.useRef<HTMLButtonElement>(null);\n  const { ref: motionRef } = useMotionFeedback<HTMLButtonElement>({ ref, feedback: \"calendar\" });\n  React.useEffect(() => {\n    if (modifiers.focused) ref.current?.focus();\n  }, [modifiers.focused]);\n\n  return (\n    <Button\n      ref={motionRef}\n      variant=\"ghost\"\n      size=\"icon\"\n      data-day={day.date.toLocaleDateString()}\n      data-selected-single={\n        modifiers.selected &&\n        !modifiers.range_start &&\n        !modifiers.range_end &&\n        !modifiers.range_middle\n      }\n      data-range-start={modifiers.range_start}\n      data-range-end={modifiers.range_end}\n      data-range-middle={modifiers.range_middle}\n      className={cn(\"cobalt-calendar-day-button\", defaultClassNames.day, className)}\n      {...props}\n    />\n  );\n}\n\nexport { Calendar, CalendarDayButton };\n",
+      "type": "registry:ui",
+      "target": "@ui/calendar.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "選んだ日を軽く強調し、範囲の帯は安定させる。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "単日または範囲の終点を選択",
+          "effect": "選んだ日を.86→1.06→1。範囲の中間日は動かさず帯を維持。月送りは既存Buttonの手応えのみ。",
+          "timing": "feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

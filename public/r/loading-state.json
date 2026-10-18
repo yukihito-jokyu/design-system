@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "loading-state",
   "title": "loading-state",
-  "description": "Design system patterns component.",
+  "description": "領域の待機と初回スケルトン。失敗結果の表示には使わない。",
   "dependencies": [],
   "registryDependencies": [
     "@yukihi/design-system-styles",

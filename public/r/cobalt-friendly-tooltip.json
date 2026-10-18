@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-friendly-tooltip",
+  "title": "Cobalt friendly-tooltip",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/character/friendly-tooltip/friendly-tooltip.tsx",
+      "content": "import type { ReactElement } from \"react\";\nimport { Tooltip, TooltipTrigger, TooltipContent } from \"@/registry/cobalt/ui/tooltip/tooltip\";\nimport type { MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function FriendlyTooltip({\n  content,\n  children,\n  motion = \"inherit\",\n}: {\n  content: string;\n  children: ReactElement;\n  motion?: MotionPreference;\n}) {\n  return (\n    <Tooltip motion={motion}>\n      <TooltipTrigger asChild>{children}</TooltipTrigger>\n      <TooltipContent>{content}</TooltipContent>\n    </Tooltip>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/character/friendly-tooltip.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "短い案内を気軽に確かめられるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "補足を開く",
+          "effect": "Tooltipの起点から4px、scale .96→1を継承。",
+          "timing": "menu"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

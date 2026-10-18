@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-checkbox",
+  "title": "Cobalt checkbox",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/checkbox/checkbox.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\nimport { Checkbox as CheckboxPrimitive } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { type MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Checkbox({\n  className,\n  ref: forwardedRef,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof CheckboxPrimitive.Root> & { motion?: MotionPreference }) {\n  const { ref, effective } = useMotionFeedback<HTMLButtonElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"check\",\n  });\n\n  return (\n    <CheckboxPrimitive.Root\n      data-slot=\"checkbox\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-checkbox\", className)}\n      {...props}\n    >\n      <CheckboxPrimitive.Indicator\n        data-slot=\"checkbox-indicator\"\n        className=\"cobalt-checkbox-indicator\"\n      >\n        <CheckIcon className=\"cobalt-checkbox-check\" aria-hidden=\"true\" />\n        <MinusIcon className=\"cobalt-checkbox-mixed\" aria-hidden=\"true\" />\n      </CheckboxPrimitive.Indicator>\n    </CheckboxPrimitive.Root>\n  );\n}\n\nexport { Checkbox };\n",
+      "type": "registry:ui",
+      "target": "@ui/checkbox.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "選択が確定する小さな達成感を作る。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "チェックする",
+          "effect": "白い線を描き、印を.5→1.16→1に弾ませる。",
+          "timing": "selection / feedback"
+        },
+        {
+          "trigger": "中間状態になる",
+          "effect": "横線を同じ弾みで出す。解除は即時。",
+          "timing": "feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

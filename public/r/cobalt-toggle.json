@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-toggle",
+  "title": "Cobalt toggle",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/toggle/toggle.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { type MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Toggle as TogglePrimitive } from \"radix-ui\";\n\nconst toggleVariants = cva(\"cobalt-toggle\", {\n  variants: {\n    variant: { default: \"cobalt-toggle-default\", outline: \"cobalt-toggle-outline\" },\n    size: { default: \"cobalt-size-md\", sm: \"cobalt-size-sm\", lg: \"cobalt-size-lg\" },\n  },\n  defaultVariants: { variant: \"default\", size: \"default\" },\n});\n\nfunction Toggle({\n  className,\n  ref: forwardedRef,\n  variant,\n  size,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof TogglePrimitive.Root> &\n  VariantProps<typeof toggleVariants> & { motion?: MotionPreference }) {\n  const { ref, effective } = useMotionFeedback<HTMLButtonElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"toggle\",\n  });\n\n  return (\n    <TogglePrimitive.Root\n      data-slot=\"toggle\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      className={cn(toggleVariants({ variant, size, className }))}\n      {...props}\n    />\n  );\n}\n\nexport { Toggle, toggleVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "押した状態の確定を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "押下",
+          "effect": "全体を.96に縮める。ONになった印は.88→1.08→1。選択面の色は維持。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

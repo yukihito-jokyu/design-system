@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "assistant-panel",
   "title": "assistant-panel",
-  "description": "Design system patterns component.",
+  "description": "AI支援が要件にある画面へ案内領域を加える。AI支援が不要なら使わない。",
   "dependencies": [
     "lucide-react@^1.45.0"
   ],

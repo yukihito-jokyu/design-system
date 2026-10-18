@@ -5,7 +5,7 @@
 この文書は、デザインシステムを継続的に検査・配布・導入するための手順です。
 
 ```text
-GitHub（registry/new-york、registry.json、public/r）
+GitHub（registry/new-york、registry/cobalt、registry.json、public/r）
   ↓ CI（検査、生成、空アプリへの導入検証）
 HTTPS（https://design.yukihi.tokyo/v1/r/）
   ↓ @yukihi名前空間
@@ -25,7 +25,28 @@ GitHubでは次を管理します。
 - `public/r/`：HTTPS配信へ渡す生成済みJSON
 - README、運用手順、第三者ライセンス表記
 
-本体にはカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証はCIの一時ディレクトリ、手動カタログは別リポジトリまたは`development-preview`で管理します。
+承認済みPattern 18種類とcobaltのUI・Character・SVG部品のStorybookを例外として本体に置きます。Storyは各原本に隣接しますがRegistry項目の`files`には登録しません。それ以外のカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証とStorybook静的出力は一時ディレクトリ、他の手動カタログは別リポジトリまたは`development-preview`で管理します。
+
+### Storybook用CSSの同期
+
+`.storybook/styles.css`は`registry/new-york/styles/registry.json`の`design-system-styles`を、shadcn CLIで一時Vite環境へ導入した結果です。正本を変更したときは、リポジトリ外の一時ディレクトリにReact/Vite環境を作り、`components.json`を複製して`tailwind.css`だけを一時アプリの`src/index.css`へ向けます。`src/index.css`を`@import "tailwindcss";`のみで始め、Registryをローカル配信して、ロック済みCLIでスタイルを導入します。
+
+```sh
+npm run registry:build
+REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve
+# 別ターミナル・一時Vite環境のルートで実行
+/path/to/design-system/node_modules/.bin/shadcn add http://127.0.0.1:4173/r/design-system-styles.json --yes
+```
+
+CLIが更新した`src/index.css`を`.storybook/styles.css`へ反映します。`components.json`と`registry/new-york/styles/index.css`は変更しません。CIの`storybook-styles`ジョブは同じ導入を一時環境で再現し、CSSの差分を検出します。Storybook設定とStoryの型検査は`npm run typecheck:storybook`、静的出力は`npm run build-storybook`で確認します。
+
+### cobaltのStorybook用CSS
+
+`.storybook/cobalt.css`の正本は`registry/cobalt/styles/registry.json`の`cobalt-design-system-styles`です。new-yorkと同じ一時アプリで、`cobalt-design-system-styles.json`をCLI導入し、更新された`src/index.css`をリポジトリのoxfmtで整形してコピーします（`node_modules/.bin/oxfmt --config /path/to/design-system/.oxfmtrc.json /tmp/consumer/src/index.css`）。Noto Sans JPの400/500/600/700はGoogle Fonts CSSをimportします。従来の`@font-face`を手作業で足す手順は不要です。CIは両システムを別々の一時アプリへ導入して、Storybook用CSSとの一致を検査します。
+
+cobaltのStoryは`parameters.designSystem: "cobalt"`を指定します。共通decoratorがcobalt用Providerを適用し、既存Patternの5テーマとは分けて表示します。
+
+モーションの通常位置は`--cobalt-motion-rest-scale`と`--cobalt-motion-rest-translate`で指定します。固定値を直接指定すると、本番ビルドのCSS最適化で`transform`へ統合され、OFFからONへ戻しただけで不要な動きが発生するためです。OFF時は時間を0にするだけでなく`transition: none`を指定し、再生途中の動きも停止します。
 
 ## 3. 公開前に決める項目
 
@@ -182,7 +203,7 @@ npm run build
 Build command：
 
 ```sh
-npm ci && npm run typecheck && npm run registry:build && mkdir -p dist/v1 && cp -R public/r dist/v1/r
+npm ci && npm run typecheck && npm run registry:build && npm run registry:prepare
 ```
 
 Deploy command：
@@ -478,3 +499,22 @@ export・Props・Token・importパスの削除や意味変更、primitiveの変�
 - CLI: https://ui.shadcn.com/docs/cli
 
 shadcn更新時は、Schema、CLIコマンド、Radix指定、ファイルtargetの動作を再検証します。
+
+## 追補：2システムの配布構造
+
+ルート`registry.json`は`registry/new-york/registry.json`と`registry/cobalt/registry.json`をincludeし、各システムがカテゴリ別索引をincludeします。全体索引・生成物は`public/r/`、公開配置は`dist/v1/r/`のままです。`@yukihi`と従来の項目名・URLを維持し、cobaltだけ`cobalt-`を付けます。検索索引は242項目（各121）です。
+
+| 対象 | 個別導入 | 一括導入 | 導入先の例 |
+| --- | --- | --- | --- |
+| new-york | `@yukihi/button` | `@yukihi/design-system` | `src/components/ui/button.tsx` |
+| cobalt | `@yukihi/cobalt-button` | `@yukihi/cobalt-design-system` | `src/components/ui/button.tsx` |
+
+同一アプリで両者を併用しません。Registry名とtarget/export名は区別します。cobaltのProviderは`theme="light"`、motionは`inherit`・`on`・`off`です。個別・全体とも共通CSSと必要な依存をCLIが追加します。新namespaceの設定は不要です。公開後の正式導入・ローカル検証の具体例は[README](../README.md#cobaltを導入する)を参照してください。
+
+`npm run registry:check`はinclude・名前衝突・循環/不足/システム間依存・未登録import・npm依存・一括導入の網羅・生成物の過不足・内容・CSS・targetを検査します。`npm run registry:build`は一時領域で生成して検査後、`public/r/`の生成JSONを置き換えます。`npm run registry:prepare -- /tmp/registry-dist`は公開相当の`/tmp/registry-dist/v1/r/`へコピーし、`REGISTRY_ROOT=/tmp/registry-dist REGISTRY_BASE_URL=http://127.0.0.1:4173/v1/r npm run registry:serve`で確認できます。
+
+CIでは両システムの代表8項目ずつの導入と検索、新規init、既存Radixアプリへのadd、再導入のCSS・packageの不変性、型検査・lint・production build、両Storybook CSSの同期を確認します。検証にはリポジトリのロック済みCLI（4.21.0）を使います。Storybook静的出力・アプリ・公開相当出力は外部一時領域に置きます。
+
+GitHub直接導入はルート索引を使うため、`npx shadcn@4.21.0 add yukihito-jokyu/design-system/button`を維持します。cobaltは当該ソースをpushした後に`yukihito-jokyu/design-system/cobalt-button`で利用できます。未pushのローカル索引を、現在のGitHubから取得できるとは扱いません。
+
+Dashboardで照合する設定はRoot directory、Build command、Deploy commandです。リポジトリ側の推奨Build commandは上記の`registry:prepare`を使う形です。従来の`mkdir -p dist/v1 && cp -R public/r dist/v1/r`も初回の空出力では同じ配置ですが、古い配布物を残さないため置き換えます。Dashboardの実値は照合できるまで未確認とし、本番公開は明示的な依頼時だけ行います。

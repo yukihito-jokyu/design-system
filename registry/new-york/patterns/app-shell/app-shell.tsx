@@ -34,7 +34,9 @@ export function AppShell({
           <SheetContent side="left">
             <SheetTitle>メニュー</SheetTitle>
             <SheetDescription>表示するページを選択してください。</SheetDescription>
-            <nav aria-label="モバイルナビゲーション">{navigation}</nav>
+            <nav className="app-shell-menu" aria-label="モバイルナビゲーション">
+              {navigation}
+            </nav>
           </SheetContent>
         </Sheet>
       </div>
@@ -44,7 +46,11 @@ export function AppShell({
       <Content id={id} aria-label="作業領域" tabIndex={-1} className="app-shell-content">
         {children}
       </Content>
-      {aside && <aside aria-label="補助情報">{aside}</aside>}
+      {aside && (
+        <aside className="app-shell-aside" aria-label="補助情報">
+          {aside}
+        </aside>
+      )}
     </div>
   );
 }

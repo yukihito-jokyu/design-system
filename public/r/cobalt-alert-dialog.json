@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-alert-dialog",
+  "title": "Cobalt alert-dialog",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/alert-dialog/alert-dialog.tsx",
+      "content": "import * as React from \"react\";\nimport { AlertDialog as AlertDialogPrimitive } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  DesignThemeProvider,\n  useDesignTheme,\n  useDesignTokens,\n} from \"@/registry/cobalt/components/theme-provider/theme-provider\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\n\nfunction AlertDialog({\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <AlertDialogPrimitive.Root {...props} />\n    </MotionProvider>\n  );\n}\n\nfunction AlertDialogTrigger(props: React.ComponentProps<typeof AlertDialogPrimitive.Trigger>) {\n  return <AlertDialogPrimitive.Trigger data-slot=\"alert-dialog-trigger\" {...props} />;\n}\n\nfunction AlertDialogPortal({\n  children,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Portal>) {\n  const theme = useDesignTheme();\n  const tokens = useDesignTokens();\n  return (\n    <AlertDialogPrimitive.Portal {...props}>\n      <DesignThemeProvider theme={theme} tokens={tokens}>\n        {children}\n      </DesignThemeProvider>\n    </AlertDialogPrimitive.Portal>\n  );\n}\n\nfunction AlertDialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {\n  const effective = useDesignMotion();\n  return (\n    <AlertDialogPrimitive.Overlay\n      data-slot=\"alert-dialog-overlay\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-dialog-overlay cobalt-alert-dialog-overlay\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogContent({\n  className,\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Content> & { size?: \"default\" | \"sm\" }) {\n  const effective = useDesignMotion();\n  return (\n    <AlertDialogPortal>\n      <AlertDialogOverlay />\n      <AlertDialogPrimitive.Content\n        data-slot=\"alert-dialog-content\"\n        data-size={size}\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-dialog-content cobalt-alert-dialog-content\", className)}\n        {...props}\n      />\n    </AlertDialogPortal>\n  );\n}\n\nfunction AlertDialogHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"alert-dialog-header\" className={cn(\"cobalt-stack\", className)} {...props} />\n  );\n}\n\nfunction AlertDialogFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-dialog-footer\"\n      className={cn(\"cobalt-dialog-footer\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogTitle({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {\n  return (\n    <AlertDialogPrimitive.Title\n      data-slot=\"alert-dialog-title\"\n      className={cn(\"cobalt-dialog-title\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Description>) {\n  return (\n    <AlertDialogPrimitive.Description\n      data-slot=\"alert-dialog-description\"\n      className={cn(\"cobalt-note\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogMedia({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-dialog-media\"\n      className={cn(\"cobalt-dialog-media\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AlertDialogAction({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Action> &\n  Pick<React.ComponentProps<typeof Button>, \"variant\" | \"size\">) {\n  return (\n    <Button variant={variant} size={size} asChild>\n      <AlertDialogPrimitive.Action\n        data-slot=\"alert-dialog-action\"\n        className={cn(className)}\n        {...props}\n      />\n    </Button>\n  );\n}\n\nfunction AlertDialogCancel({\n  className,\n  variant = \"outline\",\n  size = \"default\",\n  ...props\n}: React.ComponentProps<typeof AlertDialogPrimitive.Cancel> &\n  Pick<React.ComponentProps<typeof Button>, \"variant\" | \"size\">) {\n  return (\n    <Button variant={variant} size={size} asChild>\n      <AlertDialogPrimitive.Cancel\n        data-slot=\"alert-dialog-cancel\"\n        className={cn(className)}\n        {...props}\n      />\n    </Button>\n  );\n}\n\nexport {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogMedia,\n  AlertDialogOverlay,\n  AlertDialogPortal,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/alert-dialog.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "確認を落ち着いて読めるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "4pxの移動とscale .98→1。Dialogより小さな動きにし、破壊操作を祝う動きは付けない。",
+          "timing": "menu"
+        },
+        {
+          "trigger": "確定・キャンセル",
+          "effect": "既存Buttonの手応えのみ。閉じるとフォーカスを即時復帰。",
+          "timing": "press"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

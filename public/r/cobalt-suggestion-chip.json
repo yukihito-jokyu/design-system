@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-suggestion-chip",
+  "title": "Cobalt suggestion-chip",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/character/suggestion-chip/suggestion-chip.tsx",
+      "content": "import { Button } from \"@/registry/cobalt/ui/button/button\";\nimport type { MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function SuggestionChip({\n  label,\n  onSelect,\n  disabled,\n  motion = \"inherit\",\n}: {\n  label: string;\n  onSelect: () => void;\n  disabled?: boolean;\n  motion?: MotionPreference;\n}) {\n  return (\n    <Button\n      type=\"button\"\n      variant=\"secondary\"\n      className=\"cobalt-suggestion-chip\"\n      motion={motion}\n      disabled={disabled}\n      onClick={onSelect}\n    >\n      {label}\n    </Button>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/character/suggestion-chip.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "提案を選ぶ行為に小さな手応えを付ける。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "押下・ホバー",
+          "effect": "既存Buttonの縮みと精密ポインターでの浮きを継承。文言は固定する。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

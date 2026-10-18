@@ -1,0 +1,638 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "cobalt-app-shell",
+      "type": "registry:component",
+      "title": "Cobalt app-shell",
+      "description": "Cobalt design system component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-sheet",
+        "@yukihi/cobalt-theme-provider",
+        "@yukihi/cobalt-use-mobile"
+      ],
+      "files": [
+        {
+          "path": "app-shell/app-shell.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/app-shell.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "本文とナビゲーションの関係を保つ。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "スマホのメニューを開く",
+              "effect": "Sheetの端からの登場を継承。本文全体の登場は付けない。",
+              "timing": "entry"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-collection-page",
+      "type": "registry:component",
+      "title": "Cobalt collection-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-data-table",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-loading-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "collection-page/collection-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/collection-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "絞り込み後の一覧を追いやすくする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "一覧の構成変更",
+              "effect": "既存の行は移動前後の位置をつなぎ、新しい行は6pxとフェード。検索中の連続操作は前の再生を中止。",
+              "timing": "expand"
+            },
+            {
+              "trigger": "状態変更・行操作",
+              "effect": "Badgeの印とButtonの押下を継承。",
+              "timing": "celebrate / press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-data-table",
+      "type": "registry:component",
+      "title": "Cobalt data-table",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-checkbox",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-table",
+        "@yukihi/cobalt-table-toolbar",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "data-table/data-table.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/data-table.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "並べ替えで行の行き先を見えるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "検索・並べ替え・ページ変更",
+              "effect": "同じDOM行を前の位置から新しい位置へ移動。新しい行だけ6pxとフェード、順次表示は最大80ms。",
+              "timing": "expand"
+            },
+            {
+              "trigger": "行の選択",
+              "effect": "Checkboxのチェック描画を継承。値とフォーカスは即時更新。",
+              "timing": "selection / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-error-state",
+      "type": "registry:component",
+      "title": "Cobalt error-state",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-alert",
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "error-state/error-state.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/error-state.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "エラーを落ち着いて読めるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "再試行",
+              "effect": "Buttonの押下のみ。エラー本文・見出しは弾ませない。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-loading-state",
+      "type": "registry:component",
+      "title": "Cobalt loading-state",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-skeleton",
+        "@yukihi/cobalt-spinner",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "loading-state/loading-state.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/loading-state.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "待機と読める状態への変化を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "loading=true",
+              "effect": "Skeletonは静止、Spinnerだけ回転。",
+              "timing": "spin"
+            },
+            {
+              "trigger": "loading=falseへ変更",
+              "effect": "読める内容へ一度だけフェード。初回の読込済み状態は動かさない。",
+              "timing": "entry"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-page-header",
+      "type": "registry:component",
+      "title": "Cobalt page-header",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "page-header/page-header.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/page-header.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "ページの名前と操作を見失わせない。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "主要操作",
+              "effect": "渡されたButtonなどのmotionを継承。見出しは静止。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-search-field",
+      "type": "registry:component",
+      "title": "Cobalt search-field",
+      "description": "Cobalt design system component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-button",
+        "@yukihi/cobalt-input",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "search-field/search-field.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/search-field.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "入力と検索解除に即時反応する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "入力・クリア",
+              "effect": "InputのフォーカスとButtonの押下を継承。文字入力で検索欄自体は移動しない。",
+              "timing": "selection / press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-table-toolbar",
+      "type": "registry:component",
+      "title": "Cobalt table-toolbar",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-search-field",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "table-toolbar/table-toolbar.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/table-toolbar.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "検索・絞り込み操作を軽く返す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "検索・フィルター・操作",
+              "effect": "SearchFieldとButtonを継承。ツールバー全体の再登場は付けない。",
+              "timing": "selection / press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-form-field",
+      "type": "registry:component",
+      "title": "Cobalt form-field",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-label",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "form-field/form-field.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/form-field.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "入力の手がかりを安定して示す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "入力エラー",
+              "effect": "Input/Textareaのエラー変化時の動作を利用する。Labelと説明は静止。",
+              "timing": "selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-edit-page",
+      "type": "registry:component",
+      "title": "Cobalt edit-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "edit-page/edit-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/edit-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "保存を待つ間も操作の結果が分かるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "保存する",
+              "effect": "Buttonの押下とloadingのSpinnerを継承。送信失敗時は既存のエラーへ即時フォーカス。エラー本文は弾ませない。",
+              "timing": "press / spin"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-assistant-panel",
+      "type": "registry:component",
+      "title": "Cobalt assistant-panel",
+      "description": "Cobalt design system component.",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [
+        "@yukihi/cobalt-assistant-card",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-button",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "assistant-panel/assistant-panel.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/assistant-panel.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "案内を親しみやすく取り出す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "案内を表示・選択",
+              "effect": "AssistantCardの小さな登場、SuggestionChipとButtonの手応えを継承。SVG自体は変形しない。",
+              "timing": "entry / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-settings-section",
+      "type": "registry:component",
+      "title": "Cobalt settings-section",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "settings-section/settings-section.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/settings-section.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "設定のまとまりを読みやすく保つ。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "設定操作",
+              "effect": "子のSwitch/Inputなどのmotionを継承。セクション自体は静止。",
+              "timing": "feedback / selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-dashboard-page",
+      "type": "registry:component",
+      "title": "Cobalt dashboard-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-card",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-loading-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "dashboard-page/dashboard-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/dashboard-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "数値の読み取りを邪魔せず次の操作を促す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "指標から操作",
+              "effect": "子のButton・案内部品のmotionを継承。数字のカウントアップやカードの一斉登場は付けない。",
+              "timing": "press / entry"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-detail-page",
+      "type": "registry:component",
+      "title": "Cobalt detail-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-loading-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "detail-page/detail-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/detail-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "詳細を安定して読み、操作の結果を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "編集・確認",
+              "effect": "子のButton・Dialogなどのmotionを継承。本文は静止。",
+              "timing": "press / entry"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-settings-page",
+      "type": "registry:component",
+      "title": "Cobalt settings-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-settings-section",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "settings-page/settings-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/settings-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "保存が終わったことを穏やかに祝う。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "保存する",
+              "effect": "Buttonの押下と処理中Spinnerを継承。保存済み文言は6pxとscale .98→1で登場。",
+              "timing": "press / spin / celebrate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-step-form",
+      "type": "registry:component",
+      "title": "Cobalt step-form",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-progress",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "step-form/step-form.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/step-form.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "進む・戻るの方向と到達を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "ステップ変更",
+              "effect": "進む時は右12px、戻る時は左12px（スマホでは8px）から内容をフェード。見出しへの既存フォーカスは待たせない。",
+              "timing": "expand"
+            },
+            {
+              "trigger": "進行・送信",
+              "effect": "Progressの前進、Buttonの処理中Spinnerを継承。送信完了の業務コールバックは遅らせない。",
+              "timing": "celebrate / spin"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-task-workflow-page",
+      "type": "registry:component",
+      "title": "Cobalt task-workflow-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-badge",
+        "@yukihi/cobalt-card",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "task-workflow-page/task-workflow-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/task-workflow-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "作業を一つずつ終える達成感を作る。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "完了状態になる",
+              "effect": "Badgeの印、Progressの到達、完了パネルの6pxとscale .98→1を利用。再実行しても前の再生を溜めない。",
+              "timing": "celebrate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-result-page",
+      "type": "registry:component",
+      "title": "Cobalt result-page",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-alert",
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "result-page/result-page.tsx",
+          "type": "registry:component",
+          "target": "@components/patterns/result-page.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "完了から次の一歩へつなぐ。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "成功画面を表示",
+              "effect": "成功Alertを6pxとscale .98→1で登場。次のButtonは通常の手応え。失敗画面は静止した説明を優先。",
+              "timing": "celebrate / press"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

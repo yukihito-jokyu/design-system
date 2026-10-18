@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "cobalt-utils",
+      "type": "registry:lib",
+      "title": "Cobalt Utilities",
+      "description": "Cobalt design system component.",
+      "dependencies": [
+        "clsx@^2.1.1",
+        "tailwind-merge@^3.7.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "utils/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "既存の補助処理を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "DOMを描画しないため独立したmotionは持たない。"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-collapsible",
+  "title": "Cobalt collapsible",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/collapsible/collapsible.tsx",
+      "content": "import { useMotionEntry } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Collapsible as CollapsiblePrimitive } from \"radix-ui\";\n\nfunction Collapsible({\n  motion = \"inherit\",\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <CollapsiblePrimitive.Root\n        data-slot=\"collapsible\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-collapsible\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction CollapsibleTrigger({\n  className,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleTrigger>) {\n  const effective = useDesignMotion();\n  return (\n    <CollapsiblePrimitive.CollapsibleTrigger\n      data-slot=\"collapsible-trigger\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-collapsible-trigger\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction CollapsibleContent({\n  className,\n  ref: forwardedRef,\n  children,\n  ...props\n}: React.ComponentProps<typeof CollapsiblePrimitive.CollapsibleContent>) {\n  const { ref, effective } = useMotionEntry<HTMLDivElement>(forwardedRef);\n  return (\n    <CollapsiblePrimitive.CollapsibleContent\n      data-slot=\"collapsible-content\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-collapsible-content\", className)}\n      {...props}\n    >\n      {/* asChildの要素は維持し、通常は実寸で開くための内側の枠を置く。 */}\n      {props.asChild ? children : <div className=\"cobalt-collapsible-body\">{children}</div>}\n    </CollapsiblePrimitive.CollapsibleContent>\n  );\n}\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
+      "type": "registry:ui",
+      "target": "@ui/collapsible.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "追加情報の出現位置を見失わせない。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "Radixの実寸まで高さ0から展開し、フェード。通常の内容に内側の枠を置き、asChildの要素は保つ。閉じるは即時。",
+          "timing": "expand"
+        }
+      ],
+      "entryControl": "位置・高さの計測後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で再生の印を外し、ONへ戻すだけでは再生しない。"
+    }
+  },
+  "type": "registry:ui"
+}

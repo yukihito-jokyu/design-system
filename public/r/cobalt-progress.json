@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-progress",
+  "title": "Cobalt progress",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/progress/progress.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { type MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Progress as ProgressPrimitive } from \"radix-ui\";\n\nfunction Progress({\n  className,\n  ref: forwardedRef,\n  value,\n  max = 100,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof ProgressPrimitive.Root> & { motion?: MotionPreference }) {\n  const { ref, effective } = useMotionFeedback<HTMLDivElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"complete\",\n  });\n\n  return (\n    <ProgressPrimitive.Root\n      data-slot=\"progress\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      value={value}\n      max={max}\n      className={cn(\"cobalt-progress\", className)}\n      {...props}\n    >\n      <ProgressPrimitive.Indicator\n        data-slot=\"progress-indicator\"\n        className=\"cobalt-progress-indicator\"\n        style={{\n          width: `${value == null ? 25 : Math.max(0, Math.min(100, (value / (max > 0 ? max : 100)) * 100))}%`,\n        }}\n      />\n    </ProgressPrimitive.Root>\n  );\n}\n\nexport { Progress };\n",
+      "type": "registry:ui",
+      "target": "@ui/progress.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "前進と到達を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "値の更新",
+          "effect": "幅を補間し、100%に到達した時だけ一度明るさを戻す。",
+          "timing": "celebrate"
+        },
+        {
+          "trigger": "進捗が不定",
+          "effect": "25%幅の帯を往復。OFFでは静止しaria情報を維持。",
+          "timing": "indeterminate"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

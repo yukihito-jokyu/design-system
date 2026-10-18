@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["vite/client"]
+  },
+  "include": [
+    ".storybook",
+    "registry/new-york/patterns/**/*.stories.tsx",
+    "registry/cobalt/ui/**/*.stories.tsx",
+    "registry/cobalt/patterns/**/*.stories.tsx",
+    "registry/cobalt/character/**/*.stories.tsx",
+    "registry/cobalt/icons/**/*.stories.tsx"
+  ]
+}

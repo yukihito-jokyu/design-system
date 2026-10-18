@@ -1,0 +1,48 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-button",
+  "title": "Cobalt button",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-spinner",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/button/button.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { Spinner } from \"@/registry/cobalt/ui/spinner/spinner\";\nimport {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nconst buttonVariants = cva(\"cobalt-button\", {\n  variants: {\n    variant: {\n      default: \"cobalt-button-primary\",\n      destructive: \"cobalt-button-destructive\",\n      outline: \"cobalt-button-outline\",\n      secondary: \"cobalt-button-secondary\",\n      ghost: \"cobalt-button-ghost\",\n      link: \"cobalt-button-link\",\n    },\n    size: {\n      default: \"cobalt-size-md\",\n      sm: \"cobalt-size-sm\",\n      lg: \"cobalt-size-lg\",\n      icon: \"cobalt-size-md cobalt-icon-button\",\n      \"icon-sm\": \"cobalt-size-sm cobalt-icon-button\",\n      \"icon-lg\": \"cobalt-size-lg cobalt-icon-button\",\n    },\n  },\n  defaultVariants: { variant: \"default\", size: \"default\" },\n});\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  loading = false,\n  motion = \"inherit\",\n  disabled,\n  tabIndex,\n  onClick,\n  onClickCapture,\n  onKeyDownCapture,\n  children,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    loading?: boolean;\n    asChild?: boolean;\n    motion?: MotionPreference;\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\";\n  const effective = useDesignMotion(motion);\n  const unavailable = disabled || loading;\n\n  return (\n    <Comp\n      {...props}\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      data-cobalt-motion={effective}\n      className={cn(buttonVariants({ variant, size, className }))}\n      disabled={asChild ? undefined : unavailable}\n      aria-disabled={unavailable || undefined}\n      aria-busy={loading || undefined}\n      tabIndex={asChild && unavailable ? -1 : tabIndex}\n      onClickCapture={(event) => {\n        if (unavailable) {\n          event.preventDefault();\n          event.stopPropagation();\n          return;\n        }\n        onClickCapture?.(event);\n      }}\n      onKeyDownCapture={(event) => {\n        if (unavailable && (event.key === \"Enter\" || event.key === \" \")) {\n          event.preventDefault();\n          event.stopPropagation();\n          return;\n        }\n        onKeyDownCapture?.(event);\n      }}\n      onClick={(event) => {\n        if (unavailable) {\n          event.preventDefault();\n          event.stopPropagation();\n          return;\n        }\n        onClick?.(event);\n      }}\n    >\n      {asChild ? (\n        children\n      ) : (\n        <>\n          {loading && (\n            <Spinner motion={motion} className=\"cobalt-button-spinner\" aria-hidden=\"true\" />\n          )}\n          {children}\n        </>\n      )}\n    </Comp>\n  );\n}\n\nexport { Button, buttonVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/button.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "押した手応えを返し、実行を少し楽しみにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "押下",
+          "effect": "scale 1→.96、離すと弾性を付けて1へ戻す。色は変えない。",
+          "timing": "press / feedback"
+        },
+        {
+          "trigger": "ポインターが乗る",
+          "effect": "精密ポインターのみ上へ2px、スマホは1px。",
+          "timing": "feedback"
+        },
+        {
+          "trigger": "loading=true",
+          "effect": "白いSpinnerで待機を示す。OFF時も文言とaria-busyは残す。",
+          "timing": "spin"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

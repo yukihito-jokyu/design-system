@@ -1,0 +1,1352 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "cobalt-icon-frame",
+      "type": "registry:component",
+      "title": "Cobalt Icon Frame",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles"
+      ],
+      "files": [
+        {
+          "path": "icon-frame/IconFrame.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/IconFrame.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-document-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblyDocumentFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-document-feature-icon/AssemblyDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyDocumentFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-history-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblyHistoryFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-history-feature-icon/AssemblyHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyHistoryFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-idea-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblyIdeaFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-idea-feature-icon/AssemblyIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyIdeaFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-saved-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblySavedStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-saved-status-icon/AssemblySavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblySavedStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-success-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblySuccessCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-success-character-icon/AssemblySuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblySuccessCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-thinking-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblyThinkingCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-thinking-character-icon/AssemblyThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyThinkingCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-thinking-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblyThinkingStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-thinking-status-icon/AssemblyThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyThinkingStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-assembly-welcome-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt AssemblyWelcomeCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/AssemblyWelcomeCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-document-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldDocumentFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-document-feature-icon/FoldDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldDocumentFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-history-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldHistoryFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-history-feature-icon/FoldHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldHistoryFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-idea-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldIdeaFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-idea-feature-icon/FoldIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldIdeaFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-saved-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldSavedStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-saved-status-icon/FoldSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldSavedStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-success-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldSuccessCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-success-character-icon/FoldSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldSuccessCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-thinking-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldThinkingCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-thinking-character-icon/FoldThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldThinkingCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-thinking-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldThinkingStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-thinking-status-icon/FoldThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldThinkingStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-fold-welcome-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt FoldWelcomeCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "fold-welcome-character-icon/FoldWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/FoldWelcomeCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-document-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressDocumentFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-document-feature-icon/ImpressDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressDocumentFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-history-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressHistoryFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-history-feature-icon/ImpressHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressHistoryFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-idea-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressIdeaFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-idea-feature-icon/ImpressIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressIdeaFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-saved-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressSavedStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-saved-status-icon/ImpressSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressSavedStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-success-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressSuccessCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-success-character-icon/ImpressSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressSuccessCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-thinking-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressThinkingCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-thinking-character-icon/ImpressThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressThinkingCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-thinking-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressThinkingStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-thinking-status-icon/ImpressThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressThinkingStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-impress-welcome-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt ImpressWelcomeCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "impress-welcome-character-icon/ImpressWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/ImpressWelcomeCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-document-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkDocumentFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-document-feature-icon/InkDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkDocumentFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-history-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkHistoryFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-history-feature-icon/InkHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkHistoryFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-idea-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkIdeaFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-idea-feature-icon/InkIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkIdeaFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-saved-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkSavedStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-saved-status-icon/InkSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkSavedStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-success-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkSuccessCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-success-character-icon/InkSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkSuccessCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-thinking-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkThinkingCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-thinking-character-icon/InkThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkThinkingCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-thinking-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkThinkingStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-thinking-status-icon/InkThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkThinkingStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-ink-welcome-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt InkWelcomeCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "ink-welcome-character-icon/InkWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/InkWelcomeCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-document-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithDocumentFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-document-feature-icon/MonolithDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithDocumentFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-history-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithHistoryFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-history-feature-icon/MonolithHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithHistoryFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-idea-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithIdeaFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-idea-feature-icon/MonolithIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithIdeaFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-saved-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithSavedStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-saved-status-icon/MonolithSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithSavedStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-success-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithSuccessCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-success-character-icon/MonolithSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithSuccessCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-thinking-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithThinkingCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-thinking-character-icon/MonolithThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithThinkingCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-thinking-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithThinkingStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-thinking-status-icon/MonolithThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithThinkingStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-monolith-welcome-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt MonolithWelcomeCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "monolith-welcome-character-icon/MonolithWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/MonolithWelcomeCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-document-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitDocumentFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-document-feature-icon/OrbitDocumentFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitDocumentFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-history-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitHistoryFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-history-feature-icon/OrbitHistoryFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitHistoryFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-idea-feature-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitIdeaFeatureIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-idea-feature-icon/OrbitIdeaFeatureIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitIdeaFeatureIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-saved-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitSavedStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-saved-status-icon/OrbitSavedStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitSavedStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-success-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitSuccessCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-success-character-icon/OrbitSuccessCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitSuccessCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-thinking-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitThinkingCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-thinking-character-icon/OrbitThinkingCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitThinkingCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-thinking-status-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitThinkingStatusIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-thinking-status-icon/OrbitThinkingStatusIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitThinkingStatusIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-orbit-welcome-character-icon",
+      "type": "registry:component",
+      "title": "Cobalt OrbitWelcomeCharacterIcon",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
+      "files": [
+        {
+          "path": "orbit-welcome-character-icon/OrbitWelcomeCharacterIcon.tsx",
+          "type": "registry:component",
+          "target": "@components/icons/OrbitWelcomeCharacterIcon.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    },
+    {
+      "name": "cobalt-icons",
+      "type": "registry:component",
+      "title": "Cobalt All Approved Icons",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-assembly-document-feature-icon",
+        "@yukihi/cobalt-assembly-history-feature-icon",
+        "@yukihi/cobalt-assembly-idea-feature-icon",
+        "@yukihi/cobalt-assembly-saved-status-icon",
+        "@yukihi/cobalt-assembly-success-character-icon",
+        "@yukihi/cobalt-assembly-thinking-character-icon",
+        "@yukihi/cobalt-assembly-thinking-status-icon",
+        "@yukihi/cobalt-assembly-welcome-character-icon",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-fold-document-feature-icon",
+        "@yukihi/cobalt-fold-history-feature-icon",
+        "@yukihi/cobalt-fold-idea-feature-icon",
+        "@yukihi/cobalt-fold-saved-status-icon",
+        "@yukihi/cobalt-fold-success-character-icon",
+        "@yukihi/cobalt-fold-thinking-character-icon",
+        "@yukihi/cobalt-fold-thinking-status-icon",
+        "@yukihi/cobalt-fold-welcome-character-icon",
+        "@yukihi/cobalt-icon-frame",
+        "@yukihi/cobalt-impress-document-feature-icon",
+        "@yukihi/cobalt-impress-history-feature-icon",
+        "@yukihi/cobalt-impress-idea-feature-icon",
+        "@yukihi/cobalt-impress-saved-status-icon",
+        "@yukihi/cobalt-impress-success-character-icon",
+        "@yukihi/cobalt-impress-thinking-character-icon",
+        "@yukihi/cobalt-impress-thinking-status-icon",
+        "@yukihi/cobalt-impress-welcome-character-icon",
+        "@yukihi/cobalt-ink-document-feature-icon",
+        "@yukihi/cobalt-ink-history-feature-icon",
+        "@yukihi/cobalt-ink-idea-feature-icon",
+        "@yukihi/cobalt-ink-saved-status-icon",
+        "@yukihi/cobalt-ink-success-character-icon",
+        "@yukihi/cobalt-ink-thinking-character-icon",
+        "@yukihi/cobalt-ink-thinking-status-icon",
+        "@yukihi/cobalt-ink-welcome-character-icon",
+        "@yukihi/cobalt-monolith-document-feature-icon",
+        "@yukihi/cobalt-monolith-history-feature-icon",
+        "@yukihi/cobalt-monolith-idea-feature-icon",
+        "@yukihi/cobalt-monolith-saved-status-icon",
+        "@yukihi/cobalt-monolith-success-character-icon",
+        "@yukihi/cobalt-monolith-thinking-character-icon",
+        "@yukihi/cobalt-monolith-thinking-status-icon",
+        "@yukihi/cobalt-monolith-welcome-character-icon",
+        "@yukihi/cobalt-orbit-document-feature-icon",
+        "@yukihi/cobalt-orbit-history-feature-icon",
+        "@yukihi/cobalt-orbit-idea-feature-icon",
+        "@yukihi/cobalt-orbit-saved-status-icon",
+        "@yukihi/cobalt-orbit-success-character-icon",
+        "@yukihi/cobalt-orbit-thinking-character-icon",
+        "@yukihi/cobalt-orbit-thinking-status-icon",
+        "@yukihi/cobalt-orbit-welcome-character-icon"
+      ],
+      "files": [
+        {
+          "path": "icons/index.ts",
+          "type": "registry:component",
+          "target": "@components/icons/index.ts"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みSVGの図柄・色・線を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+        }
+      }
+    }
+  ]
+}

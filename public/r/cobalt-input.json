@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-input",
+  "title": "Cobalt input",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/input/input.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { type MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Input({\n  className,\n  ref: forwardedRef,\n  type,\n  controlSize = \"md\",\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<\"input\"> & {\n  controlSize?: \"sm\" | \"md\" | \"lg\";\n  motion?: MotionPreference;\n}) {\n  const { ref, effective } = useMotionFeedback<HTMLInputElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"invalid\",\n  });\n\n  return (\n    <input\n      type={type}\n      data-slot=\"input\"\n      ref={ref}\n      data-size={controlSize}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-input\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Input };\n",
+      "type": "registry:ui",
+      "target": "@ui/input.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "入力の場所と修正が必要な場所を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "フォーカス",
+          "effect": "単一のグラデーション枠を保ち、淡い影を滑らかに出す。",
+          "timing": "selection"
+        },
+        {
+          "trigger": "aria-invalidがtrueに変化",
+          "effect": "左右2px以内の小さな揺れを一度だけ再生。入力値とフォーカスは維持。初期エラーは揺らさない。",
+          "timing": "selection"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

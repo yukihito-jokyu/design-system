@@ -33,7 +33,11 @@ export function AssistantCard({
       </CardHeader>
       <CardContent className="stack">
         <div>{body}</div>
-        {status && <StatusBubble direction={direction} status={status} />}
+        {status && (
+          <div className="actions">
+            <StatusBubble direction={direction} status={status} />
+          </div>
+        )}
         <div className="actions">
           {suggestions.map((suggestion, i) => (
             <SuggestionChip key={i} {...suggestion} />

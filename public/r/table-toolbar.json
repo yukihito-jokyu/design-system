@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "table-toolbar",
   "title": "table-toolbar",
-  "description": "Design system patterns component.",
+  "description": "一覧の検索・条件・件数をまとめる。表本体にはdata-tableを使う。",
   "dependencies": [],
   "registryDependencies": [
     "@yukihi/design-system-styles",

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-collection-page",
+  "title": "Cobalt collection-page",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-data-table",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-empty-state",
+    "@yukihi/cobalt-error-state",
+    "@yukihi/cobalt-loading-state",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/collection-page/collection-page.tsx",
+      "content": "import { EmptyState } from \"@/registry/cobalt/character/empty-state/empty-state\";\nimport type { ReactNode } from \"react\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport { DataTable, type DataColumn } from \"@/registry/cobalt/patterns/data-table/data-table\";\nimport { LoadingState } from \"@/registry/cobalt/patterns/loading-state/loading-state\";\nimport { useListMotion } from \"@/registry/cobalt/components/theme-provider/motion-layout\";\nimport { ErrorState } from \"@/registry/cobalt/patterns/error-state/error-state\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function CollectionPage<T>({\n  title,\n  description,\n  actions,\n  rows,\n  columns,\n  getRowId,\n  caption,\n  filters,\n  filterRow,\n  filterKey,\n  onSelectionChange,\n  renderList,\n  loading = false,\n  error,\n  onRetry,\n  empty,\n  emptyAction,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description?: string;\n  actions?: ReactNode;\n  rows: T[];\n  columns: DataColumn<T>[];\n  getRowId: (row: T) => string;\n  caption: string;\n  filters?: ReactNode;\n  filterRow?: (row: T) => boolean;\n  filterKey?: string | number;\n  onSelectionChange?: (ids: string[]) => void;\n  renderList?: (rows: T[]) => ReactNode;\n  loading?: boolean;\n  error?: string;\n  onRetry?: () => void;\n  empty?: ReactNode;\n  emptyAction?: ReactNode;\n  motion?: MotionPreference;\n}) {\n  const visibleRows = filterRow ? rows.filter(filterRow) : rows;\n\n  const motionRef = useListMotion<HTMLElement>(\n    motion,\n    JSON.stringify([visibleRows.map(getRowId), loading, error]),\n    \".cobalt-record-list > li\",\n  );\n\n  return (\n    <MotionProvider motion={motion}>\n      <main className=\"cobalt-stack\" ref={motionRef}>\n        <PageHeader title={title} description={description} actions={actions} headingLevel={1} />\n        {error ? (\n          <ErrorState description={error} onRetry={onRetry} />\n        ) : (\n          <LoadingState loading={loading} initial>\n            {rows.length === 0 && !filterRow ? (\n              <div role=\"status\">\n                {empty ?? (\n                  <EmptyState\n                    kind=\"initial\"\n                    title=\"項目がありません\"\n                    description=\"項目を作成すると、ここに表示されます。\"\n                    action={emptyAction}\n                  />\n                )}\n              </div>\n            ) : renderList ? (\n              <div className=\"cobalt-stack\">\n                <div className=\"cobalt-actions\">\n                  {filters}\n                  <span role=\"status\">{visibleRows.length}件</span>\n                </div>\n                {visibleRows.length ? (\n                  renderList(visibleRows)\n                ) : (\n                  <EmptyState\n                    kind=\"filter\"\n                    title=\"条件に一致する項目がありません\"\n                    description=\"絞り込み条件を変更してください。\"\n                    action={emptyAction}\n                  />\n                )}\n              </div>\n            ) : (\n              <DataTable\n                rows={rows}\n                columns={columns}\n                getRowId={getRowId}\n                caption={caption}\n                filters={filters}\n                filterRow={filterRow}\n                filterKey={filterKey}\n                onSelectionChange={onSelectionChange}\n                emptyAction={emptyAction}\n              />\n            )}\n          </LoadingState>\n        )}\n      </main>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/collection-page.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "絞り込み後の一覧を追いやすくする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "一覧の構成変更",
+          "effect": "既存の行は移動前後の位置をつなぎ、新しい行は6pxとフェード。検索中の連続操作は前の再生を中止。",
+          "timing": "expand"
+        },
+        {
+          "trigger": "状態変更・行操作",
+          "effect": "Badgeの印とButtonの押下を継承。",
+          "timing": "celebrate / press"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

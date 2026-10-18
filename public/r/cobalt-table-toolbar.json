@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-table-toolbar",
+  "title": "Cobalt table-toolbar",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-search-field",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/table-toolbar/table-toolbar.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { SearchField } from \"@/registry/cobalt/patterns/search-field/search-field\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function TableToolbar({\n  query,\n  onQueryChange,\n  count,\n  children,\n  motion = \"inherit\",\n}: {\n  query: string;\n  onQueryChange: (value: string) => void;\n  count: number;\n  children?: ReactNode;\n  motion?: MotionPreference;\n}) {\n  return (\n    <MotionProvider motion={motion}>\n      <div className=\"cobalt-table-toolbar\">\n        <SearchField label=\"一覧を検索\" value={query} onValueChange={onQueryChange} />\n        <div className=\"cobalt-actions\">\n          <span role=\"status\" aria-live=\"polite\" className=\"cobalt-note\">\n            {count}件\n          </span>\n          {children}\n        </div>\n      </div>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/table-toolbar.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "検索・絞り込み操作を軽く返す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "検索・フィルター・操作",
+          "effect": "SearchFieldとButtonを継承。ツールバー全体の再登場は付けない。",
+          "timing": "selection / press"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

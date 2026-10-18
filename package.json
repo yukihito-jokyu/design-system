@@ -10,8 +10,13 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "typecheck": "tsc --noEmit",
-    "registry:build": "shadcn build registry.json --output public/r",
-    "registry:serve": "node scripts/serve-registry.mjs"
+    "typecheck:storybook": "tsc --noEmit -p tsconfig.storybook.json",
+    "storybook": "storybook dev",
+    "build-storybook": "storybook build",
+    "registry:build": "node scripts/build-registry.mjs",
+    "registry:serve": "node scripts/serve-registry.mjs",
+    "registry:check": "node scripts/check-registry.mjs",
+    "registry:prepare": "node scripts/prepare-registry.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -26,14 +31,20 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
+    "@babel/parser": "^7.29.8",
+    "@storybook/react-vite": "^10.6.0",
     "@stylistic/eslint-plugin": "5.10.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^22.20.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "oxfmt": "0.67.0",
     "oxlint": "1.82.0",
     "oxlint-tsgolint": "7.0.2001",
     "shadcn": "^4.21.0",
+    "storybook": "^10.6.0",
     "tailwindcss": "^4.3.3",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
   }
 }

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-page-header",
+  "title": "Cobalt page-header",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/page-header/page-header.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function PageHeader({\n  title,\n  description,\n  actions,\n  headingLevel = 2,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description?: string;\n  actions?: ReactNode;\n  headingLevel?: 1 | 2;\n  motion?: MotionPreference;\n}) {\n  const Heading = headingLevel === 1 ? \"h1\" : \"h2\";\n  return (\n    <MotionProvider motion={motion}>\n      <header className=\"cobalt-page-header\">\n        <div>\n          <Heading>{title}</Heading>\n          {description && <p className=\"cobalt-note\">{description}</p>}\n        </div>\n        {actions && <div className=\"cobalt-actions\">{actions}</div>}\n      </header>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/page-header.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "ページの名前と操作を見失わせない。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "主要操作",
+          "effect": "渡されたButtonなどのmotionを継承。見出しは静止。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

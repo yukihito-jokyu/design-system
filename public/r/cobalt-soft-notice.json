@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-soft-notice",
+  "title": "Cobalt soft-notice",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-alert",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/character/soft-notice/soft-notice.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Alert, AlertTitle, AlertDescription } from \"@/registry/cobalt/ui/alert/alert\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function SoftNotice({\n  title,\n  children,\n  tone = \"neutral\",\n  action,\n  motion = \"inherit\",\n}: {\n  title: string;\n  children: ReactNode;\n  tone?: \"neutral\" | \"success\" | \"warning\" | \"danger\";\n  action?: ReactNode;\n  motion?: MotionPreference;\n}) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <Alert\n        className=\"cobalt-character-entry\"\n        data-cobalt-motion={effective}\n        variant={tone === \"danger\" ? \"destructive\" : tone === \"neutral\" ? \"default\" : tone}\n      >\n        <AlertTitle>{title}</AlertTitle>\n        <AlertDescription>\n          {children}\n          {action && <div className=\"cobalt-actions\">{action}</div>}\n        </AlertDescription>\n      </Alert>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/character/soft-notice.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "案内と成功を穏やかに伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "表示",
+          "effect": "Character共通の8pxとscale .98→1。成功はAlertの小さな登場。",
+          "timing": "entry / celebrate"
+        },
+        {
+          "trigger": "tone変更",
+          "effect": "Alertの状態変化を継承。dangerは弾ませずフェード。",
+          "timing": "selection / celebrate"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

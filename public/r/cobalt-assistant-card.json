@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-assistant-card",
+  "title": "Cobalt assistant-card",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-card",
+    "@yukihi/cobalt-character-icons",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-suggestion-chip",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/character/assistant-card/assistant-card.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Card, CardHeader, CardTitle, CardContent } from \"@/registry/cobalt/ui/card/card\";\nimport {\n  CharacterIcon,\n  StatusBubble,\n  type IconDirection,\n} from \"@/registry/cobalt/character/character-icons/index\";\nimport { SuggestionChip } from \"@/registry/cobalt/character/suggestion-chip/suggestion-chip\";\nimport type { MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function AssistantCard({\n  title,\n  body,\n  suggestions = [],\n  status,\n  direction = \"fold\",\n  motion = \"inherit\",\n}: {\n  title: string;\n  body: ReactNode;\n  suggestions?: { label: string; onSelect: () => void }[];\n  status?: \"thinking\" | \"saved\";\n  direction?: IconDirection;\n  motion?: MotionPreference;\n}) {\n  return (\n    <Card motion={motion} className=\"cobalt-assistant-card\">\n      <CardHeader>\n        <div className=\"cobalt-assistant-heading\">\n          <CharacterIcon\n            direction={direction}\n            expression={status === \"thinking\" ? \"thinking\" : \"welcome\"}\n          />\n          <CardTitle>{title}</CardTitle>\n        </div>\n      </CardHeader>\n      <CardContent className=\"cobalt-stack\">\n        <div>{body}</div>\n        {status && (\n          <div className=\"cobalt-actions\">\n            <StatusBubble direction={direction} status={status} />\n          </div>\n        )}\n        <div className=\"cobalt-actions\">\n          {suggestions.map((suggestion, i) => (\n            <SuggestionChip key={i} {...suggestion} />\n          ))}\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/character/assistant-card.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "案内を親しみやすく迎える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "表示",
+          "effect": "8pxとscale .98→1で控えめに登場。SVGの線・色・内部形状は変更しない。",
+          "timing": "entry"
+        },
+        {
+          "trigger": "提案を押す",
+          "effect": "SuggestionChipとButtonの手応えを継承。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-alert",
+  "title": "Cobalt alert",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/alert/alert.tsx",
+      "content": "import * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\n\nconst alertVariants = cva(\"cobalt-alert\", {\n  variants: {\n    variant: {\n      default: \"\",\n      success: \"cobalt-alert-success\",\n      warning: \"cobalt-alert-warning\",\n      destructive: \"cobalt-alert-destructive\",\n    },\n  },\n  defaultVariants: { variant: \"default\" },\n});\n\nfunction Alert({\n  className,\n  ref: forwardedRef,\n  motion = \"inherit\",\n  variant,\n  ...props\n}: React.ComponentProps<\"div\"> &\n  VariantProps<typeof alertVariants> & { motion?: MotionPreference }) {\n  const { ref, effective } = useMotionFeedback<HTMLDivElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"status\",\n  });\n\n  return (\n    <MotionProvider motion={motion}>\n      <div\n        data-slot=\"alert\"\n        data-variant={variant ?? \"default\"}\n        data-cobalt-motion={effective}\n        ref={ref}\n        role=\"alert\"\n        className={cn(alertVariants({ variant }), className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction AlertTitle({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"alert-title\" className={cn(\"cobalt-alert-title\", className)} {...props} />;\n}\n\nfunction AlertDescription({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"alert-description\"\n      className={cn(\"cobalt-alert-description\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Alert, AlertTitle, AlertDescription };\n",
+      "type": "registry:ui",
+      "target": "@ui/alert.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "成功の到達を軽く祝う。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "成功通知の表示",
+          "effect": "6pxとscale .98→1で穏やかに登場。",
+          "timing": "celebrate"
+        },
+        {
+          "trigger": "variant変更",
+          "effect": "成功は.98→1.01→1の小さな弾み。警告・通常・destructiveは短いフェード。初期の警告・エラーは静止。",
+          "timing": "celebrate / selection"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

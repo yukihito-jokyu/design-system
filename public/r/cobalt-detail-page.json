@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-detail-page",
+  "title": "Cobalt detail-page",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-error-state",
+    "@yukihi/cobalt-loading-state",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/detail-page/detail-page.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport { LoadingState } from \"@/registry/cobalt/patterns/loading-state/loading-state\";\nimport { ErrorState } from \"@/registry/cobalt/patterns/error-state/error-state\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function DetailPage({\n  title,\n  description,\n  back,\n  actions,\n  children,\n  status = \"ready\",\n  error,\n  onRetry,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description?: string;\n  back?: ReactNode;\n  actions?: ReactNode;\n  children: ReactNode;\n  status?: \"ready\" | \"loading\" | \"missing\" | \"forbidden\" | \"error\";\n  error?: string;\n  onRetry?: () => void;\n  motion?: MotionPreference;\n}) {\n  const message =\n    status === \"missing\"\n      ? \"対象が見つかりません。\"\n      : status === \"forbidden\"\n        ? \"この対象を表示する権限がありません。\"\n        : (error ?? \"詳細を読み込めませんでした。\");\n\n  return (\n    <MotionProvider motion={motion}>\n      <main className=\"cobalt-stack cobalt-pattern-page\">\n        {back && <nav aria-label=\"戻り先\">{back}</nav>}\n        <PageHeader\n          title={title}\n          description={description}\n          actions={status === \"ready\" ? actions : undefined}\n          headingLevel={1}\n        />\n        {status === \"error\" || status === \"missing\" || status === \"forbidden\" ? (\n          <ErrorState description={message} onRetry={status === \"error\" ? onRetry : undefined} />\n        ) : (\n          <LoadingState loading={status === \"loading\"} initial>\n            <div className=\"cobalt-stack\">{children}</div>\n          </LoadingState>\n        )}\n      </main>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/detail-page.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "詳細を安定して読み、操作の結果を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "編集・確認",
+          "effect": "子のButton・Dialogなどのmotionを継承。本文は静止。",
+          "timing": "press / entry"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

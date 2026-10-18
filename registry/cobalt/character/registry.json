@@ -1,0 +1,298 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "cobalt-assistant-card",
+      "type": "registry:component",
+      "title": "Cobalt assistant-card",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-card",
+        "@yukihi/cobalt-character-icons",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-suggestion-chip",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "assistant-card/assistant-card.tsx",
+          "type": "registry:component",
+          "target": "@components/character/assistant-card.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "案内を親しみやすく迎える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "8pxとscale .98→1で控えめに登場。SVGの線・色・内部形状は変更しない。",
+              "timing": "entry"
+            },
+            {
+              "trigger": "提案を押す",
+              "effect": "SuggestionChipとButtonの手応えを継承。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-empty-state",
+      "type": "registry:component",
+      "title": "Cobalt empty-state",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-character-icons",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "empty-state/empty-state.tsx",
+          "type": "registry:component",
+          "target": "@components/character/empty-state.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "空の状態から次の行動を促す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "8pxとscale .98→1で登場。内容更新だけで再登場させない。",
+              "timing": "entry"
+            },
+            {
+              "trigger": "操作する",
+              "effect": "子のButtonの手応えを継承。",
+              "timing": "press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-friendly-tooltip",
+      "type": "registry:component",
+      "title": "Cobalt friendly-tooltip",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider",
+        "@yukihi/cobalt-tooltip"
+      ],
+      "files": [
+        {
+          "path": "friendly-tooltip/friendly-tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/character/friendly-tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "短い案内を気軽に確かめられるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "補足を開く",
+              "effect": "Tooltipの起点から4px、scale .96→1を継承。",
+              "timing": "menu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-message-bubble",
+      "type": "registry:component",
+      "title": "Cobalt message-bubble",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "message-bubble/message-bubble.tsx",
+          "type": "registry:component",
+          "target": "@components/character/message-bubble.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "届いた・送れたことをやさしく伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "Character共通の8pxとscale .98→1。",
+              "timing": "entry"
+            },
+            {
+              "trigger": "statusがsentになる",
+              "effect": "2pxと透明度.8→1を一度だけ再生。送信中ループやエラーの弾みは付けない。",
+              "timing": "menu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-soft-notice",
+      "type": "registry:component",
+      "title": "Cobalt soft-notice",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-alert",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "soft-notice/soft-notice.tsx",
+          "type": "registry:component",
+          "target": "@components/character/soft-notice.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "案内と成功を穏やかに伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "Character共通の8pxとscale .98→1。成功はAlertの小さな登場。",
+              "timing": "entry / celebrate"
+            },
+            {
+              "trigger": "tone変更",
+              "effect": "Alertの状態変化を継承。dangerは弾ませずフェード。",
+              "timing": "selection / celebrate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-suggestion-chip",
+      "type": "registry:component",
+      "title": "Cobalt suggestion-chip",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
+      "files": [
+        {
+          "path": "suggestion-chip/suggestion-chip.tsx",
+          "type": "registry:component",
+          "target": "@components/character/suggestion-chip.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "提案を選ぶ行為に小さな手応えを付ける。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "押下・ホバー",
+              "effect": "既存Buttonの縮みと精密ポインターでの浮きを継承。文言は固定する。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "cobalt-character-icons",
+      "type": "registry:component",
+      "title": "Cobalt Dynamic Character Icons",
+      "description": "Cobalt design system component.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-assembly-document-feature-icon",
+        "@yukihi/cobalt-assembly-history-feature-icon",
+        "@yukihi/cobalt-assembly-idea-feature-icon",
+        "@yukihi/cobalt-assembly-saved-status-icon",
+        "@yukihi/cobalt-assembly-success-character-icon",
+        "@yukihi/cobalt-assembly-thinking-character-icon",
+        "@yukihi/cobalt-assembly-thinking-status-icon",
+        "@yukihi/cobalt-assembly-welcome-character-icon",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-fold-document-feature-icon",
+        "@yukihi/cobalt-fold-history-feature-icon",
+        "@yukihi/cobalt-fold-idea-feature-icon",
+        "@yukihi/cobalt-fold-saved-status-icon",
+        "@yukihi/cobalt-fold-success-character-icon",
+        "@yukihi/cobalt-fold-thinking-character-icon",
+        "@yukihi/cobalt-fold-thinking-status-icon",
+        "@yukihi/cobalt-fold-welcome-character-icon",
+        "@yukihi/cobalt-impress-document-feature-icon",
+        "@yukihi/cobalt-impress-history-feature-icon",
+        "@yukihi/cobalt-impress-idea-feature-icon",
+        "@yukihi/cobalt-impress-saved-status-icon",
+        "@yukihi/cobalt-impress-success-character-icon",
+        "@yukihi/cobalt-impress-thinking-character-icon",
+        "@yukihi/cobalt-impress-thinking-status-icon",
+        "@yukihi/cobalt-impress-welcome-character-icon",
+        "@yukihi/cobalt-ink-document-feature-icon",
+        "@yukihi/cobalt-ink-history-feature-icon",
+        "@yukihi/cobalt-ink-idea-feature-icon",
+        "@yukihi/cobalt-ink-saved-status-icon",
+        "@yukihi/cobalt-ink-success-character-icon",
+        "@yukihi/cobalt-ink-thinking-character-icon",
+        "@yukihi/cobalt-ink-thinking-status-icon",
+        "@yukihi/cobalt-ink-welcome-character-icon",
+        "@yukihi/cobalt-monolith-document-feature-icon",
+        "@yukihi/cobalt-monolith-history-feature-icon",
+        "@yukihi/cobalt-monolith-idea-feature-icon",
+        "@yukihi/cobalt-monolith-saved-status-icon",
+        "@yukihi/cobalt-monolith-success-character-icon",
+        "@yukihi/cobalt-monolith-thinking-character-icon",
+        "@yukihi/cobalt-monolith-thinking-status-icon",
+        "@yukihi/cobalt-monolith-welcome-character-icon",
+        "@yukihi/cobalt-orbit-document-feature-icon",
+        "@yukihi/cobalt-orbit-history-feature-icon",
+        "@yukihi/cobalt-orbit-idea-feature-icon",
+        "@yukihi/cobalt-orbit-saved-status-icon",
+        "@yukihi/cobalt-orbit-success-character-icon",
+        "@yukihi/cobalt-orbit-thinking-character-icon",
+        "@yukihi/cobalt-orbit-thinking-status-icon",
+        "@yukihi/cobalt-orbit-welcome-character-icon",
+        "@yukihi/cobalt-utils"
+      ],
+      "files": [
+        {
+          "path": "character-icons/icon-map.ts",
+          "type": "registry:component",
+          "target": "@components/icons/icon-map.ts"
+        },
+        {
+          "path": "character-icons/index.tsx",
+          "type": "registry:component",
+          "target": "@components/character/index.tsx"
+        }
+      ],
+      "meta": {
+        "motion": {
+          "purpose": "承認済みの図柄を読みやすく保つ。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "図柄の選択・表示を担う部品。SVG自体にループ・色変化を付けず、親の案内部品だけが登場する。"
+        }
+      }
+    }
+  ]
+}

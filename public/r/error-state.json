@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "error-state",
   "title": "error-state",
-  "description": "Design system patterns component.",
+  "description": "処理失敗の説明と再試行。対象が0件の状態には使わない。",
   "dependencies": [],
   "registryDependencies": [
     "@yukihi/alert",

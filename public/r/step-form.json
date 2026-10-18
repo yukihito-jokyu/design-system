@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "step-form",
+  "title": "step-form",
+  "description": "順番に入力し確認して送信する画面。独立した複数作業には使わない。",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/button",
+    "@yukihi/design-system-styles",
+    "@yukihi/error-state",
+    "@yukihi/page-header",
+    "@yukihi/progress"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/patterns/step-form/step-form.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Button } from \"@/registry/new-york/ui/button/button\";\nimport { Progress } from \"@/registry/new-york/ui/progress/progress\";\nimport { PageHeader } from \"@/registry/new-york/patterns/page-header/page-header\";\nimport { ErrorState } from \"@/registry/new-york/patterns/error-state/error-state\";\n\nexport type FormStep = { id: string; title: string; content: ReactNode };\n\nexport function StepForm({\n  title,\n  steps,\n  currentStep,\n  onNext,\n  onBack,\n  onSubmit,\n  onCancel,\n  submitting = false,\n  error,\n  dirty = false,\n}: {\n  title: string;\n  steps: FormStep[];\n  currentStep: number;\n  onNext: () => void;\n  onBack: () => void;\n  onSubmit: () => void;\n  onCancel?: () => void;\n  submitting?: boolean;\n  error?: string;\n  dirty?: boolean;\n}) {\n  const step = steps[currentStep];\n  if (!step) return null;\n  const last = currentStep === steps.length - 1;\n  return (\n    <main className=\"stack\">\n      <PageHeader title={title} headingLevel={1} />\n      <p aria-live=\"polite\">\n        {currentStep + 1} / {steps.length}：{step.title}\n      </p>\n      <Progress value={((currentStep + 1) / steps.length) * 100} aria-label=\"入力の進行状況\" />\n      <section className=\"stack\" aria-label={step.title}>\n        {error && <ErrorState description={error} />}\n        {step.content}\n      </section>\n      {dirty && (\n        <p className=\"note\" role=\"status\">\n          途中の入力があります。離れる前に確認してください。\n        </p>\n      )}\n      <div className=\"actions\">\n        {currentStep > 0 && (\n          <Button type=\"button\" variant=\"outline\" onClick={onBack} disabled={submitting}>\n            戻る\n          </Button>\n        )}\n        <Button type=\"button\" onClick={last ? onSubmit : onNext} disabled={submitting}>\n          {submitting ? \"送信中…\" : last ? \"送信\" : \"次へ\"}\n        </Button>\n        {onCancel && (\n          <Button type=\"button\" variant=\"outline\" onClick={onCancel} disabled={submitting}>\n            中止\n          </Button>\n        )}\n      </div>\n    </main>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/step-form.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,11 @@
+/* 両テーマを読むStorybookで、new-yorkのdata-slot共通指定がcobaltへ混入するのを防ぐ。 */
+@layer base {
+  .cobalt-root :where([data-slot]) {
+    font-family: inherit;
+  }
+}
+
+:where(.cobalt-root) [data-slot] {
+  transition-duration: 0s;
+  animation-duration: 0s;
+}

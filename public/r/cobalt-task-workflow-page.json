@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-task-workflow-page",
+  "title": "Cobalt task-workflow-page",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-badge",
+    "@yukihi/cobalt-card",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-empty-state",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/task-workflow-page/task-workflow-page.tsx",
+      "content": "import type { ComponentProps, ReactNode } from \"react\";\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/registry/cobalt/ui/card/card\";\nimport { Badge } from \"@/registry/cobalt/ui/badge/badge\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport { EmptyState } from \"@/registry/cobalt/character/empty-state/empty-state\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport type WorkflowTask = {\n  id: string;\n  title: string;\n  description?: string;\n  status: \"not-started\" | \"in-progress\" | \"complete\" | \"blocked\";\n  action?: ReactNode;\n};\n\nconst labels = {\n  \"not-started\": \"未開始\",\n  \"in-progress\": \"進行中\",\n  complete: \"完了\",\n  blocked: \"問題あり\",\n};\n\nconst badgeVariants: Record<WorkflowTask[\"status\"], ComponentProps<typeof Badge>[\"variant\"]> = {\n  \"not-started\": \"secondary\",\n  \"in-progress\": \"warning\",\n  complete: \"success\",\n  blocked: \"destructive\",\n};\n\nexport function TaskWorkflowPage({\n  title,\n  description,\n  tasks,\n  complete,\n  completionAction,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description?: string;\n  tasks: WorkflowTask[];\n  complete?: boolean;\n  completionAction?: ReactNode;\n  motion?: MotionPreference;\n}) {\n  const effective = useDesignMotion(motion);\n\n  const isComplete =\n    complete ?? (tasks.length > 0 && tasks.every((task) => task.status === \"complete\"));\n\n  return (\n    <MotionProvider motion={motion}>\n      <main className=\"cobalt-stack cobalt-pattern-page\">\n        <PageHeader title={title} description={description} headingLevel={1} />\n        <p role=\"status\" aria-live=\"polite\">\n          {tasks.filter((task) => task.status === \"complete\").length} / {tasks.length} 件完了\n        </p>\n        {tasks.length > 0 ? (\n          <div className=\"cobalt-workflow-grid\">\n            {tasks.map((task) => (\n              <Card key={task.id}>\n                <CardHeader>\n                  <CardTitle>{task.title}</CardTitle>\n                  <div className=\"cobalt-actions\">\n                    <Badge variant={badgeVariants[task.status]}>{labels[task.status]}</Badge>\n                  </div>\n                </CardHeader>\n                <CardContent className=\"cobalt-stack\">\n                  {task.description && <p>{task.description}</p>}\n                  {task.action && <div className=\"cobalt-actions\">{task.action}</div>}\n                </CardContent>\n              </Card>\n            ))}\n          </div>\n        ) : (\n          !isComplete && (\n            <EmptyState\n              title=\"作業はありません\"\n              description=\"作業が追加されると、ここに表示されます。\"\n            />\n          )\n        )}\n        {isComplete && (\n          <div\n            role=\"status\"\n            className=\"cobalt-stack cobalt-workflow-complete cobalt-feedback-notice\"\n            data-cobalt-motion={effective}\n          >\n            <p>すべての作業が完了しました。</p>\n            {completionAction}\n          </div>\n        )}\n      </main>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/task-workflow-page.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "作業を一つずつ終える達成感を作る。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "完了状態になる",
+          "effect": "Badgeの印、Progressの到達、完了パネルの6pxとscale .98→1を利用。再実行しても前の再生を溜めない。",
+          "timing": "celebrate"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

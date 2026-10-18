@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-app-shell",
+  "title": "Cobalt app-shell",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-sheet",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-use-mobile"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/app-shell/app-shell.tsx",
+      "content": "import { useId, useState, type ReactNode } from \"react\";\nimport { MenuIcon } from \"lucide-react\";\nimport {\n  Sheet,\n  SheetTrigger,\n  SheetContent,\n  SheetTitle,\n  SheetDescription,\n  SheetHeader,\n} from \"@/registry/cobalt/ui/sheet/sheet\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { useIsMobile } from \"@/registry/cobalt/hooks/use-mobile/use-mobile\";\n\nexport function AppShell({\n  navigation,\n  children,\n  aside,\n  contentElement = \"main\",\n  motion = \"inherit\",\n}: {\n  navigation: ReactNode;\n  children: ReactNode;\n  aside?: ReactNode;\n  contentElement?: \"main\" | \"section\";\n  motion?: MotionPreference;\n}) {\n  const id = useId();\n  const Content = contentElement;\n  const mobile = useIsMobile();\n  return (\n    <MotionProvider motion={motion}>\n      <div className=\"cobalt-app-shell\">\n        <a className=\"cobalt-skip-link\" href={`#${id}`}>\n          本文へ移動\n        </a>\n        {mobile && <MobileNavigation navigation={navigation} />}\n        <nav className=\"cobalt-app-shell-nav\" aria-label=\"メインナビゲーション\">\n          {navigation}\n        </nav>\n        <Content id={id} aria-label=\"作業領域\" tabIndex={-1} className=\"cobalt-app-shell-content\">\n          {children}\n        </Content>\n        {aside && (\n          <aside className=\"cobalt-app-shell-aside\" aria-label=\"補助情報\">\n            {aside}\n          </aside>\n        )}\n      </div>\n    </MotionProvider>\n  );\n}\n\n// PC表示へ切り替わったらメニューを破棄し、再度スマホ表示にしても閉じた状態で始める。\nfunction MobileNavigation({ navigation }: { navigation: ReactNode }) {\n  const [menuOpen, setMenuOpen] = useState(false);\n\n  return (\n    <div className=\"cobalt-app-shell-mobile\">\n      <Sheet open={menuOpen} onOpenChange={setMenuOpen}>\n        <SheetTrigger asChild>\n          <Button type=\"button\" variant=\"outline\" size=\"sm\">\n            <MenuIcon aria-hidden=\"true\" />\n            メニュー\n          </Button>\n        </SheetTrigger>\n        <SheetContent side=\"left\">\n          <SheetHeader>\n            <SheetTitle>メニュー</SheetTitle>\n            <SheetDescription>表示するページを選択してください。</SheetDescription>\n          </SheetHeader>\n          <nav\n            className=\"cobalt-app-shell-menu\"\n            aria-label=\"モバイルナビゲーション\"\n            onClick={(event) => {\n              if ((event.target as HTMLElement).closest(\"a[href]\")) setMenuOpen(false);\n            }}\n          >\n            {navigation}\n          </nav>\n        </SheetContent>\n      </Sheet>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/app-shell.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "本文とナビゲーションの関係を保つ。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "スマホのメニューを開く",
+          "effect": "Sheetの端からの登場を継承。本文全体の登場は付けない。",
+          "timing": "entry"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

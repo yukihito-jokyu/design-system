@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-form-field",
+  "title": "Cobalt form-field",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-label",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/form-field/form-field.tsx",
+      "content": "import { useId, type ReactNode } from \"react\";\nimport { Label } from \"@/registry/cobalt/ui/label/label\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nexport type FieldBinding = {\n  id: string;\n  \"aria-describedby\"?: string;\n  \"aria-invalid\"?: true;\n  required?: boolean;\n};\n\nexport function FormField({\n  label,\n  description,\n  error,\n  required,\n  children,\n  motion = \"inherit\",\n}: {\n  label: string;\n  description?: string;\n  error?: string;\n  required?: boolean;\n  children: (props: FieldBinding) => ReactNode;\n  motion?: MotionPreference;\n}) {\n  const id = useId();\n\n  const described =\n    [description ? `${id}-help` : null, error ? `${id}-error` : null].filter(Boolean).join(\" \") ||\n    undefined;\n\n  return (\n    <MotionProvider motion={motion}>\n      <div className=\"cobalt-field\">\n        <Label htmlFor={id}>\n          {label}\n          {required ? \"（必須）\" : \"\"}\n        </Label>\n        {children({\n          id,\n          \"aria-describedby\": described,\n          \"aria-invalid\": error ? true : undefined,\n          required,\n        })}\n        {description && (\n          <p id={`${id}-help`} className=\"cobalt-note\">\n            {description}\n          </p>\n        )}\n        {error && (\n          <p id={`${id}-error`} className=\"cobalt-field-error\">\n            {error}\n          </p>\n        )}\n      </div>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/form-field.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "入力の手がかりを安定して示す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "入力エラー",
+          "effect": "Input/Textareaのエラー変化時の動作を利用する。Labelと説明は静止。",
+          "timing": "selection"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}
