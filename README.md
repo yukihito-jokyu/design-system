@@ -124,6 +124,8 @@ export function Example() {
 
 Noto Sans JPの400/500/600/700は、共通CSSのGoogle Fonts importから読み込みます。色・寸法・動きの共通値は`registry/cobalt/styles/registry.json`が正本です。
 
+導入後は、CLIが追加したGoogle FontsのimportをTailwindのimportより前へ移します。後ろにあるとproduction build後にブラウザーが無視するため、[CSSの導入手順](skills/cobalt-design-system/references/installation.md#cssとprovider)に沿って順序を確認してください。
+
 ローカルでは、先に既存の`registry add`例で`@yukihi`をローカルURLへ向け、`@yukihi/cobalt-button`または`@yukihi/cobalt-design-system`を導入します。新規initには`http://127.0.0.1:4173/r/cobalt-design-system.json`を指定します。
 
 ## 配布物を検査する
@@ -141,13 +143,22 @@ CIはロック済みshadcn CLIで、両システムの検索・個別/一括導�
 
 ## AI向け利用ルール
 
-このデザインシステム専用のAgent Skillは[`skills/design-system/`](skills/design-system/SKILL.md)で管理します。公開後はGitHubから導入できます。
+利用するシステムに合わせてAgent Skillを選びます。同一アプリでは一方だけを使います。GitHubからのスキル導入は、対象ファイルの公開後に利用できます。
+
+| システム | Agent Skill                                                            |
+| -------- | ---------------------------------------------------------------------- |
+| new-york | [`skills/design-system/`](skills/design-system/SKILL.md)               |
+| cobalt   | [`skills/cobalt-design-system/`](skills/cobalt-design-system/SKILL.md) |
 
 ```sh
 npx skills add yukihito-jokyu/design-system --skill design-system
+# cobaltを使う場合
+npx skills add yukihito-jokyu/design-system --skill cobalt-design-system
 ```
 
-Skillにはコンポーネント選択、Token、検証ルールと、Registryで導入できる各コンポーネントの使用例があります。AIは対象を決めた後、`skills/design-system/references/examples/`にある同名ファイルを参照します。
+各Skillには部品・Pattern・操作ルールの選択、Token、検証手順と、Registry項目の使用例があります。対象を決めた後、選んだSkillの`references/examples/`にある同名ファイルを参照します。cobaltの導入名・CSS・lightテーマ・Motion設定は[専用の導入手順](skills/cobalt-design-system/references/installation.md)に従います。
+
+以下はnew-yorkの利用ルールです。
 
 - 新規UIを作る前にRegistryの既存Foundation・Character・Patternを検索し、合成で対応する。
 - 配色・寸法の共通値は`registry/new-york/styles/registry.json`を正本とし、移行前の値を維持する。
