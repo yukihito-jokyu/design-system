@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Cobalt Design Theme Provider",
+      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "dependencies": [
+        "react-dom"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "theme-provider/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/theme-provider.tsx"
+        },
+        {
+          "path": "theme-provider/motion-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/motion-provider.tsx"
+        },
+        {
+          "path": "theme-provider/theme-portal.tsx",
+          "type": "registry:component",
+          "target": "@components/theme-portal.tsx"
+        },
+        {
+          "path": "theme-provider/motion-feedback.ts",
+          "type": "registry:component",
+          "target": "@components/motion-feedback.ts"
+        },
+        {
+          "path": "theme-provider/motion-layout.ts",
+          "type": "registry:component",
+          "target": "@components/motion-layout.ts"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "全体・個別・OSの優先順位と中断を統一する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "設定変更",
+              "effect": "useDesignMotionで継承・OS設定を解決し、CSS・WAAPI双方を停止。ONへの復帰だけで既存の動きを再生しない。"
+            }
+          ],
+          "differenceReason": "属性を持つ既存Radix/HTML要素を監視して状態変化だけを再生し、共通フックでキャンセルとcallback refの後始末を揃える。並べ替えとTabsはCSSだけでは変更前の位置を取得できないため、motion-layout.tsで計測する。追加ライブラリーは使わない。 Radixが計測時にCSSアニメーションを一時停止する部品は、useMotionEntryで登場の印を管理し、位置確定後の一度の再生とOFFからの再開防止を両立する。"
+        }
+      }
+    }
+  ]
+}
