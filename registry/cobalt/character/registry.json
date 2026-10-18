@@ -1,0 +1,314 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "assistant-card",
+      "type": "registry:component",
+      "title": "Cobalt assistant-card",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "assistant-card/assistant-card.tsx",
+          "type": "registry:component",
+          "target": "@components/character/assistant-card.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/character/character-icons/index.tsx",
+          "registry/cobalt/character/suggestion-chip/suggestion-chip.tsx",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/card/card.tsx"
+        ],
+        "motion": {
+          "purpose": "案内を親しみやすく迎える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "8pxとscale .98→1で控えめに登場。SVGの線・色・内部形状は変更しない。",
+              "timing": "entry"
+            },
+            {
+              "trigger": "提案を押す",
+              "effect": "SuggestionChipとButtonの手応えを継承。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "title": "Cobalt empty-state",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "empty-state/empty-state.tsx",
+          "type": "registry:component",
+          "target": "@components/character/empty-state.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/character/character-icons/index.tsx",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "空の状態から次の行動を促す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "8pxとscale .98→1で登場。内容更新だけで再登場させない。",
+              "timing": "entry"
+            },
+            {
+              "trigger": "操作する",
+              "effect": "子のButtonの手応えを継承。",
+              "timing": "press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "friendly-tooltip",
+      "type": "registry:component",
+      "title": "Cobalt friendly-tooltip",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "friendly-tooltip/friendly-tooltip.tsx",
+          "type": "registry:component",
+          "target": "@components/character/friendly-tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/tooltip/tooltip.tsx"
+        ],
+        "motion": {
+          "purpose": "短い案内を気軽に確かめられるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "補足を開く",
+              "effect": "Tooltipの起点から4px、scale .96→1を継承。",
+              "timing": "menu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "message-bubble",
+      "type": "registry:component",
+      "title": "Cobalt message-bubble",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "message-bubble/message-bubble.tsx",
+          "type": "registry:component",
+          "target": "@components/character/message-bubble.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "届いた・送れたことをやさしく伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "Character共通の8pxとscale .98→1。",
+              "timing": "entry"
+            },
+            {
+              "trigger": "statusがsentになる",
+              "effect": "2pxと透明度.8→1を一度だけ再生。送信中ループやエラーの弾みは付けない。",
+              "timing": "menu"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "soft-notice",
+      "type": "registry:component",
+      "title": "Cobalt soft-notice",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "soft-notice/soft-notice.tsx",
+          "type": "registry:component",
+          "target": "@components/character/soft-notice.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/alert/alert.tsx"
+        ],
+        "motion": {
+          "purpose": "案内と成功を穏やかに伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "表示",
+              "effect": "Character共通の8pxとscale .98→1。成功はAlertの小さな登場。",
+              "timing": "entry / celebrate"
+            },
+            {
+              "trigger": "tone変更",
+              "effect": "Alertの状態変化を継承。dangerは弾ませずフェード。",
+              "timing": "selection / celebrate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "suggestion-chip",
+      "type": "registry:component",
+      "title": "Cobalt suggestion-chip",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "suggestion-chip/suggestion-chip.tsx",
+          "type": "registry:component",
+          "target": "@components/character/suggestion-chip.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "提案を選ぶ行為に小さな手応えを付ける。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "押下・ホバー",
+              "effect": "既存Buttonの縮みと精密ポインターでの浮きを継承。文言は固定する。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "character-icons",
+      "type": "registry:component",
+      "title": "Cobalt Dynamic Character Icons",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "character-icons/icon-map.ts",
+          "type": "registry:component",
+          "target": "@components/icons/icon-map.ts"
+        },
+        {
+          "path": "character-icons/index.tsx",
+          "type": "registry:component",
+          "target": "@components/character/index.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/character/character-icons/icon-map.ts",
+          "registry/cobalt/icons/assembly-document-feature-icon/AssemblyDocumentFeatureIcon.tsx",
+          "registry/cobalt/icons/assembly-history-feature-icon/AssemblyHistoryFeatureIcon.tsx",
+          "registry/cobalt/icons/assembly-idea-feature-icon/AssemblyIdeaFeatureIcon.tsx",
+          "registry/cobalt/icons/assembly-saved-status-icon/AssemblySavedStatusIcon.tsx",
+          "registry/cobalt/icons/assembly-success-character-icon/AssemblySuccessCharacterIcon.tsx",
+          "registry/cobalt/icons/assembly-thinking-character-icon/AssemblyThinkingCharacterIcon.tsx",
+          "registry/cobalt/icons/assembly-thinking-status-icon/AssemblyThinkingStatusIcon.tsx",
+          "registry/cobalt/icons/assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon.tsx",
+          "registry/cobalt/icons/fold-document-feature-icon/FoldDocumentFeatureIcon.tsx",
+          "registry/cobalt/icons/fold-history-feature-icon/FoldHistoryFeatureIcon.tsx",
+          "registry/cobalt/icons/fold-idea-feature-icon/FoldIdeaFeatureIcon.tsx",
+          "registry/cobalt/icons/fold-saved-status-icon/FoldSavedStatusIcon.tsx",
+          "registry/cobalt/icons/fold-success-character-icon/FoldSuccessCharacterIcon.tsx",
+          "registry/cobalt/icons/fold-thinking-character-icon/FoldThinkingCharacterIcon.tsx",
+          "registry/cobalt/icons/fold-thinking-status-icon/FoldThinkingStatusIcon.tsx",
+          "registry/cobalt/icons/fold-welcome-character-icon/FoldWelcomeCharacterIcon.tsx",
+          "registry/cobalt/icons/impress-document-feature-icon/ImpressDocumentFeatureIcon.tsx",
+          "registry/cobalt/icons/impress-history-feature-icon/ImpressHistoryFeatureIcon.tsx",
+          "registry/cobalt/icons/impress-idea-feature-icon/ImpressIdeaFeatureIcon.tsx",
+          "registry/cobalt/icons/impress-saved-status-icon/ImpressSavedStatusIcon.tsx",
+          "registry/cobalt/icons/impress-success-character-icon/ImpressSuccessCharacterIcon.tsx",
+          "registry/cobalt/icons/impress-thinking-character-icon/ImpressThinkingCharacterIcon.tsx",
+          "registry/cobalt/icons/impress-thinking-status-icon/ImpressThinkingStatusIcon.tsx",
+          "registry/cobalt/icons/impress-welcome-character-icon/ImpressWelcomeCharacterIcon.tsx",
+          "registry/cobalt/icons/ink-document-feature-icon/InkDocumentFeatureIcon.tsx",
+          "registry/cobalt/icons/ink-history-feature-icon/InkHistoryFeatureIcon.tsx",
+          "registry/cobalt/icons/ink-idea-feature-icon/InkIdeaFeatureIcon.tsx",
+          "registry/cobalt/icons/ink-saved-status-icon/InkSavedStatusIcon.tsx",
+          "registry/cobalt/icons/ink-success-character-icon/InkSuccessCharacterIcon.tsx",
+          "registry/cobalt/icons/ink-thinking-character-icon/InkThinkingCharacterIcon.tsx",
+          "registry/cobalt/icons/ink-thinking-status-icon/InkThinkingStatusIcon.tsx",
+          "registry/cobalt/icons/ink-welcome-character-icon/InkWelcomeCharacterIcon.tsx",
+          "registry/cobalt/icons/monolith-document-feature-icon/MonolithDocumentFeatureIcon.tsx",
+          "registry/cobalt/icons/monolith-history-feature-icon/MonolithHistoryFeatureIcon.tsx",
+          "registry/cobalt/icons/monolith-idea-feature-icon/MonolithIdeaFeatureIcon.tsx",
+          "registry/cobalt/icons/monolith-saved-status-icon/MonolithSavedStatusIcon.tsx",
+          "registry/cobalt/icons/monolith-success-character-icon/MonolithSuccessCharacterIcon.tsx",
+          "registry/cobalt/icons/monolith-thinking-character-icon/MonolithThinkingCharacterIcon.tsx",
+          "registry/cobalt/icons/monolith-thinking-status-icon/MonolithThinkingStatusIcon.tsx",
+          "registry/cobalt/icons/monolith-welcome-character-icon/MonolithWelcomeCharacterIcon.tsx",
+          "registry/cobalt/icons/orbit-document-feature-icon/OrbitDocumentFeatureIcon.tsx",
+          "registry/cobalt/icons/orbit-history-feature-icon/OrbitHistoryFeatureIcon.tsx",
+          "registry/cobalt/icons/orbit-idea-feature-icon/OrbitIdeaFeatureIcon.tsx",
+          "registry/cobalt/icons/orbit-saved-status-icon/OrbitSavedStatusIcon.tsx",
+          "registry/cobalt/icons/orbit-success-character-icon/OrbitSuccessCharacterIcon.tsx",
+          "registry/cobalt/icons/orbit-thinking-character-icon/OrbitThinkingCharacterIcon.tsx",
+          "registry/cobalt/icons/orbit-thinking-status-icon/OrbitThinkingStatusIcon.tsx",
+          "registry/cobalt/icons/orbit-welcome-character-icon/OrbitWelcomeCharacterIcon.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "承認済みの図柄を読みやすく保つ。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "図柄の選択・表示を担う部品。SVG自体にループ・色変化を付けず、親の案内部品だけが登場する。"
+        }
+      }
+    }
+  ]
+}
