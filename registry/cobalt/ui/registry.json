@@ -1,0 +1,1604 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Cobalt button",
+      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "button/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/spinner/spinner.tsx"
+        ],
+        "motion": {
+          "purpose": "押した手応えを返し、実行を少し楽しみにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "押下",
+              "effect": "scale 1→.96、離すと弾性を付けて1へ戻す。色は変えない。",
+              "timing": "press / feedback"
+            },
+            {
+              "trigger": "ポインターが乗る",
+              "effect": "精密ポインターのみ上へ2px、スマホは1px。",
+              "timing": "feedback"
+            },
+            {
+              "trigger": "loading=true",
+              "effect": "白いSpinnerで待機を示す。OFF時も文言とaria-busyは残す。",
+              "timing": "spin"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Cobalt card",
+      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "card/card.tsx",
+          "type": "registry:ui",
+          "target": "@ui/card.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "操作できるカードだけが反応する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "onClickまたはbutton/linkのroleがあるカードを操作",
+              "effect": "精密ポインターでは少し浮き、押下で.96に縮む。読み物のCardは静止。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Cobalt input",
+      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "input/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "入力の場所と修正が必要な場所を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "フォーカス",
+              "effect": "単一のグラデーション枠を保ち、淡い影を滑らかに出す。",
+              "timing": "selection"
+            },
+            {
+              "trigger": "aria-invalidがtrueに変化",
+              "effect": "左右2px以内の小さな揺れを一度だけ再生。入力値とフォーカスは維持。初期エラーは揺らさない。",
+              "timing": "selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Cobalt alert",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "alert/alert.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "成功の到達を軽く祝う。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "成功通知の表示",
+              "effect": "6pxとscale .98→1で穏やかに登場。",
+              "timing": "celebrate"
+            },
+            {
+              "trigger": "variant変更",
+              "effect": "成功は.98→1.01→1の小さな弾み。警告・通常・destructiveは短いフェード。初期の警告・エラーは静止。",
+              "timing": "celebrate / selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Cobalt badge",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "badge/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "状態の変化を文字の位置を変えずに伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "variant変更",
+              "effect": "印だけ.7→1.12→1。要修正は弾ませず短いフェードにする。初回・文言変更だけでは動かさない。",
+              "timing": "celebrate / selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Cobalt breadcrumb",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "breadcrumb/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "@ui/breadcrumb.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "現在地を安定させ、戻れるリンクだけ反応させる。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "リンクへ精密ポインターを乗せる",
+              "effect": "1px浮かせる。現在ページ、区切り、グラデーション枠は静止。",
+              "timing": "feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Cobalt checkbox",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "checkbox/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "選択が確定する小さな達成感を作る。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "チェックする",
+              "effect": "白い線を描き、印を.5→1.16→1に弾ませる。",
+              "timing": "selection / feedback"
+            },
+            {
+              "trigger": "中間状態になる",
+              "effect": "横線を同じ弾みで出す。解除は即時。",
+              "timing": "feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "title": "Cobalt icon-button",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "icon-button/icon-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/icon-button.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "小さな操作にも手応えを返す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "押下",
+              "effect": "Buttonを利用し、アイコンボタンはscale .92まで縮む。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Cobalt sheet",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "sheet/sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sheet.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "パネルが現れる方向を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "指定した辺から24px、スマホは16px移動してフェード。背景は別にフェード。閉じるは即時。",
+              "timing": "entry / selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Cobalt skeleton",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "skeleton/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "読み込み中の輪郭を安定させる。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "読み込み中の輪郭は静止させ、動く待機表現はSpinnerに集約する。"
+        }
+      }
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Cobalt spinner",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "spinner/spinner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/spinner.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "処理中であることを伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "処理中",
+              "effect": "既存の円を1回転で連続回転。OFFでは静止し処理中の名前は維持。",
+              "timing": "spin"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Cobalt table",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "table/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "行を読みながら操作対象を追いやすくする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "行へポインターを乗せる",
+              "effect": "既存の背景変化を滑らかにする。並べ替えの位置移動はDataTableが担い、Table単体では行の順序を変更しない。",
+              "timing": "selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Cobalt dialog",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "dialog/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "重要な作業へ視線を集める。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "背景をフェードし、内容は下12pxからscale .96→1。スマホでは8pxへ抑える。フォーカスは即時。",
+              "timing": "selection / entry"
+            },
+            {
+              "trigger": "閉じる",
+              "effect": "待たせず消し、トリガーへフォーカスを戻す。業務処理をanimationendに結び付けない。",
+              "timing": "none"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Cobalt label",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "label/label.tsx",
+          "type": "registry:ui",
+          "target": "@ui/label.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "操作対象の名前を安定して読めるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "常時読む名前のため独立した動きを付けない。"
+        }
+      }
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Cobalt textarea",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "textarea/textarea.tsx",
+          "type": "registry:ui",
+          "target": "@ui/textarea.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "長文入力を妨げずエラーを伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "aria-invalidがtrueに変化",
+              "effect": "Inputと同じ左右2px以内の揺れを一度だけ再生。入力中は動かさない。",
+              "timing": "selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Cobalt select",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "select/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/components/theme-provider/motion-feedback.ts"
+        ],
+        "motion": {
+          "purpose": "選択肢が操作した場所から現れるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "トリガー側から4px移動、scale .96→1とフェード。transform-originはRadixの起点。",
+              "timing": "menu"
+            },
+            {
+              "trigger": "項目へ移動",
+              "effect": "背景を滑らかに切り替え、項目を右へ2px。確定・閉じるは即時。",
+              "timing": "selection"
+            }
+          ],
+          "entryControl": "位置・高さの計測後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で再生の印を外し、ONへ戻すだけでは再生しない。"
+        }
+      }
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Cobalt alert-dialog",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "alert-dialog/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "確認を落ち着いて読めるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "4pxの移動とscale .98→1。Dialogより小さな動きにし、破壊操作を祝う動きは付けない。",
+              "timing": "menu"
+            },
+            {
+              "trigger": "確定・キャンセル",
+              "effect": "既存Buttonの手応えのみ。閉じるとフォーカスを即時復帰。",
+              "timing": "press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Cobalt sonner",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "sonner@^2.0.8"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "sonner/sonner.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sonner.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/spinner/spinner.tsx"
+        ],
+        "motion": {
+          "purpose": "処理結果が積み上がる位置を自然に追えるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "通知追加・位置変更",
+              "effect": "Sonnerの位置制御を維持し、transformに弾性、透明度と高さに穏やかな補間。閉じる操作は少し縮む。",
+              "timing": "entry / selection / expand"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Cobalt toast",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "sonner@^2.0.8"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "toast/toast.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toast.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/sonner/sonner.tsx"
+        ],
+        "motion": {
+          "purpose": "既存の通知APIでも統一した手応えを返す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "通知表示・操作",
+              "effect": "ToasterとSonnerの移動・フェード・押下を利用する。独自タイマーや通知待ちを追加しない。",
+              "timing": "entry / selection / press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Cobalt switch",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "switch/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "切り替えをつまみの移動で追えるようにする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "ON/OFF切り替え",
+              "effect": "つまみの移動に弾性を付け、横.84・縦1.12の変形から1へ戻す。承認済みグラデーションを維持。",
+              "timing": "feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Cobalt radio-group",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7",
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "radio-group/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "選んだ一つへ視線を導く。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "選択変更",
+              "effect": "新しい中心の印だけ.35→1.2→1に弾む。選択解除は即時。",
+              "timing": "feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Cobalt slider",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "slider/slider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/slider.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "ドラッグ中のつまみを掴んだ感覚を作る。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "つまみを押す",
+              "effect": "scale 1→1.18、離すと弾性を付けて戻す。値・位置・範囲の更新は遅延させない。",
+              "timing": "feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Cobalt toggle",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "toggle/toggle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "押した状態の確定を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "押下",
+              "effect": "全体を.96に縮める。ONになった印は.88→1.08→1。選択面の色は維持。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Cobalt toggle-group",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "toggle-group/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/toggle-group.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/toggle/toggle.tsx"
+        ],
+        "motion": {
+          "purpose": "複数の選択操作に統一した手応えを付ける。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "項目を選択",
+              "effect": "Toggleの押下と印の弾みを継承。複数選択の値は即時更新。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Cobalt input-group",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "input-group/input-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input-group.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx",
+          "registry/cobalt/ui/input/input.tsx",
+          "registry/cobalt/ui/textarea/textarea.tsx"
+        ],
+        "motion": {
+          "purpose": "入力と付属操作を一つのまとまりとして扱う。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "入力へフォーカス",
+              "effect": "外枠に淡い影を出す。内部Inputのエラー動作とButtonの押下を継承。",
+              "timing": "selection / press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Cobalt combobox",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "combobox/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx",
+          "registry/cobalt/ui/input-group/input-group.tsx"
+        ],
+        "motion": {
+          "purpose": "入力と候補のつながりを伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "候補を開く",
+              "effect": "Base UIのdata-starting-styleに合わせ起点から4px、scale .96→1。候補の再検索では全体を再生しない。",
+              "timing": "menu / selection"
+            },
+            {
+              "trigger": "解除する",
+              "effect": "内側Buttonの押下を継承。入力値更新と候補閉鎖は即時。",
+              "timing": "press"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Cobalt calendar",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "react-day-picker@^10.0.1",
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "calendar/calendar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/calendar.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "選んだ日を軽く強調し、範囲の帯は安定させる。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "単日または範囲の終点を選択",
+              "effect": "選んだ日を.86→1.06→1。範囲の中間日は動かさず帯を維持。月送りは既存Buttonの手応えのみ。",
+              "timing": "feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Cobalt date-picker",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "date-picker/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-picker.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/calendar/calendar.tsx",
+          "registry/cobalt/ui/icon-button/icon-button.tsx",
+          "registry/cobalt/ui/input/input.tsx",
+          "registry/cobalt/ui/popover/popover.tsx"
+        ],
+        "motion": {
+          "purpose": "日付入力と候補の関係を見失わせない。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "カレンダーを開く",
+              "effect": "Popoverの起点からの登場を継承。日付確定はCalendarの弾み、入力エラーはInputの揺れ。",
+              "timing": "menu / feedback / selection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "Cobalt file-upload",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "file-upload/file-upload.tsx",
+          "type": "registry:ui",
+          "target": "@ui/file-upload.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-layout.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx",
+          "registry/cobalt/ui/input/input.tsx",
+          "registry/cobalt/ui/label/label.tsx"
+        ],
+        "motion": {
+          "purpose": "追加したファイルを見つけやすくする。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "ファイルを追加・削除",
+              "effect": "既存ファイルは位置を補間し、新規項目は6pxとフェード。最大80msの小さな順次表示。",
+              "timing": "expand"
+            },
+            {
+              "trigger": "成功表示",
+              "effect": "6pxとscale .98→1の登場。削除・値変更は即時。",
+              "timing": "celebrate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Cobalt popover",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "popover/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/components/theme-provider/motion-feedback.ts"
+        ],
+        "motion": {
+          "purpose": "補足を操作した場所から取り出す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "トリガー側から4px、scale .96→1とフェード。起点をRadixのCSS変数から継承。閉じるは即時。",
+              "timing": "menu"
+            }
+          ],
+          "entryControl": "位置確定後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で印を外し、ONへ戻すだけでは再生しない。"
+        }
+      }
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Cobalt accordion",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "accordion/accordion.tsx",
+          "type": "registry:ui",
+          "target": "@ui/accordion.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/components/theme-provider/motion-feedback.ts"
+        ],
+        "motion": {
+          "purpose": "説明がその場でほどけるように開く。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "Radixが計測した実寸まで高さ0から展開し、フェード。矢印は弾性を付けて回転。",
+              "timing": "expand / feedback"
+            },
+            {
+              "trigger": "閉じる",
+              "effect": "内容を即時に隠す。矢印だけ滑らかに戻す。",
+              "timing": "feedback"
+            }
+          ],
+          "entryControl": "位置・高さの計測後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で再生の印を外し、ONへ戻すだけでは再生しない。"
+        }
+      }
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Cobalt avatar",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "avatar/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "画像の読み込みによる急な切り替えを和らげる。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "画像の読み込み完了",
+              "effect": "既存の画像がマウントされた時だけフェード。Fallbackと枠は動かさない。",
+              "timing": "entry"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Cobalt collapsible",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "collapsible/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "@ui/collapsible.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/components/theme-provider/motion-feedback.ts"
+        ],
+        "motion": {
+          "purpose": "追加情報の出現位置を見失わせない。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "Radixの実寸まで高さ0から展開し、フェード。通常の内容に内側の枠を置き、asChildの要素は保つ。閉じるは即時。",
+              "timing": "expand"
+            }
+          ],
+          "entryControl": "位置・高さの計測後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で再生の印を外し、ONへ戻すだけでは再生しない。"
+        }
+      }
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Cobalt dropdown-menu",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "dropdown-menu/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dropdown-menu.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/components/theme-provider/motion-feedback.ts"
+        ],
+        "motion": {
+          "purpose": "操作メニューの出どころと対象を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く",
+              "effect": "Popoverと同じ起点から4pxとscale .96→1。サブメニューも同じルール。",
+              "timing": "menu"
+            },
+            {
+              "trigger": "項目を移動",
+              "effect": "ハイライトを滑らかにし、右へ2px。確定と閉鎖は即時。",
+              "timing": "selection"
+            }
+          ],
+          "entryControl": "位置確定後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で印を外し、ONへ戻すだけでは再生しない。"
+        }
+      }
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Cobalt navigation-menu",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "navigation-menu/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "隣のメニューへの移動方向を示す。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "開く・別項目へ移動",
+              "effect": "共通の面は実寸へ伸縮、内容はfrom-start/from-endに従い左右12pxから登場。矢印は弾性回転。閉じるは即時。",
+              "timing": "expand / menu / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Cobalt pagination",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "lucide-react@^1.45.0"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "pagination/pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx"
+        ],
+        "motion": {
+          "purpose": "移動したページの選択を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "ページが選択状態になる",
+              "effect": "既存Buttonの押下と、選択印の.88→1.08→1を継承。データ更新は待たせない。",
+              "timing": "press / feedback"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Cobalt progress",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "progress/progress.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-feedback.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "前進と到達を伝える。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "値の更新",
+              "effect": "幅を補間し、100%に到達した時だけ一度明るさを戻す。",
+              "timing": "celebrate"
+            },
+            {
+              "trigger": "進捗が不定",
+              "effect": "25%幅の帯を往復。OFFでは静止しaria情報を維持。",
+              "timing": "indeterminate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Cobalt separator",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "separator/separator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/separator.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "情報の区切りを固定し、他の動きを邪魔しない。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "区切りは静止させる。"
+        }
+      }
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Cobalt sidebar",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "lucide-react@^1.45.0",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "sidebar/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/sidebar.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/hooks/use-mobile/use-mobile.ts",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/ui/button/button.tsx",
+          "registry/cobalt/ui/input/input.tsx",
+          "registry/cobalt/ui/separator/separator.tsx",
+          "registry/cobalt/ui/sheet/sheet.tsx",
+          "registry/cobalt/ui/skeleton/skeleton.tsx",
+          "registry/cobalt/ui/tooltip/tooltip.tsx"
+        ],
+        "motion": {
+          "purpose": "ナビゲーションと本文の位置関係を保つ。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "PCで展開・縮小",
+              "effect": "幅と左右位置を補間し本文の移動を追えるようにする。",
+              "timing": "expand"
+            },
+            {
+              "trigger": "スマホで開く",
+              "effect": "既存Sheetを使い、端から16pxの登場を継承。",
+              "timing": "entry"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Cobalt tabs",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "tabs/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-layout.ts",
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json"
+        ],
+        "motion": {
+          "purpose": "選択先へ面がつながって移動する楽しさを作る。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "タブ変更",
+              "effect": "文字・操作領域は固定し、選択面または線だけ位置と大きさを移す。連続操作は見えている途中位置から接続。内容は6pxとフェード。",
+              "timing": "expand / menu"
+            },
+            {
+              "trigger": "サイズ・向き変更",
+              "effect": "選択面を再計測するだけで不要な移動を再生しない。",
+              "timing": "none"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Cobalt tooltip",
+      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "dependencies": [
+        "radix-ui@^1.6.7"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "tooltip/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tooltip.tsx"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "sourceDependencies": [
+          "registry/cobalt/components/theme-provider/motion-provider.tsx",
+          "registry/cobalt/components/theme-provider/theme-provider.tsx",
+          "registry/cobalt/lib/utils/utils.ts",
+          "registry/cobalt/styles/registry.json",
+          "registry/cobalt/components/theme-provider/motion-feedback.ts"
+        ],
+        "motion": {
+          "purpose": "短い補足を軽く現し、操作を邪魔しない。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [
+            {
+              "trigger": "ホバー・フォーカス",
+              "effect": "既存の表示待ち時間の後、起点から4pxとscale .96→1で登場。閉じるは即時。",
+              "timing": "menu"
+            }
+          ],
+          "entryControl": "位置確定後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で印を外し、ONへ戻すだけでは再生しない。"
+        }
+      }
+    }
+  ]
+}
