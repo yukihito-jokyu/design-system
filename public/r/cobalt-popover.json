@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-popover",
+  "title": "Cobalt popover",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/popover/popover.tsx",
+      "content": "import { useMotionEntry } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Popover as PopoverPrimitive } from \"radix-ui\";\nimport {\n  DesignThemeProvider,\n  useDesignTheme,\n  useDesignTokens,\n} from \"@/registry/cobalt/components/theme-provider/theme-provider\";\n\nfunction Popover({\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <PopoverPrimitive.Root {...props} />\n    </MotionProvider>\n  );\n}\n\nfunction PopoverTrigger(props: React.ComponentProps<typeof PopoverPrimitive.Trigger>) {\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...props} />;\n}\n\nfunction PopoverContent({\n  className,\n  ref: forwardedRef,\n  align = \"center\",\n  sideOffset = 4,\n  ...props\n}: React.ComponentProps<typeof PopoverPrimitive.Content>) {\n  const theme = useDesignTheme();\n  const tokens = useDesignTokens();\n  const { ref, effective } = useMotionEntry<HTMLDivElement>(forwardedRef);\n  return (\n    <PopoverPrimitive.Portal>\n      <DesignThemeProvider theme={theme} tokens={tokens}>\n        <PopoverPrimitive.Content\n          data-slot=\"popover-content\"\n          ref={ref}\n          data-cobalt-motion={effective}\n          align={align}\n          sideOffset={sideOffset}\n          className={cn(\"cobalt-popover\", className)}\n          {...props}\n        />\n      </DesignThemeProvider>\n    </PopoverPrimitive.Portal>\n  );\n}\n\nfunction PopoverAnchor(props: React.ComponentProps<typeof PopoverPrimitive.Anchor>) {\n  return <PopoverPrimitive.Anchor data-slot=\"popover-anchor\" {...props} />;\n}\n\nfunction PopoverHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"popover-header\" className={cn(\"cobalt-stack\", className)} {...props} />;\n}\n\nfunction PopoverTitle({ className, ...props }: React.ComponentProps<\"h2\">) {\n  return (\n    <h2 data-slot=\"popover-title\" className={cn(\"cobalt-popover-title\", className)} {...props} />\n  );\n}\n\nfunction PopoverDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return <p data-slot=\"popover-description\" className={cn(\"cobalt-note\", className)} {...props} />;\n}\n\nexport {\n  Popover,\n  PopoverTrigger,\n  PopoverContent,\n  PopoverAnchor,\n  PopoverHeader,\n  PopoverTitle,\n  PopoverDescription,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/popover.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "補足を操作した場所から取り出す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "トリガー側から4px、scale .96→1とフェード。起点をRadixのCSS変数から継承。閉じるは即時。",
+          "timing": "menu"
+        }
+      ],
+      "entryControl": "位置確定後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で印を外し、ONへ戻すだけでは再生しない。"
+    }
+  },
+  "type": "registry:ui"
+}

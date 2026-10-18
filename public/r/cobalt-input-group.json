@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-input-group",
+  "title": "Cobalt input-group",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-input",
+    "@yukihi/cobalt-textarea",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/input-group/input-group.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\nimport { Input } from \"@/registry/cobalt/ui/input/input\";\nimport { Textarea } from \"@/registry/cobalt/ui/textarea/textarea\";\n\nfunction InputGroup({\n  className,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<\"div\"> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <div\n        data-slot=\"input-group\"\n        role=\"group\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-input-group\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nconst inputGroupAddonVariants = cva(\"cobalt-input-group-addon\", {\n  variants: {\n    align: {\n      \"inline-start\": \"cobalt-addon-start\",\n      \"inline-end\": \"cobalt-addon-end\",\n      \"block-start\": \"cobalt-addon-top\",\n      \"block-end\": \"cobalt-addon-bottom\",\n    },\n  },\n  defaultVariants: { align: \"inline-start\" },\n});\n\nfunction InputGroupAddon({\n  className,\n  align = \"inline-start\",\n  ...props\n}: React.ComponentProps<\"div\"> & VariantProps<typeof inputGroupAddonVariants>) {\n  return (\n    <div\n      role=\"group\"\n      data-slot=\"input-group-addon\"\n      data-align={align}\n      className={cn(inputGroupAddonVariants({ align }), className)}\n      onClick={(event) => {\n        if ((event.target as HTMLElement).closest(\"button\")) return;\n        event.currentTarget.parentElement\n          ?.querySelector<HTMLInputElement | HTMLTextAreaElement>(\"input, textarea\")\n          ?.focus();\n      }}\n      {...props}\n    />\n  );\n}\n\nconst inputGroupButtonVariants = cva(\"cobalt-input-group-button\", {\n  variants: {\n    size: {\n      xs: \"cobalt-group-button-xs\",\n      sm: \"cobalt-group-button-sm\",\n      \"icon-xs\": \"cobalt-group-button-icon\",\n      \"icon-sm\": \"cobalt-group-button-icon\",\n    },\n  },\n  defaultVariants: { size: \"xs\" },\n});\n\nfunction InputGroupButton({\n  className,\n  type = \"button\",\n  variant = \"ghost\",\n  size = \"xs\",\n  ...props\n}: Omit<React.ComponentProps<typeof Button>, \"size\"> &\n  VariantProps<typeof inputGroupButtonVariants>) {\n  return (\n    <Button\n      type={type}\n      data-size={size}\n      variant={variant}\n      className={cn(inputGroupButtonVariants({ size }), className)}\n      {...props}\n    />\n  );\n}\n\nfunction InputGroupText({ className, ...props }: React.ComponentProps<\"span\">) {\n  return <span className={cn(\"cobalt-input-group-text\", className)} {...props} />;\n}\n\nfunction InputGroupInput({ className, ...props }: React.ComponentProps<typeof Input>) {\n  return (\n    <Input\n      data-slot=\"input-group-control\"\n      className={cn(\"cobalt-group-control\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction InputGroupTextarea({ className, ...props }: React.ComponentProps<typeof Textarea>) {\n  return (\n    <Textarea\n      data-slot=\"input-group-control\"\n      className={cn(\"cobalt-group-control\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  InputGroup,\n  InputGroupAddon,\n  InputGroupButton,\n  InputGroupText,\n  InputGroupInput,\n  InputGroupTextarea,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/input-group.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "入力と付属操作を一つのまとまりとして扱う。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "入力へフォーカス",
+          "effect": "外枠に淡い影を出す。内部Inputのエラー動作とButtonの押下を継承。",
+          "timing": "selection / press"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

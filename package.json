@@ -13,8 +13,10 @@
     "typecheck:storybook": "tsc --noEmit -p tsconfig.storybook.json",
     "storybook": "storybook dev",
     "build-storybook": "storybook build",
-    "registry:build": "shadcn build registry.json --output public/r",
-    "registry:serve": "node scripts/serve-registry.mjs"
+    "registry:build": "node scripts/build-registry.mjs",
+    "registry:serve": "node scripts/serve-registry.mjs",
+    "registry:check": "node scripts/check-registry.mjs",
+    "registry:prepare": "node scripts/prepare-registry.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -29,6 +31,7 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
+    "@babel/parser": "^7.29.8",
     "@storybook/react-vite": "^10.6.0",
     "@stylistic/eslint-plugin": "5.10.0",
     "@tailwindcss/vite": "^4.3.3",

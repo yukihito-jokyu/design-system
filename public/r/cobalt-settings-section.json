@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-settings-section",
+  "title": "Cobalt settings-section",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/settings-section/settings-section.tsx",
+      "content": "import { useId, type ReactNode } from \"react\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function SettingsSection({\n  title,\n  description,\n  children,\n  headingLevel = 3,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description?: string;\n  children: ReactNode;\n  headingLevel?: 2 | 3;\n  motion?: MotionPreference;\n}) {\n  const id = useId();\n  const Heading = headingLevel === 2 ? \"h2\" : \"h3\";\n  return (\n    <MotionProvider motion={motion}>\n      <section aria-labelledby={id} className=\"cobalt-stack cobalt-settings-section\">\n        <header>\n          <Heading id={id}>{title}</Heading>\n          {description && <p className=\"cobalt-note\">{description}</p>}\n        </header>\n        {children}\n      </section>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/settings-section.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "設定のまとまりを読みやすく保つ。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "設定操作",
+          "effect": "子のSwitch/Inputなどのmotionを継承。セクション自体は静止。",
+          "timing": "feedback / selection"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

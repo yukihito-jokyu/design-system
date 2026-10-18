@@ -2,14 +2,20 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "items": [
     {
-      "name": "app-shell",
+      "name": "cobalt-app-shell",
       "type": "registry:component",
       "title": "Cobalt app-shell",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [
         "lucide-react@^1.45.0"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-sheet",
+        "@yukihi/cobalt-theme-provider",
+        "@yukihi/cobalt-use-mobile"
+      ],
       "files": [
         {
           "path": "app-shell/app-shell.tsx",
@@ -18,14 +24,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/hooks/use-mobile/use-mobile.ts",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/button/button.tsx",
-          "registry/cobalt/ui/sheet/sheet.tsx"
-        ],
         "motion": {
           "purpose": "本文とナビゲーションの関係を保つ。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -40,12 +38,20 @@
       }
     },
     {
-      "name": "collection-page",
+      "name": "cobalt-collection-page",
       "type": "registry:component",
       "title": "Cobalt collection-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-data-table",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-loading-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "collection-page/collection-page.tsx",
@@ -54,17 +60,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/character/empty-state/empty-state.tsx",
-          "registry/cobalt/components/theme-provider/motion-layout.ts",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/data-table/data-table.tsx",
-          "registry/cobalt/patterns/error-state/error-state.tsx",
-          "registry/cobalt/patterns/loading-state/loading-state.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "絞り込み後の一覧を追いやすくする。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -84,12 +79,20 @@
       }
     },
     {
-      "name": "data-table",
+      "name": "cobalt-data-table",
       "type": "registry:component",
       "title": "Cobalt data-table",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-checkbox",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-table",
+        "@yukihi/cobalt-table-toolbar",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "data-table/data-table.tsx",
@@ -98,17 +101,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/character/empty-state/empty-state.tsx",
-          "registry/cobalt/components/theme-provider/motion-layout.ts",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/table-toolbar/table-toolbar.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/button/button.tsx",
-          "registry/cobalt/ui/checkbox/checkbox.tsx",
-          "registry/cobalt/ui/table/table.tsx"
-        ],
         "motion": {
           "purpose": "並べ替えで行の行き先を見えるようにする。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -128,12 +120,17 @@
       }
     },
     {
-      "name": "error-state",
+      "name": "cobalt-error-state",
       "type": "registry:component",
       "title": "Cobalt error-state",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-alert",
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "error-state/error-state.tsx",
@@ -142,13 +139,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/alert/alert.tsx",
-          "registry/cobalt/ui/button/button.tsx"
-        ],
         "motion": {
           "purpose": "エラーを落ち着いて読めるようにする。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -163,12 +153,17 @@
       }
     },
     {
-      "name": "loading-state",
+      "name": "cobalt-loading-state",
       "type": "registry:component",
       "title": "Cobalt loading-state",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-skeleton",
+        "@yukihi/cobalt-spinner",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "loading-state/loading-state.tsx",
@@ -177,14 +172,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-feedback.ts",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/skeleton/skeleton.tsx",
-          "registry/cobalt/ui/spinner/spinner.tsx"
-        ],
         "motion": {
           "purpose": "待機と読める状態への変化を伝える。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -204,12 +191,15 @@
       }
     },
     {
-      "name": "page-header",
+      "name": "cobalt-page-header",
       "type": "registry:component",
       "title": "Cobalt page-header",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "page-header/page-header.tsx",
@@ -218,11 +208,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "ページの名前と操作を見失わせない。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -237,14 +222,19 @@
       }
     },
     {
-      "name": "search-field",
+      "name": "cobalt-search-field",
       "type": "registry:component",
       "title": "Cobalt search-field",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [
         "lucide-react@^1.45.0"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-button",
+        "@yukihi/cobalt-input",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "search-field/search-field.tsx",
@@ -253,13 +243,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/icon-button/icon-button.tsx",
-          "registry/cobalt/ui/input/input.tsx"
-        ],
         "motion": {
           "purpose": "入力と検索解除に即時反応する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -274,12 +257,16 @@
       }
     },
     {
-      "name": "table-toolbar",
+      "name": "cobalt-table-toolbar",
       "type": "registry:component",
       "title": "Cobalt table-toolbar",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-search-field",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "table-toolbar/table-toolbar.tsx",
@@ -288,12 +275,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/search-field/search-field.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "検索・絞り込み操作を軽く返す。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -308,12 +289,16 @@
       }
     },
     {
-      "name": "form-field",
+      "name": "cobalt-form-field",
       "type": "registry:component",
       "title": "Cobalt form-field",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-label",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "form-field/form-field.tsx",
@@ -322,12 +307,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/label/label.tsx"
-        ],
         "motion": {
           "purpose": "入力の手がかりを安定して示す。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -342,12 +321,18 @@
       }
     },
     {
-      "name": "edit-page",
+      "name": "cobalt-edit-page",
       "type": "registry:component",
       "title": "Cobalt edit-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "edit-page/edit-page.tsx",
@@ -356,14 +341,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/error-state/error-state.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/button/button.tsx"
-        ],
         "motion": {
           "purpose": "保存を待つ間も操作の結果が分かるようにする。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -378,14 +355,19 @@
       }
     },
     {
-      "name": "assistant-panel",
+      "name": "cobalt-assistant-panel",
       "type": "registry:component",
       "title": "Cobalt assistant-panel",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [
         "lucide-react@^1.45.0"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-assistant-card",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-button",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "assistant-panel/assistant-panel.tsx",
@@ -394,13 +376,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/character/assistant-card/assistant-card.tsx",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/icon-button/icon-button.tsx"
-        ],
         "motion": {
           "purpose": "案内を親しみやすく取り出す。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -415,12 +390,15 @@
       }
     },
     {
-      "name": "settings-section",
+      "name": "cobalt-settings-section",
       "type": "registry:component",
       "title": "Cobalt settings-section",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "settings-section/settings-section.tsx",
@@ -429,11 +407,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "設定のまとまりを読みやすく保つ。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -448,12 +421,20 @@
       }
     },
     {
-      "name": "dashboard-page",
+      "name": "cobalt-dashboard-page",
       "type": "registry:component",
       "title": "Cobalt dashboard-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-card",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-loading-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "dashboard-page/dashboard-page.tsx",
@@ -462,16 +443,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/character/empty-state/empty-state.tsx",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/error-state/error-state.tsx",
-          "registry/cobalt/patterns/loading-state/loading-state.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/card/card.tsx"
-        ],
         "motion": {
           "purpose": "数値の読み取りを邪魔せず次の操作を促す。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -486,12 +457,18 @@
       }
     },
     {
-      "name": "detail-page",
+      "name": "cobalt-detail-page",
       "type": "registry:component",
       "title": "Cobalt detail-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-loading-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "detail-page/detail-page.tsx",
@@ -500,14 +477,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/error-state/error-state.tsx",
-          "registry/cobalt/patterns/loading-state/loading-state.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "詳細を安定して読み、操作の結果を伝える。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -522,12 +491,19 @@
       }
     },
     {
-      "name": "settings-page",
+      "name": "cobalt-settings-page",
       "type": "registry:component",
       "title": "Cobalt settings-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-settings-section",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "settings-page/settings-page.tsx",
@@ -536,15 +512,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/error-state/error-state.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/patterns/settings-section/settings-section.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/button/button.tsx"
-        ],
         "motion": {
           "purpose": "保存が終わったことを穏やかに祝う。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -559,12 +526,19 @@
       }
     },
     {
-      "name": "step-form",
+      "name": "cobalt-step-form",
       "type": "registry:component",
       "title": "Cobalt step-form",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-error-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-progress",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "step-form/step-form.tsx",
@@ -573,16 +547,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-layout.ts",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/error-state/error-state.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/button/button.tsx",
-          "registry/cobalt/ui/progress/progress.tsx"
-        ],
         "motion": {
           "purpose": "進む・戻るの方向と到達を伝える。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -602,12 +566,19 @@
       }
     },
     {
-      "name": "task-workflow-page",
+      "name": "cobalt-task-workflow-page",
       "type": "registry:component",
       "title": "Cobalt task-workflow-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-badge",
+        "@yukihi/cobalt-card",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-empty-state",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "task-workflow-page/task-workflow-page.tsx",
@@ -616,15 +587,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/character/empty-state/empty-state.tsx",
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/badge/badge.tsx",
-          "registry/cobalt/ui/card/card.tsx"
-        ],
         "motion": {
           "purpose": "作業を一つずつ終える達成感を作る。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -639,12 +601,18 @@
       }
     },
     {
-      "name": "result-page",
+      "name": "cobalt-result-page",
       "type": "registry:component",
       "title": "Cobalt result-page",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-alert",
+        "@yukihi/cobalt-button",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-page-header",
+        "@yukihi/cobalt-theme-provider"
+      ],
       "files": [
         {
           "path": "result-page/result-page.tsx",
@@ -653,14 +621,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/components/theme-provider/motion-provider.tsx",
-          "registry/cobalt/patterns/page-header/page-header.tsx",
-          "registry/cobalt/styles/registry.json",
-          "registry/cobalt/ui/alert/alert.tsx",
-          "registry/cobalt/ui/button/button.tsx"
-        ],
         "motion": {
           "purpose": "完了から次の一歩へつなぐ。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",

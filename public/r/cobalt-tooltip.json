@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-tooltip",
+  "title": "Cobalt tooltip",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/tooltip/tooltip.tsx",
+      "content": "import { useMotionEntry } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport {\n  DesignThemeProvider,\n  useDesignTheme,\n  useDesignTokens,\n} from \"@/registry/cobalt/components/theme-provider/theme-provider\";\nimport { Tooltip as TooltipPrimitive } from \"radix-ui\";\n\nfunction TooltipProvider({\n  delayDuration = 0,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Provider> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <TooltipPrimitive.Provider\n        data-slot=\"tooltip-provider\"\n        delayDuration={delayDuration}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction Tooltip({\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <TooltipPrimitive.Root data-slot=\"tooltip\" {...props} />\n    </MotionProvider>\n  );\n}\n\nfunction TooltipTrigger(props: React.ComponentProps<typeof TooltipPrimitive.Trigger>) {\n  return <TooltipPrimitive.Trigger data-slot=\"tooltip-trigger\" {...props} />;\n}\n\nfunction TooltipContent({\n  className,\n  ref: forwardedRef,\n  sideOffset = 0,\n  collisionPadding = 8,\n  children,\n  ...props\n}: React.ComponentProps<typeof TooltipPrimitive.Content>) {\n  const theme = useDesignTheme();\n  const tokens = useDesignTokens();\n  const { ref, effective } = useMotionEntry<HTMLDivElement>(forwardedRef);\n  return (\n    <TooltipPrimitive.Portal>\n      <DesignThemeProvider theme={theme} tokens={tokens}>\n        <TooltipPrimitive.Content\n          data-slot=\"tooltip-content\"\n          ref={ref}\n          data-cobalt-motion={effective}\n          sideOffset={sideOffset}\n          collisionPadding={collisionPadding}\n          className={cn(\"cobalt-tooltip\", className)}\n          {...props}\n        >\n          {children}\n          <TooltipPrimitive.Arrow className=\"cobalt-tooltip-arrow\" />\n        </TooltipPrimitive.Content>\n      </DesignThemeProvider>\n    </TooltipPrimitive.Portal>\n  );\n}\n\nexport { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };\n",
+      "type": "registry:ui",
+      "target": "@ui/tooltip.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "短い補足を軽く現し、操作を邪魔しない。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "ホバー・フォーカス",
+          "effect": "既存の表示待ち時間の後、起点から4pxとscale .96→1で登場。閉じるは即時。",
+          "timing": "menu"
+        }
+      ],
+      "entryControl": "位置確定後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で印を外し、ONへ戻すだけでは再生しない。"
+    }
+  },
+  "type": "registry:ui"
+}

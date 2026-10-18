@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-search-field",
+  "title": "Cobalt search-field",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-icon-button",
+    "@yukihi/cobalt-input",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/search-field/search-field.tsx",
+      "content": "import { useId, useRef } from \"react\";\nimport { SearchIcon, XIcon } from \"lucide-react\";\nimport { Input } from \"@/registry/cobalt/ui/input/input\";\nimport {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { IconButton } from \"@/registry/cobalt/ui/icon-button/icon-button\";\n\nexport function SearchField({\n  label = \"検索\",\n  value,\n  onValueChange,\n  onSearch,\n  motion = \"inherit\",\n}: {\n  label?: string;\n  value: string;\n  onValueChange: (value: string) => void;\n  onSearch?: (value: string) => void;\n  motion?: MotionPreference;\n}) {\n  const composing = useRef(false);\n  const inputId = useId();\n  const inputRef = useRef<HTMLInputElement>(null);\n  const effective = useDesignMotion(motion);\n  return (\n    <div className=\"cobalt-search\" data-cobalt-motion={effective}>\n      <label htmlFor={inputId} className=\"cobalt-search-label\">\n        {label}\n      </label>\n      <div className=\"cobalt-search-control\">\n        <SearchIcon size={20} aria-hidden=\"true\" />\n        <Input\n          id={inputId}\n          ref={inputRef}\n          motion={motion}\n          className=\"cobalt-search-input\"\n          placeholder=\"キーワードを入力\"\n          type=\"search\"\n          value={value}\n          onCompositionStart={() => (composing.current = true)}\n          onCompositionEnd={() => (composing.current = false)}\n          onChange={(e) => onValueChange(e.target.value)}\n          onKeyDown={(e) => {\n            if (e.key === \"Enter\" && !composing.current && !e.nativeEvent.isComposing) {\n              e.preventDefault();\n              onSearch?.(value);\n            }\n          }}\n        />\n        <IconButton\n          aria-label={`${label}をクリア`}\n          type=\"button\"\n          variant=\"secondary\"\n          motion={motion}\n          className=\"cobalt-search-clear\"\n          disabled={!value}\n          onClick={() => {\n            onValueChange(\"\");\n            inputRef.current?.focus();\n          }}\n        >\n          <XIcon size={20} />\n        </IconButton>\n      </div>\n    </div>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/search-field.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "入力と検索解除に即時反応する。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "入力・クリア",
+          "effect": "InputのフォーカスとButtonの押下を継承。文字入力で検索欄自体は移動しない。",
+          "timing": "selection / press"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

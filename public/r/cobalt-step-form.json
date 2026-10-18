@@ -1,0 +1,42 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-step-form",
+  "title": "Cobalt step-form",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-error-state",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-progress",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/step-form/step-form.tsx",
+      "content": "import { useEffect, useRef, type ReactNode } from \"react\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\nimport { Progress } from \"@/registry/cobalt/ui/progress/progress\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport { useStepMotion } from \"@/registry/cobalt/components/theme-provider/motion-layout\";\nimport { ErrorState } from \"@/registry/cobalt/patterns/error-state/error-state\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport type FormStep = { id: string; title: string; content: ReactNode };\n\nexport function StepForm({\n  title,\n  steps,\n  currentStep,\n  onNext,\n  onBack,\n  onSubmit,\n  onCancel,\n  submitting = false,\n  error,\n  dirty = false,\n  motion = \"inherit\",\n}: {\n  title: string;\n  steps: FormStep[];\n  currentStep: number;\n  onNext: () => void;\n  onBack: () => void;\n  onSubmit: () => void;\n  onCancel?: () => void;\n  submitting?: boolean;\n  error?: string;\n  dirty?: boolean;\n  motion?: MotionPreference;\n}) {\n  const effective = useDesignMotion(motion);\n  const step = steps[currentStep];\n  const motionRef = useStepMotion(motion, currentStep);\n  const headingRef = useRef<HTMLHeadingElement>(null);\n  const errorRef = useRef<HTMLDivElement>(null);\n  const previousStep = useRef(currentStep);\n  // ステップが変わったときだけ移動先を伝え、初回のフォーカスは奪わない。\n  useEffect(() => {\n    if (step && previousStep.current !== currentStep) headingRef.current?.focus();\n    previousStep.current = currentStep;\n  }, [currentStep, step]);\n  // 入力や送信に失敗したら、説明を確認できる位置へ移動する。\n  useEffect(() => {\n    if (error && !submitting) errorRef.current?.focus();\n  }, [error, submitting]);\n  if (!step) return null;\n  const last = currentStep === steps.length - 1;\n  return (\n    <MotionProvider motion={motion}>\n      <main className=\"cobalt-stack cobalt-pattern-page\">\n        <PageHeader title={title} headingLevel={1} />\n        <p aria-live=\"polite\">\n          {currentStep + 1} / {steps.length}：{step.title}\n        </p>\n        <Progress value={((currentStep + 1) / steps.length) * 100} aria-label=\"入力の進行状況\" />\n        <section\n          ref={motionRef}\n          data-cobalt-motion={effective}\n          className=\"cobalt-stack cobalt-step-content\"\n          aria-label={step.title}\n          aria-busy={submitting}\n        >\n          <h2 className=\"cobalt-step-heading\" ref={headingRef} tabIndex={-1}>\n            {step.title}\n          </h2>\n          {error && (\n            <div ref={errorRef} tabIndex={-1} role=\"group\" aria-label=\"入力・送信エラー\">\n              <ErrorState description={error} />\n            </div>\n          )}\n          <fieldset className=\"cobalt-edit-fields\" disabled={submitting}>\n            {step.content}\n          </fieldset>\n        </section>\n        {dirty && (\n          <p className=\"cobalt-note\" role=\"status\">\n            途中の入力があります。離れる前に確認してください。\n          </p>\n        )}\n        <div className=\"cobalt-edit-actions\">\n          {currentStep > 0 && (\n            <Button type=\"button\" variant=\"outline\" onClick={onBack} disabled={submitting}>\n              戻る\n            </Button>\n          )}\n          <Button\n            type=\"button\"\n            onClick={last ? onSubmit : onNext}\n            disabled={submitting}\n            loading={submitting}\n          >\n            {submitting ? \"送信中…\" : last ? \"送信\" : \"次へ\"}\n          </Button>\n          {onCancel && (\n            <Button type=\"button\" variant=\"outline\" onClick={onCancel} disabled={submitting}>\n              中止\n            </Button>\n          )}\n        </div>\n      </main>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/step-form.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "進む・戻るの方向と到達を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "ステップ変更",
+          "effect": "進む時は右12px、戻る時は左12px（スマホでは8px）から内容をフェード。見出しへの既存フォーカスは待たせない。",
+          "timing": "expand"
+        },
+        {
+          "trigger": "進行・送信",
+          "effect": "Progressの前進、Buttonの処理中Spinnerを継承。送信完了の業務コールバックは遅らせない。",
+          "timing": "celebrate / spin"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

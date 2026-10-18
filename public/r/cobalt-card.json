@@ -1,0 +1,34 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-card",
+  "title": "Cobalt card",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/card/card.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Card({\n  className,\n  variant = \"surface\",\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<\"div\"> & {\n  variant?: \"surface\" | \"soft\";\n  motion?: MotionPreference;\n}) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <div\n        data-slot=\"card\"\n        data-variant={variant}\n        data-cobalt-motion={effective}\n        data-interactive={\n          Boolean(props.onClick || props.role === \"button\" || props.role === \"link\") || undefined\n        }\n        className={cn(\"cobalt-card\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction CardHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"card-header\" className={cn(\"cobalt-card-header\", className)} {...props} />;\n}\n\nfunction CardTitle({ className, ...props }: React.ComponentProps<\"h2\">) {\n  return <h2 data-slot=\"card-title\" className={cn(\"cobalt-card-title\", className)} {...props} />;\n}\n\nfunction CardDescription({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"card-description\"\n      className={cn(\"cobalt-card-description\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction CardAction({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"card-action\" className={cn(\"cobalt-card-action\", className)} {...props} />;\n}\n\nfunction CardContent({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"card-content\" className={cn(\"cobalt-card-content\", className)} {...props} />\n  );\n}\n\nfunction CardFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return <div data-slot=\"card-footer\" className={cn(\"cobalt-card-footer\", className)} {...props} />;\n}\n\nexport { Card, CardHeader, CardFooter, CardTitle, CardAction, CardDescription, CardContent };\n",
+      "type": "registry:ui",
+      "target": "@ui/card.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "操作できるカードだけが反応する。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "onClickまたはbutton/linkのroleがあるカードを操作",
+          "effect": "精密ポインターでは少し浮き、押下で.96に縮む。読み物のCardは静止。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

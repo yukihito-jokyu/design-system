@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-toast",
+  "title": "Cobalt toast",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "sonner@^2.0.8"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-sonner"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/toast/toast.tsx",
+      "content": "// 既存と同じSonnerの通知APIを使用する。\nexport { toast } from \"sonner\";\nimport { Toaster } from \"@/registry/cobalt/ui/sonner/sonner\";\nexport { Toaster };\n",
+      "type": "registry:ui",
+      "target": "@ui/toast.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "既存の通知APIでも統一した手応えを返す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "通知表示・操作",
+          "effect": "ToasterとSonnerの移動・フェード・押下を利用する。独自タイマーや通知待ちを追加しない。",
+          "timing": "entry / selection / press"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

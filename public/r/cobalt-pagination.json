@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-pagination",
+  "title": "Cobalt pagination",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/pagination/pagination.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from \"lucide-react\";\n\nimport { buttonVariants, type Button } from \"@/registry/cobalt/ui/button/button\";\n\nfunction Pagination({\n  className,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<\"nav\"> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <nav\n        role=\"navigation\"\n        aria-label=\"ページ切り替え\"\n        data-slot=\"pagination\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-pagination\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction PaginationContent({ className, ...props }: React.ComponentProps<\"ul\">) {\n  return (\n    <ul\n      data-slot=\"pagination-content\"\n      className={cn(\"cobalt-pagination-content\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction PaginationItem({ ...props }: React.ComponentProps<\"li\">) {\n  return <li data-slot=\"pagination-item\" {...props} />;\n}\n\ntype PaginationLinkProps = {\n  isActive?: boolean;\n  motion?: MotionPreference;\n} & Pick<React.ComponentProps<typeof Button>, \"size\"> &\n  React.ComponentProps<\"a\">;\n\nfunction PaginationLink({\n  className,\n  ref: forwardedRef,\n  isActive,\n  size = \"icon\",\n  motion = \"inherit\",\n  onClick,\n  onKeyDown,\n  ...props\n}: PaginationLinkProps) {\n  const { ref, effective } = useMotionFeedback<HTMLAnchorElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"toggle\",\n  });\n\n  const disabled = props[\"aria-disabled\"] === true || props[\"aria-disabled\"] === \"true\";\n  return (\n    <a\n      aria-current={isActive ? \"page\" : undefined}\n      data-slot=\"pagination-link\"\n      ref={ref}\n      data-active={isActive}\n      data-cobalt-motion={effective}\n      onClick={(event) => {\n        if (disabled) {\n          event.preventDefault();\n          return;\n        }\n        onClick?.(event);\n      }}\n      onKeyDown={(event) => {\n        if (disabled && (event.key === \"Enter\" || event.key === \" \")) {\n          event.preventDefault();\n          return;\n        }\n        onKeyDown?.(event);\n      }}\n      className={cn(\n        \"cobalt-pagination-link\",\n        buttonVariants({\n          variant: isActive ? \"default\" : \"ghost\",\n          size,\n        }),\n        className,\n      )}\n      {...props}\n      tabIndex={disabled ? -1 : props.tabIndex}\n    />\n  );\n}\n\nfunction PaginationPrevious({ className, ...props }: React.ComponentProps<typeof PaginationLink>) {\n  return (\n    <PaginationLink\n      aria-label=\"前のページへ\"\n      size=\"default\"\n      className={cn(\"cobalt-pagination-previous\", className)}\n      {...props}\n    >\n      <ChevronLeftIcon />\n      <span className=\"cobalt-pagination-label\">前へ</span>\n    </PaginationLink>\n  );\n}\n\nfunction PaginationNext({ className, ...props }: React.ComponentProps<typeof PaginationLink>) {\n  return (\n    <PaginationLink\n      aria-label=\"次のページへ\"\n      size=\"default\"\n      className={cn(\"cobalt-pagination-next\", className)}\n      {...props}\n    >\n      <span className=\"cobalt-pagination-label\">次へ</span>\n      <ChevronRightIcon />\n    </PaginationLink>\n  );\n}\n\nfunction PaginationEllipsis({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      aria-hidden\n      data-slot=\"pagination-ellipsis\"\n      className={cn(\"cobalt-pagination-ellipsis\", className)}\n      {...props}\n    >\n      <MoreHorizontalIcon className=\"size-4\" />\n      <span className=\"sr-only\">他のページ</span>\n    </span>\n  );\n}\n\nexport {\n  Pagination,\n  PaginationContent,\n  PaginationLink,\n  PaginationItem,\n  PaginationPrevious,\n  PaginationNext,\n  PaginationEllipsis,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/pagination.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "移動したページの選択を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "ページが選択状態になる",
+          "effect": "既存Buttonの押下と、選択印の.88→1.08→1を継承。データ更新は待たせない。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

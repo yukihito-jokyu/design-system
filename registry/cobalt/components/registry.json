@@ -2,14 +2,16 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "items": [
     {
-      "name": "theme-provider",
+      "name": "cobalt-theme-provider",
       "type": "registry:component",
       "title": "Cobalt Design Theme Provider",
-      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "description": "Cobalt design system component.",
       "dependencies": [
         "react-dom"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles"
+      ],
       "files": [
         {
           "path": "theme-provider/theme-provider.tsx",
@@ -38,10 +40,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "全体・個別・OSの優先順位と中断を統一する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",

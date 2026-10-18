@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-spinner",
+  "title": "Cobalt spinner",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/spinner/spinner.tsx",
+      "content": "import type { ComponentProps } from \"react\";\nimport { Loader2Icon } from \"lucide-react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Spinner({\n  className,\n  motion = \"inherit\",\n  ...props\n}: ComponentProps<\"svg\"> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <Loader2Icon\n      data-slot=\"spinner\"\n      role=\"status\"\n      aria-label=\"読み込み中\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-spinner\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Spinner };\n",
+      "type": "registry:ui",
+      "target": "@ui/spinner.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "処理中であることを伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "処理中",
+          "effect": "既存の円を1回転で連続回転。OFFでは静止し処理中の名前は維持。",
+          "timing": "spin"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

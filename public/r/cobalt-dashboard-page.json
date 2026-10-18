@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-dashboard-page",
+  "title": "Cobalt dashboard-page",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-card",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-empty-state",
+    "@yukihi/cobalt-error-state",
+    "@yukihi/cobalt-loading-state",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/dashboard-page/dashboard-page.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Card, CardContent, CardHeader, CardTitle } from \"@/registry/cobalt/ui/card/card\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport { LoadingState } from \"@/registry/cobalt/patterns/loading-state/loading-state\";\nimport { ErrorState } from \"@/registry/cobalt/patterns/error-state/error-state\";\nimport { EmptyState } from \"@/registry/cobalt/character/empty-state/empty-state\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport type DashboardMetric = { label: string; value: ReactNode; description?: string };\n\nexport function DashboardPage({\n  title,\n  description,\n  metrics,\n  sections,\n  actions,\n  loading = false,\n  error,\n  onRetry,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description?: string;\n  metrics: DashboardMetric[];\n  sections?: ReactNode;\n  actions?: ReactNode;\n  loading?: boolean;\n  error?: string;\n  onRetry?: () => void;\n  motion?: MotionPreference;\n}) {\n  return (\n    <MotionProvider motion={motion}>\n      <main className=\"cobalt-stack cobalt-pattern-page\">\n        <PageHeader title={title} description={description} actions={actions} headingLevel={1} />\n        {error ? (\n          <ErrorState description={error} onRetry={onRetry} />\n        ) : (\n          <LoadingState loading={loading} initial>\n            {metrics.length > 0 && (\n              <div className=\"cobalt-metric-grid\">\n                {metrics.map((metric) => (\n                  <Card key={metric.label}>\n                    <CardHeader>\n                      <CardTitle>{metric.label}</CardTitle>\n                    </CardHeader>\n                    <CardContent>\n                      <p className=\"cobalt-metric-value\">{metric.value}</p>\n                      {metric.description && <p className=\"cobalt-note\">{metric.description}</p>}\n                    </CardContent>\n                  </Card>\n                ))}\n              </div>\n            )}\n            {sections ? (\n              <div className=\"cobalt-stack\">{sections}</div>\n            ) : (\n              metrics.length === 0 && (\n                <EmptyState\n                  title=\"指標はありません\"\n                  description=\"指標が追加されると、ここに表示されます。\"\n                />\n              )\n            )}\n          </LoadingState>\n        )}\n      </main>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/dashboard-page.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "数値の読み取りを邪魔せず次の操作を促す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "指標から操作",
+          "effect": "子のButton・案内部品のmotionを継承。数字のカウントアップやカードの一斉登場は付けない。",
+          "timing": "press / entry"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

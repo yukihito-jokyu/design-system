@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-result-page",
+  "title": "Cobalt result-page",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-alert",
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/result-page/result-page.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { Alert, AlertDescription, AlertTitle } from \"@/registry/cobalt/ui/alert/alert\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function ResultPage({\n  title,\n  description,\n  status,\n  details,\n  targetLink,\n  action,\n  onRetry,\n  motion = \"inherit\",\n}: {\n  title: string;\n  description: string;\n  status: \"success\" | \"partial\" | \"failure\";\n  details?: ReactNode;\n  targetLink?: ReactNode;\n  action?: ReactNode;\n  onRetry?: () => void;\n  motion?: MotionPreference;\n}) {\n  return (\n    <MotionProvider motion={motion}>\n      <main className=\"cobalt-stack cobalt-pattern-page\">\n        <PageHeader title={title} description={description} headingLevel={1} />\n        <Alert\n          variant={\n            status === \"failure\" ? \"destructive\" : status === \"success\" ? \"success\" : \"warning\"\n          }\n          role=\"status\"\n        >\n          <AlertTitle>\n            {status === \"success\"\n              ? \"完了\"\n              : status === \"partial\"\n                ? \"一部完了\"\n                : \"完了できませんでした\"}\n          </AlertTitle>\n          <AlertDescription>{details}</AlertDescription>\n        </Alert>\n        <div className=\"cobalt-actions\">\n          {targetLink}\n          {status === \"success\" && action}\n          {status !== \"success\" && onRetry && (\n            <Button type=\"button\" onClick={onRetry}>\n              再試行\n            </Button>\n          )}\n        </div>\n      </main>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/result-page.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "完了から次の一歩へつなぐ。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "成功画面を表示",
+          "effect": "成功Alertを6pxとscale .98→1で登場。次のButtonは通常の手応え。失敗画面は静止した説明を優先。",
+          "timing": "celebrate / press"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

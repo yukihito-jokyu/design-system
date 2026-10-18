@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-avatar",
+  "title": "Cobalt avatar",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/avatar/avatar.tsx",
+      "content": "import {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { Avatar as AvatarPrimitive } from \"radix-ui\";\n\nfunction Avatar({\n  className,\n  size = \"default\",\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Root> & {\n  size?: \"default\" | \"sm\" | \"lg\";\n  motion?: MotionPreference;\n}) {\n  const effective = useDesignMotion(motion);\n  return (\n    <AvatarPrimitive.Root\n      data-slot=\"avatar\"\n      data-size={size}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-avatar\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarImage({ className, ...props }: React.ComponentProps<typeof AvatarPrimitive.Image>) {\n  return (\n    <AvatarPrimitive.Image\n      data-slot=\"avatar-image\"\n      className={cn(\"cobalt-avatar-image\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarFallback({\n  className,\n  ...props\n}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {\n  return (\n    <AvatarPrimitive.Fallback\n      data-slot=\"avatar-fallback\"\n      className={cn(\"cobalt-avatar-fallback\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AvatarBadge({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span data-slot=\"avatar-badge\" className={cn(\"cobalt-avatar-badge\", className)} {...props} />\n  );\n}\n\nfunction AvatarGroup({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"avatar-group\" className={cn(\"cobalt-avatar-group\", className)} {...props} />\n  );\n}\n\nfunction AvatarGroupCount({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"avatar-group-count\"\n      className={cn(\"cobalt-avatar-group-count\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Avatar, AvatarImage, AvatarFallback, AvatarBadge, AvatarGroup, AvatarGroupCount };\n",
+      "type": "registry:ui",
+      "target": "@ui/avatar.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "画像の読み込みによる急な切り替えを和らげる。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "画像の読み込み完了",
+          "effect": "既存の画像がマウントされた時だけフェード。Fallbackと枠は動かさない。",
+          "timing": "entry"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}
