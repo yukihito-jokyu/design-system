@@ -25,7 +25,7 @@ GitHubでは次を管理します。
 - `public/r/`：HTTPS配信へ渡す生成済みJSON
 - README、運用手順、第三者ライセンス表記
 
-承認済みPattern 18種類のStorybookだけを例外として本体に置きます。StoryはPattern原本に隣接しますがRegistry項目の`files`には登録しません。それ以外のカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証とStorybook静的出力は一時ディレクトリ、他の手動カタログは別リポジトリまたは`development-preview`で管理します。
+承認済みPattern 18種類とcobaltのUI・Character・SVG部品のStorybookを例外として本体に置きます。Storyは各原本に隣接しますがRegistry項目の`files`には登録しません。それ以外のカタログアプリ、E2E専用アプリ、原案・検証画像、大量のログ、未承認案を置きません。空アプリ検証とStorybook静的出力は一時ディレクトリ、他の手動カタログは別リポジトリまたは`development-preview`で管理します。
 
 ### Storybook用CSSの同期
 
@@ -39,6 +39,16 @@ REGISTRY_BASE_URL=http://127.0.0.1:4173/r npm run registry:serve
 ```
 
 CLIが更新した`src/index.css`を`.storybook/styles.css`へ反映します。`components.json`と`registry/new-york/styles/index.css`は変更しません。CIの`storybook-styles`ジョブは同じ導入を一時環境で再現し、CSSの差分を検出します。Storybook設定とStoryの型検査は`npm run typecheck:storybook`、静的出力は`npm run build-storybook`で確認します。
+
+### cobaltのStorybook用CSS
+
+`.storybook/cobalt.css`の正本は`registry/cobalt/styles/registry.json`の`design-system-styles`です。cobaltも既存と同じく、リポジトリ外の一時Vite環境へロック済みshadcn CLIでCSSを反映し、Storybook側へコピーします。Registry配布への接続は不要で、itemを一時JSONファイルへ取り出して`shadcn add /絶対パス/design-system-styles.json --cwd /一時Vite環境 --yes`で導入できます。
+
+現在のCLIでは、正本の`@font-face`の取り込みが失敗します。一時JSONだけから`@font-face`を除いて導入し、除いたルールを正本と同じプロパティ・値のCSSへ展開して先頭へ加えます。生成結果はTailwindのimportを先頭に保って`.storybook/cobalt.css`へ反映します。正本の書体・配色・寸法は変更しません。既存の`storybook-styles`ジョブはnew-york用であり、cobaltの同期確認は含みません。
+
+cobaltのStoryは`parameters.designSystem: "cobalt"`を指定します。共通decoratorがcobalt用Providerを適用し、既存Patternの5テーマとは分けて表示します。
+
+モーションの通常位置は`--cobalt-motion-rest-scale`と`--cobalt-motion-rest-translate`で指定します。固定値を直接指定すると、本番ビルドのCSS最適化で`transform`へ統合され、OFFからONへ戻しただけで不要な動きが発生するためです。OFF時は時間を0にするだけでなく`transition: none`を指定し、再生途中の動きも停止します。
 
 ## 3. 公開前に決める項目
 
