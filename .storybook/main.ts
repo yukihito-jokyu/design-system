@@ -4,7 +4,13 @@ import { mergeConfig } from "vite";
 
 const config = {
   framework: "@storybook/react-vite",
-  stories: ["../registry/new-york/patterns/**/*.stories.tsx"],
+  stories: [
+    "../registry/new-york/patterns/**/*.stories.tsx",
+    "../registry/cobalt/ui/**/*.stories.tsx",
+    "../registry/cobalt/character/**/*.stories.tsx",
+    "../registry/cobalt/icons/**/*.stories.tsx",
+    "../registry/cobalt/patterns/**/*.stories.tsx",
+  ],
   async viteFinal(viteConfig) {
     return mergeConfig(viteConfig, {
       plugins: [tailwindcss()],
