@@ -1,0 +1,28 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-utils",
+  "title": "Cobalt Utilities",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "clsx@^2.1.1",
+    "tailwind-merge@^3.7.0"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/cobalt/lib/utils/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\";\nimport { twMerge } from \"tailwind-merge\";\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs));\n}\n",
+      "type": "registry:lib",
+      "target": "@lib/utils.ts"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "既存の補助処理を維持する。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "DOMを描画しないため独立したmotionは持たない。"
+    }
+  },
+  "type": "registry:lib"
+}

@@ -2,12 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "items": [
     {
-      "name": "design-system-styles",
+      "name": "cobalt-design-system-styles",
       "type": "registry:style",
       "title": "Cobalt Design System Styles",
-      "description": "Canonical cobalt tokens, Noto Sans JP font loading, and shared component rules. Distribution is not configured.",
+      "description": "Canonical cobalt tokens, Noto Sans JP font loading, and shared component rules.",
       "meta": {
-        "distribution": "not-configured",
         "motion": {
           "purpose": "日常操作は短い手応え、選択は小さな弾み、完了は一度の穏やかな祝福。色・静止時寸法・承認済みSVGは維持する。",
           "sources": [
@@ -71,34 +70,7 @@
         }
       },
       "css": {
-        "@font-face /* Noto Sans JP 400 */": {
-          "font-family": "\"Noto Sans JP\"",
-          "font-style": "normal",
-          "font-weight": "400",
-          "font-display": "swap",
-          "src": "url(\"https://fonts.gstatic.com/s/notosansjp/v57/-F6jfjtqLzI2JPCgQBnw7HFyzSD-AsregP8VFBEj75s.ttf\") format(\"truetype\")"
-        },
-        "@font-face /* Noto Sans JP 500 */": {
-          "font-family": "\"Noto Sans JP\"",
-          "font-style": "normal",
-          "font-weight": "500",
-          "font-display": "swap",
-          "src": "url(\"https://fonts.gstatic.com/s/notosansjp/v57/-F6jfjtqLzI2JPCgQBnw7HFyzSD-AsregP8VFCMj75s.ttf\") format(\"truetype\")"
-        },
-        "@font-face /* Noto Sans JP 600 */": {
-          "font-family": "\"Noto Sans JP\"",
-          "font-style": "normal",
-          "font-weight": "600",
-          "font-display": "swap",
-          "src": "url(\"https://fonts.gstatic.com/s/notosansjp/v57/-F6jfjtqLzI2JPCgQBnw7HFyzSD-AsregP8VFM8k75s.ttf\") format(\"truetype\")"
-        },
-        "@font-face /* Noto Sans JP 700 */": {
-          "font-family": "\"Noto Sans JP\"",
-          "font-style": "normal",
-          "font-weight": "700",
-          "font-display": "swap",
-          "src": "url(\"https://fonts.gstatic.com/s/notosansjp/v57/-F6jfjtqLzI2JPCgQBnw7HFyzSD-AsregP8VFPYk75s.ttf\") format(\"truetype\")"
-        },
+        "@import url(\"https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap\")": {},
         ":root, [data-cobalt-theme=\"light\"]": {
           "--cobalt-primary": "#0647ed",
           "--cobalt-accent": "#00b4dc",
@@ -3831,7 +3803,8 @@
           "transition": "none",
           "animation": "none"
         }
-      }
+      },
+      "registryDependencies": []
     }
   ]
 }

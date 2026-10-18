@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-edit-page",
+  "title": "Cobalt edit-page",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-error-state",
+    "@yukihi/cobalt-page-header",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/patterns/edit-page/edit-page.tsx",
+      "content": "import { useEffect, useRef, type FormEvent, type ReactNode } from \"react\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\nimport { PageHeader } from \"@/registry/cobalt/patterns/page-header/page-header\";\nimport { ErrorState } from \"@/registry/cobalt/patterns/error-state/error-state\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function EditPage({\n  title,\n  variant,\n  description,\n  children,\n  onSubmit,\n  onCancel,\n  submitting = false,\n  error,\n  dirty = false,\n  header,\n  contentElement = \"main\",\n  noValidate = false,\n  motion = \"inherit\",\n}: {\n  title: string;\n  variant: \"create\" | \"edit\";\n  description?: string;\n  children: ReactNode;\n  onSubmit: (event: FormEvent<HTMLFormElement>) => void;\n  onCancel?: () => void;\n  submitting?: boolean;\n  error?: string;\n  dirty?: boolean;\n  header?: ReactNode;\n  contentElement?: \"main\" | \"section\";\n  noValidate?: boolean;\n  motion?: MotionPreference;\n}) {\n  const Content = contentElement;\n  const errorRef = useRef<HTMLDivElement>(null);\n  // 保存に失敗したら、説明へ移動して内容を確認できるようにする。\n  useEffect(() => {\n    if (error && !submitting) errorRef.current?.focus();\n  }, [error, submitting]);\n  return (\n    <MotionProvider motion={motion}>\n      <Content className=\"cobalt-stack\">\n        {header ?? <PageHeader title={title} description={description} headingLevel={1} />}\n        <form\n          className=\"cobalt-stack\"\n          aria-label={title}\n          aria-busy={submitting}\n          noValidate={noValidate}\n          onSubmit={(event) => {\n            event.preventDefault();\n            if (!submitting) onSubmit(event);\n          }}\n        >\n          {error && (\n            <div ref={errorRef} tabIndex={-1} role=\"group\" aria-label=\"保存エラー\">\n              <ErrorState title=\"保存できませんでした\" description={error} />\n            </div>\n          )}\n          <fieldset className=\"cobalt-edit-fields\" disabled={submitting}>\n            {children}\n          </fieldset>\n          {dirty && (\n            <p className=\"cobalt-note\" role=\"status\">\n              未保存の変更があります。\n            </p>\n          )}\n          <div className=\"cobalt-edit-actions\">\n            <Button type=\"submit\" loading={submitting}>\n              {submitting ? \"保存中…\" : variant === \"create\" ? \"作成\" : \"保存\"}\n            </Button>\n            {onCancel && (\n              <Button type=\"button\" variant=\"outline\" onClick={onCancel} disabled={submitting}>\n                キャンセル\n              </Button>\n            )}\n          </div>\n        </form>\n      </Content>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/patterns/edit-page.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "保存を待つ間も操作の結果が分かるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "保存する",
+          "effect": "Buttonの押下とloadingのSpinnerを継承。送信失敗時は既存のエラーへ即時フォーカス。エラー本文は弾ませない。",
+          "timing": "press / spin"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

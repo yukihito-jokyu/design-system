@@ -1,0 +1,30 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-label",
+  "title": "Cobalt label",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/label/label.tsx",
+      "content": "import * as React from \"react\";\nimport { Label as LabelPrimitive } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\n\nfunction Label({ className, ...props }: React.ComponentProps<typeof LabelPrimitive.Root>) {\n  return (\n    <LabelPrimitive.Root data-slot=\"label\" className={cn(\"cobalt-label\", className)} {...props} />\n  );\n}\n\nexport { Label };\n",
+      "type": "registry:ui",
+      "target": "@ui/label.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "操作対象の名前を安定して読めるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "常時読む名前のため独立した動きを付けない。"
+    }
+  },
+  "type": "registry:ui"
+}

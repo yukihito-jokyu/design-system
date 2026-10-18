@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-badge",
+  "title": "Cobalt badge",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/badge/badge.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport * as React from \"react\";\nimport { cva, type VariantProps } from \"class-variance-authority\";\nimport { Slot } from \"radix-ui\";\nimport { CheckIcon, MinusIcon } from \"lucide-react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\n\nconst badgeVariants = cva(\"cobalt-badge\", {\n  variants: {\n    variant: {\n      default: \"cobalt-badge-default\",\n      success: \"cobalt-badge-success\",\n      warning: \"cobalt-badge-warning\",\n      secondary: \"cobalt-badge-secondary\",\n      destructive: \"cobalt-badge-destructive\",\n      outline: \"cobalt-badge-outline\",\n      ghost: \"cobalt-badge-ghost\",\n      link: \"cobalt-badge-link\",\n    },\n  },\n  defaultVariants: { variant: \"default\" },\n});\n\nfunction Badge({\n  className,\n  ref: forwardedRef,\n  motion = \"inherit\",\n  variant = \"default\",\n  asChild = false,\n  children,\n  ...props\n}: React.ComponentProps<\"span\"> &\n  VariantProps<typeof badgeVariants> & { asChild?: boolean; motion?: MotionPreference }) {\n  const { ref, effective } = useMotionFeedback<HTMLSpanElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"status\",\n  });\n\n  const Comp = asChild ? Slot.Root : \"span\";\n\n  const mark =\n    variant === \"success\" ? (\n      <CheckIcon />\n    ) : variant === \"warning\" || variant === \"destructive\" ? (\n      \"!\"\n    ) : variant === \"secondary\" ? (\n      <MinusIcon />\n    ) : null;\n\n  // asChildでは既存と同じく、渡された要素をそのまま装飾する。\n  return (\n    <MotionProvider motion={motion}>\n      <Comp\n        data-slot=\"badge\"\n        data-cobalt-motion={effective}\n        ref={ref}\n        data-variant={variant}\n        className={cn(badgeVariants({ variant }), className)}\n        {...props}\n      >\n        {asChild ? (\n          children\n        ) : (\n          <>\n            {mark && (\n              <span className=\"cobalt-badge-mark\" aria-hidden=\"true\">\n                {mark}\n              </span>\n            )}\n            {children}\n          </>\n        )}\n      </Comp>\n    </MotionProvider>\n  );\n}\n\nexport { Badge, badgeVariants };\n",
+      "type": "registry:ui",
+      "target": "@ui/badge.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "状態の変化を文字の位置を変えずに伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "variant変更",
+          "effect": "印だけ.7→1.12→1。要修正は弾ませず短いフェードにする。初回・文言変更だけでは動かさない。",
+          "timing": "celebrate / selection"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

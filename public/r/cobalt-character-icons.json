@@ -1,0 +1,82 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-character-icons",
+  "title": "Cobalt Dynamic Character Icons",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-assembly-document-feature-icon",
+    "@yukihi/cobalt-assembly-history-feature-icon",
+    "@yukihi/cobalt-assembly-idea-feature-icon",
+    "@yukihi/cobalt-assembly-saved-status-icon",
+    "@yukihi/cobalt-assembly-success-character-icon",
+    "@yukihi/cobalt-assembly-thinking-character-icon",
+    "@yukihi/cobalt-assembly-thinking-status-icon",
+    "@yukihi/cobalt-assembly-welcome-character-icon",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-fold-document-feature-icon",
+    "@yukihi/cobalt-fold-history-feature-icon",
+    "@yukihi/cobalt-fold-idea-feature-icon",
+    "@yukihi/cobalt-fold-saved-status-icon",
+    "@yukihi/cobalt-fold-success-character-icon",
+    "@yukihi/cobalt-fold-thinking-character-icon",
+    "@yukihi/cobalt-fold-thinking-status-icon",
+    "@yukihi/cobalt-fold-welcome-character-icon",
+    "@yukihi/cobalt-impress-document-feature-icon",
+    "@yukihi/cobalt-impress-history-feature-icon",
+    "@yukihi/cobalt-impress-idea-feature-icon",
+    "@yukihi/cobalt-impress-saved-status-icon",
+    "@yukihi/cobalt-impress-success-character-icon",
+    "@yukihi/cobalt-impress-thinking-character-icon",
+    "@yukihi/cobalt-impress-thinking-status-icon",
+    "@yukihi/cobalt-impress-welcome-character-icon",
+    "@yukihi/cobalt-ink-document-feature-icon",
+    "@yukihi/cobalt-ink-history-feature-icon",
+    "@yukihi/cobalt-ink-idea-feature-icon",
+    "@yukihi/cobalt-ink-saved-status-icon",
+    "@yukihi/cobalt-ink-success-character-icon",
+    "@yukihi/cobalt-ink-thinking-character-icon",
+    "@yukihi/cobalt-ink-thinking-status-icon",
+    "@yukihi/cobalt-ink-welcome-character-icon",
+    "@yukihi/cobalt-monolith-document-feature-icon",
+    "@yukihi/cobalt-monolith-history-feature-icon",
+    "@yukihi/cobalt-monolith-idea-feature-icon",
+    "@yukihi/cobalt-monolith-saved-status-icon",
+    "@yukihi/cobalt-monolith-success-character-icon",
+    "@yukihi/cobalt-monolith-thinking-character-icon",
+    "@yukihi/cobalt-monolith-thinking-status-icon",
+    "@yukihi/cobalt-monolith-welcome-character-icon",
+    "@yukihi/cobalt-orbit-document-feature-icon",
+    "@yukihi/cobalt-orbit-history-feature-icon",
+    "@yukihi/cobalt-orbit-idea-feature-icon",
+    "@yukihi/cobalt-orbit-saved-status-icon",
+    "@yukihi/cobalt-orbit-success-character-icon",
+    "@yukihi/cobalt-orbit-thinking-character-icon",
+    "@yukihi/cobalt-orbit-thinking-status-icon",
+    "@yukihi/cobalt-orbit-welcome-character-icon",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/character/character-icons/icon-map.ts",
+      "content": "// CharacterIcon、FeatureIcon、StatusBubbleで動的に選択する。個別アイコンの読み込みは独立させる。\nimport { FoldWelcomeCharacterIcon } from \"@/registry/cobalt/icons/fold-welcome-character-icon/FoldWelcomeCharacterIcon\";\nimport { FoldThinkingCharacterIcon } from \"@/registry/cobalt/icons/fold-thinking-character-icon/FoldThinkingCharacterIcon\";\nimport { FoldSuccessCharacterIcon } from \"@/registry/cobalt/icons/fold-success-character-icon/FoldSuccessCharacterIcon\";\nimport { FoldDocumentFeatureIcon } from \"@/registry/cobalt/icons/fold-document-feature-icon/FoldDocumentFeatureIcon\";\nimport { FoldIdeaFeatureIcon } from \"@/registry/cobalt/icons/fold-idea-feature-icon/FoldIdeaFeatureIcon\";\nimport { FoldHistoryFeatureIcon } from \"@/registry/cobalt/icons/fold-history-feature-icon/FoldHistoryFeatureIcon\";\nimport { FoldThinkingStatusIcon } from \"@/registry/cobalt/icons/fold-thinking-status-icon/FoldThinkingStatusIcon\";\nimport { FoldSavedStatusIcon } from \"@/registry/cobalt/icons/fold-saved-status-icon/FoldSavedStatusIcon\";\nimport { MonolithWelcomeCharacterIcon } from \"@/registry/cobalt/icons/monolith-welcome-character-icon/MonolithWelcomeCharacterIcon\";\nimport { MonolithThinkingCharacterIcon } from \"@/registry/cobalt/icons/monolith-thinking-character-icon/MonolithThinkingCharacterIcon\";\nimport { MonolithSuccessCharacterIcon } from \"@/registry/cobalt/icons/monolith-success-character-icon/MonolithSuccessCharacterIcon\";\nimport { MonolithDocumentFeatureIcon } from \"@/registry/cobalt/icons/monolith-document-feature-icon/MonolithDocumentFeatureIcon\";\nimport { MonolithIdeaFeatureIcon } from \"@/registry/cobalt/icons/monolith-idea-feature-icon/MonolithIdeaFeatureIcon\";\nimport { MonolithHistoryFeatureIcon } from \"@/registry/cobalt/icons/monolith-history-feature-icon/MonolithHistoryFeatureIcon\";\nimport { MonolithThinkingStatusIcon } from \"@/registry/cobalt/icons/monolith-thinking-status-icon/MonolithThinkingStatusIcon\";\nimport { MonolithSavedStatusIcon } from \"@/registry/cobalt/icons/monolith-saved-status-icon/MonolithSavedStatusIcon\";\nimport { InkWelcomeCharacterIcon } from \"@/registry/cobalt/icons/ink-welcome-character-icon/InkWelcomeCharacterIcon\";\nimport { InkThinkingCharacterIcon } from \"@/registry/cobalt/icons/ink-thinking-character-icon/InkThinkingCharacterIcon\";\nimport { InkSuccessCharacterIcon } from \"@/registry/cobalt/icons/ink-success-character-icon/InkSuccessCharacterIcon\";\nimport { InkDocumentFeatureIcon } from \"@/registry/cobalt/icons/ink-document-feature-icon/InkDocumentFeatureIcon\";\nimport { InkIdeaFeatureIcon } from \"@/registry/cobalt/icons/ink-idea-feature-icon/InkIdeaFeatureIcon\";\nimport { InkHistoryFeatureIcon } from \"@/registry/cobalt/icons/ink-history-feature-icon/InkHistoryFeatureIcon\";\nimport { InkThinkingStatusIcon } from \"@/registry/cobalt/icons/ink-thinking-status-icon/InkThinkingStatusIcon\";\nimport { InkSavedStatusIcon } from \"@/registry/cobalt/icons/ink-saved-status-icon/InkSavedStatusIcon\";\nimport { AssemblyWelcomeCharacterIcon } from \"@/registry/cobalt/icons/assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon\";\nimport { AssemblyThinkingCharacterIcon } from \"@/registry/cobalt/icons/assembly-thinking-character-icon/AssemblyThinkingCharacterIcon\";\nimport { AssemblySuccessCharacterIcon } from \"@/registry/cobalt/icons/assembly-success-character-icon/AssemblySuccessCharacterIcon\";\nimport { AssemblyDocumentFeatureIcon } from \"@/registry/cobalt/icons/assembly-document-feature-icon/AssemblyDocumentFeatureIcon\";\nimport { AssemblyIdeaFeatureIcon } from \"@/registry/cobalt/icons/assembly-idea-feature-icon/AssemblyIdeaFeatureIcon\";\nimport { AssemblyHistoryFeatureIcon } from \"@/registry/cobalt/icons/assembly-history-feature-icon/AssemblyHistoryFeatureIcon\";\nimport { AssemblyThinkingStatusIcon } from \"@/registry/cobalt/icons/assembly-thinking-status-icon/AssemblyThinkingStatusIcon\";\nimport { AssemblySavedStatusIcon } from \"@/registry/cobalt/icons/assembly-saved-status-icon/AssemblySavedStatusIcon\";\nimport { ImpressWelcomeCharacterIcon } from \"@/registry/cobalt/icons/impress-welcome-character-icon/ImpressWelcomeCharacterIcon\";\nimport { ImpressThinkingCharacterIcon } from \"@/registry/cobalt/icons/impress-thinking-character-icon/ImpressThinkingCharacterIcon\";\nimport { ImpressSuccessCharacterIcon } from \"@/registry/cobalt/icons/impress-success-character-icon/ImpressSuccessCharacterIcon\";\nimport { ImpressDocumentFeatureIcon } from \"@/registry/cobalt/icons/impress-document-feature-icon/ImpressDocumentFeatureIcon\";\nimport { ImpressIdeaFeatureIcon } from \"@/registry/cobalt/icons/impress-idea-feature-icon/ImpressIdeaFeatureIcon\";\nimport { ImpressHistoryFeatureIcon } from \"@/registry/cobalt/icons/impress-history-feature-icon/ImpressHistoryFeatureIcon\";\nimport { ImpressThinkingStatusIcon } from \"@/registry/cobalt/icons/impress-thinking-status-icon/ImpressThinkingStatusIcon\";\nimport { ImpressSavedStatusIcon } from \"@/registry/cobalt/icons/impress-saved-status-icon/ImpressSavedStatusIcon\";\nimport { OrbitWelcomeCharacterIcon } from \"@/registry/cobalt/icons/orbit-welcome-character-icon/OrbitWelcomeCharacterIcon\";\nimport { OrbitThinkingCharacterIcon } from \"@/registry/cobalt/icons/orbit-thinking-character-icon/OrbitThinkingCharacterIcon\";\nimport { OrbitSuccessCharacterIcon } from \"@/registry/cobalt/icons/orbit-success-character-icon/OrbitSuccessCharacterIcon\";\nimport { OrbitDocumentFeatureIcon } from \"@/registry/cobalt/icons/orbit-document-feature-icon/OrbitDocumentFeatureIcon\";\nimport { OrbitIdeaFeatureIcon } from \"@/registry/cobalt/icons/orbit-idea-feature-icon/OrbitIdeaFeatureIcon\";\nimport { OrbitHistoryFeatureIcon } from \"@/registry/cobalt/icons/orbit-history-feature-icon/OrbitHistoryFeatureIcon\";\nimport { OrbitThinkingStatusIcon } from \"@/registry/cobalt/icons/orbit-thinking-status-icon/OrbitThinkingStatusIcon\";\nimport { OrbitSavedStatusIcon } from \"@/registry/cobalt/icons/orbit-saved-status-icon/OrbitSavedStatusIcon\";\n\nexport const iconComponents = {\n  \"fold/character-welcome\": FoldWelcomeCharacterIcon,\n  \"fold/character-thinking\": FoldThinkingCharacterIcon,\n  \"fold/character-success\": FoldSuccessCharacterIcon,\n  \"fold/feature-document\": FoldDocumentFeatureIcon,\n  \"fold/feature-idea\": FoldIdeaFeatureIcon,\n  \"fold/feature-history\": FoldHistoryFeatureIcon,\n  \"fold/status-thinking\": FoldThinkingStatusIcon,\n  \"fold/status-saved\": FoldSavedStatusIcon,\n  \"monolith/character-welcome\": MonolithWelcomeCharacterIcon,\n  \"monolith/character-thinking\": MonolithThinkingCharacterIcon,\n  \"monolith/character-success\": MonolithSuccessCharacterIcon,\n  \"monolith/feature-document\": MonolithDocumentFeatureIcon,\n  \"monolith/feature-idea\": MonolithIdeaFeatureIcon,\n  \"monolith/feature-history\": MonolithHistoryFeatureIcon,\n  \"monolith/status-thinking\": MonolithThinkingStatusIcon,\n  \"monolith/status-saved\": MonolithSavedStatusIcon,\n  \"ink/character-welcome\": InkWelcomeCharacterIcon,\n  \"ink/character-thinking\": InkThinkingCharacterIcon,\n  \"ink/character-success\": InkSuccessCharacterIcon,\n  \"ink/feature-document\": InkDocumentFeatureIcon,\n  \"ink/feature-idea\": InkIdeaFeatureIcon,\n  \"ink/feature-history\": InkHistoryFeatureIcon,\n  \"ink/status-thinking\": InkThinkingStatusIcon,\n  \"ink/status-saved\": InkSavedStatusIcon,\n  \"assembly/character-welcome\": AssemblyWelcomeCharacterIcon,\n  \"assembly/character-thinking\": AssemblyThinkingCharacterIcon,\n  \"assembly/character-success\": AssemblySuccessCharacterIcon,\n  \"assembly/feature-document\": AssemblyDocumentFeatureIcon,\n  \"assembly/feature-idea\": AssemblyIdeaFeatureIcon,\n  \"assembly/feature-history\": AssemblyHistoryFeatureIcon,\n  \"assembly/status-thinking\": AssemblyThinkingStatusIcon,\n  \"assembly/status-saved\": AssemblySavedStatusIcon,\n  \"impress/character-welcome\": ImpressWelcomeCharacterIcon,\n  \"impress/character-thinking\": ImpressThinkingCharacterIcon,\n  \"impress/character-success\": ImpressSuccessCharacterIcon,\n  \"impress/feature-document\": ImpressDocumentFeatureIcon,\n  \"impress/feature-idea\": ImpressIdeaFeatureIcon,\n  \"impress/feature-history\": ImpressHistoryFeatureIcon,\n  \"impress/status-thinking\": ImpressThinkingStatusIcon,\n  \"impress/status-saved\": ImpressSavedStatusIcon,\n  \"orbit/character-welcome\": OrbitWelcomeCharacterIcon,\n  \"orbit/character-thinking\": OrbitThinkingCharacterIcon,\n  \"orbit/character-success\": OrbitSuccessCharacterIcon,\n  \"orbit/feature-document\": OrbitDocumentFeatureIcon,\n  \"orbit/feature-idea\": OrbitIdeaFeatureIcon,\n  \"orbit/feature-history\": OrbitHistoryFeatureIcon,\n  \"orbit/status-thinking\": OrbitThinkingStatusIcon,\n  \"orbit/status-saved\": OrbitSavedStatusIcon,\n} as const;\n\nexport const directions = [\"fold\", \"monolith\", \"ink\", \"assembly\", \"impress\", \"orbit\"] as const;\nexport type IconDirection = (typeof directions)[number];\n\nexport const statusPalettes = {\n  \"fold/thinking\": {\n    background: \"#feefe1\",\n    foreground: \"#4c281e\",\n  },\n  \"fold/saved\": {\n    background: \"#fef0e1\",\n    foreground: \"#4c281e\",\n  },\n  \"monolith/thinking\": {\n    background: \"#efebf5\",\n    foreground: \"#262568\",\n  },\n  \"monolith/saved\": {\n    background: \"#f0ebf9\",\n    foreground: \"#262568\",\n  },\n  \"ink/thinking\": {\n    background: \"#f2f5e5\",\n    foreground: \"#143e35\",\n  },\n  \"ink/saved\": {\n    background: \"#f1f5e4\",\n    foreground: \"#143e35\",\n  },\n  \"assembly/thinking\": {\n    background: \"#f6ead5\",\n    foreground: \"#543326\",\n  },\n  \"assembly/saved\": {\n    background: \"#e7572d\",\n    foreground: \"#fffdf7\",\n  },\n  \"impress/thinking\": {\n    background: \"#dfeaf0\",\n    foreground: \"#194496\",\n  },\n  \"impress/saved\": {\n    background: \"#173f95\",\n    foreground: \"#fffdf7\",\n  },\n  \"orbit/thinking\": {\n    background: \"#eae4f2\",\n    foreground: \"#49388e\",\n  },\n  \"orbit/saved\": {\n    background: \"#3b2f85\",\n    foreground: \"#fffdf7\",\n  },\n} as const;\n",
+      "type": "registry:component",
+      "target": "@components/icons/icon-map.ts"
+    },
+    {
+      "path": "registry/cobalt/character/character-icons/index.tsx",
+      "content": "import {\n  iconComponents,\n  statusPalettes,\n  directions,\n  type IconDirection,\n} from \"@/registry/cobalt/character/character-icons/icon-map\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nexport { directions, type IconDirection };\ntype CommonProps = { direction?: IconDirection; size?: number; label?: string; className?: string };\nexport type CharacterIconProps = CommonProps & { expression?: \"welcome\" | \"thinking\" | \"success\" };\nexport type FeatureIconProps = CommonProps & { name: \"document\" | \"idea\" | \"history\" };\n\n// 互換API: 動的な選択にも個別に読み込めるTSXコンポーネントを使う。\nfunction SvgIcon({\n  direction = \"fold\",\n  size = 48,\n  label = \"\",\n  className,\n  kind,\n  name,\n}: CommonProps & { kind: \"character\" | \"feature\" | \"status\"; name: string }) {\n  const Icon = iconComponents[`${direction}/${kind}-${name}` as keyof typeof iconComponents];\n  if (!Icon) throw new Error(\"Unknown icon kind/name\");\n  return <Icon size={size} label={label} className={className} />;\n}\n\nexport function CharacterIcon({ expression = \"welcome\", size = 48, ...props }: CharacterIconProps) {\n  return <SvgIcon {...props} size={size} kind=\"character\" name={expression} />;\n}\n\nexport function FeatureIcon({ name, size = 24, ...props }: FeatureIconProps) {\n  return <SvgIcon {...props} size={size} kind=\"feature\" name={name} />;\n}\n\nexport type StatusBubbleProps = {\n  direction?: IconDirection;\n  status: \"thinking\" | \"saved\";\n  children?: React.ReactNode;\n  announce?: boolean;\n  className?: string;\n};\n\nexport function StatusBubble({\n  direction = \"fold\",\n  status,\n  children,\n  announce = false,\n  className,\n}: StatusBubbleProps) {\n  const palette = statusPalettes[`${direction}/${status}`];\n  return (\n    <span\n      className={cn(\"cobalt-status-bubble\", className)}\n      role={announce ? \"status\" : undefined}\n      style={{\n        backgroundColor: palette.background,\n        color: palette.foreground,\n        borderColor: palette.foreground,\n      }}\n    >\n      <SvgIcon direction={direction} kind=\"status\" name={status} size={20} />\n      <span\n        style={direction === \"assembly\" && status === \"saved\" ? { color: \"#28180f\" } : undefined}\n      >\n        {children ?? (status === \"thinking\" ? \"考え中\" : \"保存しました\")}\n      </span>\n    </span>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/character/index.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "承認済みの図柄を読みやすく保つ。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "図柄の選択・表示を担う部品。SVG自体にループ・色変化を付けず、親の案内部品だけが登場する。"
+    }
+  },
+  "type": "registry:component"
+}

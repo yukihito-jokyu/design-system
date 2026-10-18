@@ -1,0 +1,27 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-icon-frame",
+  "title": "Cobalt Icon Frame",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/icons/icon-frame/IconFrame.tsx",
+      "content": "import type { ReactNode } from \"react\";\nexport type IconProps = { size?: number; label?: string; className?: string };\n\nexport function IconFrame({\n  size = 48,\n  label = \"\",\n  className,\n  children,\n}: IconProps & { children: ReactNode }) {\n  if (!Number.isFinite(size) || size < 12 || size > 512)\n    throw new Error(\"Icon size must be 12–512\");\n  return (\n    <span className={[\"cobalt-art-icon\", className].filter(Boolean).join(\" \")}>\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        viewBox=\"0 0 96 96\"\n        width={size}\n        height={size}\n        focusable=\"false\"\n        role={label ? \"img\" : undefined}\n        aria-label={label || undefined}\n        aria-hidden={label ? undefined : true}\n      >\n        {label ? <title>{label}</title> : null}\n        {children}\n      </svg>\n    </span>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/icons/IconFrame.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "承認済みSVGの図柄・色・線を維持する。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "独立した動作・ループ・SVG内部変形は付けない。操作の手応えはButton、登場はCharacterの外側で制御する。"
+    }
+  },
+  "type": "registry:component"
+}

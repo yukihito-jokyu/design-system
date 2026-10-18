@@ -2,10 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "items": [
     {
-      "name": "use-mobile",
+      "name": "cobalt-use-mobile",
       "type": "registry:hook",
       "title": "Cobalt Mobile Hook",
-      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "description": "Cobalt design system component.",
       "dependencies": [],
       "registryDependencies": [],
       "files": [
@@ -16,7 +16,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
         "motion": {
           "purpose": "既存の補助処理を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",

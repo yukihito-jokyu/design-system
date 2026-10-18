@@ -3,14 +3,7 @@
   "name": "yukihi",
   "homepage": "https://github.com/yukihito-jokyu/design-system",
   "include": [
-    "registry/new-york/styles/registry.json",
-    "registry/new-york/lib/registry.json",
-    "registry/new-york/hooks/registry.json",
-    "registry/new-york/ui/registry.json",
-    "registry/new-york/components/registry.json",
-    "registry/new-york/character/registry.json",
-    "registry/new-york/patterns/registry.json",
-    "registry/new-york/icons/registry.json",
-    "registry/new-york/bundles/registry.json"
+    "registry/new-york/registry.json",
+    "registry/cobalt/registry.json"
   ]
 }

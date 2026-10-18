@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-breadcrumb",
+  "title": "Cobalt breadcrumb",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/breadcrumb/breadcrumb.tsx",
+      "content": "import * as React from \"react\";\nimport { ChevronRight, MoreHorizontal } from \"lucide-react\";\nimport { Slot } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Breadcrumb({\n  className,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<\"nav\"> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <nav\n        aria-label=\"パンくず\"\n        data-slot=\"breadcrumb\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-breadcrumb\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction BreadcrumbList({ className, ...props }: React.ComponentProps<\"ol\">) {\n  return (\n    <ol\n      data-slot=\"breadcrumb-list\"\n      className={cn(\"cobalt-breadcrumb-list\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbItem({ className, ...props }: React.ComponentProps<\"li\">) {\n  return (\n    <li\n      data-slot=\"breadcrumb-item\"\n      className={cn(\"cobalt-breadcrumb-item\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbLink({\n  asChild,\n  className,\n  ...props\n}: React.ComponentProps<\"a\"> & { asChild?: boolean }) {\n  const Comp = asChild ? Slot.Root : \"a\";\n  return (\n    <Comp\n      data-slot=\"breadcrumb-link\"\n      className={cn(\"cobalt-breadcrumb-link\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbPage({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"breadcrumb-page\"\n      aria-current=\"page\"\n      className={cn(\"cobalt-breadcrumb-page\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction BreadcrumbSeparator({ children, className, ...props }: React.ComponentProps<\"li\">) {\n  return (\n    <li\n      data-slot=\"breadcrumb-separator\"\n      role=\"presentation\"\n      aria-hidden=\"true\"\n      className={cn(\"cobalt-breadcrumb-separator\", className)}\n      {...props}\n    >\n      {children ?? <ChevronRight />}\n    </li>\n  );\n}\n\nfunction BreadcrumbEllipsis({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"breadcrumb-ellipsis\"\n      role=\"presentation\"\n      aria-hidden=\"true\"\n      className={cn(\"cobalt-breadcrumb-separator\", className)}\n      {...props}\n    >\n      <MoreHorizontal />\n    </span>\n  );\n}\n\nexport {\n  Breadcrumb,\n  BreadcrumbList,\n  BreadcrumbItem,\n  BreadcrumbLink,\n  BreadcrumbPage,\n  BreadcrumbSeparator,\n  BreadcrumbEllipsis,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/breadcrumb.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "現在地を安定させ、戻れるリンクだけ反応させる。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "リンクへ精密ポインターを乗せる",
+          "effect": "1px浮かせる。現在ページ、区切り、グラデーション枠は静止。",
+          "timing": "feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

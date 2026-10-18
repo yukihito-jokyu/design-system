@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-select",
+  "title": "Cobalt select",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/select/select.tsx",
+      "content": "import { useMotionEntry } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { CheckIcon, ChevronDownIcon, ChevronUpIcon } from \"lucide-react\";\nimport { Select as SelectPrimitive } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  DesignThemeProvider,\n  useDesignTheme,\n  useDesignTokens,\n} from \"@/registry/cobalt/components/theme-provider/theme-provider\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nfunction Select({\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <SelectPrimitive.Root {...props} />\n    </MotionProvider>\n  );\n}\n\nfunction SelectGroup(props: React.ComponentProps<typeof SelectPrimitive.Group>) {\n  return <SelectPrimitive.Group data-slot=\"select-group\" {...props} />;\n}\n\nfunction SelectValue(props: React.ComponentProps<typeof SelectPrimitive.Value>) {\n  return <SelectPrimitive.Value data-slot=\"select-value\" {...props} />;\n}\n\nfunction SelectTrigger({\n  className,\n  size = \"default\",\n  children,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Trigger> & { size?: \"sm\" | \"default\" }) {\n  const effective = useDesignMotion();\n  return (\n    <SelectPrimitive.Trigger\n      data-slot=\"select-trigger\"\n      data-size={size}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-input cobalt-select-trigger\", className)}\n      {...props}\n    >\n      {children}\n      <SelectPrimitive.Icon asChild>\n        <ChevronDownIcon aria-hidden=\"true\" />\n      </SelectPrimitive.Icon>\n    </SelectPrimitive.Trigger>\n  );\n}\n\nfunction SelectContent({\n  className,\n  ref: forwardedRef,\n  children,\n  position = \"item-aligned\",\n  align = \"center\",\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Content>) {\n  const theme = useDesignTheme();\n  const tokens = useDesignTokens();\n  const { ref, effective } = useMotionEntry<HTMLDivElement>(forwardedRef);\n  return (\n    <SelectPrimitive.Portal>\n      <DesignThemeProvider theme={theme} tokens={tokens}>\n        <SelectPrimitive.Content\n          data-slot=\"select-content\"\n          ref={ref}\n          data-cobalt-motion={effective}\n          className={cn(\"cobalt-select-content\", className)}\n          position={position}\n          align={align}\n          {...props}\n        >\n          <SelectScrollUpButton />\n          <SelectPrimitive.Viewport className=\"cobalt-select-viewport\">\n            {children}\n          </SelectPrimitive.Viewport>\n          <SelectScrollDownButton />\n        </SelectPrimitive.Content>\n      </DesignThemeProvider>\n    </SelectPrimitive.Portal>\n  );\n}\n\nfunction SelectLabel({ className, ...props }: React.ComponentProps<typeof SelectPrimitive.Label>) {\n  return (\n    <SelectPrimitive.Label\n      data-slot=\"select-label\"\n      className={cn(\"cobalt-select-label\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction SelectItem({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Item>) {\n  return (\n    <SelectPrimitive.Item\n      data-slot=\"select-item\"\n      className={cn(\"cobalt-select-item\", className)}\n      {...props}\n    >\n      <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>\n      <span className=\"cobalt-select-indicator\">\n        <SelectPrimitive.ItemIndicator>\n          <CheckIcon aria-hidden=\"true\" />\n        </SelectPrimitive.ItemIndicator>\n      </span>\n    </SelectPrimitive.Item>\n  );\n}\n\nfunction SelectSeparator({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.Separator>) {\n  return (\n    <SelectPrimitive.Separator\n      data-slot=\"select-separator\"\n      className={cn(\"cobalt-select-separator\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction SelectScrollUpButton({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.ScrollUpButton>) {\n  return (\n    <SelectPrimitive.ScrollUpButton\n      data-slot=\"select-scroll-up-button\"\n      className={cn(\"cobalt-select-scroll\", className)}\n      {...props}\n    >\n      <ChevronUpIcon aria-hidden=\"true\" />\n    </SelectPrimitive.ScrollUpButton>\n  );\n}\n\nfunction SelectScrollDownButton({\n  className,\n  ...props\n}: React.ComponentProps<typeof SelectPrimitive.ScrollDownButton>) {\n  return (\n    <SelectPrimitive.ScrollDownButton\n      data-slot=\"select-scroll-down-button\"\n      className={cn(\"cobalt-select-scroll\", className)}\n      {...props}\n    >\n      <ChevronDownIcon aria-hidden=\"true\" />\n    </SelectPrimitive.ScrollDownButton>\n  );\n}\n\nexport {\n  Select,\n  SelectContent,\n  SelectGroup,\n  SelectItem,\n  SelectLabel,\n  SelectScrollDownButton,\n  SelectScrollUpButton,\n  SelectSeparator,\n  SelectTrigger,\n  SelectValue,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/select.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "選択肢が操作した場所から現れるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "トリガー側から4px移動、scale .96→1とフェード。transform-originはRadixの起点。",
+          "timing": "menu"
+        },
+        {
+          "trigger": "項目へ移動",
+          "effect": "背景を滑らかに切り替え、項目を右へ2px。確定・閉じるは即時。",
+          "timing": "selection"
+        }
+      ],
+      "entryControl": "位置・高さの計測後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で再生の印を外し、ONへ戻すだけでは再生しない。"
+    }
+  },
+  "type": "registry:ui"
+}

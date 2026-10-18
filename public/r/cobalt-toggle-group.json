@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-toggle-group",
+  "title": "Cobalt toggle-group",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "class-variance-authority@^0.7.1",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-toggle",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/toggle-group/toggle-group.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport * as React from \"react\";\nimport { type VariantProps } from \"class-variance-authority\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { ToggleGroup as ToggleGroupPrimitive } from \"radix-ui\";\n\nimport { toggleVariants } from \"@/registry/cobalt/ui/toggle/toggle\";\n\nconst ToggleGroupContext = React.createContext<\n  VariantProps<typeof toggleVariants> & {\n    spacing?: number;\n  }\n>({\n  size: \"default\",\n  variant: \"default\",\n  spacing: 0,\n});\n\nfunction ToggleGroup({\n  className,\n  variant,\n  size,\n  spacing = 0,\n  motion = \"inherit\",\n  children,\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Root> &\n  VariantProps<typeof toggleVariants> & {\n    spacing?: number;\n    motion?: MotionPreference;\n  }) {\n  return (\n    <MotionProvider motion={motion}>\n      <ToggleGroupPrimitive.Root\n        data-slot=\"toggle-group\"\n        data-variant={variant}\n        data-size={size}\n        data-spacing={spacing}\n        style={{ \"--cobalt-toggle-gap\": `${spacing * 4}px` } as React.CSSProperties}\n        className={cn(\"cobalt-toggle-group\", className)}\n        {...props}\n      >\n        <ToggleGroupContext.Provider value={{ variant, size, spacing }}>\n          {children}\n        </ToggleGroupContext.Provider>\n      </ToggleGroupPrimitive.Root>\n    </MotionProvider>\n  );\n}\n\nfunction ToggleGroupItem({\n  className,\n  ref: forwardedRef,\n  children,\n  variant,\n  size,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof ToggleGroupPrimitive.Item> &\n  VariantProps<typeof toggleVariants> & { motion?: MotionPreference }) {\n  const context = React.useContext(ToggleGroupContext);\n\n  const { ref, effective } = useMotionFeedback<HTMLButtonElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"toggle\",\n  });\n\n  return (\n    <ToggleGroupPrimitive.Item\n      data-slot=\"toggle-group-item\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      data-variant={context.variant || variant}\n      data-size={context.size || size}\n      data-spacing={context.spacing}\n      className={cn(\n        toggleVariants({\n          variant: context.variant || variant,\n          size: context.size || size,\n        }),\n        \"cobalt-toggle-group-item\",\n        className,\n      )}\n      {...props}\n    >\n      {children}\n    </ToggleGroupPrimitive.Item>\n  );\n}\n\nexport { ToggleGroup, ToggleGroupItem };\n",
+      "type": "registry:ui",
+      "target": "@ui/toggle-group.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "複数の選択操作に統一した手応えを付ける。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "項目を選択",
+          "effect": "Toggleの押下と印の弾みを継承。複数選択の値は即時更新。",
+          "timing": "press / feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

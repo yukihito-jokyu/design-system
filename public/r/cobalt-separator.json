@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-separator",
+  "title": "Cobalt separator",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/separator/separator.tsx",
+      "content": "import * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Separator as SeparatorPrimitive } from \"radix-ui\";\n\nfunction Separator({\n  className,\n  orientation = \"horizontal\",\n  decorative = true,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof SeparatorPrimitive.Root> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <SeparatorPrimitive.Root\n      data-slot=\"separator\"\n      data-cobalt-motion={effective}\n      decorative={decorative}\n      orientation={orientation}\n      className={cn(\"cobalt-separator\", className)}\n      {...props}\n    />\n  );\n}\n\nexport { Separator };\n",
+      "type": "registry:ui",
+      "target": "@ui/separator.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "情報の区切りを固定し、他の動きを邪魔しない。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "区切りは静止させる。"
+    }
+  },
+  "type": "registry:ui"
+}

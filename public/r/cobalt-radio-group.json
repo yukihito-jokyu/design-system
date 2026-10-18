@@ -1,0 +1,37 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-radio-group",
+  "title": "Cobalt radio-group",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7",
+    "lucide-react@^1.45.0"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/radio-group/radio-group.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\";\nimport { CircleIcon } from \"lucide-react\";\n\nfunction RadioGroup({\n  className,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <RadioGroupPrimitive.Root\n        data-slot=\"radio-group\"\n        className={cn(\"cobalt-radio-group\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction RadioGroupItem({\n  className,\n  ref: forwardedRef,\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item> & { motion?: MotionPreference }) {\n  const { ref, effective } = useMotionFeedback<HTMLButtonElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"radio\",\n  });\n\n  return (\n    <RadioGroupPrimitive.Item\n      data-slot=\"radio-group-item\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-radio\", className)}\n      {...props}\n    >\n      <RadioGroupPrimitive.Indicator\n        data-slot=\"radio-group-indicator\"\n        className=\"cobalt-radio-indicator\"\n      >\n        <CircleIcon aria-hidden=\"true\" />\n      </RadioGroupPrimitive.Indicator>\n    </RadioGroupPrimitive.Item>\n  );\n}\n\nexport { RadioGroup, RadioGroupItem };\n",
+      "type": "registry:ui",
+      "target": "@ui/radio-group.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "選んだ一つへ視線を導く。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "選択変更",
+          "effect": "新しい中心の印だけ.35→1.2→1に弾む。選択解除は即時。",
+          "timing": "feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

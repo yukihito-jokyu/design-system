@@ -2,12 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "items": [
     {
-      "name": "icon-frame",
+      "name": "cobalt-icon-frame",
       "type": "registry:component",
       "title": "Cobalt Icon Frame",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles"
+      ],
       "files": [
         {
           "path": "icon-frame/IconFrame.tsx",
@@ -16,10 +18,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -29,12 +27,15 @@
       }
     },
     {
-      "name": "assembly-document-feature-icon",
+      "name": "cobalt-assembly-document-feature-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblyDocumentFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-document-feature-icon/AssemblyDocumentFeatureIcon.tsx",
@@ -43,11 +44,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -57,12 +53,15 @@
       }
     },
     {
-      "name": "assembly-history-feature-icon",
+      "name": "cobalt-assembly-history-feature-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblyHistoryFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-history-feature-icon/AssemblyHistoryFeatureIcon.tsx",
@@ -71,11 +70,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -85,12 +79,15 @@
       }
     },
     {
-      "name": "assembly-idea-feature-icon",
+      "name": "cobalt-assembly-idea-feature-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblyIdeaFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-idea-feature-icon/AssemblyIdeaFeatureIcon.tsx",
@@ -99,11 +96,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -113,12 +105,15 @@
       }
     },
     {
-      "name": "assembly-saved-status-icon",
+      "name": "cobalt-assembly-saved-status-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblySavedStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-saved-status-icon/AssemblySavedStatusIcon.tsx",
@@ -127,11 +122,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -141,12 +131,15 @@
       }
     },
     {
-      "name": "assembly-success-character-icon",
+      "name": "cobalt-assembly-success-character-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblySuccessCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-success-character-icon/AssemblySuccessCharacterIcon.tsx",
@@ -155,11 +148,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -169,12 +157,15 @@
       }
     },
     {
-      "name": "assembly-thinking-character-icon",
+      "name": "cobalt-assembly-thinking-character-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblyThinkingCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-thinking-character-icon/AssemblyThinkingCharacterIcon.tsx",
@@ -183,11 +174,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -197,12 +183,15 @@
       }
     },
     {
-      "name": "assembly-thinking-status-icon",
+      "name": "cobalt-assembly-thinking-status-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblyThinkingStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-thinking-status-icon/AssemblyThinkingStatusIcon.tsx",
@@ -211,11 +200,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -225,12 +209,15 @@
       }
     },
     {
-      "name": "assembly-welcome-character-icon",
+      "name": "cobalt-assembly-welcome-character-icon",
       "type": "registry:component",
       "title": "Cobalt AssemblyWelcomeCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon.tsx",
@@ -239,11 +226,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -253,12 +235,15 @@
       }
     },
     {
-      "name": "fold-document-feature-icon",
+      "name": "cobalt-fold-document-feature-icon",
       "type": "registry:component",
       "title": "Cobalt FoldDocumentFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-document-feature-icon/FoldDocumentFeatureIcon.tsx",
@@ -267,11 +252,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -281,12 +261,15 @@
       }
     },
     {
-      "name": "fold-history-feature-icon",
+      "name": "cobalt-fold-history-feature-icon",
       "type": "registry:component",
       "title": "Cobalt FoldHistoryFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-history-feature-icon/FoldHistoryFeatureIcon.tsx",
@@ -295,11 +278,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -309,12 +287,15 @@
       }
     },
     {
-      "name": "fold-idea-feature-icon",
+      "name": "cobalt-fold-idea-feature-icon",
       "type": "registry:component",
       "title": "Cobalt FoldIdeaFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-idea-feature-icon/FoldIdeaFeatureIcon.tsx",
@@ -323,11 +304,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -337,12 +313,15 @@
       }
     },
     {
-      "name": "fold-saved-status-icon",
+      "name": "cobalt-fold-saved-status-icon",
       "type": "registry:component",
       "title": "Cobalt FoldSavedStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-saved-status-icon/FoldSavedStatusIcon.tsx",
@@ -351,11 +330,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -365,12 +339,15 @@
       }
     },
     {
-      "name": "fold-success-character-icon",
+      "name": "cobalt-fold-success-character-icon",
       "type": "registry:component",
       "title": "Cobalt FoldSuccessCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-success-character-icon/FoldSuccessCharacterIcon.tsx",
@@ -379,11 +356,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -393,12 +365,15 @@
       }
     },
     {
-      "name": "fold-thinking-character-icon",
+      "name": "cobalt-fold-thinking-character-icon",
       "type": "registry:component",
       "title": "Cobalt FoldThinkingCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-thinking-character-icon/FoldThinkingCharacterIcon.tsx",
@@ -407,11 +382,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -421,12 +391,15 @@
       }
     },
     {
-      "name": "fold-thinking-status-icon",
+      "name": "cobalt-fold-thinking-status-icon",
       "type": "registry:component",
       "title": "Cobalt FoldThinkingStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-thinking-status-icon/FoldThinkingStatusIcon.tsx",
@@ -435,11 +408,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -449,12 +417,15 @@
       }
     },
     {
-      "name": "fold-welcome-character-icon",
+      "name": "cobalt-fold-welcome-character-icon",
       "type": "registry:component",
       "title": "Cobalt FoldWelcomeCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "fold-welcome-character-icon/FoldWelcomeCharacterIcon.tsx",
@@ -463,11 +434,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -477,12 +443,15 @@
       }
     },
     {
-      "name": "impress-document-feature-icon",
+      "name": "cobalt-impress-document-feature-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressDocumentFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-document-feature-icon/ImpressDocumentFeatureIcon.tsx",
@@ -491,11 +460,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -505,12 +469,15 @@
       }
     },
     {
-      "name": "impress-history-feature-icon",
+      "name": "cobalt-impress-history-feature-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressHistoryFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-history-feature-icon/ImpressHistoryFeatureIcon.tsx",
@@ -519,11 +486,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -533,12 +495,15 @@
       }
     },
     {
-      "name": "impress-idea-feature-icon",
+      "name": "cobalt-impress-idea-feature-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressIdeaFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-idea-feature-icon/ImpressIdeaFeatureIcon.tsx",
@@ -547,11 +512,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -561,12 +521,15 @@
       }
     },
     {
-      "name": "impress-saved-status-icon",
+      "name": "cobalt-impress-saved-status-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressSavedStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-saved-status-icon/ImpressSavedStatusIcon.tsx",
@@ -575,11 +538,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -589,12 +547,15 @@
       }
     },
     {
-      "name": "impress-success-character-icon",
+      "name": "cobalt-impress-success-character-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressSuccessCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-success-character-icon/ImpressSuccessCharacterIcon.tsx",
@@ -603,11 +564,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -617,12 +573,15 @@
       }
     },
     {
-      "name": "impress-thinking-character-icon",
+      "name": "cobalt-impress-thinking-character-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressThinkingCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-thinking-character-icon/ImpressThinkingCharacterIcon.tsx",
@@ -631,11 +590,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -645,12 +599,15 @@
       }
     },
     {
-      "name": "impress-thinking-status-icon",
+      "name": "cobalt-impress-thinking-status-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressThinkingStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-thinking-status-icon/ImpressThinkingStatusIcon.tsx",
@@ -659,11 +616,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -673,12 +625,15 @@
       }
     },
     {
-      "name": "impress-welcome-character-icon",
+      "name": "cobalt-impress-welcome-character-icon",
       "type": "registry:component",
       "title": "Cobalt ImpressWelcomeCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "impress-welcome-character-icon/ImpressWelcomeCharacterIcon.tsx",
@@ -687,11 +642,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -701,12 +651,15 @@
       }
     },
     {
-      "name": "ink-document-feature-icon",
+      "name": "cobalt-ink-document-feature-icon",
       "type": "registry:component",
       "title": "Cobalt InkDocumentFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-document-feature-icon/InkDocumentFeatureIcon.tsx",
@@ -715,11 +668,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -729,12 +677,15 @@
       }
     },
     {
-      "name": "ink-history-feature-icon",
+      "name": "cobalt-ink-history-feature-icon",
       "type": "registry:component",
       "title": "Cobalt InkHistoryFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-history-feature-icon/InkHistoryFeatureIcon.tsx",
@@ -743,11 +694,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -757,12 +703,15 @@
       }
     },
     {
-      "name": "ink-idea-feature-icon",
+      "name": "cobalt-ink-idea-feature-icon",
       "type": "registry:component",
       "title": "Cobalt InkIdeaFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-idea-feature-icon/InkIdeaFeatureIcon.tsx",
@@ -771,11 +720,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -785,12 +729,15 @@
       }
     },
     {
-      "name": "ink-saved-status-icon",
+      "name": "cobalt-ink-saved-status-icon",
       "type": "registry:component",
       "title": "Cobalt InkSavedStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-saved-status-icon/InkSavedStatusIcon.tsx",
@@ -799,11 +746,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -813,12 +755,15 @@
       }
     },
     {
-      "name": "ink-success-character-icon",
+      "name": "cobalt-ink-success-character-icon",
       "type": "registry:component",
       "title": "Cobalt InkSuccessCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-success-character-icon/InkSuccessCharacterIcon.tsx",
@@ -827,11 +772,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -841,12 +781,15 @@
       }
     },
     {
-      "name": "ink-thinking-character-icon",
+      "name": "cobalt-ink-thinking-character-icon",
       "type": "registry:component",
       "title": "Cobalt InkThinkingCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-thinking-character-icon/InkThinkingCharacterIcon.tsx",
@@ -855,11 +798,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -869,12 +807,15 @@
       }
     },
     {
-      "name": "ink-thinking-status-icon",
+      "name": "cobalt-ink-thinking-status-icon",
       "type": "registry:component",
       "title": "Cobalt InkThinkingStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-thinking-status-icon/InkThinkingStatusIcon.tsx",
@@ -883,11 +824,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -897,12 +833,15 @@
       }
     },
     {
-      "name": "ink-welcome-character-icon",
+      "name": "cobalt-ink-welcome-character-icon",
       "type": "registry:component",
       "title": "Cobalt InkWelcomeCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "ink-welcome-character-icon/InkWelcomeCharacterIcon.tsx",
@@ -911,11 +850,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -925,12 +859,15 @@
       }
     },
     {
-      "name": "monolith-document-feature-icon",
+      "name": "cobalt-monolith-document-feature-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithDocumentFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-document-feature-icon/MonolithDocumentFeatureIcon.tsx",
@@ -939,11 +876,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -953,12 +885,15 @@
       }
     },
     {
-      "name": "monolith-history-feature-icon",
+      "name": "cobalt-monolith-history-feature-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithHistoryFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-history-feature-icon/MonolithHistoryFeatureIcon.tsx",
@@ -967,11 +902,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -981,12 +911,15 @@
       }
     },
     {
-      "name": "monolith-idea-feature-icon",
+      "name": "cobalt-monolith-idea-feature-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithIdeaFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-idea-feature-icon/MonolithIdeaFeatureIcon.tsx",
@@ -995,11 +928,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1009,12 +937,15 @@
       }
     },
     {
-      "name": "monolith-saved-status-icon",
+      "name": "cobalt-monolith-saved-status-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithSavedStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-saved-status-icon/MonolithSavedStatusIcon.tsx",
@@ -1023,11 +954,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1037,12 +963,15 @@
       }
     },
     {
-      "name": "monolith-success-character-icon",
+      "name": "cobalt-monolith-success-character-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithSuccessCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-success-character-icon/MonolithSuccessCharacterIcon.tsx",
@@ -1051,11 +980,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1065,12 +989,15 @@
       }
     },
     {
-      "name": "monolith-thinking-character-icon",
+      "name": "cobalt-monolith-thinking-character-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithThinkingCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-thinking-character-icon/MonolithThinkingCharacterIcon.tsx",
@@ -1079,11 +1006,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1093,12 +1015,15 @@
       }
     },
     {
-      "name": "monolith-thinking-status-icon",
+      "name": "cobalt-monolith-thinking-status-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithThinkingStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-thinking-status-icon/MonolithThinkingStatusIcon.tsx",
@@ -1107,11 +1032,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1121,12 +1041,15 @@
       }
     },
     {
-      "name": "monolith-welcome-character-icon",
+      "name": "cobalt-monolith-welcome-character-icon",
       "type": "registry:component",
       "title": "Cobalt MonolithWelcomeCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "monolith-welcome-character-icon/MonolithWelcomeCharacterIcon.tsx",
@@ -1135,11 +1058,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1149,12 +1067,15 @@
       }
     },
     {
-      "name": "orbit-document-feature-icon",
+      "name": "cobalt-orbit-document-feature-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitDocumentFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-document-feature-icon/OrbitDocumentFeatureIcon.tsx",
@@ -1163,11 +1084,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1177,12 +1093,15 @@
       }
     },
     {
-      "name": "orbit-history-feature-icon",
+      "name": "cobalt-orbit-history-feature-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitHistoryFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-history-feature-icon/OrbitHistoryFeatureIcon.tsx",
@@ -1191,11 +1110,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1205,12 +1119,15 @@
       }
     },
     {
-      "name": "orbit-idea-feature-icon",
+      "name": "cobalt-orbit-idea-feature-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitIdeaFeatureIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-idea-feature-icon/OrbitIdeaFeatureIcon.tsx",
@@ -1219,11 +1136,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1233,12 +1145,15 @@
       }
     },
     {
-      "name": "orbit-saved-status-icon",
+      "name": "cobalt-orbit-saved-status-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitSavedStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-saved-status-icon/OrbitSavedStatusIcon.tsx",
@@ -1247,11 +1162,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1261,12 +1171,15 @@
       }
     },
     {
-      "name": "orbit-success-character-icon",
+      "name": "cobalt-orbit-success-character-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitSuccessCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-success-character-icon/OrbitSuccessCharacterIcon.tsx",
@@ -1275,11 +1188,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1289,12 +1197,15 @@
       }
     },
     {
-      "name": "orbit-thinking-character-icon",
+      "name": "cobalt-orbit-thinking-character-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitThinkingCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-thinking-character-icon/OrbitThinkingCharacterIcon.tsx",
@@ -1303,11 +1214,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1317,12 +1223,15 @@
       }
     },
     {
-      "name": "orbit-thinking-status-icon",
+      "name": "cobalt-orbit-thinking-status-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitThinkingStatusIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-thinking-status-icon/OrbitThinkingStatusIcon.tsx",
@@ -1331,11 +1240,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1345,12 +1249,15 @@
       }
     },
     {
-      "name": "orbit-welcome-character-icon",
+      "name": "cobalt-orbit-welcome-character-icon",
       "type": "registry:component",
       "title": "Cobalt OrbitWelcomeCharacterIcon",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-icon-frame"
+      ],
       "files": [
         {
           "path": "orbit-welcome-character-icon/OrbitWelcomeCharacterIcon.tsx",
@@ -1359,11 +1266,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
@@ -1373,12 +1275,63 @@
       }
     },
     {
-      "name": "icons",
+      "name": "cobalt-icons",
       "type": "registry:component",
       "title": "Cobalt All Approved Icons",
-      "description": "cobaltの原本。Registry配布への接続は未設定。",
+      "description": "Cobalt design system component.",
       "dependencies": [],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "@yukihi/cobalt-assembly-document-feature-icon",
+        "@yukihi/cobalt-assembly-history-feature-icon",
+        "@yukihi/cobalt-assembly-idea-feature-icon",
+        "@yukihi/cobalt-assembly-saved-status-icon",
+        "@yukihi/cobalt-assembly-success-character-icon",
+        "@yukihi/cobalt-assembly-thinking-character-icon",
+        "@yukihi/cobalt-assembly-thinking-status-icon",
+        "@yukihi/cobalt-assembly-welcome-character-icon",
+        "@yukihi/cobalt-design-system-styles",
+        "@yukihi/cobalt-fold-document-feature-icon",
+        "@yukihi/cobalt-fold-history-feature-icon",
+        "@yukihi/cobalt-fold-idea-feature-icon",
+        "@yukihi/cobalt-fold-saved-status-icon",
+        "@yukihi/cobalt-fold-success-character-icon",
+        "@yukihi/cobalt-fold-thinking-character-icon",
+        "@yukihi/cobalt-fold-thinking-status-icon",
+        "@yukihi/cobalt-fold-welcome-character-icon",
+        "@yukihi/cobalt-icon-frame",
+        "@yukihi/cobalt-impress-document-feature-icon",
+        "@yukihi/cobalt-impress-history-feature-icon",
+        "@yukihi/cobalt-impress-idea-feature-icon",
+        "@yukihi/cobalt-impress-saved-status-icon",
+        "@yukihi/cobalt-impress-success-character-icon",
+        "@yukihi/cobalt-impress-thinking-character-icon",
+        "@yukihi/cobalt-impress-thinking-status-icon",
+        "@yukihi/cobalt-impress-welcome-character-icon",
+        "@yukihi/cobalt-ink-document-feature-icon",
+        "@yukihi/cobalt-ink-history-feature-icon",
+        "@yukihi/cobalt-ink-idea-feature-icon",
+        "@yukihi/cobalt-ink-saved-status-icon",
+        "@yukihi/cobalt-ink-success-character-icon",
+        "@yukihi/cobalt-ink-thinking-character-icon",
+        "@yukihi/cobalt-ink-thinking-status-icon",
+        "@yukihi/cobalt-ink-welcome-character-icon",
+        "@yukihi/cobalt-monolith-document-feature-icon",
+        "@yukihi/cobalt-monolith-history-feature-icon",
+        "@yukihi/cobalt-monolith-idea-feature-icon",
+        "@yukihi/cobalt-monolith-saved-status-icon",
+        "@yukihi/cobalt-monolith-success-character-icon",
+        "@yukihi/cobalt-monolith-thinking-character-icon",
+        "@yukihi/cobalt-monolith-thinking-status-icon",
+        "@yukihi/cobalt-monolith-welcome-character-icon",
+        "@yukihi/cobalt-orbit-document-feature-icon",
+        "@yukihi/cobalt-orbit-history-feature-icon",
+        "@yukihi/cobalt-orbit-idea-feature-icon",
+        "@yukihi/cobalt-orbit-saved-status-icon",
+        "@yukihi/cobalt-orbit-success-character-icon",
+        "@yukihi/cobalt-orbit-thinking-character-icon",
+        "@yukihi/cobalt-orbit-thinking-status-icon",
+        "@yukihi/cobalt-orbit-welcome-character-icon"
+      ],
       "files": [
         {
           "path": "icons/index.ts",
@@ -1387,59 +1340,6 @@
         }
       ],
       "meta": {
-        "distribution": "not-configured",
-        "sourceDependencies": [
-          "registry/cobalt/icons/assembly-document-feature-icon/AssemblyDocumentFeatureIcon.tsx",
-          "registry/cobalt/icons/assembly-history-feature-icon/AssemblyHistoryFeatureIcon.tsx",
-          "registry/cobalt/icons/assembly-idea-feature-icon/AssemblyIdeaFeatureIcon.tsx",
-          "registry/cobalt/icons/assembly-saved-status-icon/AssemblySavedStatusIcon.tsx",
-          "registry/cobalt/icons/assembly-success-character-icon/AssemblySuccessCharacterIcon.tsx",
-          "registry/cobalt/icons/assembly-thinking-character-icon/AssemblyThinkingCharacterIcon.tsx",
-          "registry/cobalt/icons/assembly-thinking-status-icon/AssemblyThinkingStatusIcon.tsx",
-          "registry/cobalt/icons/assembly-welcome-character-icon/AssemblyWelcomeCharacterIcon.tsx",
-          "registry/cobalt/icons/fold-document-feature-icon/FoldDocumentFeatureIcon.tsx",
-          "registry/cobalt/icons/fold-history-feature-icon/FoldHistoryFeatureIcon.tsx",
-          "registry/cobalt/icons/fold-idea-feature-icon/FoldIdeaFeatureIcon.tsx",
-          "registry/cobalt/icons/fold-saved-status-icon/FoldSavedStatusIcon.tsx",
-          "registry/cobalt/icons/fold-success-character-icon/FoldSuccessCharacterIcon.tsx",
-          "registry/cobalt/icons/fold-thinking-character-icon/FoldThinkingCharacterIcon.tsx",
-          "registry/cobalt/icons/fold-thinking-status-icon/FoldThinkingStatusIcon.tsx",
-          "registry/cobalt/icons/fold-welcome-character-icon/FoldWelcomeCharacterIcon.tsx",
-          "registry/cobalt/icons/icon-frame/IconFrame.tsx",
-          "registry/cobalt/icons/impress-document-feature-icon/ImpressDocumentFeatureIcon.tsx",
-          "registry/cobalt/icons/impress-history-feature-icon/ImpressHistoryFeatureIcon.tsx",
-          "registry/cobalt/icons/impress-idea-feature-icon/ImpressIdeaFeatureIcon.tsx",
-          "registry/cobalt/icons/impress-saved-status-icon/ImpressSavedStatusIcon.tsx",
-          "registry/cobalt/icons/impress-success-character-icon/ImpressSuccessCharacterIcon.tsx",
-          "registry/cobalt/icons/impress-thinking-character-icon/ImpressThinkingCharacterIcon.tsx",
-          "registry/cobalt/icons/impress-thinking-status-icon/ImpressThinkingStatusIcon.tsx",
-          "registry/cobalt/icons/impress-welcome-character-icon/ImpressWelcomeCharacterIcon.tsx",
-          "registry/cobalt/icons/ink-document-feature-icon/InkDocumentFeatureIcon.tsx",
-          "registry/cobalt/icons/ink-history-feature-icon/InkHistoryFeatureIcon.tsx",
-          "registry/cobalt/icons/ink-idea-feature-icon/InkIdeaFeatureIcon.tsx",
-          "registry/cobalt/icons/ink-saved-status-icon/InkSavedStatusIcon.tsx",
-          "registry/cobalt/icons/ink-success-character-icon/InkSuccessCharacterIcon.tsx",
-          "registry/cobalt/icons/ink-thinking-character-icon/InkThinkingCharacterIcon.tsx",
-          "registry/cobalt/icons/ink-thinking-status-icon/InkThinkingStatusIcon.tsx",
-          "registry/cobalt/icons/ink-welcome-character-icon/InkWelcomeCharacterIcon.tsx",
-          "registry/cobalt/icons/monolith-document-feature-icon/MonolithDocumentFeatureIcon.tsx",
-          "registry/cobalt/icons/monolith-history-feature-icon/MonolithHistoryFeatureIcon.tsx",
-          "registry/cobalt/icons/monolith-idea-feature-icon/MonolithIdeaFeatureIcon.tsx",
-          "registry/cobalt/icons/monolith-saved-status-icon/MonolithSavedStatusIcon.tsx",
-          "registry/cobalt/icons/monolith-success-character-icon/MonolithSuccessCharacterIcon.tsx",
-          "registry/cobalt/icons/monolith-thinking-character-icon/MonolithThinkingCharacterIcon.tsx",
-          "registry/cobalt/icons/monolith-thinking-status-icon/MonolithThinkingStatusIcon.tsx",
-          "registry/cobalt/icons/monolith-welcome-character-icon/MonolithWelcomeCharacterIcon.tsx",
-          "registry/cobalt/icons/orbit-document-feature-icon/OrbitDocumentFeatureIcon.tsx",
-          "registry/cobalt/icons/orbit-history-feature-icon/OrbitHistoryFeatureIcon.tsx",
-          "registry/cobalt/icons/orbit-idea-feature-icon/OrbitIdeaFeatureIcon.tsx",
-          "registry/cobalt/icons/orbit-saved-status-icon/OrbitSavedStatusIcon.tsx",
-          "registry/cobalt/icons/orbit-success-character-icon/OrbitSuccessCharacterIcon.tsx",
-          "registry/cobalt/icons/orbit-thinking-character-icon/OrbitThinkingCharacterIcon.tsx",
-          "registry/cobalt/icons/orbit-thinking-status-icon/OrbitThinkingStatusIcon.tsx",
-          "registry/cobalt/icons/orbit-welcome-character-icon/OrbitWelcomeCharacterIcon.tsx",
-          "registry/cobalt/styles/registry.json"
-        ],
         "motion": {
           "purpose": "承認済みSVGの図柄・色・線を維持する。",
           "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",

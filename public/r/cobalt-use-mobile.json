@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-use-mobile",
+  "title": "Cobalt Mobile Hook",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/cobalt/hooks/use-mobile/use-mobile.ts",
+      "content": "import * as React from \"react\";\n\nconst MOBILE_BREAKPOINT = 768;\n\nexport function useIsMobile() {\n  return React.useSyncExternalStore(\n    (onStoreChange) => {\n      const mediaQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);\n\n      mediaQuery.addEventListener(\"change\", onStoreChange);\n      return () => mediaQuery.removeEventListener(\"change\", onStoreChange);\n    },\n    () => window.innerWidth < MOBILE_BREAKPOINT,\n    () => false,\n  );\n}\n",
+      "type": "registry:hook",
+      "target": "@hooks/use-mobile.ts"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "既存の補助処理を維持する。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [],
+      "staticReason": "DOMを描画しないため独立したmotionは持たない。"
+    }
+  },
+  "type": "registry:hook"
+}

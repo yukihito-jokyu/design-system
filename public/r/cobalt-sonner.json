@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-sonner",
+  "title": "Cobalt sonner",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "sonner@^2.0.8"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-spinner",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/sonner/sonner.tsx",
+      "content": "import type { CSSProperties } from \"react\";\nimport { CircleCheckIcon, InfoIcon, OctagonXIcon, TriangleAlertIcon } from \"lucide-react\";\nimport { Toaster as Sonner, type ToasterProps } from \"sonner\";\nimport {\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Spinner } from \"@/registry/cobalt/ui/spinner/spinner\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\n\nfunction Toaster({\n  motion = \"inherit\",\n  className,\n  style,\n  toastOptions,\n  icons,\n  ...props\n}: ToasterProps & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <div className=\"cobalt-toaster\" data-cobalt-motion={effective}>\n      <Sonner\n        theme=\"light\"\n        className={cn(\"cobalt-toast-region\", className)}\n        icons={{\n          success: <CircleCheckIcon />,\n          info: <InfoIcon />,\n          warning: <TriangleAlertIcon />,\n          error: <OctagonXIcon />,\n          loading: <Spinner motion={motion} />,\n          ...icons,\n        }}\n        style={\n          {\n            \"--normal-bg\": \"var(--cobalt-surface)\",\n            \"--normal-text\": \"var(--cobalt-foreground)\",\n            \"--normal-border\": \"var(--cobalt-border)\",\n            \"--border-radius\": \"var(--cobalt-radius-control)\",\n            ...style,\n          } as CSSProperties\n        }\n        toastOptions={{ closeButtonAriaLabel: \"通知を閉じる\", ...toastOptions }}\n        {...props}\n      />\n    </div>\n  );\n}\n\nexport { Toaster };\n",
+      "type": "registry:ui",
+      "target": "@ui/sonner.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "処理結果が積み上がる位置を自然に追えるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "通知追加・位置変更",
+          "effect": "Sonnerの位置制御を維持し、transformに弾性、透明度と高さに穏やかな補間。閉じる操作は少し縮む。",
+          "timing": "entry / selection / expand"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

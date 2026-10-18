@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-empty-state",
+  "title": "Cobalt empty-state",
+  "description": "Cobalt design system component.",
+  "dependencies": [],
+  "registryDependencies": [
+    "@yukihi/cobalt-character-icons",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/character/empty-state/empty-state.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { CharacterIcon } from \"@/registry/cobalt/character/character-icons/index\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\n\nexport function EmptyState({\n  kind = \"initial\",\n  title,\n  description,\n  action,\n  motion = \"inherit\",\n}: {\n  kind?: \"initial\" | \"search\" | \"filter\";\n  title: string;\n  description: string;\n  action?: ReactNode;\n  motion?: MotionPreference;\n}) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <section\n        className=\"cobalt-empty-state cobalt-character-entry\"\n        data-cobalt-motion={effective}\n        data-empty-kind={kind}\n        aria-label={title}\n      >\n        <CharacterIcon size={64} />\n        <h3>{title}</h3>\n        <p>{description}</p>\n        {action && <div className=\"cobalt-actions\">{action}</div>}\n      </section>\n    </MotionProvider>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "@components/character/empty-state.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "空の状態から次の行動を促す。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "表示",
+          "effect": "8pxとscale .98→1で登場。内容更新だけで再登場させない。",
+          "timing": "entry"
+        },
+        {
+          "trigger": "操作する",
+          "effect": "子のButtonの手応えを継承。",
+          "timing": "press"
+        }
+      ]
+    }
+  },
+  "type": "registry:component"
+}

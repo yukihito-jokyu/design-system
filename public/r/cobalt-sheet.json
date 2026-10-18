@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-sheet",
+  "title": "Cobalt sheet",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/sheet/sheet.tsx",
+      "content": "import * as React from \"react\";\nimport { XIcon } from \"lucide-react\";\nimport { Dialog as SheetPrimitive } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  DesignThemeProvider,\n  useDesignTheme,\n  useDesignTokens,\n} from \"@/registry/cobalt/components/theme-provider/theme-provider\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\n\nfunction Sheet({\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <SheetPrimitive.Root {...props} />\n    </MotionProvider>\n  );\n}\n\nfunction SheetTrigger(props: React.ComponentProps<typeof SheetPrimitive.Trigger>) {\n  return <SheetPrimitive.Trigger data-slot=\"sheet-trigger\" {...props} />;\n}\n\nfunction SheetClose(props: React.ComponentProps<typeof SheetPrimitive.Close>) {\n  return <SheetPrimitive.Close data-slot=\"sheet-close\" {...props} />;\n}\n\nfunction SheetPortal({ children, ...props }: React.ComponentProps<typeof SheetPrimitive.Portal>) {\n  const theme = useDesignTheme();\n  const tokens = useDesignTokens();\n  // RadixのPortal内へ、cobaltの書体・色・動きの継承を渡す。\n  return (\n    <SheetPrimitive.Portal {...props}>\n      <DesignThemeProvider theme={theme} tokens={tokens}>\n        {children}\n      </DesignThemeProvider>\n    </SheetPrimitive.Portal>\n  );\n}\n\nfunction SheetOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Overlay>) {\n  const effective = useDesignMotion();\n  return (\n    <SheetPrimitive.Overlay\n      data-slot=\"sheet-overlay\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-sheet-overlay\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction SheetContent({\n  className,\n  children,\n  side = \"right\",\n  showCloseButton = true,\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Content> & {\n  side?: \"top\" | \"right\" | \"bottom\" | \"left\";\n  showCloseButton?: boolean;\n}) {\n  const effective = useDesignMotion();\n  return (\n    <SheetPortal>\n      <SheetOverlay />\n      <SheetPrimitive.Content\n        data-slot=\"sheet-content\"\n        data-side={side}\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-sheet-content\", className)}\n        {...props}\n      >\n        {children}\n        {showCloseButton && (\n          <SheetPrimitive.Close asChild>\n            <Button\n              type=\"button\"\n              variant=\"secondary\"\n              size=\"icon\"\n              className=\"cobalt-sheet-close\"\n              aria-label=\"閉じる\"\n            >\n              <XIcon aria-hidden=\"true\" />\n            </Button>\n          </SheetPrimitive.Close>\n        )}\n      </SheetPrimitive.Content>\n    </SheetPortal>\n  );\n}\n\nfunction SheetHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"sheet-header\" className={cn(\"cobalt-sheet-header\", className)} {...props} />\n  );\n}\n\nfunction SheetFooter({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"sheet-footer\" className={cn(\"cobalt-sheet-footer\", className)} {...props} />\n  );\n}\n\nfunction SheetTitle({ className, ...props }: React.ComponentProps<typeof SheetPrimitive.Title>) {\n  return (\n    <SheetPrimitive.Title\n      data-slot=\"sheet-title\"\n      className={cn(\"cobalt-sheet-title\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction SheetDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof SheetPrimitive.Description>) {\n  return (\n    <SheetPrimitive.Description\n      data-slot=\"sheet-description\"\n      className={cn(\"cobalt-note\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  Sheet,\n  SheetTrigger,\n  SheetClose,\n  SheetContent,\n  SheetHeader,\n  SheetFooter,\n  SheetTitle,\n  SheetDescription,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/sheet.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "パネルが現れる方向を伝える。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "指定した辺から24px、スマホは16px移動してフェード。背景は別にフェード。閉じるは即時。",
+          "timing": "entry / selection"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

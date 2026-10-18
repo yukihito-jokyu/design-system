@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-dialog",
+  "title": "Cobalt dialog",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-button",
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/dialog/dialog.tsx",
+      "content": "import * as React from \"react\";\nimport { XIcon } from \"lucide-react\";\nimport { Dialog as DialogPrimitive } from \"radix-ui\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  DesignThemeProvider,\n  useDesignTheme,\n  useDesignTokens,\n} from \"@/registry/cobalt/components/theme-provider/theme-provider\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Button } from \"@/registry/cobalt/ui/button/button\";\n\nfunction Dialog({\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Root> & { motion?: MotionPreference }) {\n  return (\n    <MotionProvider motion={motion}>\n      <DialogPrimitive.Root {...props} />\n    </MotionProvider>\n  );\n}\n\nfunction DialogTrigger(props: React.ComponentProps<typeof DialogPrimitive.Trigger>) {\n  return <DialogPrimitive.Trigger data-slot=\"dialog-trigger\" {...props} />;\n}\n\nfunction DialogClose(props: React.ComponentProps<typeof DialogPrimitive.Close>) {\n  return <DialogPrimitive.Close data-slot=\"dialog-close\" {...props} />;\n}\n\nfunction DialogPortal({ children, ...props }: React.ComponentProps<typeof DialogPrimitive.Portal>) {\n  const theme = useDesignTheme();\n  const tokens = useDesignTokens();\n  // RadixのPortal内へ、cobaltの書体・色・動きの継承を渡す。\n  return (\n    <DialogPrimitive.Portal {...props}>\n      <DesignThemeProvider theme={theme} tokens={tokens}>\n        {children}\n      </DesignThemeProvider>\n    </DialogPrimitive.Portal>\n  );\n}\n\nfunction DialogOverlay({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {\n  const effective = useDesignMotion();\n  return (\n    <DialogPrimitive.Overlay\n      data-slot=\"dialog-overlay\"\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-dialog-overlay\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogContent({\n  className,\n  children,\n  showCloseButton = true,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Content> & {\n  showCloseButton?: boolean;\n}) {\n  const effective = useDesignMotion();\n  return (\n    <DialogPortal>\n      <DialogOverlay />\n      <DialogPrimitive.Content\n        data-slot=\"dialog-content\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-dialog-content\", className)}\n        {...props}\n      >\n        {children}\n        {showCloseButton && (\n          <DialogPrimitive.Close asChild>\n            <Button\n              type=\"button\"\n              variant=\"secondary\"\n              size=\"icon\"\n              className=\"cobalt-dialog-close\"\n              aria-label=\"閉じる\"\n            >\n              <XIcon aria-hidden=\"true\" />\n            </Button>\n          </DialogPrimitive.Close>\n        )}\n      </DialogPrimitive.Content>\n    </DialogPortal>\n  );\n}\n\nfunction DialogHeader({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div data-slot=\"dialog-header\" className={cn(\"cobalt-dialog-header\", className)} {...props} />\n  );\n}\n\nfunction DialogFooter({\n  className,\n  children,\n  showCloseButton = false,\n  ...props\n}: React.ComponentProps<\"div\"> & { showCloseButton?: boolean }) {\n  return (\n    <div data-slot=\"dialog-footer\" className={cn(\"cobalt-dialog-footer\", className)} {...props}>\n      {children}\n      {showCloseButton && (\n        <DialogClose asChild>\n          <Button type=\"button\" variant=\"outline\">\n            閉じる\n          </Button>\n        </DialogClose>\n      )}\n    </div>\n  );\n}\n\nfunction DialogTitle({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Title>) {\n  return (\n    <DialogPrimitive.Title\n      data-slot=\"dialog-title\"\n      className={cn(\"cobalt-dialog-title\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction DialogDescription({\n  className,\n  ...props\n}: React.ComponentProps<typeof DialogPrimitive.Description>) {\n  return (\n    <DialogPrimitive.Description\n      data-slot=\"dialog-description\"\n      className={cn(\"cobalt-note\", className)}\n      {...props}\n    />\n  );\n}\n\nexport {\n  Dialog,\n  DialogTrigger,\n  DialogClose,\n  DialogContent,\n  DialogHeader,\n  DialogFooter,\n  DialogTitle,\n  DialogOverlay,\n  DialogPortal,\n  DialogDescription,\n};\n",
+      "type": "registry:ui",
+      "target": "@ui/dialog.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "重要な作業へ視線を集める。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "背景をフェードし、内容は下12pxからscale .96→1。スマホでは8pxへ抑える。フォーカスは即時。",
+          "timing": "selection / entry"
+        },
+        {
+          "trigger": "閉じる",
+          "effect": "待たせず消し、トリガーへフォーカスを戻す。業務処理をanimationendに結び付けない。",
+          "timing": "none"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

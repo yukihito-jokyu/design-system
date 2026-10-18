@@ -1,0 +1,36 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-switch",
+  "title": "Cobalt switch",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/switch/switch.tsx",
+      "content": "import { useMotionFeedback } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport { type MotionPreference } from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { Switch as SwitchPrimitive } from \"radix-ui\";\n\nfunction Switch({\n  className,\n  ref: forwardedRef,\n  size = \"default\",\n  motion = \"inherit\",\n  ...props\n}: React.ComponentProps<typeof SwitchPrimitive.Root> & {\n  size?: \"sm\" | \"default\";\n  motion?: MotionPreference;\n}) {\n  const { ref, effective } = useMotionFeedback<HTMLButtonElement>({\n    motion,\n    ref: forwardedRef,\n    feedback: \"switch\",\n  });\n\n  return (\n    <SwitchPrimitive.Root\n      data-slot=\"switch\"\n      ref={ref}\n      data-size={size}\n      data-cobalt-motion={effective}\n      className={cn(\"cobalt-switch\", className)}\n      {...props}\n    >\n      <SwitchPrimitive.Thumb data-slot=\"switch-thumb\" className=\"cobalt-switch-thumb\" />\n    </SwitchPrimitive.Root>\n  );\n}\n\nexport { Switch };\n",
+      "type": "registry:ui",
+      "target": "@ui/switch.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "切り替えをつまみの移動で追えるようにする。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "ON/OFF切り替え",
+          "effect": "つまみの移動に弾性を付け、横.84・縦1.12の変形から1へ戻す。承認済みグラデーションを維持。",
+          "timing": "feedback"
+        }
+      ]
+    }
+  },
+  "type": "registry:ui"
+}

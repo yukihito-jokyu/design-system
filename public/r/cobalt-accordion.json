@@ -1,0 +1,43 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cobalt-accordion",
+  "title": "Cobalt accordion",
+  "description": "Cobalt design system component.",
+  "dependencies": [
+    "lucide-react@^1.45.0",
+    "radix-ui@^1.6.7"
+  ],
+  "registryDependencies": [
+    "@yukihi/cobalt-design-system-styles",
+    "@yukihi/cobalt-theme-provider",
+    "@yukihi/cobalt-utils"
+  ],
+  "files": [
+    {
+      "path": "registry/cobalt/ui/accordion/accordion.tsx",
+      "content": "import { useMotionEntry } from \"@/registry/cobalt/components/theme-provider/motion-feedback\";\nimport * as React from \"react\";\nimport { cn } from \"@/registry/cobalt/lib/utils/utils\";\nimport {\n  MotionProvider,\n  useDesignMotion,\n  type MotionPreference,\n} from \"@/registry/cobalt/components/theme-provider/motion-provider\";\nimport { ChevronDownIcon } from \"lucide-react\";\nimport { Accordion as AccordionPrimitive } from \"radix-ui\";\n\nfunction Accordion({\n  motion = \"inherit\",\n  className,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Root> & { motion?: MotionPreference }) {\n  const effective = useDesignMotion(motion);\n  return (\n    <MotionProvider motion={motion}>\n      <AccordionPrimitive.Root\n        data-slot=\"accordion\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-accordion\", className)}\n        {...props}\n      />\n    </MotionProvider>\n  );\n}\n\nfunction AccordionItem({\n  className,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Item>) {\n  return (\n    <AccordionPrimitive.Item\n      data-slot=\"accordion-item\"\n      className={cn(\"cobalt-accordion-item\", className)}\n      {...props}\n    />\n  );\n}\n\nfunction AccordionTrigger({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {\n  const effective = useDesignMotion();\n  return (\n    <AccordionPrimitive.Header className=\"cobalt-accordion-header\">\n      <AccordionPrimitive.Trigger\n        data-slot=\"accordion-trigger\"\n        data-cobalt-motion={effective}\n        className={cn(\"cobalt-accordion-trigger\", className)}\n        {...props}\n      >\n        {children}\n        <ChevronDownIcon aria-hidden=\"true\" />\n      </AccordionPrimitive.Trigger>\n    </AccordionPrimitive.Header>\n  );\n}\n\nfunction AccordionContent({\n  className,\n  ref: forwardedRef,\n  children,\n  ...props\n}: React.ComponentProps<typeof AccordionPrimitive.Content>) {\n  const { ref, effective } = useMotionEntry<HTMLDivElement>(forwardedRef);\n  return (\n    <AccordionPrimitive.Content\n      data-slot=\"accordion-content\"\n      ref={ref}\n      data-cobalt-motion={effective}\n      className=\"cobalt-accordion-content\"\n      {...props}\n    >\n      <div className={cn(\"cobalt-accordion-body\", className)}>{children}</div>\n    </AccordionPrimitive.Content>\n  );\n}\n\nexport { Accordion, AccordionItem, AccordionTrigger, AccordionContent };\n",
+      "type": "registry:ui",
+      "target": "@ui/accordion.tsx"
+    }
+  ],
+  "meta": {
+    "motion": {
+      "purpose": "説明がその場でほどけるように開く。",
+      "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+      "actions": [
+        {
+          "trigger": "開く",
+          "effect": "Radixが計測した実寸まで高さ0から展開し、フェード。矢印は弾性を付けて回転。",
+          "timing": "expand / feedback"
+        },
+        {
+          "trigger": "閉じる",
+          "effect": "内容を即時に隠す。矢印だけ滑らかに戻す。",
+          "timing": "feedback"
+        }
+      ],
+      "entryControl": "位置・高さの計測後のCSSキーフレームをuseMotionEntryで一度だけ再生する。OFFと完了で再生の印を外し、ONへ戻すだけでは再生しない。"
+    }
+  },
+  "type": "registry:ui"
+}
