@@ -15,5 +15,5 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["registry/new-york"]
+  "include": ["registry/new-york", "registry/cobalt"]
 }

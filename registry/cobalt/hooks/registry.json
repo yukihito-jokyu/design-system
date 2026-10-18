@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "items": [
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "Cobalt Mobile Hook",
+      "description": "Cobalt source component. Registry distribution is not configured yet.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "use-mobile/use-mobile.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.ts"
+        }
+      ],
+      "meta": {
+        "distribution": "not-configured",
+        "motion": {
+          "purpose": "既存の補助処理を維持する。",
+          "policy": "registry/cobalt/styles/registry.json#/items/0/meta/motion",
+          "actions": [],
+          "staticReason": "DOMを描画しないため独立したmotionは持たない。"
+        }
+      }
+    }
+  ]
+}
